@@ -5,13 +5,11 @@ import warnings
 from matplotlib import pyplot as plt
 import matplotlib.cm as cm
 import random
-from scipy import integrate
 from tqdm import tqdm
 from nilearn import image, plotting
+from nibabel.processing import resample_from_to
 import nibabel as nib
 from itertools import combinations, permutations
-from itertools import cycle
-import connattractor.dynamicstates as dbs
 
 from . import config
 
@@ -28,7 +26,7 @@ class State(np.ndarray):
         else:
             obj = np.asarray(input).view(cls)
         obj.labelmap = labelmap
-        return obj #.astype(np.float128)
+        return obj  # .astype(np.float128)
 
     def __array_finalize__(self, obj):
         if obj is None: return
@@ -42,17 +40,21 @@ class State(np.ndarray):
                           labelmap=config.DEFAULT_ATLAS_NII,
                           ):
 
-        if isinstance(nii, str):
-            # it's a file name
-            map_data = nib.load(nii).get_data()
-        else:
-            map_data = nii.get_data()
-
         if isinstance(labelmap, str):
             # it's a file name
-            atlas_data = nib.load(labelmap).get_data()
+            atlas_data = nib.load(labelmap)
         else:
-            atlas_data = labelmap.get_data()
+            atlas_data = labelmap
+
+        if isinstance(nii, str):
+            # it's a file name
+            map_data = nib.load(nii)
+        else:
+            map_data = nii
+
+        map_data = resample_from_to(map_data, atlas_data, order=2)
+        map_data = map_data.get_fdata()
+        atlas_data = atlas_data.get_fdata()
 
         M = int(np.max(atlas_data))
 
@@ -77,8 +79,8 @@ class State(np.ndarray):
     def to_Nifti1Image(self,
                        labelmap=config.DEFAULT_ATLAS_NII,
                        outfile=""):
-        #todo: fix this
-        #if self.shape[0] != config.DEAFULT_ATLAS_M:
+        # todo: fix this
+        # if self.shape[0] != config.DEAFULT_ATLAS_M:
         #    print(str(self.shape[0]) + " " + str(config.DEAFULT_ATLAS_M))
         #    raise ValueError('Please adjust the labelmap for image conversion!')
         img = image.load_img(labelmap)
@@ -113,8 +115,7 @@ class State(np.ndarray):
 
         plotting.plot_glass_brain(smooth_img, **default_plot_kwargs)
         # calling show() here causes issues when sending plots to axes
-        #plotting.show()
-
+        # plotting.show()
 
 
 class Hopfield(object):
@@ -135,10 +136,7 @@ class Hopfield(object):
         self.beta = beta
 
         # initilaize with empty state
-        self.state = State(np.zeros(self.num_neuron))
-
-        # init lookuptable for energy function
-        self.lut = gen_energy_lookuptable(np.linspace(0,1,100))
+        self._state = State(np.zeros(self.num_neuron))
 
     def train_weights(self, train_data):  # tarin_data is a list of States
         num_data = len(train_data)
@@ -171,7 +169,7 @@ class Hopfield(object):
         self.num_neuron = W.shape[0]
 
     def get_state(self):
-        return (self.state)
+        return np.arctanh(self._state)
 
     def update(self, state, threshold=None, beta=None, num_iter=10000, asyn=False, seed=None, verbose=False, plot=0,
                plot_tolerance=.9999):
@@ -191,7 +189,7 @@ class Hopfield(object):
         # sigmoid transformation to initialize the state
         state = np.tanh(state)
 
-        self.state = State(np.copy(state)) # copy?
+        self._state = State(np.copy(state))  # copy?
 
         energy_conv = []
 
@@ -201,8 +199,8 @@ class Hopfield(object):
             """
 
             # Compute initial state energy
-            #e = self.energy_cont(self.state)
-            e = self.energy(self.state)
+            # e = self.energy_cont(self.state)
+            e = self.energy(self._state)
 
             energy_conv.append(e)
 
@@ -218,18 +216,17 @@ class Hopfield(object):
                 # print(self.W)
                 # print(self.state)
                 # print(self.W @ np.array(self.state))
-                #self.state = State(np.tanh(self.beta * (self.W @ np.array(self.state) - self.threshold)))  # continous
-                self.state = State(np.tanh(self.beta * (self.W @ np.array(self.state) - self.threshold)))  # continous
-
+                # self.state = State(np.tanh(self.beta * (self.W @ np.array(self.state) - self.threshold)))  # continous
+                self._state = State(np.tanh(self.beta * (self.W @ np.array(self._state) - self.threshold)))  # continous
 
                 # Compute new state energy
-                #e_new = self.energy_cont(self.state)
-                e_new = self.energy(self.state)
+                # e_new = self.energy_cont(self.state)
+                e_new = self.energy(self._state)
 
                 energy_conv.append(e_new)
-                #unique_states = count_unique_states(np.asarray(q_states), atol=0, rtol=1e-10)[0]
+                # unique_states = count_unique_states(np.asarray(q_states), atol=0, rtol=1e-10)[0]
 
-                #if plot and plot_tolerance <= e / e_new:
+                # if plot and plot_tolerance <= e / e_new:
                 #    plot = -1  # The end is boring, don't plot it!
 
                 pbar.set_description("Energy: %f" % e_new)
@@ -240,21 +237,23 @@ class Hopfield(object):
                     if plot != 0:
                         print("Converged. Energy: " + str(e) + " Iteration: " + str(i))
                         self.plot_activation()
-                    return self.state, i + 1, energy_conv  # converged
+                    return np.arctanh(self._state), i + 1, energy_conv  # converged
                 # Update energy
                 e = e_new
             # return NaN if energy does not converge
             # warnings.warn("Warning: Hopfield Network did not converge! Consider increasing num_iter.")
-            #empty_state = np.empty(np.shape(self.state))
-            #empty_state[:] = np.nan
-            #return empty_state, i + 1  # No convergence, still you can get the state with get_sate()
-            return self.state, i + 1, energy_conv # No convergence, still you can get the state with get_sate()
+            # empty_state = np.empty(np.shape(self.state))
+            # empty_state[:] = np.nan
+            # return empty_state, i + 1  # No convergence, still you can get the state with get_sate()
+            return np.arctanh(
+                self._state), i + 1, energy_conv  # No convergence, still you can get the state with get_sate()
         else:
             """
             Asynchronous update
             """
+            raise Warning("Asynchronous update is not tested yet!")
             # Compute initial state energy
-            e = self.energy_cont(self.state)
+            e = self.energy_cont(self._state)
 
             # Iteration
             pbar = tqdm(range(self.num_iter), disable=not verbose)
@@ -262,18 +261,18 @@ class Hopfield(object):
                 if plot > 0 and not i % plot:
                     print("Iter: " + str(i) + " Energy: " + str(e))
                     self.plot_activation()
-                region_idx = list(range(len(self.state)))
+                region_idx = list(range(len(self._state)))
                 if seed is not None:
                     random.seed(seed)
                     random.shuffle(region_idx)
                 for idx in region_idx:
                     # Update s
-                    self.state[idx] = np.tanh( self.beta * (np.sum([self.W[i, idx] * self.state[i] for i in range(len(self.state))]) - self.threshold))
-
+                    self._state[idx] = np.tanh(self.beta * (np.sum(
+                        [self.W[i, idx] * self._state[i] for i in range(len(self._state))]) - self.threshold))
 
                 # Compute new state energy
                 # todo: change me back
-                e_new = self.energy_cont(self.state)
+                e_new = self.energy_cont(self._state)
                 pbar.set_description("Energy: %f" % e_new)
 
                 if plot > 0 and plot_tolerance <= e / e_new:
@@ -286,13 +285,13 @@ class Hopfield(object):
                     if plot != 0:
                         print("Converged. Energy: " + str(e) + " Iteration: " + str(i))
                         self.plot_activation()
-                    return self.state, i + 1  # converged
+                    return np.arctanh(self._state), i + 1  # converged
                 # Update energy
                 e = e_new
             warnings.warn("Warning: Hopfield Network did not converge! Consider increasing num_iter.")
             # todo: not a very elegant return value. Could number of iterations be a filed of the state?
             # can be None for states not being a result of relaxation
-            return self.state, i + 1  # No convergence, still you can get the state with get_sate()
+            return np.arctanh(self._state), i + 1  # No convergence, still you can get the state with get_sate()
 
     def energy(self, s):
         s = np.array(s)
@@ -300,12 +299,13 @@ class Hopfield(object):
 
     def plot_activation(self, smooth=6, arctanh=True, **kwargs):
         if arctanh:
-            s = State(np.arctanh(np.array(self.state)))
+            s = State(np.arctanh(np.array(self._state)))
         else:
-            s = self.state
+            s = self._state
         s.plot(smooth=smooth, **kwargs)
 
     def plot_weights(self, **kwargs):
+        # todo: return the plot isntead of showing it
         plt.figure(figsize=(6, 5))
         w_mat = plt.imshow(self.W, cmap=cm.coolwarm, **kwargs)
         plt.colorbar(w_mat)
@@ -318,6 +318,7 @@ class Hopfield(object):
 def fun_random_shuffle(prev_state):  # changes prev_state!
     np.random.shuffle(prev_state)
     return prev_state
+
 
 def count_unique_states(att_states, rtol=1e-05, atol=1e-08):
     # count attractor states
@@ -335,14 +336,20 @@ def count_unique_states(att_states, rtol=1e-05, atol=1e-08):
             counts.append(1)
     return unique, counts
 
+
+def min_energy(hopfiled_network, state):
+    # get the minumum energy with scaling the state
+    raise Warning("Not implemented yet!")
+
+
 def map_out_attractors(hopfiled_net,
-                      base_state=None,
-                      shuffle_iter=100,
-                      hopfiled_num_iter=100000,
-                      fun_state_gen=fun_random_shuffle,
-                      sparsity=10,  # only if base_state=None
-                      verbose=False
-                      ):
+                       base_state=None,
+                       shuffle_iter=100,
+                       hopfiled_num_iter=100000,
+                       fun_state_gen=fun_random_shuffle,
+                       sparsity=10,  # only if base_state=None
+                       verbose=False
+                       ):
     if not isinstance(base_state, np.ndarray):
         # init a simple sparse base state to be shuffled
         base_state = np.concatenate((np.repeat(0.1, sparsity), np.repeat(0, hopfiled_net.num_neuron - sparsity)),
@@ -401,20 +408,19 @@ def get_n_attractor_states(hopfield_net,
                            beta_upper=0.1,
                            beta_lower=0,
                            verbose=True):
-
     # todo: fix the double calculating of the hopfield states
     hopfield_net.beta = beta_lower
-    n_states_lower = num_of_attractors(hopfield_net)[0]
+    n_states_lower = map_out_attractors(hopfield_net)[0]
 
     hopfield_net.beta = beta_upper
-    n_states_upper = num_of_attractors(hopfield_net)[0]
+    n_states_upper = map_out_attractors(hopfield_net)[0]
 
     while n_target_states > n_states_upper or n_target_states < n_states_lower:
-        #print('warning, beta bounds changed')
+        # print('warning, beta bounds changed')
         if n_target_states > n_states_upper:
             beta_upper *= 2
             hopfield_net.beta = beta_upper
-            n_states_upper = num_of_attractors(hopfield_net)[0]
+            n_states_upper = map_out_attractors(hopfield_net)[0]
             print('beta upper', beta_upper)
             print('n states upper', n_states_upper)
 
@@ -422,13 +428,13 @@ def get_n_attractor_states(hopfield_net,
         elif n_target_states < n_states_lower:
             beta_lower *= 0.5
             hopfield_net.beta = beta_lower
-            n_states_lower = num_of_attractors(hopfield_net)[0]
+            n_states_lower = map_out_attractors(hopfield_net)[0]
             print('beta lower', beta_lower)
             print('n states lower', n_states_lower)
 
     beta = 0.5 * (beta_lower + beta_upper)
     hopfield_net.beta = beta
-    n_states, attractors, counts, iters = num_of_attractors(hopfield_net)
+    n_states, attractors, counts, iters = map_out_attractors(hopfield_net)
 
     iter = 0
 
@@ -441,7 +447,7 @@ def get_n_attractor_states(hopfield_net,
         beta = 0.5 * (beta_lower + beta_upper)
         hopfield_net.beta = beta
 
-        n_states, attractors, counts, iters = num_of_attractors(hopfield_net)
+        n_states, attractors, counts, iters = map_out_attractors(hopfield_net)
         iter += 1
 
     if verbose:
@@ -449,4 +455,3 @@ def get_n_attractor_states(hopfield_net,
         print('target beta: ', beta)
 
     return attractors, beta, iter
-
