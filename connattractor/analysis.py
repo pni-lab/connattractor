@@ -91,7 +91,7 @@ class HopfiledEmbedding:
         default_regimes_contour_kwargs.update(regimes_contour_kwargs)
 
         if attractor_plot_type == 'glassbrain':
-            default_attractor_kwargs = dict(display_mode='x', colorbar = False)
+            default_attractor_kwargs = dict(display_mode='x', colorbar=False)
         elif attractor_plot_type == 'scatter':
             default_attractor_kwargs = dict()
         else:
@@ -100,6 +100,8 @@ class HopfiledEmbedding:
 
         if plot_type == 'scatter':
             default_kwargs = dict(alpha=1.0, s=10, linewidths=0, c='black')
+        elif plot_type == 'line':
+            default_kwargs = dict()
         elif plot_type == 'hist2d':
             default_kwargs = dict(bins=100, cmap='gray_r')
         elif plot_type == 'density':
@@ -141,6 +143,8 @@ class HopfiledEmbedding:
                 if legend_kwargs is not None:
                     handles, labels = plot.legend_elements(prop="colors")
                     legend = ax.legend(handles, labels, **legend_kwargs)
+            elif plot_type == 'line':
+                plot = ax.plot(th, r, **default_kwargs)
             elif plot_type == 'hist2d':
                 plot = ax.hist2d(th, r, **default_kwargs)
             elif plot_type == 'density' or plot_type == 'contour' or plot_type == 'contourf':
