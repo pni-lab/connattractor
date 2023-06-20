@@ -1,5 +1,6 @@
 # https://github.com/takyamamoto/Hopfield-Network
 
+from dataclasses import dataclass
 import numpy as np
 import warnings
 from matplotlib import pyplot as plt
@@ -95,7 +96,7 @@ class State(np.ndarray):
         if outfile:
             # save
             nib.save(volume, outfile)
-        return (volume)
+        return volume
 
     def plot(self, smooth=6, labelmap=config.MIST122_NII, **kwargs):
         img = self.to_Nifti1Image(labelmap)
@@ -113,9 +114,7 @@ class State(np.ndarray):
         }
         default_plot_kwargs.update(kwargs)
 
-        plotting.plot_glass_brain(smooth_img, **default_plot_kwargs)
-        # calling show() here causes issues when sending plots to axes
-        # plotting.show()
+        return plotting.plot_glass_brain(smooth_img, **default_plot_kwargs)
 
 
 class Hopfield(object):
