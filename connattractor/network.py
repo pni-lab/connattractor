@@ -311,7 +311,7 @@ class Hopfield(object):
         plt.title("Network Weights")
         plt.tight_layout()
         # plt.savefig("weights.png")
-        plt.show()
+        #plt.show()
 
 
 def fun_random_shuffle(prev_state):  # changes prev_state!

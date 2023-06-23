@@ -102,6 +102,9 @@ class HopfiledEmbedding:
             default_kwargs = dict(alpha=1.0, s=10, linewidths=0, c='black')
         elif plot_type == 'line':
             default_kwargs = dict()
+        elif plot_type == 'stream':
+            default_kwargs = dict(linewidth=5, color='gray', density=1.2, bins=10)
+            default_kwargs.update(kwargs)
         elif plot_type == 'hist2d':
             default_kwargs = dict(bins=100, cmap='gray_r')
         elif plot_type == 'density':
@@ -112,30 +115,46 @@ class HopfiledEmbedding:
             default_kwargs = dict(levels=20, antialiased=True, cmap='Greens')
         else:
             raise ValueError("Unknown type.")
+
         default_kwargs.update(kwargs)
+
+        if plot_type == 'stream':
+            stream_linewidth = default_kwargs.pop('linewidth')
+            stream_bins = default_kwargs.pop('bins')
 
         if ax is None:
             fig = plt.gcf()
-            ax = fig.add_subplot(projection='polar')
+            if plot_type == 'stream' or plot_type == 'density' or plot_type == 'contour' or plot_type == 'contourf':
+                ax_cart = fig.add_axes([0,0,1,1], polar=False, frameon=False)
+            ax = fig.add_axes([0,0,1,1], polar=True, frameon=False)
             w, h = figaspect(1)
             ax.figure.set_size_inches(w, h)
         else:
             ax.set_aspect('equal')
+            ax.patch.set_alpha(0)
+            if plot_type == 'stream' or plot_type == 'density' or plot_type == 'contour' or plot_type == 'contourf':
+                ax_cart = ax.figure.add_axes(ax.get_position(), polar=False, frameon=False, zorder=-1)
             # todo: test if ax is specified
 
         max_r = 1
         for l, attractor in self.attractors.items():
             att = StandardScaler().fit_transform(np.array(attractor).reshape(1, -1).T).T
-            att_cart = self.embedding_model.transform(np.tanh(att))[:, :2]
+            att_cart = self.embedding_model.transform(att)[:, :2]
             r, th = _cart2pol(att_cart[:, 0], att_cart[:, 1])
             max_r = max(max_r, r.squeeze())
+        if plot_type == 'stream' or plot_type == 'density' or plot_type == 'contour' or plot_type == 'contourf':
+            ax_cart.set_xlim([-1.1 * max_r, 1.1 * max_r])
+            ax_cart.set_ylim([-1.1 * max_r, 1.1 * max_r])
+            ax_cart.set_xticks([])
+            ax_cart.set_yticks([])
+            ax_cart.grid(False)
         ax.set_ylim([0, 1.1 * max_r])
 
         # plot actual data
         if activations is not None:
             # transform activations to embedding space
             activations = StandardScaler().fit_transform(activations.T).T
-            embedded = self.embedding_model.transform(np.tanh(activations))
+            embedded = self.embedding_model.transform(activations)
             r, th = _cart2pol(embedded[:, 0], embedded[:, 1])
             if plot_type == 'scatter':
                 plot = ax.scatter(th, r, **default_kwargs)
@@ -145,10 +164,32 @@ class HopfiledEmbedding:
                     legend = ax.legend(handles, labels, **legend_kwargs)
             elif plot_type == 'line':
                 plot = ax.plot(th, r, **default_kwargs)
+            elif plot_type == 'stream':
+                directions = embedded[1:, :] - embedded[:-1, :]
+                from scipy.stats import binned_statistic_2d
+                dir_x, x_edges, y_edges, _ = binned_statistic_2d(embedded[:-1, 1], embedded[:-1, 0], directions[:, 0],
+                                                                 statistic=np.mean,
+                                                                 bins=[np.linspace(-max_r*1.1, max_r*1.1, stream_bins),
+                                                                       np.linspace(-max_r*1.1, max_r*1.1, stream_bins)])
+                dir_y, x_edges, y_edges, _ = binned_statistic_2d(embedded[:-1, 1], embedded[:-1, 0], directions[:, 1],
+                                                                 statistic=np.mean,
+                                                                 bins=[np.linspace(-max_r * 1.1, max_r * 1.1,
+                                                                                   stream_bins),
+                                                                       np.linspace(-max_r * 1.1, max_r * 1.1,
+                                                                                   stream_bins)])
+
+                x, y = np.meshgrid((x_edges[1:] + x_edges[:-1]) / 2,
+                                   (y_edges[1:] + y_edges[:-1]) / 2)
+
+                speed = np.sqrt(dir_x ** 2 + dir_y ** 2)
+                ax_cart.streamplot(x, y, dir_x, dir_y,
+                                   linewidth= stream_linewidth * speed / speed[~ np.isnan(speed)].max(),
+                                   **default_kwargs)
             elif plot_type == 'hist2d':
-                plot = ax.hist2d(th, r, **default_kwargs)
+                raise NotImplementedError("Not implemented yet.")
+                #plot = ax.hist2d(th, r, **default_kwargs)
             elif plot_type == 'density' or plot_type == 'contour' or plot_type == 'contourf':
-                H, x_edges, y_edges = np.histogram2d(embedded[:, 0], embedded[:, 1],
+                H, x_edges, y_edges = np.histogram2d(embedded[:, 1], embedded[:, 0],
                                                      bins=density_bins,
                                                      density=True,
                                                      range=[[-max_r*1.2, max_r*1.2], [-max_r*1.2, max_r*1.2]])
@@ -163,16 +204,17 @@ class HopfiledEmbedding:
                 # calculate midpoints of bins
                 y = (y[: -1, :-1] + y[1:, 1:]) / 2
                 x = (x[: -1, :-1] + x[1:, 1:]) / 2
-                rad, theta = _cart2pol(y, x)
+                rad, theta = _cart2pol(x, y)
+                #theta = theta % (np.pi * 2)
                 # fill
                 if plot_type == 'density':
                     with warnings.catch_warnings():
                         warnings.simplefilter("ignore")
-                        ax.pcolormesh(theta, rad, H, **default_kwargs)
+                        ax_cart.pcolormesh(x, y, H, **default_kwargs)
                 elif plot_type == 'contour':
-                    ax.contour(theta, rad, H, **default_kwargs)
+                    ax_cart.contour(x, y, H, **default_kwargs)
                 elif plot_type == 'contourf':
-                    ax.contourf(theta, rad, H, **default_kwargs)
+                    ax_cart.contourf(x, y, H, **default_kwargs)
 
             else:
                 raise ValueError("Unknown type.")
@@ -198,7 +240,7 @@ class HopfiledEmbedding:
         ax.set_prop_cycle(None)
         for l, attractor in self.attractors.items():
             att = StandardScaler().fit_transform(np.array(attractor).reshape(1, -1).T).T
-            att_cart = self.embedding_model.transform(np.tanh(att))[:, :2]
+            att_cart = self.embedding_model.transform(att)[:, :2]
             r, th = _cart2pol(att_cart[:, 0], att_cart[:, 1])
             if attractor_plot_type == 'scatter':
                 ax.scatter(th, r, **default_attractor_kwargs)
@@ -211,7 +253,7 @@ class HopfiledEmbedding:
             else:
                 raise ValueError("Unknown attractor_type.")
 
-        ax.set_xticks([0, 0.5 * np.pi, np.pi, 1.5 * np.pi], ["PC1", "PC2", "", ""])
+        ax.set_xticks([0, 0.5 * np.pi, np.pi, 1.5 * np.pi], ["", "", "", ""])
         ax.set_yticks(np.arange(0, np.round(max_r) + 1, 2))
         ax.set_rlabel_position(0)
         ax.tick_params(axis='y', colors='gray')
@@ -290,7 +332,7 @@ def create_embeddings(simulation, attractor_sample=1000, num_hopfield_iter=10000
     # PCA on simulated hopfield states
     pca = PCA(**kwargs)
     states = StandardScaler().fit_transform(simulation.states.T).T
-    embedded = pca.fit_transform(np.tanh(states))
+    embedded = pca.fit_transform(states)
 
     # calculate attractor states for a subsample
     random = np.random.default_rng(random_state)
