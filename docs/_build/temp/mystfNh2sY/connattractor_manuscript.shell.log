@@ -1,0 +1,120 @@
+Rc files read:
+  NONE
+Latexmk: This is Latexmk, John Collins, 29 September 2020, version: 4.70b.
+Rule 'xelatex': The following rules & subrules became out-of-date:
+      'xelatex'
+------------
+Run number 1 of rule 'xelatex'
+------------
+------------
+Running 'xelatex -no-pdf -synctex=1 -interaction=batchmode -file-line-error -shell-escape -recorder  "connattractor_manuscript.tex"'
+------------
+Latexmk: applying rule 'xelatex'...
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex)
+ \write18 enabled.
+entering extended mode
+
+SyncTeX written on connattractor_manuscript.synctex.gz.Latexmk: References changed.
+Latexmk: Non-existent bbl file 'connattractor_manuscript.bbl in line'
+ No file connattractor_manuscript.bbl.
+Latexmk: References changed.
+Latexmk: References changed.
+Latexmk: Log file says output to 'connattractor_manuscript.xdv'
+Latexmk: List of undefined refs and citations:
+  Citation `Gutierrez_Barragan_2019' on page 1 undefined on input line 42
+  Reference `face-val' on page 2 undefined on input line 65
+Latexmk: Examining 'connattractor_manuscript.log'
+=== TeX engine is 'XeTeX'
+Latexmk: Found bibliography file(s) [main.bib]
+Rule 'bibtex connattractor_manuscript': File changes, etc:
+   Changed files, or newly in use since previous run(s):
+      'connattractor_manuscript.aux'
+------------
+Run number 1 of rule 'bibtex connattractor_manuscript'
+------------
+------------
+Running 'bibtex  "connattractor_manuscript.aux"'
+------------
+Latexmk: applying rule 'bibtex connattractor_manuscript'...
+For rule 'bibtex connattractor_manuscript', running '&run_bibtex(  )' ...
+This is BibTeX, Version 0.99d (TeX Live 2021)
+The top-level auxiliary file: connattractor_manuscript.aux
+The style file: abbrvnat.bst
+Database file #1: main.bib
+Rule 'xelatex': File changes, etc:
+   Changed files, or newly in use since previous run(s):
+      'connattractor_manuscript.aux'
+      'connattractor_manuscript.bbl'
+      'connattractor_manuscript.out'
+------------
+Run number 2 of rule 'xelatex'
+------------
+------------
+Running 'xelatex -no-pdf -synctex=1 -interaction=batchmode -file-line-error -shell-escape -recorder  "connattractor_manuscript.tex"'
+------------
+Latexmk: applying rule 'xelatex'...
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex)
+ \write18 enabled.
+entering extended mode
+
+SyncTeX written on connattractor_manuscript.synctex.gz.Latexmk: Found input bbl file 'connattractor_manuscript.bbl'
+Latexmk: References changed.
+Latexmk: Log file says output to 'connattractor_manuscript.xdv'
+Latexmk: List of undefined refs and citations:
+  Citation `Gutierrez_Barragan_2019' on page 1 undefined on input line 42
+Latexmk: Examining 'connattractor_manuscript.log'
+=== TeX engine is 'XeTeX'
+Latexmk: Found bibliography file(s) [main.bib]
+Rule 'bibtex connattractor_manuscript': File changes, etc:
+   Changed files, or newly in use since previous run(s):
+      'connattractor_manuscript.aux'
+------------
+Run number 2 of rule 'bibtex connattractor_manuscript'
+------------
+------------
+Running 'bibtex  "connattractor_manuscript.aux"'
+------------
+Latexmk: applying rule 'bibtex connattractor_manuscript'...
+For rule 'bibtex connattractor_manuscript', running '&run_bibtex(  )' ...
+This is BibTeX, Version 0.99d (TeX Live 2021)
+The top-level auxiliary file: connattractor_manuscript.aux
+The style file: abbrvnat.bst
+Database file #1: main.bib
+Rule 'xelatex': File changes, etc:
+   Changed files, or newly in use since previous run(s):
+      'connattractor_manuscript.aux'
+------------
+Run number 3 of rule 'xelatex'
+------------
+------------
+Running 'xelatex -no-pdf -synctex=1 -interaction=batchmode -file-line-error -shell-escape -recorder  "connattractor_manuscript.tex"'
+------------
+Latexmk: applying rule 'xelatex'...
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex)
+ \write18 enabled.
+entering extended mode
+
+SyncTeX written on connattractor_manuscript.synctex.gz.Latexmk: Found input bbl file 'connattractor_manuscript.bbl'
+Latexmk: Log file says output to 'connattractor_manuscript.xdv'
+Latexmk: Examining 'connattractor_manuscript.log'
+=== TeX engine is 'XeTeX'
+Latexmk: Found bibliography file(s) [main.bib]
+Rule 'xdvipdfmx': File changes, etc:
+   Changed files, or newly in use since previous run(s):
+      'connattractor_manuscript.xdv'
+   Rule(s) that have been run and require run of dependent rule:
+      'xelatex' which requires run of 'xdvipdfmx'
+------------
+Run number 1 of rule 'xdvipdfmx'
+------------
+------------
+Running 'xdvipdfmx -E -o "connattractor_manuscript.pdf"  "connattractor_manuscript.xdv"'
+------------
+Latexmk: applying rule 'xdvipdfmx'...
+For rule 'xdvipdfmx', running '&do_viewfile(  )' ...
+connattractor_manuscript.xdv -> connattractor_manuscript.pdf
+[1][2
+xdvipdfmx:warning: Object @figure.1 already defined.
+][3][4]
+2469153 bytes written
+Latexmk: All targets (connattractor_manuscript.xdv connattractor_manuscript.pdf) are up-to-date

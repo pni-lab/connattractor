@@ -1,0 +1,105 @@
+\documentclass{article}
+\usepackage{arxiv}
+
+\usepackage[utf8]{inputenc} % allow utf-8 input
+\usepackage[T1]{fontenc}    % use 8-bit T1 fonts
+\usepackage{hyperref}       % hyperlinks
+\usepackage{url}            % simple URL typesetting
+\usepackage{datetime}       % show dates in the title block
+\usepackage{booktabs}       % professional-quality tables
+\usepackage{amsfonts}       % blackboard math symbols
+\usepackage{nicefrac}       % compact symbols for 1/2, etc.
+\usepackage{microtype}      % microtypography
+\usepackage{graphicx}
+\usepackage{natbib}
+\usepackage{doi}
+\usepackage{xcolor}
+
+[- IMPORTS -]
+
+\hypersetup{colorlinks = true,
+linkcolor = purple,
+urlcolor  = blue,
+citecolor = cyan,
+anchorcolor = black}
+
+\title{[-doc.title-]}
+
+[# if options.show_date #]
+\newdate{articleDate}{[-doc.date.day-]}{[-doc.date.month-]}{[-doc.date.year-]}
+\date{\displaydate{articleDate}}
+[# else #]
+\date{}
+[# endif #]
+
+\makeatletter
+\let\@fnsymbol\@arabic
+\makeatother
+
+\author{[# for author in doc.authors #]
+[# if author.orcid #]\href{https://orcid.org/[-author.orcid-]}{\includegraphics[scale=0.06]{orcid.pdf}}\hspace{1mm}[# endif #]
+[--author.name--]
+[# if author.corresponding #]
+\footnotemark[[-author.corresponding.index-]]
+[#- endif #]\\
+[# for affiliation in author.affiliations #][-affiliation.value-]\\[# endfor #]
+[# if not loop.last #]
+\AND
+[# endif #]
+[# endfor #]
+}
+
+% Uncomment to override  the `A preprint' in the header
+\renewcommand{\headeright}{[-doc.subject-]}
+\renewcommand{\undertitle}{[-doc.subtitle-]}
+\renewcommand{\shorttitle}{[-doc.short_title-]}
+
+%% Add PDF metadata to help others organize their library
+%% Once the PDF is generated, you can check the metadata with
+%% $ pdfinfo template.pdf
+\hypersetup{
+pdftitle={\@title},
+pdfsubject={[-doc.description-]},
+pdfauthor={\@author},
+pdfkeywords={[-doc.keywords-]},
+addtopdfcreator={Written in Curvenote}
+}
+
+\begin{document}
+\maketitle
+[# for author in doc.authors #]
+[# if author.corresponding #]
+\footnotetext[[-author.corresponding.index-]]{Correspondence to: [-author.email-]}
+[# endif #]
+[# endfor #]
+
+[# if parts.abstract #]
+\begin{abstract}
+[-parts.abstract-]
+\end{abstract}
+[# endif #]
+
+[# if doc.keywords #]
+\keywords{[-doc.keywords|join(", ")-]}
+[# endif #]
+
+[-CONTENT-]
+
+[# if parts.acknowledgments #]
+\section*{Acknowledgments}
+[-parts.acknowledgments-]
+[# endif #]
+
+[# if options.link #]
+\section*{Original article}
+\footnotesize
+This article is available online at the following URL: \href{[-options.link-]}{[-options.link-]}
+\normalsize
+[# endif #]
+
+[# if doc.bibliography #]
+\bibliographystyle{unsrtnat}
+\bibliography{[- doc.bibliography | join(", ") -]}
+[# endif #]
+
+\end{document}

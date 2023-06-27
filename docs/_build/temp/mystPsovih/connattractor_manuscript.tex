@@ -1,0 +1,78 @@
+% Created with jtex v.1.0.1
+\documentclass{article}
+\PassOptionsToPackage{short, nodayofweek}{datetime}
+
+\input{curvenote.def}
+
+
+
+% colors for hyperlinks
+\hypersetup{colorlinks=true, allcolors=blue}
+\hypersetup{
+pdftitle={\@title},
+pdfsubject={},
+pdfauthor={\@author},
+pdfkeywords={},
+addtopdfcreator={Written in Curvenote}
+}
+
+\usepackage{curvenote}
+
+\title{The attractor states of the functional brain connectome}
+
+\newdate{articleDate}{27}{6}{2023}
+\date{\displaydate{articleDate}}
+
+\author{\bfseries Robert Englert\mdseries\\University Medicine Essen\\\AND\bfseries Tamas Spisak\mdseries\\University Medicine Essen\\}
+
+\begin{document}
+
+\maketitle
+\begin{abstract}
+Abstract: Todo
+\end{abstract}\keywords{}\textbf{Highglights:}
+
+\begin{itemize}
+\item a
+\item b
+\end{itemize}
+
+\section{Introduction}\label{Introduction}
+
+Functional brain connectomics studies the spontaneous co-activation of brain regions and has revolutionized our understanding of the physical basis of mind [ref]. The majority of fMRI connectivity studies assume temporal stationarity, i.e. that the brain connectivity is static for the entire data acquisition period. Such studies have provided a wealth of insights into the neural mechanisms of several behavioral/psychological phenotypes and clinical conditions. However, functional connectivity has been shown to be dynamic; it fluctuates spontaneously over time in a globally coordinated manner. Dynamic functional connectivity has quasi periodic properties (ref), with a limited number of recurring states (``brain states'') \cite{Gutierrez_Barragan_2019}; i.e. sporadic intervals during which information can be efficiently exchanged between a characteristic subset of brain regions [Hutchison et al., 2013, Liu 2013 PNAS, Zalesky, PNAS, 2014]. Brain state dynamics can be assessed with multiple techniques, including independent component analysis (ref), co-activation patterns (Liu 2013 PNAS), \dots and there is accumulating evidence for the neurobiological relevance of these dynamics, with promising perspectives for facilitating the clinical translation of functional neuroimaging techniques by improving brain based biomarkers (Woo, Nat Med. 2021).
+
+However, progress is limited by gaps in the mechanistic understanding of how brain activity and functional connectivity dynamically shape each other and how this process leads to the emergence and organization of brain states (ref).
+
+Here we propose a novel model-based framework that - with minimal, but reasonable assumptions about the ``activity flow'' (ref: Cole-papers) between two, functionally connected regions - considers the stationary functional brain network as an empirical (i.e. already-trained) artificial neural network (eANN). In the proposed framework, the topology of the stationary brain connectome defines a cost (energy) for any arbitrary brain activation patterns and a trajectory towards one of the finite number of stable patterns that minimize this cost (so-called attractor states).
+
+Here we propose these attractors states as robust and biomedically relevant characteristics of the functional brain connectome, with a wide variety of potential applications.
+
+We demonstrate that the proposed attractor states highly resemble to the dynamic brain states commonly observed by dynamic functional connectivity methods (e.g. CAP-analyses (ref)) and provide a proof-of-concept for the biomedical validity of our framework, by showing that the average brain activations corresponding to the attractor states during resting sate display manifold significant associations to cognition.
+
+Due to the known noise-tolerance of the applied eANN-s, the proposed approach can be expected to be highly robust/reliable/replicable, which we demonstrate with independent datasets (total n=xxx).
+
+List all the aims: hierarchy, generalizability etc
+
+\section{Results}\label{Results}
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[width=0.7\linewidth]{files/face_validity-167c44f136d6ab0bca5672ad8f64b5a2.pdf}
+\caption{Empirical Hopfiled-networks reconstruct real brain activity.}
+\label{face-val}
+\end{figure}
+
+Here I refer to Figure~\ref{face-val}.
+
+\section{Discussion}\label{Discussion}
+
+\section{Methods}\label{Methods}
+
+Todo
+
+Todo
+
+\clearpage
+\bibliography{main.bib}
+
+\end{document}
