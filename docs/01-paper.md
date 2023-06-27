@@ -20,6 +20,8 @@ exports:
   - format: pdf
     template: arxiv_nips
     output: exports/connattractor_manuscript.pdf
+  - format: docx
+    output: exports/connattractor_manuscript.docx
 ---
 
 +++ {"part": "key-points"}
