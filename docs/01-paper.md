@@ -27,14 +27,14 @@ exports:
 +++ {"part": "key-points"}
 **Highglights:**
 
-- activity flow across brain regions restricts
-- b
+- continous "activity flow" across brain regions
+- considerung the functional brain connectome as the weights of
 
 +++
 
 +++ {"part": "abstract"}
 
-Todo
+**Abstract:**
 
 +++
 
@@ -44,12 +44,11 @@ Todo
 
 
 
+Measuring localized brain activity, e.g. with functional magnetic resonsnace imaging (fMRI) have provided a wealth of insights into the neural correlates of several behavioral/psychological phenotypes and clinical conditions.
 
 
-Functional brain connectomics studies the spontaneous co-activation of brain regions and has revolutionized our understanding of the physical basis of mind [ref].
-The majority of fMRI connectivity studies assume temporal stationarity, i.e. that the brain connectivity is static for the entire data acquisition period.
-Such studies have provided a wealth of insights into the neural mechanisms
-of several behavioral/psychological phenotypes and clinical conditions.
+
+
 However, functional connectivity has been shown to be dynamic; it fluctuates spontaneously over time in a globally coordinated manner.
 Dynamic functional connectivity has quasi periodic properties (ref), with a limited number of recurring states (“brain states”) ([](https://doi.org/10.1016/j.cub.2019.06.017)); i.e. sporadic intervals during which information can be efficiently exchanged between a characteristic subset of brain regions ([](https://doi.org/10.1016/j.neuroimage.2013.05.079), [](https://doi.org/10.1073/pnas.1216856110), [](https://doi.org/10.1073/pnas.1400181111)).
 Brain state dynamics can be assessed with multiple techniques, including independent component analysis (ref), co-activation patterns ([](https://doi.org/10.1073/pnas.1216856110)), and there is accumulating evidence for the neurobiological relevance of these dynamics, with promising perspectives for facilitating the clinical translation of functional neuroimaging techniques by improving brain based biomarkers ([](https://doi.org/10.1038/s41591-020-1142-7)).
