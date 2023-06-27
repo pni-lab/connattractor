@@ -31,12 +31,26 @@ jobs:
       run: |
         cd docs 
         myst build -a
-    - name: Commit exported docs to main branch
+        
+    - name: Commit files
       run: |
-        git config user.name 'github-actions[bot]' && git config user.email 'github-actions[bot]@users.noreply.github.com'
-        git add -A docs/exports 
-        git diff-index --quiet HEAD || git commit -m "exports" -a
-        git push origin master  
+        git config --local user.email "github-actions[bot]@users.noreply.github.com"
+        git config --local user.name "github-actions[bot]"
+        git commit -a -m "Add changes"
+    - name: Push changes
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.GIT_TOKEN }}
+        branch: ${{ github.ref }}
+        
+        
+    #- name: Commit exported docs to main branch
+    #  run: |
+    #    git config user.name 'github-actions[bot]' && git config user.email 'github-actions[bot]@users.noreply.github.com'
+    #    git add -A docs/exports 
+    #    git commit -a -m "autogen"
+    #    git diff-index --quiet HEAD || git commit -m "exports" -a
+    #    git push origin master  
         
     #- name: GitHub Pages
     #  uses: crazy-max/ghaction-github-pages@v3.1.0
