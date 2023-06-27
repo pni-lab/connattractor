@@ -23,7 +23,7 @@ jobs:
     - name: Install dependencies
       run: |
         sudo apt-get update
-        sudo apt-get install texlive-xelatex latexmk -y
+        sudo apt-get install texlive-xetex latexmk -y
         python -m pip install --upgrade pip
         npm install -g myst-cli
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
