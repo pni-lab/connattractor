@@ -9,7 +9,7 @@ project:
   github: https://github.com/pni-lab/connattractor
   # bibliography: []
 site:
-  template: article-theme
+  template: book-theme
   title: ConnAttractor
   # logo:
   nav: []
