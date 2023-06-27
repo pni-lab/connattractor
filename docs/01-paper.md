@@ -2,7 +2,7 @@
 title: The attractor states of the functional brain connectome
 subject: Preprint
 #subtitle: Evolve your markdown documents into structured data
-short_title: The paper
+short_title: ConnAttractor Preprint
 authors:
     - name: Robert Englert
       affiliations:
@@ -27,7 +27,7 @@ exports:
 
 ---
 +++ {"part": "key-points"}
-**Highglights:**
+**Key Points:**
 
 - We propose a high-level computational model of "activity flow" across brain regions
 - The model considers the funcional brain connectome as an already-trained Hopfield neural network
