@@ -42,7 +42,7 @@ jobs:
       uses: ad-m/github-push-action@master
       with:
         github_token: ${{ secrets.GIT_TOKEN }}
-        branch: ${{ github.ref }}
+        branch: master
         
         
     #- name: Commit exported docs to main branch
