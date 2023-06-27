@@ -53,9 +53,9 @@ List all the aims: hierarchy, generalizability etc
 
 ## Results
 
-:::{figure} figures/face_validity.png
-:name: Figure 1
-Empirical Hopfiled-networks reconstruct real brain activity.
+:::{figure} ../data_out/fig/face_validity.svg
+:name: citations
+Citations are rendered with a popup directly inline.
 :::
 
 ## Discussion

@@ -22,12 +22,6 @@ exports:
     output: exports/connattractor_manuscript.pdf
 ---
 
-+++ {"part": "key-points"}
-**Highglights:**
-- a
-- b
-
-+++
 
 +++ {"part": "abstract"}
 
@@ -35,7 +29,7 @@ Todo
 
 +++
 
-## Introduction
+# Introduction
 
 Functional brain connectomics studies the spontaneous co-activation of brain regions and has revolutionized our understanding of the physical basis of mind [ref]. The majority of fMRI connectivity studies assume temporal stationarity, i.e. that the brain connectivity is static for the entire data acquisition period. Such studies have provided a wealth of insights into the neural mechanisms of several behavioral/psychological phenotypes and clinical conditions. However, functional connectivity has been shown to be dynamic; it fluctuates spontaneously over time in a globally coordinated manner. Dynamic functional connectivity has quasi periodic properties (ref), with a limited number of recurring states (“brain states”) [](https://doi.org/10.1016/j.cub.2019.06.017); i.e. sporadic intervals during which information can be efficiently exchanged between a characteristic subset of brain regions [Hutchison et al., 2013, Liu 2013 PNAS, Zalesky, PNAS, 2014]. Brain state dynamics can be assessed with multiple techniques, including independent component analysis (ref), co-activation patterns (Liu 2013 PNAS), … and there is accumulating evidence for the neurobiological relevance of these dynamics, with promising perspectives for facilitating the clinical translation of functional neuroimaging techniques by improving brain based biomarkers (Woo, Nat Med. 2021). 
 
@@ -51,26 +45,5 @@ Due to the known noise-tolerance of the applied eANN-s, the proposed approach ca
 
 List all the aims: hierarchy, generalizability etc 
 
-## Results
-
-:::{figure} figures/face_validity.png
-:name: Figure 1
-Empirical Hopfiled-networks reconstruct real brain activity.
-:::
-
-## Discussion
-
-## Methods
-
-+++ {"part": "acknowledgements"}
-
-Todo
-
-+++
-
-+++ {"part": "data-availability"}
-
-Todo
-
-+++
+# Results
 
