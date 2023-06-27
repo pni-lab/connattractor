@@ -29,16 +29,16 @@ jobs:
       run: |
         cd docs 
         myst build -a
-    - name: GitHub Pages
-      uses: crazy-max/ghaction-github-pages@v3.1.0
-      with:
-        # Build directory to deploy
-        build_dir: docs/_build
-        jekyll: false # optional, default is true
-        # If enabled, nothing will be pushed
-        dry_run: false # optional, default is false
-        # Enable verbose output
-        verbose: true # optional, default is false
-      env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    #- name: GitHub Pages
+    #  uses: crazy-max/ghaction-github-pages@v3.1.0
+    #  with:
+    #    # Build directory to deploy
+    #    build_dir: docs/_build
+    #    jekyll: false # optional, default is true
+    #    # If enabled, nothing will be pushed
+    #    dry_run: false # optional, default is false
+    #    # Enable verbose output
+    #    verbose: true # optional, default is false
+    #  env:
+    #s      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
