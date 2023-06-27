@@ -38,6 +38,9 @@ jobs:
         git config --local user.name "github-actions[bot]"
         git add -A -f docs/exports/*
         git commit -a -m "autogen"
+        git remote set-url origin https://spisakt:${{ secrets.GIT_TOKEN }}@github.com/pni-lab/connattractor.git
+        git push
+    #git push https://gitlab-ci-token:${{ secrets.GIT_TOKEN }}@github.com/myuser/myrepo.git <branch_name>
     - name: Push changes
       uses: ad-m/github-push-action@master
       with:
