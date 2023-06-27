@@ -29,7 +29,23 @@ jobs:
       run: |
         cd docs 
         myst build -a
-    - uses: actions/upload-artifact@v3
-      with:
-        name: myst build
-        path: docs/_build
+    - name: Commit exported docs to main branch
+      run: |
+        git config user.name 'github-actions[bot]' && git config user.email 'github-actions[bot]@users.noreply.github.com'
+        git add -A exports 
+        git diff-index --quiet HEAD || git commit -m "exports" -a
+        git push origin master  
+        
+    #- name: GitHub Pages
+    #  uses: crazy-max/ghaction-github-pages@v3.1.0
+    #  with:
+    #    # Build directory to deploy
+    #    build_dir: docs/_build
+    #    jekyll: false # optional, default is true
+    #    # If enabled, nothing will be pushed
+    #    dry_run: false # optional, default is false
+    #    # Enable verbose output
+    #    verbose: true # optional, default is false
+    #  env:
+    #s      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
