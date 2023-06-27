@@ -20,8 +20,9 @@ exports:
   - format: pdf
     template: arxiv_nips
     output: exports/connattractor_manuscript.pdf
-  - format: docx
-    output: exports/connattractor_manuscript.docx
+#  - format: docx
+#    template: curvenote
+#    output: exports/connattractor_manuscript.docx
 ---
 
 +++ {"part": "key-points"}
@@ -39,7 +40,13 @@ Todo
 
 # Introduction
 
-Functional brain connectomics studies the spontaneous co-activation of brain regions and has revolutionized our understanding of the physical basis of mind [ref]. The majority of fMRI connectivity studies assume temporal stationarity, i.e. that the brain connectivity is static for the entire data acquisition period. Such studies have provided a wealth of insights into the neural mechanisms of several behavioral/psychological phenotypes and clinical conditions. However, functional connectivity has been shown to be dynamic; it fluctuates spontaneously over time in a globally coordinated manner. Dynamic functional connectivity has quasi periodic properties (ref), with a limited number of recurring states (“brain states”) [](https://doi.org/10.1016/j.cub.2019.06.017); i.e. sporadic intervals during which information can be efficiently exchanged between a characteristic subset of brain regions [Hutchison et al., 2013, Liu 2013 PNAS, Zalesky, PNAS, 2014]. Brain state dynamics can be assessed with multiple techniques, including independent component analysis (ref), co-activation patterns (Liu 2013 PNAS), … and there is accumulating evidence for the neurobiological relevance of these dynamics, with promising perspectives for facilitating the clinical translation of functional neuroimaging techniques by improving brain based biomarkers (Woo, Nat Med. 2021). 
+Functional brain connectomics studies the spontaneous co-activation of brain regions and has revolutionized our understanding of the physical basis of mind [ref]. 
+The majority of fMRI connectivity studies assume temporal stationarity, i.e. that the brain connectivity is static for the entire data acquisition period.
+Such studies have provided a wealth of insights into the neural mechanisms 
+of several behavioral/psychological phenotypes and clinical conditions.
+However, functional connectivity has been shown to be dynamic; it fluctuates spontaneously over time in a globally coordinated manner.
+Dynamic functional connectivity has quasi periodic properties (ref), with a limited number of recurring states (“brain states”) ([](https://doi.org/10.1016/j.cub.2019.06.017)); i.e. sporadic intervals during which information can be efficiently exchanged between a characteristic subset of brain regions ([](https://doi.org/10.1016/j.neuroimage.2013.05.079), [](https://doi.org/10.1073/pnas.1216856110), [](https://doi.org/10.1073/pnas.1400181111)).
+Brain state dynamics can be assessed with multiple techniques, including independent component analysis (ref), co-activation patterns ([](https://doi.org/10.1073/pnas.1216856110)), and there is accumulating evidence for the neurobiological relevance of these dynamics, with promising perspectives for facilitating the clinical translation of functional neuroimaging techniques by improving brain based biomarkers ([](https://doi.org/10.1038/s41591-020-1142-7)). 
 
 However, progress is limited by gaps in the mechanistic understanding of how brain activity and functional connectivity dynamically shape each other and how this process leads to the emergence and organization of brain states (ref). 
 
@@ -55,9 +62,9 @@ List all the aims: hierarchy, generalizability etc
 
 # Results
 
-:::{figure} figures/face_validity.*
+:::{figure} figures/face_validity.png
 :name: face-val
-Empirical Hopfiled-networks reconstruct real brain activity.
+Empirical Hopfield-networks reconstruct real brain activity.
 :::
 
 Here I refer to {numref}`face-val`.
