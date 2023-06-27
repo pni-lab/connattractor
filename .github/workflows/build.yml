@@ -22,6 +22,7 @@ jobs:
         python-version: 3.9
     - name: Install dependencies
       run: |
+        sudo apt install texlive-latex-extra latexmk -y
         python -m pip install --upgrade pip
         npm install -g myst-cli
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
@@ -32,7 +33,7 @@ jobs:
     - name: Commit exported docs to main branch
       run: |
         git config user.name 'github-actions[bot]' && git config user.email 'github-actions[bot]@users.noreply.github.com'
-        git add -A exports 
+        git add -A docs/exports 
         git diff-index --quiet HEAD || git commit -m "exports" -a
         git push origin master  
         
