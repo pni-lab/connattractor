@@ -41,11 +41,11 @@ jobs:
         git remote set-url origin https://spisakt:${{ secrets.GIT_TOKEN }}@github.com/pni-lab/connattractor.git
         git push
     #git push https://gitlab-ci-token:${{ secrets.GIT_TOKEN }}@github.com/myuser/myrepo.git <branch_name>
-    - name: Push changes
-      uses: ad-m/github-push-action@master
-      with:
-        github_token: ${{ secrets.GIT_TOKEN }}
-        branch: master
+    #- name: Push changes
+    #  uses: ad-m/github-push-action@master
+    #  with:
+    #    github_token: ${{ secrets.GIT_TOKEN }}
+    #    branch: master
         
         
     #- name: Commit exported docs to main branch
