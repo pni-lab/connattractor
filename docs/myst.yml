@@ -1,0 +1,32 @@
+# See docs at: https://mystmd.org/guide/frontmatter
+version: 1
+project:
+  title: Paper
+  short_title: Paper
+  # description:
+  keywords: []
+  authors:
+    - name: Robert Englert
+      affiliations:
+        - University Medicine Essen
+      #orcid: 0000-0002-7859-8394
+      email: robert.englert@uk-essen.de
+    - name: Tamas Spisak
+      affiliations:
+        - University Medicine Essen
+      #orcid: 0000-0002-7859-8394
+      email: tamas.spisak@uk-essen.de
+  license: CC-BY-4.0
+  github: https://github.com/pni-lab/connattractor
+  # bibliography: []
+site:
+  template: book-theme
+  # title:
+  # logo:
+  nav: []
+  actions:
+    - title: PNI-lab
+      url: https://pni-lab.github.io/
+  domains: []
+
+
