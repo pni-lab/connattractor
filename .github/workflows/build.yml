@@ -39,4 +39,6 @@ jobs:
         dry_run: false # optional, default is false
         # Enable verbose output
         verbose: true # optional, default is false
+      env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
