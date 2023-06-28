@@ -72,7 +72,7 @@ On one hand, similarly to neuroconnectionism, we do not aim for a full bottom-up
 On the other hand, we do not train our ANN for a specific task, but set its weights "manually", based on empirical data about the "activity flow" ([](http://dx.doi.org/10.1038/nn.4406), [](http://dx.doi.org/10.1038/s41467-017-01000-w)) within the functional brain connectome, as measured with functional magnetic resonance imaging (fMRI). 
 We use a neurobiologically motivated ANN architecture, a continuous-space Hopfield network.
 Within this architecture, the topology of the functional connectome naturally defines an energy level for any arbitrary activation patterns and a trajectory towards one of the finite number of stable patterns that minimize this energy, the so-called attractor states.
-Furthermore, it provides a natural account for brain state dynamics as the system, in the presence of a small amount of noise, can undergo bifurcation, i.e. spontaneously switch between attractor states.
+Furthermore, it provides a natural account for brain state dynamics as the system, in the presence of weak noise, can undergo bifurcation, allowing the system to 'wander' through large swathes of the state space, from the basins of one attractor to the other.
 
 In this simplistic yet powerful framework, the primary determinants of the system's dynamic behavior are the topology of the network spanned by the weights of the ANN.
 As these weights are directly inferred from brain data, we hypothesize that the system will closely mimic the dynamic repertoire of true activity patterns in the brain (as measured by fMRI) and capture activity changes induced by tasks and pathologies.
@@ -96,11 +96,20 @@ In the proposed framework, both spontaneous and task-induced brain dynamics can 
 > Due to the known noise-tolerance of the applied eANN-s, the proposed approach can be expected to be highly robust/reliable/replicable, which we demonstrate with independent datasets (total n=xxx).
 
 
+:::{figure} figures/method_overview.*
+:name: overview
+Empirical Hopfield-networks.
+:::
 
 
 :::{figure} figures/face_validity.png
 :name: face-val
 Empirical Hopfield-networks reconstruct real brain activity.
+:::
+
+:::{figure} figures/state_analysis.*
+:name: clinical_validity
+Empirical Hopfield-networks.
 :::
 
 Here I refer to {numref}`face-val`.
