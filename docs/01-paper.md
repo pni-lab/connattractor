@@ -1,7 +1,7 @@
 ---
 title: The attractor states of the functional brain connectome
 subject: Preprint
-#subtitle: Evolve your markdown documents into structured data
+#subtitle: Optional Subtitle
 short_title: ConnAttractor Preprint
 authors:
     - name: Robert Englert
@@ -49,49 +49,40 @@ todo
 
 # Introduction
 
+Brain function is characterized by the continuous activation and deactivation of anatomically distributed neuronal populations.
+While changes in the activity of a single brain area is often associated with various tasks or conditions, in reality, regional activation never occurs in isolation ([](https://doi.org/10.1038/nn.4502)).
+Regardless of the presence or absence of explicit stimuli, brain regions seem to work in concert, resulting in a rich and complex spatiotemporal fluctuation ([](https://doi.org/10.1016/j.cub.2019.06.017)). 
+This fluctuation is neither random, nor stationary over time [](https://doi.org/10.1073/pnas.1216856110), [](https://doi.org/10.1073/pnas.1400181111). It shows quasi-periodic properties ([](https://doi.org/10.1016/j.neuroimage.2013.09.029)), with a limited number of recurring patterns known as “brain states” ([](https://doi.org/10.1073/pnas.1705120114), [](https://doi.org/10.1073/pnas.1216856110), [](https://doi.org/10.1016/j.neuroimage.2010.05.081)).
 
+Many recent studies ([](https://doi.org/10.1073/pnas.1121329109), [](https://doi.org/10.1073/pnas.1705120114), [](https://doi.org/10.1073/pnas.1216856110)) assess whole-brain dynamics and provide accumulating evidence supporting the neurobiological significance of these dynamics ([](https://doi.org/10.1016/j.neuroimage.2013.05.079), [](https://doi.org/10.1073/pnas.1418031112), [](10.1038/s41467-020-18717-w)). However, the underlying driving forces remain elusive.
 
-Brain function is accompanied by the activation and deactivation of anatomically distributed neuronal populations. While changes in the activity of a single brain area is often associated with various tasks or conditions, in reality, regional activation never occurs in isolation (ref). Regardless of the presence or absence of explicit stimuli, brain regions seem to work in concert, resulting in a rich and complex spatiotemporal fluctuation over time. This fluctuation shows quasi-periodic properties ([](https://doi.org/10.1016/j.neuroimage.2013.09.029 "Persistent link using digital object identifier")), with a limited number of recurring states known as “brain states” ([](https://doi.org/10.1016/j.cub.2019.06.017), [](https://doi.org/10.1073/pnas.1705120114)). These states are often interpreted as sporadic intervals during which information can be efficiently exchanged between a characteristic subset of brain regions ([](https://doi.org/10.1016/j.neuroimage.2013.05.079), [](https://doi.org/10.1073/pnas.1216856110), [](https://doi.org/10.1073/pnas.1400181111)). Brain state dynamics can be assessed with multiple techniques, including independent component analysis (ref), co-activation patterns ([](https://doi.org/10.1073/pnas.1216856110)) and hidden markov models ([](https://doi.org/10.1073/pnas.1705120114)).
+% Brain state dynamics can be assessed with multiple techniques, dynamic connectivity analysis (), including independent component analysis ([](https://doi.org/10.1073/pnas.1121329109)), hidden markov models ([](https://doi.org/10.1073/pnas.1705120114)) or point-process analyses to capture co-activation patterns (CAPs, [](https://doi.org/10.1073/pnas.1216856110), [](https://doi.org/10.1016/j.neuroimage.2015.01.057), [](https://doi.org/10.3389/fnsys.2013.00101), [](https://doi.org/10.1038/s41467-020-18717-w))
 
-While such efforts, by their nature, do not shed light on the driving forces of the complex spatiotemporal dance of brain acctity, they provide accumulating evidence for the neurobiological relevance of these dynamics, with promising perspectives for facilitating the clinical translation of functional neuroimaging techniques ([](https://doi.org/10.1038/s41591-020-1142-7)).
+Questions regarding the origin and meaning of this dynamic repertoire are to be answered by computational models that hold promise to bring us from "correlational studies" to casual understanding.
+Traditional computational neuroscience approaches try to solve the puzzle all the way.
+They begin by considering the biophysical properties of single neurons and then aim to construct a model of larger neural populations, or even the entire brain ([](https://doi.org/10.1038/nn.4497)).
+Although there have been numerous successful applications ([]( https://doi.org/10.1038/s41593-018-0210-5), [](https://doi.org/10.1093/schbul/sby154)), estimating all free parameters of such models proved to be a grand challenge, limiting success of these techniques to bridge levels of explanations from single neurons to complex behavior ([](https://doi.org/10.1038/nn.4497)).
 
-Why does such interregional communication manifest in co-activation? Which activiy configurations does the brain visit and which not? How do these relate to each other? How does this dyanmic repertoir of activation patterns result in task-related activity maps, as obtained with functional magnetic resonance imaging? What is the meaning of activity and connectivity differences across individuals or in various clinical conditions?
+An alternative approach, known as "neuroconnectomism" ([](https://doi.org/10.1038/s41583-023-00705-w)) releases the aim of full bottom-up understanding of neural mechanisms and shifts the emphasis from "biophysical fidelity" of models to "cognitive/behavioral fidelity" ([](https://doi.org/10.1038/s41593-018-0210-5)) by using artificial neural networks (ANNs) that were trained to perform various tasks as brain models.
+This approach utilizes artificial neural networks (ANNs) trained for various tasks as brain models.
+While the approach has significantly contributed to expanding our understanding of the general computational principles of the brain (see https://doi.org/10.1038/s41583-023-00705-w), the requirement of training ANNs for specific tasks poses inherent limitations in their capacity to explain spontaneous macro-scale dynamics of neural activity (https://doi.org/10.1038/s41593-019-0520-2).
 
-Traditional tools of computational neuroscience try to address these and similar questions whith methods of varying complexity from those based on the Fokker–Planck equation, to neural mass and neural field models. Commons amongst these models is the assumption that spatiotemporal patterns of neural dynamics arise from interactions between functionally specialized cell populations connected by a topologically complex array of short- and long-range axonal connections([](https://doi.org/10.1038/nrn2575), [](https://doi.org/10.1038/nrn3962)), the latter ofen being estimated at macroscopic scales by diffusion magnetic resonance imaging (dMRI).
+In this work, we take the middle ground between traditional computational modelling and neuroconnectionism to address the phenomenon of brain dynamics.
+On one hand, similarly to neuroconnectionism, we do not aim for a full bottom-up understanding of neural mechanisms and use an ANN as a high-level computational model of the brain.
+On the other hand, we do not train our ANN for a specific task, but set its weights "manually", based on empirical data about the "activity flow" ([](http://dx.doi.org/10.1038/nn.4406), [](http://dx.doi.org/10.1038/s41467-017-01000-w)) within the functional brain connectome, as measured with functional magnetic resonance imaging (fMRI). 
+We use a neurobiologically motivated ANN architecture, a continuous-space Hopfield network.
+Within this architecture, the topology of the functional connectome naturally defines an energy level for any arbitrary activation patterns and a trajectory towards one of the finite number of stable patterns that minimize this energy, the so-called attractor states.
+Furthermore, it provides a natural account for brain state dynamics as the system, in the presence of a small amount of noise, can undergo bifurcation, i.e. spontaneously switch between attractor states.
 
-These models have found broad success in modeling seizures[11](https://www.nature.com/articles/nn.4497#ref-CR11 "Breakspear, M. et al. A unifying explanation of primary generalized seizures through nonlinear brain modeling and bifurcation analysis. Cereb. Cortex 16, 1296–1313 (2006)."), encephalopathies[12](https://www.nature.com/articles/nn.4497#ref-CR12 "Roberts, J.A., Iyer, K.K., Finnigan, S., Vanhatalo, S. & Breakspear, M. Scale-free bursting in human cortex following hypoxia at birth. J. Neurosci. 34, 6557–6572 (2014)."),[13](https://www.nature.com/articles/nn.4497#ref-CR13 "Bojak, I., Stoyanov, Z.V. & Liley, D.T. Emergence of spatially heterogeneous burst suppression in a neural field model of electrocortical activity. Front. Syst. Neurosci. 9, 18 (2015)."), sleep[14](https://www.nature.com/articles/nn.4497#ref-CR14 "Phillips, A.J. & Robinson, P.A. A quantitative model of sleep-wake dynamics based on the physiology of the brainstem ascending arousal system. J. Biol. Rhythms 22, 167–179 (2007)."), anesthesia[15](https://www.nature.com/articles/nn.4497#ref-CR15 "Bojak, I. & Liley, D.T. Modeling the effects of anesthesia on the electroencephalogram. Phys. Rev. E 71, 041902 (2005)."), resting-state brain networks[16](https://www.nature.com/articles/nn.4497#ref-CR16 "Honey, C.J., Kötter, R., Breakspear, M. & Sporns, O. Network structure of cerebral cortex shapes functional connectivity on multiple time scales. Proc. Natl. Acad. Sci. USA 104, 10240–10245 (2007)."),[17](https://www.nature.com/articles/nn.4497#ref-CR17 "Deco, G., Jirsa, V., McIntosh, A.R., Sporns, O. & Kötter, R. Key role of coupling, delay, and noise in resting brain fluctuations. Proc. Natl. Acad. Sci. USA 106, 10302–10307 (2009).") and the human alpha rhythm[18](https://www.nature.com/articles/nn.4497#ref-CR18 "Robinson, P.A., Rennie, C.J. & Rowe, D.L. Dynamics of large-scale brain activity in normal arousal states and epileptic seizures. Phys. Rev. E 65, 041924 (2002)."),[19](https://www.nature.com/articles/nn.4497#ref-CR19 "Freyer, F. et al. Biophysical mechanisms of multistability in resting-state cortical rhythms. J. Neurosci. 31, 6353–6361 (2011)."), and as a tool for multimodal data fusion[20](https://www.nature.com/articles/nn.4497#ref-CR20 "Valdes-Sosa, P.A. et al. Model driven EEG/fMRI fusion of brain oscillations. Hum. Brain Mapp. 30, 2701–2721 (2009)."). Technical advances in model inversion (estimating the likelihood and parameters of a model from empirical data) place mean field models within reach of widespread application to cognitive neuroscience[21](https://www.nature.com/articles/nn.4497#ref-CR21 "Daunizeau, J., Stephan, K.E. & Friston, K.J. Stochastic dynamic causal modelling of fMRI data: should we care about neural noise? Neuroimage 62, 464–481 (2012).").
+In this simplistic yet powerful framework, the primary determinants of the system's dynamic behavior are the topology of the network spanned by the weights of the ANN.
+As these weights are directly inferred from brain data, we hypothesize that the system will closely mimic the dynamic repertoire of true activity patterns in the brain (as measured by fMRI) and capture activity changes induced by tasks and pathologies.
 
-*Nevertheless, there is no broadly accepted mathematical theory for the collective activity of neuronal populations and such models have shown limited success to bridge levels of explanations from singel neurons to complex behavior, mainly due to the grand challenges of estimatkng all free parameters.*
+In the present work, we test our hypotheses in a series of experiments, on data from a total of n≈2000 individuals, to provide converging evidence for the validity of our model.
 
-> Todo: shorten and focus on the fact that most comp models aim to solve the task all the way: to construct a "biophysical model" that accounts for empirical brain data and behavior.
+In the proposed framework, both spontaneous and task-induced brain dynamics can be conceptualized as a high-dimensional path that wanders on the reconstructed energy landscape in a way that is restricted by the "gravitational pull" of the attractors states. The framework offers a generative model for resting state and task-related brain dynamics and new perspectives on the mechanistic origin of resting state brain states and task based activation maps.
 
-Thus, the penetration of dynamic models of large-scale brain activity into mainstream neuroscience has been slow, and they may be unknown to many neuroscientists.
+> ToDo: more on the significance
 
-An alternative approach: Neuroconnectomist approach ([](https://doi.org/10.1038/s41583-023-00705-w))
-
-> A further scenario rests on the role of ghost attractors [109](https://www.nature.com/articles/nn.4497#ref-CR109 "Deco, G. & Jirsa, V.K. Ongoing cortical activity at rest: criticality, multistability, and ghost attractors. J. Neurosci. 32, 3366–3375 (2012).", a dynamic landscape of remnant attractors each of which has an incomplete basin, hence allowing the system to 'wander' through large swathes of the phase space under the influence of weak noise [110](https://www.nature.com/articles/nn.4497#ref-CR110 "Tsuda, I. Toward an interpretation of dynamic neural activity in terms of chaotic dynamical systems. Behav. Brain Sci. 24, 793–810 discussion 810–848 (2001).").
-
-In this work, we aim for:
-
-- simpliest, highest-level genrative computational model: a multistable dynamic system with **maximal empirical validity**
-- bypass the challenges of estimating parameters, by  building on the activity. flow
-- **no mechanistic model, not aiming to explain biophisical background**
-- links to Neuroconnectomism
-
-> multistable
-> dynamical systems theory
-
-Our framework - with minimal and reasonable assumptions about the “activity flow” (ref: Cole-papers) between two, functionally connected regions - considers the stationary functional brain network as an already-trained artificial neural network.  In the proposed framework, the topology of the stationary brain connectome defines a cost (energy) for any arbitrary brain activation patterns and a trajectory towards one of the finite number of stable patterns that minimize this cost (so-called attractor states).
-
-- noise
-
-Here we propose these attractors states as robust and neurobiologically relevant characteristics of the functional brain connectome, with a wide variety of potential applications.
-
-We demonstrate that the proposed attractor states highly resemble to the dynamic brain states commonly observed by dynamic functional connectivity methods (e.g. CAP-analyses (ref)) and provide a proof-of-concept for the biomedical validity of our framework, by showing that the average brain activations corresponding to the attractor states during resting sate display manifold significant associations to cognition.
-
-Due to the known noise-tolerance of the applied eANN-s, the proposed approach can be expected to be highly robust/reliable/replicable, which we demonstrate with independent datasets (total n=xxx).
-
-List all the aims: hierarchy, generalizability etc
 
 # Results
 
@@ -102,6 +93,7 @@ List all the aims: hierarchy, generalizability etc
 - face validity
 - clinical validity
 
+> Due to the known noise-tolerance of the applied eANN-s, the proposed approach can be expected to be highly robust/reliable/replicable, which we demonstrate with independent datasets (total n=xxx).
 
 
 
@@ -116,6 +108,9 @@ Here I refer to {numref}`face-val`.
 # Discussion
 
 - significance
+
+> A further scenario rests on the role of ghost attractors [109](https://www.nature.com/articles/nn.4497#ref-CR109 "Deco, G. & Jirsa, V.K. Ongoing cortical activity at rest: criticality, multistability, and ghost attractors. J. Neurosci. 32, 3366–3375 (2012).", a dynamic landscape of remnant attractors each of which has an incomplete basin, hence allowing the system to 'wander' through large swathes of the phase space under the influence of weak noise [110](https://www.nature.com/articles/nn.4497#ref-CR110 "Tsuda, I. Toward an interpretation of dynamic neural activity in terms of chaotic dynamical systems. Behav. Brain Sci. 24, 793–810 discussion 810–848 (2001).").
+
 
 # Methods
 
