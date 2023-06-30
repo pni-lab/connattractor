@@ -265,11 +265,12 @@ class HopfiledEmbedding:
         return ax
 
 
-def simulate_activations(connectome, noise_coef=1, num_iter=1000, init_state=None,
+def simulate_activations(connectome, noise_coef=1, num_iter=1000, init_state=None, signal=None,
                          progress=True, random_state=None, **kwargs):
     """
     Simulate activations of a Hopfield network  with a given connectome.
     Factory function for HopfieldSimulation dataclass.
+    :param signal: non-null signal to be added to the noise in each iteration (list of length connectome.shape[0])
     :param connectome: a 2D numpy array
     :param noise_coef:  noise coefficient
     :param num_iter: number of iterations
@@ -281,6 +282,9 @@ def simulate_activations(connectome, noise_coef=1, num_iter=1000, init_state=Non
 
     if not isinstance(connectome, np.ndarray) or connectome.ndim != 2 or connectome.shape[0] != connectome.shape[1]:
         raise ValueError("Connectome must be a 2D quadratic numpy array!")
+
+    if signal is None:
+        signal = np.zeros(connectome.shape[0])
 
     random = np.random.default_rng(random_state)
 
@@ -304,7 +308,7 @@ def simulate_activations(connectome, noise_coef=1, num_iter=1000, init_state=Non
         new_state, n_iter, energy = hopnet.update(states[i], num_iter=1)
         energies[i] = energy[-1]
         # add noise
-        states[i + 1] = np.array(new_state) + random.normal(0, noise_coef, hopnet.num_neuron)
+        states[i + 1] = np.array(new_state) + random.normal(signal, noise_coef, hopnet.num_neuron)
 
     return HopfieldSimulation(hopnet=hopnet, states=states[:-1], energies=energies)
 
