@@ -73,7 +73,7 @@ Within this architecture, the topology of the functional connectome naturally de
 Our model also offers a natural explanation for brain state dynamics.
 In the presence of weak noise, the system does not converge into an equilibrium state but undergoes "bifurcation", enabling it to traverse extensive regions of the state space, moving on a path restricted by the "gravitational pull" of different attractor states ({numref}`concept`C).
 
-:::{figure} figures/concept.*
+:::{figure} figures/concept.png
 :name: concept
 **Connectome-based Hopfield networks as models of macros-scale brain dynamics.** <br/><br/>
 **A)** Hopfield artificial neural networks (ANNs)  are a form of recurrent ANNs that serve as content-addressable ("associative") memory systems. Hopfield networks can be trained to store a finite number of patterns (e.g. via Hebbian learning). During the training procedure, the weights of the Hopfield ANN are trained so that the stored patterns become stable attractor states of the network. Thus, when the trained network is presented partial or noisy variations of the stored patterns, it can effectively reconstruct the original pattern via an iterative relaxation procedure that converges to the attractor states.
@@ -90,19 +90,20 @@ These experiments provide converging evidence for the validity of connectome-bas
 
 # Results
 
-First, we explored the attractor states of the functional brain connectome in a sample of n=41 healthy young participants (Study 1). We estimated activity flow in the connectome ([](http://dx.doi.org/10.1038/nn.4406); [](http://dx.doi.org/10.1038/s41467-017-01000-w)) as the study-level average of regularized partial correlations among the resting state fMRI timeseries of m = 122 functionally defined brain regions (see Methods). We then used the standardized functional connectome as the $w_{ij}$  weights of a continuous-state Hopfield network ([](https://doi.org/10.1073/pnas.79.8.2554), [](https://doi.org/10.1162/neco.1994.6.3.459)) consisting of $m$ neural units, each having an activity $a_i \in [-1,1]$. We then repeatedly initialized the Hopfield network with random input activations and iteratively updated it, until convergence ("relaxation"), according to the following equation:
+First, we explored the attractor states of the functional brain connectome in a sample of n=41 healthy young participants (study 1). We estimated interregional activity flow ([](http://dx.doi.org/10.1038/nn.4406); [](http://dx.doi.org/10.1038/s41467-017-01000-w)) as the study-level average of regularized partial correlations among the resting state fMRI timeseries of m = 122 functionally defined brain regions (BASC brain atlas, see Methods for details). We then used the standardized functional connectome as the $w_{ij}$  weights of a continuous-state Hopfield network ([](https://doi.org/10.1073/pnas.79.8.2554), [](https://doi.org/10.1162/neco.1994.6.3.459)) consisting of $m$ neural units, each having an activity $a_i \in [-1,1]$. Hopfield networks can be initialized by an arbitrary activation pattern ($m$ activations) and iteratively updated, until convergence ("relaxation"), according to the following equation:
 
 ```{math}
 :label: hopfield-update
 \dot{a}_i = S(\beta \sum_{j=1}^m w_{ij}a_j - b_i)
 ```
 
-where $\dot{a}_i$ is the activity of neural unit $i$ in the next iteration and $S(a_j)$ is the sigmoidal activation function $S(a) = tanh(a)$ and $b_i$ is the bias of unit $i$ and $\beta$ is the so-called temperature parameter. The weights $w_{ij}$ are symmetric and the diagonal elements are set to zero.
-Importantly, in our implementation, the relaxation of the Hopfield network is in a close analog of the simultaneous and integrative application of the activity flow principle: $\dot{a}_i = \sum_{j=1}^m w_{ij}a_j$, as well as with the inner workings of with neural mass models  ([](https://doi.org/10.1038/nn.4497)).
+where $\dot{a}_i$ is the activity of neural unit $i$ in the next iteration and $S(a_j)$ is the sigmoidal activation function $S(a) = tanh(a)$ and $b_i$ is the bias of unit $i$ and $\beta$ is the so-called temperature parameter.
+Importantly, in our implementation, the relaxation of the Hopfield network can be conceptualized as the repeated application of the activity flow principle, simultaneously for all regions: $\dot{a}_i = \sum_{j=1}^m w_{ij}a_j$. The update rule also exhibits strong analogies with the inner workings of neural mass models  ([](https://doi.org/10.1038/nn.4497)) as applied e.g. in dynamic causal modelling (see Discussion for more details).
 
-Hopfiled networks assign an energy to every possible activity configurations (see Methods). which decreases during the relaxation procedure until reaching an equilibrium state with minimal energy ({numref}`attractors`A, [](https://doi.org/10.1073/pnas.79.8.2554); [](https://doi.org/10.1162/neco.1994.6.3.459)).
+Hopfiled networks assign an energy to every possible activity configurations (see Methods), which decreases during the relaxation procedure until reaching an equilibrium state with minimal energy ({numref}`attractors`A, top panel, [](https://doi.org/10.1073/pnas.79.8.2554); [](https://doi.org/10.1162/neco.1994.6.3.459)).
+We used a high number of random initializations to obtain all possible attractor states of the connectome-based Hopfield network in study 1 ({numref}`attractors`A, bottom panel).
 
-Similarly to neural mass models ([](https://doi.org/10.1098/rstb.2005.1638)), adding weak Gaussian noise to the connectome-based Hopfield network prevents the system reaching equilibrium and induces a stochastic walk that may traverse extensive regions of the state space, visiting the basins of multiple attractor states ({numref}`attractors`B).
+To account for stochastic fluctuations in neuronal activity ([](https://doi.org/10.1098/rstb.2005.1638)), we add weak Gaussian noise to the connectome-based Hopfield network prevents the system reaching equilibrium and induces a "stochastic walk" that may traverse extensive regions of the state space, visiting the basins of multiple attractor states ({numref}`attractors`B).
 
 To construct a low-dimensional embedding of the resulting state space, we applied principal component analysis (PCA) to the states visited during this stochastic walk. Largely independnet on the free parameters $\beta$ (temperature) and $\sigma$ (variance of the noise), the first two principal components (PCs) explained **XX**% of the variance in the state space.
 
@@ -116,7 +117,7 @@ The number of attractor states depends on the temperature of the network ($\beta
 
 > ToDo: Description of the attractor states, we chose to go with 4, for the sake if simplicity
 
-:::{figure} figures/embedding_method.*
+:::{figure} figures/embedding_method.png
 :name: attractors
 Empirical Hopfield-networks.
 :::
@@ -135,10 +136,6 @@ Empirical Hopfield-networks.
 Empirical Hopfield-networks reconstruct real resting state brain activity.
 :::
 
-:::{figure} figures/robustness.*
-:name: robustness
-Empirical Hopfield-networks are robustly replicable across datasets.
-:::
 
 :::{figure} figures/task_validity.png
 :name: task-validity
@@ -226,6 +223,8 @@ The activity flow principle has been shown to successfully predict held out brai
   - >todo
 ```
 
+## Hopfield network
+The weights $w_{ij}$ have to be symmetric and the diagonal elements are set to zero.
 
 
 +++ {"part": "acknowledgements"}
