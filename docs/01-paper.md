@@ -130,26 +130,31 @@ Empirical Hopfield-networks.
 
 > Due to the known noise-tolerance of the applied eANN-s, the proposed approach can be expected to be highly robust/reliable/replicable, which we demonstrate with independent datasets (total n=xxx).
 
-:::{figure} figures/method_overview.*
-:name: overview
-Empirical Hopfield-networks.
+:::{figure} figures/face_validity.png
+:name: rest-validity
+Empirical Hopfield-networks reconstruct real resting state brain activity.
 :::
 
-:::{figure} figures/face_validity.png
-:name: face-val
-Empirical Hopfield-networks reconstruct real brain activity.
+:::{figure} figures/robustness.*
+:name: robustness
+Empirical Hopfield-networks are robustly replicable across datasets.
+:::
+
+:::{figure} figures/task_validity.png
+:name: task-validity
+Empirical Hopfield-networks reconstruct real task-based brain activity.
 :::
 
 :::{figure} figures/state_analysis.*
-:name: clinical_validity
-Empirical Hopfield-networks.
+:name: clinical-validity
+Outlook: Empirical Hopfield-networks' clinical validity.
 :::
 
-Here I refer to {numref}`face-val`.
+Here I refer to {numref}`rest-validity`.
 
 # Discussion
 
-# Neurobiological validity
+## Neurobiological validity
 
 The activity flow principle has been shown to successfully predict held out brain activations by combining the activations and connection weights to the target region [1]. The proposed empirical Hopfield network builds on the knowledge derived from this framework, combining the architecture of a Hopfield network with the connectome as its pre-trained weights. Given an input activation for every region, the network will iterate upon this input state until a mathematical minimum is reached, producing an attractor state. An attractor state represents a configuration of activations in every region and is considered a recalled memory of the network. The network topology is multistable, producing different stable attractor states based on the temperature of the network and the initial activation pattern, which stimulates the network.
 
@@ -184,34 +189,41 @@ The activity flow principle has been shown to successfully predict held out brai
   - 24.9±3.5
   - 54%
   - [](10.1038/s41467-019-13785-z)
-* - study 3 (ABIDE)
+* - study 3
   - resting state
-  - Autism Spectrum Disorder
-  - ASD: 98, NC: 74
-  - >todo
-  - >todo
-  - >todo
-* - study 4 (ADNI)
-  - resting state
-  - Alzheimer's Disease vs. Mild Cognitive Impairment
-  - AD:, MCI: 
-  - >todo
-  - >todo
-  - >todo
-* - study 5 (COBRE)
-  - resting state
-  - Schizophrenia
-  - SCH: , HC:
-  - >todo
-  - >todo
-  - >todo
-* - study 6
+  - replication
+  - 29
+  - 24.8±3.1
+  - 53%
+  - [](10.1038/s41467-019-13785-z)
+* - study 4
   - task-based
   - pain self-regulation
   - 33
   - >todo
   - >todo
   - [](https://doi.org/10.1371/journal.pbio.1002036)
+* - study 5 (ABIDE)
+  - resting state
+  - Autism Spectrum Disorder
+  - ASD: 98, NC: 74
+  - >todo
+  - >todo
+  - >todo
+* - study 6 (ADNI)
+  - resting state
+  - Alzheimer's Disease vs. Mild Cognitive Impairment
+  - AD:, MCI: 
+  - >todo
+  - >todo
+  - >todo
+* - study 7 (COBRE)
+  - resting state
+  - Schizophrenia
+  - SCH: , HC:
+  - >todo
+  - >todo
+  - >todo
 ```
 
 
