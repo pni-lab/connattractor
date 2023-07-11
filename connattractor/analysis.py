@@ -4,7 +4,6 @@ import sklearn.base
 from matplotlib.figure import figaspect
 from sklearn.linear_model import LogisticRegression
 from dataclasses import dataclass
-from collections import namedtuple
 
 from sklearn.preprocessing import StandardScaler
 
@@ -12,9 +11,7 @@ from . import network
 from tqdm import tqdm
 from sklearn.decomposition import PCA
 import matplotlib.pyplot as plt
-import seaborn as sns
 import warnings
-from scipy.ndimage import gaussian_filter
 
 
 def _cart2pol(x, y):

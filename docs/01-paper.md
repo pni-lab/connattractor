@@ -83,12 +83,16 @@ In the presence of weak noise, the system does not converge into an equilibrium 
 In this simplistic yet powerful framework, both spontaneous and task-induced brain dynamics can be conceptualized as a high-dimensional path that meanders on the reconstructed energy landscape in a way that is restricted by the "gravitational pull" of the attractors states.
 The framework provides a generative model for both resting state and task-related brain dynamics, offering novel perspectives on the mechanistic origins of resting state brain states and task-based activation maps.
 
-In this study, we explore the attractor states of the functional brain connectome and construct a low-dimensional representation of the energy landscape.
-Subsequently, we rigorously test the proposed model through a series of experiments conducted on data obtained from 7 studies encompassing a total of n≈2000 individuals.
+In the present work, we first explore the attractor states of the functional brain connectome and construct a low-dimensional representation of the energy landscape.
+Subsequently, we rigorously test the proposed model through a series of experiments conducted on data obtained from 7 studies encompassing a total of n≈2000 individuals. 
 
-These experiments provide converging evidence for the validity of connectome-based Hopfield networks as models of brain dynamics and demonstrate their potential to illuminate fundamental and translational questions in neuroscience.
+These analyses include evaluation of robustness and replicability, testing the model's ability to reconstrcut various characteristics of resting state brain dynamics as well as its capacity to detect and explain changes induced by tasks or pathological conditions.
+
+These experiments provide converging evidence for the validity of connectome-based Hopfield networks as models of brain dynamics and highlight their potential to provide a fresh perspective on a wide range  of research questions in basic and translational neuroscience.
 
 # Results
+
+## Connectome-based Hopfield network as a model of brain dynamics
 
 First, we explored the attractor states of the functional brain connectome in a sample of n=41 healthy young participants (study 1). We estimated interregional activity flow ([](http://dx.doi.org/10.1038/nn.4406); [](http://dx.doi.org/10.1038/s41467-017-01000-w)) as the study-level average of regularized partial correlations among the resting state fMRI timeseries of m = 122 functionally defined brain regions (BASC brain atlas, see Methods for details). We then used the standardized functional connectome as the $w_{ij}$  weights of a continuous-state Hopfield network ([](https://doi.org/10.1073/pnas.79.8.2554), [](https://doi.org/10.1162/neco.1994.6.3.459)) consisting of $m$ neural units, each having an activity $a_i \in [-1,1]$. Hopfield networks can be initialized by an arbitrary activation pattern ($m$ activations) and iteratively updated, until convergence ("relaxation"), according to the following equation:
 
@@ -97,44 +101,48 @@ First, we explored the attractor states of the functional brain connectome in a 
 \dot{a}_i = S(\beta \sum_{j=1}^m w_{ij}a_j - b_i)
 ```
 
-where $\dot{a}_i$ is the activity of neural unit $i$ in the next iteration and $S(a_j)$ is the sigmoidal activation function $S(a) = tanh(a)$ and $b_i$ is the bias of unit $i$ and $\beta$ is the so-called temperature parameter.
+where $\dot{a}_i$ is the activity of neural unit $i$ in the next iteration and $S(a_j)$ is the sigmoidal activation function $S(a) = tanh(a)$ and $b_i$ is the bias of unit $i$ and $\beta$ is the so-called temperature parameter. For the sake of simplicity, we set $b_i=0$ in all our experiments.
 Importantly, in our implementation, the relaxation of the Hopfield network can be conceptualized as the repeated application of the activity flow principle, simultaneously for all regions: $\dot{a}_i = \sum_{j=1}^m w_{ij}a_j$. The update rule also exhibits strong analogies with the inner workings of neural mass models  ([](https://doi.org/10.1038/nn.4497)) as applied e.g. in dynamic causal modelling (see Discussion for more details).
 
 Hopfiled networks assign an energy to every possible activity configurations (see Methods), which decreases during the relaxation procedure until reaching an equilibrium state with minimal energy ({numref}`attractors`A, top panel, [](https://doi.org/10.1073/pnas.79.8.2554); [](https://doi.org/10.1162/neco.1994.6.3.459)).
-We used a high number of random initializations to obtain all possible attractor states of the connectome-based Hopfield network in study 1 ({numref}`attractors`A, bottom panel).
-
-To account for stochastic fluctuations in neuronal activity ([](https://doi.org/10.1098/rstb.2005.1638)), we add weak Gaussian noise to the connectome-based Hopfield network prevents the system reaching equilibrium and induces a "stochastic walk" that may traverse extensive regions of the state space, visiting the basins of multiple attractor states ({numref}`attractors`B).
-
-To construct a low-dimensional embedding of the resulting state space, we applied principal component analysis (PCA) to the states visited during this stochastic walk. Largely independnet on the free parameters $\beta$ (temperature) and $\sigma$ (variance of the noise), the first two principal components (PCs) explained **XX**% of the variance in the state space.
-
-On the low-dimensional embedding, which we refer to as the Hopfield state space projection, we observed a clear separation of the attractor states ({numref}`attractors`C), with the first PC aligned with an attractor-state pair similar to the default mode network (DMN) and the second PC an attractor state-pair differentiating between sensory-motor and visual regions. The Hopfield state space projection was largely consistent across different values of $\sigma$ and different datasets  (see Methods).
-
-To identify the attractor basins on the reconstructed state space ({numref}`attractors`C), we obtained the attractor state of each point visited during the stochastic walk and fit a multinomial logistic regression model to predict the attractor state from the first two PCs. The resulting model achieved a high prediction accuracy (**XX**% in study 1, with $\beta$=0.04 and $\sigma=0.37$, see Supplementary Material X for other parameter settings). Attractor bases were visualized based on the decision boundaries of this  model ({numref}`attractors`C).
-
-
-
-The number of attractor states depends on the temperature of the network ($\beta$ in Eq. [](#hopfield-update)), with higher temperatures leading to more attractor states. In the limit of infinite temperature, the network is reduced to a random walk on the state space, with no attractor states. In the limit of zero temperature, the network is reduced to a deterministic system with a single attractor state. In the intermediate regime, the network is multistable, with a finite number of attractor states ({numref}`attractors`D).
-
-> ToDo: Description of the attractor states, we chose to go with 4, for the sake if simplicity
+We used a large number of random initializations to obtain all possible attractor states of the connectome-based Hopfield network in study 1 ({numref}`attractors`A, bottom panel).
 
 :::{figure} figures/embedding_method.png
 :name: attractors
 Empirical Hopfield-networks.
 :::
 
-- introduce the idea in more detail (fig 1)
-  - attractor states and added noise
-  - construcct validity
-- attractor states (fig 1)
-- face validity
-- clinical validity
+We observed that, in line with theory, increasing the temperature parameter $\beta$ results in an increasing number of attractor states (({numref}`attractors`E, left) appearing in symmetric pairs (i.e. $a_i = -a_j$). For the sake of simplicity, we set $\beta=0.4$ for the rest of the paper, resulting in 4 distinct attractor states (2 symmetric pairs).
 
-> Due to the known noise-tolerance of the applied eANN-s, the proposed approach can be expected to be highly robust/reliable/replicable, which we demonstrate with independent datasets (total n=xxx).
+Without modifications, connectome-based Hopfield networks always converge to an equilibrium state. To account for stochastic fluctuations in neuronal activity ([](https://doi.org/10.1098/rstb.2005.1638)), we add weak Gaussian noise to the connectome-based Hopfield network, to prevent the system reaching equilibrium. This approach, similarly to Stochastic DCM ([](https://doi.org/10.1016/j.neuroimage.2012.04.061))), induces a "stochastic walk" of the internal state (activity pattern) of the network that may traverse extensive regions of the state space, determined by the "gravity field" (basins) of multiple attractor states ({numref}`attractors`B).
+
+We hypothesise that the resulting dynamics reflect many important characteristics of spontaneous activity fluctuations in the brain and may serve as a useful generative computational model of large scale brain dynamics. To sample the resulting state space, we obtained 100.000 iterations (starting from a random seed pattern) of the stochastic relaxation procedure with a Hopfield network initialized with the mean functional connectome in study 1 (n=44).
+ Next, to increase interpretability, we obtained the first two components from a principal component analysis (PCA) on the resulting state space sample to construct a low-dimensional embedding. Largely independent on the free parameter $\sigma$ (variance of the noise), the first two principal components (PCs) explained around 15% of the variance in the state space, with low energy states (attractor states) located at the extremes of the PCs ({numref}`attractors`B, bottom plot).
+The PCA embedding was found to be largely consistent across different values of $\beta$ and $\sigma$ ({numref}`attractors`E). For all further analyses, we fixed $\sigma=0.37$, as a result of a coarse optimization procedure to reconstruct the bimodal distribution of empirical data on the same projection ({numref}`attractors`E, see Methods for details)
+On the low-dimensional embedding, which we refer to as the *Hopfield projection*, we observed a clear separation of the attractor states ({numref}`attractors`C), with the two symmetric pairs of attractor states located at the extremes of the first and second PC.
+To map the attractor basins onto the space spanned by the first two PCs ({numref}`attractors`C), we obtained the attractor state of each point visited during the stochastic relaxation and fit a multinomial logistic regression model to predict the attractor state from the first two PCs. The resulting model achieved a high prediction accuracy (out-of-sample accuracy 96.5%). Attractor bases were visualized based on the decision boundaries of this  model ({numref}`attractors`C).
+.We propose the Hopfield projection depicted on ({numref}`attractors`C) as a simplified representation of brain dynamics, as modelled by connectome-based Hopfield networks, and use it as a basis for all subsequent analyses in this work.
+
+
+
+## Connectome-based Hopfield networks capture key features of resting state brain dynamics
+
+The obtained attractor states resemble familiar, neurobiologically highly plausible patterns ({numref}`rest-validity`A). The first pair of attractors (mapped on PC1) resemble the two complementary “macro” systems described by [](https://doi.org/10.1016/j.neuropsychologia.2007.10.003) and [](https://doi.org/10.1371/journal.pone.0115913): an “extrinsic” system that is more directly linked to the immediate sensory environment and an “intrinsic” system whose activity preferentially relates to changing higher-level, internal context (a.k.a the default mode network). The other attractor pair spans an orthogonal axis between regions commonly associated with active (motor) and passive inference (visual).
+
+During stochastic relaxation, the connectome-based Hopfield network spends three-quarter of the time on the basis of the first two attractor states (equally distributed across the two) and one-quarter on the basis of the second pair (again equally distributed). To test if this characteristic can also be found in real resting state data, we obtained normalized and cleaned mean timeseries in $m=122$ regions from all participants in study 1 obtained the attractor state of each time-frame via the connectome-based Hopfield network. We observed highly similar temporal occupancies to those predicted by the model ($\Chi^2$-test of equal occupancies: p<0.00001, {numref}`rest-validity`B). 
 
 :::{figure} figures/face_validity.png
 :name: rest-validity
 Empirical Hopfield-networks reconstruct real resting state brain activity.
 :::
+
+Importantly, the first two component of the Hopfield projection explained significantly more variance in the real resting state fMRI data in study 1 and generalized better to study 2 (see {numref}`samples` for more details on the studies) than PCA on the real regional timeseries data ({numref}`rest-validity`C).
+Attractor states were also found to exhibit a remarkable replicability (mean Pearson's correlation **XX**) across the discovery datasets (study 1) and two independent replication datasets (study 2 and 3, {numref}`rest-validity`E).
+
+
+> Additional emergent collective properties include some capacity for generalization, familiarity recognition, categorization, error correction, and time sequence retention. The collective properties are only weakly sensitive to details of the modeling or the failure of individual devices. [](https://doi.org/10.1073/pnas.79.8.2554)
+
+> Due to the known noise-tolerance of the applied eANN-s, the proposed approach can be expected to be highly robust/reliable/replicable, which we demonstrate with independent datasets (total n=xxx).
 
 
 :::{figure} figures/task_validity.png
@@ -161,7 +169,7 @@ The activity flow principle has been shown to successfully predict held out brai
 
 # Methods
 
-```{list-table} Overview of study sampels
+```{list-table}
 :header-rows: 1
 :name: samples
 
@@ -224,8 +232,8 @@ The activity flow principle has been shown to successfully predict held out brai
 ```
 
 ## Hopfield network
-The weights $w_{ij}$ have to be symmetric and the diagonal elements are set to zero.
 
+The weights $w_{ij}$ have to be symmetric and the diagonal elements are set to zero.
 
 +++ {"part": "acknowledgements"}
 
