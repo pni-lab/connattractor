@@ -125,30 +125,57 @@ To map the attractor basins onto the space spanned by the first two PCs ({numref
 
 
 
-## Connectome-based Hopfield networks capture key features of resting state brain dynamics
+## Reconstruction of resting state brain dynamics
 
 The obtained attractor states resemble familiar, neurobiologically highly plausible patterns ({numref}`rest-validity`A). The first pair of attractors (mapped on PC1) resemble the two complementary “macro” systems described by [](https://doi.org/10.1016/j.neuropsychologia.2007.10.003) and [](https://doi.org/10.1371/journal.pone.0115913): an “extrinsic” system that is more directly linked to the immediate sensory environment and an “intrinsic” system whose activity preferentially relates to changing higher-level, internal context (a.k.a the default mode network). The other attractor pair spans an orthogonal axis between regions commonly associated with active (motor) and passive inference (visual).
-
-During stochastic relaxation, the connectome-based Hopfield network spends three-quarter of the time on the basis of the first two attractor states (equally distributed across the two) and one-quarter on the basis of the second pair (again equally distributed). To test if this characteristic can also be found in real resting state data, we obtained normalized and cleaned mean timeseries in $m=122$ regions from all participants in study 1 obtained the attractor state of each time-frame via the connectome-based Hopfield network. We observed highly similar temporal occupancies to those predicted by the model ($\Chi^2$-test of equal occupancies: p<0.00001, {numref}`rest-validity`B). 
 
 :::{figure} figures/face_validity.png
 :name: rest-validity
 Empirical Hopfield-networks reconstruct real resting state brain activity.
 :::
 
-Importantly, the first two component of the Hopfield projection explained significantly more variance in the real resting state fMRI data in study 1 and generalized better to study 2 (see {numref}`samples` for more details on the studies) than PCA on the real regional timeseries data ({numref}`rest-validity`C).
-Attractor states were also found to exhibit a remarkable replicability (mean Pearson's correlation **XX**) across the discovery datasets (study 1) and two independent replication datasets (study 2 and 3, {numref}`rest-validity`E).
+Hopfield networks are known to exhibit remarkable robustness to noisy input ([](https://doi.org/10.1073/pnas.79.8.2554)) and even to corrupted weights (**ref**). We found that this property renders connectome-based Hopfiled networks as a strikingly robust tool (Supplementary Analysis X), showing a remarkable replicability (mean Pearson's correlation **XX**) across the discovery datasets (study 1) and two independent replication datasets (study 2 and 3, {numref}`rest-validity`C).
 
 
-> Additional emergent collective properties include some capacity for generalization, familiarity recognition, categorization, error correction, and time sequence retention. The collective properties are only weakly sensitive to details of the modeling or the failure of individual devices. [](https://doi.org/10.1073/pnas.79.8.2554)
+Further analysis in study 1 demonstrated that connectome-based Hopfield models very accurately reconstruct several characteristics of true resign state data.
+First, the Hopfield projection explained a large amount of variance in the real resting state fMRI data in study 1 (mean $R^2=0.15$) and generalized well to study 2 (mean $R^2=0.13$) and study 3 (mean $R^2=0.12$) ({numref}`rest-validity`E). Explained variance significantly exceeded that of a PCA performed on the real resting state fMRI data itself ({numref}`rest-validity`E).
 
-> Due to the known noise-tolerance of the applied eANN-s, the proposed approach can be expected to be highly robust/reliable/replicable, which we demonstrate with independent datasets (total n=xxx).
+Second, during stochastic relaxation, the connectome-based Hopfield network spends three-quarter of the time on the basis of the first two attractor states (equally distributed across the two) and one-quarter on the basis of the second pair (again equally distributed). To test if this characteristic can also be found in real resting state data, we obtained normalized and cleaned mean timeseries in $m=122$ regions from all participants in study 1 obtained the attractor state of each time-frame via the connectome-based Hopfield network. We observed highly similar temporal occupancies to those predicted by the model ($\Chi^2$-test of equal occupancies: p<0.00001, {numref}`rest-validity`B).
 
+Third, during the stochastic relaxation procedure, connectome-based Hopfield models generate regional timeseries that retain the partial correlation structure of the real functional connectome the network was initialized with, indicating a high-level of construct validity ({numref}`rest-validity`D). To
+
+Finally, our connectome-based Hopfield model also accurately reconstructs the bimodal distribution of the real resting state fMRI data on the Hopfield projection ({numref}`rest-validity`F). 
+
+The ability of the connectome-based Hopfield model to reconstruct such characteristics of remarkable, given that the model was neither trained to reconstruct nor informed about any spatial (bi-model distribution, explanatory performance) or temporal patterns (temporal state occupancy) of the brain. The only information the model was provided with was the functional connectome, which was used to initialize the network and to constrain the dynamics of the network during stochastic relaxation. The fact that the model is able to reconstruct such characteristics of resting state brain dynamics, which are not explicitly encoded in the connectome, suggests that the connectome-based Hopfield model captures important relationships between the topology of brain connectome of the dynamics of the brain activation.
+
+
+## An explanatory framework for task-based brain activity
+
+The proposed framework provides a natural account for how activation patterns in the brain dynamically emerge form the underlying functional connectivity. To illustrate this, we obtained task-based fMRI data from a study by [](https://doi.org/10.1371/journal.pbio.1002036) (study 4, n=33, see {numref}`rest-validity`), invetsigating the neural correlates of pain, with focus on self-regulation.
+We found that time-frames from obtained from periods with pain stimulation (taking into account hemodynamics, see Methods for details) locate significantly differently on the Hopfield projection than time-frames obtained from periods without pain stimulation (permutation test, p<0.001, {numref}`task-validity`A, left). Energies, as defined by the Hopfield model, were also significantly different between the two conditions (permutation test, p<0.001), with higher energies during pain stimulation. The Hopfield-projections thus provide an intuitive account for how the underlying functional connectivity of the brain can give rise to different activation patterns, depending on the current input. Change in input (i.e. task) does not switch to the brain into a distinct mode of operation but acts as a perturbation of the system's dyanmics, resulting in mean activations changes that are only reliable measurable over an extended period of time, as done by conventional task-based fMRI analyses. 
+
+Participants were instructed to up- or down-regulate their pain sensation (resulting in increased and decreased pain reports and differential brain activity in the nucleus accumbens, NAc, see [](https://doi.org/10.1371/journal.pbio.1002036) details), which resulted in further changes of the location of momentary brain states on the Hopfield-projection (permutation test, p<0.001, {numref}`task-validity`A, right). Interestingly, self-regulation did not manifest in significant energy changes (permutation test, p=0.36). This suggest that visualizong data on the Hopfiled projection can also capture changes in brain activity that originate from intrinsic modulation, rather than from changes in external input.
 
 :::{figure} figures/task_validity.png
 :name: task-validity
 Empirical Hopfield-networks reconstruct real task-based brain activity.
 :::
+
+The proposed framework offers much more than visualization and inference of resting state and task based data on the Hopfield projection.
+It can provide a generative model for observed activity changes that can be used to predict brain activity under different conditions. To illustrate this, we used the Hopfield model to simulate brain activity during pain stimulation and self-regulation. 
+First we registered the frame-to-frame transitions in the real fMRI data (all four conditions: rest, pain without self-regulation, downregulation, upregulation) and converted those into the Hopfield embedding (resulting in a 2-dimensional vector on the Hopfield projection for each transition). Then, we assessed the mean direction in various segments of the projection (on a 6x6 grid). Next we took the difference of these mean directions between rest and pain (no regulation) ({numref}`task-validity`B, left side), as well as between down- and upregulation ({numref}`task-validity`C, left side). This analysis revealed remarkable non-linear trajectory patterns, showing the most likely direction the brain proceeds towards from a given state (activity pattern) in a given condition (pain without delf-regulation or upregulation), as compared to the reference state (rest and downregulation, respectively). In case of pain vs. rest, brain activity is pulled toward a "ghost attractor" located in the proximity of the Hopfiled projection typical pain activation map, as observed via conventional task-based fMRI analyses. In terms of attractor states, this belongs to the basin of attractor corresponding to sensory and motor processes (active inference). In case of up vs. downregulation, brain activity is pulled generally towards a similar direction, although with non-linear local perturbations and the lack of a clear ghost attractor.
+
+Next, we aimed to assess, how much these non-linear dyanmics can be reconstructed by the proposed framework. To simulate how brain dynamics alter during pain stimulation, we obtained a meta-analytic pain activation map ([](10.1038/s41467-021-21179-3)) and introduced it with as additional signal on top of the Gaussian noise during the stochastic relaxation procedure. Not that, while adding such signal naturally results in a slight, linear shift on the Hopfield projection for each state generated during the stochastic relaxation procedure, that alone could only very weakly account for the observed nonlinear dyanmics in the real data (Supplementary material X). After optimizing across 5 different signal-to-noise (SNR) values (logarithmically spaced between 0.001 and 0.1) we found that, with a very low amount of signal added (SNR=0.01) the connectome-based Hopfield model is able to provide a highly accurate reconstruction of the observed non-linear differences in brain dynamics between the pain and rest conditions, including the "ghost attractor" of pain (Spearman's $\rho$ = 0.42, p=0.003, {numref}`task-validity`B, right side).
+
+Interestingly, the same model was also able to reconstruct the observed non-linear differences in brain dynamics between the up- and downregulation conditions (Spearman's $\rho$ = 0.59, p=0.004) with a very simple change; the addition (downregulation) or subtraction (upregulation) of activation in the NAc (the region in which [](https://doi.org/10.1371/journal.pbio.1002036) observed significant chnages between up- and downregulation). Importantly, in this analysis, we did not have to optimize any paramters of the model, we simply used the same low SNR for the NAC that we already found optimal in the previous analysis (SNR=0.01, {numref}`task-validity`C, right side).
+
+These results provide a fresh perspective on the neural mechanisms beyond pain and its self-regulation and provides a mechanistic account for the role of both "traditional" pain-related regions and the NAc in pain regulation ().
+
+This result highlight a very powerful feature of the proposed generative framework, namely that it can be used to simulate and predict brain activity under different conditions. Predicting the effect of lower or higher level of activity in certain regions, or lower or higher connectivity among them, on global brain dynamics and responses to various tasks provides unprecedented opportunities for forecasting the effect of interventions, such as pharmacological or non-invasive brain stimulation, on brain function.
+
+
+
+## Clinical relevance
 
 :::{figure} figures/state_analysis.*
 :name: clinical-validity
@@ -208,21 +235,28 @@ The activity flow principle has been shown to successfully predict held out brai
   - >todo
   - >todo
   - [](https://doi.org/10.1371/journal.pbio.1002036)
-* - study 5 (ABIDE)
+* - study 5 (Neurosynth)
+  - task-based
+  - coordinate-based meta-analyses
+  - 14371 studies in total
+  - -
+  - -
+  - [](https://doi.org/10.3389/conf.fninf.2011.08.00058)
+* - study 6 (ABIDE)
   - resting state
   - Autism Spectrum Disorder
   - ASD: 98, NC: 74
   - >todo
   - >todo
   - >todo
-* - study 6 (ADNI)
+* - study 7 (ADNI)
   - resting state
   - Alzheimer's Disease vs. Mild Cognitive Impairment
   - AD:, MCI: 
   - >todo
   - >todo
   - >todo
-* - study 7 (COBRE)
+* - study 8 (COBRE)
   - resting state
   - Schizophrenia
   - SCH: , HC:
