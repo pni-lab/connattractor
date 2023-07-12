@@ -53,5 +53,4 @@ jobs:
         git commit -a -m "autogen"
         git remote set-url origin https://spisakt:${{ secrets.GIT_TOKEN }}@github.com/pni-lab/connattractor.git
         git push origin myst
-   
 
