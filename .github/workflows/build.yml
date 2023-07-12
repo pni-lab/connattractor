@@ -48,6 +48,7 @@ jobs:
         git fetch origin
         git branch -a
         git checkout -b myst origin/myst
+        git pull
         mv /tmp/docs docs
         git add -A -f docs/exports/*
         git add -A -f docs/_build
