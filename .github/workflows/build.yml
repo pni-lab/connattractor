@@ -44,8 +44,10 @@ jobs:
       run: |
         git config --local user.email "github-actions[bot]@users.noreply.github.com"
         git config --local user.name "github-actions[bot]"
+        
+        git fetch origin
         git branch -a
-        git switch myst
+        git checkout -b myst origin/myst
         git add -A -f docs/exports/*
         git add -A -f docs/_build
         git commit -a -m "autogen"
