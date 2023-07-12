@@ -1,0 +1,25 @@
+doc:
+  title: An Arxiv Template
+  description: An template suitable for arxiv preprint submissions ported to a Curvenote template
+  short_title: An Arxiv Template
+  authors:
+    - name: George Kour
+      affiliations:
+        - IBM Research & Haifa University
+      email: george@somewhere.org
+      location: Israel
+  date:
+    year: 2021
+    month: 08
+    day: 3
+  keywords:
+    - tutorial
+    - python
+    - seismic
+    - attributes
+parts:
+  abstract: >
+    Morbi eu neque et enim euismod cursus sit amet sit amet elit. Fusce eget neque placerat, vehicula dui id, placerat velit. Proin pellentesque fermentum sollicitudin. Etiam egestas sed dolor rutrum faucibus. Nunc ac viverra justo. Vestibulum eget erat pretium sem blandit placerat ullamcorper nec velit. Aliquam orci enim, luctus tempor euismod a, aliquam in ex. Morbi ultrices sapien quis neque sagittis condimentum.
+options:
+  link: https://example.com
+  show_date: true
