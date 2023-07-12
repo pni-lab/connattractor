@@ -1,0 +1,143 @@
+\begin{thebibliography}{12}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Gutierrez-Barragan et~al.(2019)Gutierrez-Barragan, Basson, Panzeri,
+  and Gozzi]{Gutierrez_Barragan_2019}
+Daniel Gutierrez-Barragan, M.~Albert Basson, Stefano Panzeri, and Alessandro
+  Gozzi.
+\newblock Infraslow state fluctuations govern spontaneous {fMRI} network
+  dynamics.
+\newblock \emph{Current Biology}, 29\penalty0 (14):\penalty0 2295--2306.e5, jul
+  2019.
+\newblock \doi{10.1016/j.cub.2019.06.017}.
+\newblock URL \url{https://doi.org/10.1016%2Fj.cub.2019.06.017}.
+
+\bibitem[Thompson et~al.(2014)Thompson, Pan, Magnuson, Jaeger, and
+  Keilholz]{Thompson_2014}
+Garth~John Thompson, Wen-Ju Pan, Matthew~Evan Magnuson, Dieter Jaeger, and
+  Shella~Dawn Keilholz.
+\newblock Quasi-periodic patterns ({QPP}): Large-scale dynamics in resting
+  state {fMRI} that correlate with local infraslow electrical activity.
+\newblock \emph{{NeuroImage}}, 84:\penalty0 1018--1031, jan 2014.
+\newblock \doi{10.1016/j.neuroimage.2013.09.029}.
+\newblock URL \url{https://doi.org/10.1016%2Fj.neuroimage.2013.09.029}.
+
+\bibitem[Vidaurre et~al.(2017)Vidaurre, Smith, and Woolrich]{Vidaurre_2017}
+Diego Vidaurre, Stephen~M. Smith, and Mark~W. Woolrich.
+\newblock Brain network dynamics are hierarchically organized in time.
+\newblock \emph{Proceedings of the National Academy of Sciences}, 114\penalty0
+  (48):\penalty0 12827--12832, oct 2017.
+\newblock \doi{10.1073/pnas.1705120114}.
+\newblock URL \url{https://doi.org/10.1073%2Fpnas.1705120114}.
+
+\bibitem[Liu and Duyn(2013)]{Liu_2013}
+Xiao Liu and Jeff~H. Duyn.
+\newblock Time-varying functional network information extracted from brief
+  instances of spontaneous brain activity.
+\newblock \emph{Proceedings of the National Academy of Sciences}, 110\penalty0
+  (11):\penalty0 4392--4397, feb 2013.
+\newblock \doi{10.1073/pnas.1216856110}.
+\newblock URL \url{https://doi.org/10.1073%2Fpnas.1216856110}.
+
+\bibitem[Richiardi et~al.(2011)Richiardi, Eryilmaz, Schwartz, Vuilleumier, and
+  Ville]{Richiardi_2011}
+Jonas Richiardi, Hamdi Eryilmaz, Sophie Schwartz, Patrik Vuilleumier, and
+  Dimitri Van~De Ville.
+\newblock Decoding brain states from {fMRI} connectivity graphs.
+\newblock \emph{{NeuroImage}}, 56\penalty0 (2):\penalty0 616--626, may 2011.
+\newblock \doi{10.1016/j.neuroimage.2010.05.081}.
+\newblock URL \url{https://doi.org/10.1016%2Fj.neuroimage.2010.05.081}.
+
+\bibitem[Smith et~al.(2012)Smith, Miller, Moeller, Xu, Auerbach, Woolrich,
+  Beckmann, Jenkinson, Andersson, Glasser, Essen, Feinberg, Yacoub, and
+  Ugurbil]{Smith_2012}
+Stephen~M. Smith, Karla~L. Miller, Steen Moeller, Junqian Xu, Edward~J.
+  Auerbach, Mark~W. Woolrich, Christian~F. Beckmann, Mark Jenkinson, Jesper
+  Andersson, Matthew~F. Glasser, David C.~Van Essen, David~A. Feinberg, Essa~S.
+  Yacoub, and Kamil Ugurbil.
+\newblock Temporally-independent functional modes of spontaneous brain
+  activity.
+\newblock \emph{Proceedings of the National Academy of Sciences}, 109\penalty0
+  (8):\penalty0 3131--3136, feb 2012.
+\newblock \doi{10.1073/pnas.1121329109}.
+\newblock URL \url{https://doi.org/10.1073%2Fpnas.1121329109}.
+
+\bibitem[Hutchison et~al.(2013)Hutchison, Womelsdorf, Allen, Bandettini,
+  Calhoun, Corbetta, Penna, Duyn, Glover, Gonzalez-Castillo, Handwerker,
+  Keilholz, Kiviniemi, Leopold, de~Pasquale, Sporns, Walter, and
+  Chang]{Hutchison_2013}
+R.~Matthew Hutchison, Thilo Womelsdorf, Elena~A. Allen, Peter~A. Bandettini,
+  Vince~D. Calhoun, Maurizio Corbetta, Stefania~Della Penna, Jeff~H. Duyn,
+  Gary~H. Glover, Javier Gonzalez-Castillo, Daniel~A. Handwerker, Shella
+  Keilholz, Vesa Kiviniemi, David~A. Leopold, Francesco de~Pasquale, Olaf
+  Sporns, Martin Walter, and Catie Chang.
+\newblock Dynamic functional connectivity: Promise, issues, and
+  interpretations.
+\newblock \emph{{NeuroImage}}, 80:\penalty0 360--378, oct 2013.
+\newblock \doi{10.1016/j.neuroimage.2013.05.079}.
+\newblock URL \url{https://doi.org/10.1016%2Fj.neuroimage.2013.05.079}.
+
+\bibitem[Barttfeld et~al.(2015)Barttfeld, Uhrig, Sitt, Sigman, Jarraya, and
+  Dehaene]{Barttfeld_2015}
+Pablo Barttfeld, Lynn Uhrig, Jacobo~D. Sitt, Mariano Sigman, B{\'{e}}chir
+  Jarraya, and Stanislas Dehaene.
+\newblock Signature of consciousness in the dynamics of resting-state brain
+  activity.
+\newblock \emph{Proceedings of the National Academy of Sciences}, 112\penalty0
+  (3):\penalty0 887--892, jan 2015.
+\newblock \doi{10.1073/pnas.1418031112}.
+\newblock URL \url{https://doi.org/10.1073%2Fpnas.1418031112}.
+
+\bibitem[van~der Meer et~al.(2020)van~der Meer, Breakspear, Chang, Sonkusare,
+  and Cocchi]{Meer_2020}
+Johan~N. van~der Meer, Michael Breakspear, Luke~J. Chang, Saurabh Sonkusare,
+  and Luca Cocchi.
+\newblock Movie viewing elicits rich and reliable brain state dynamics.
+\newblock \emph{Nature Communications}, 11\penalty0 (1), oct 2020.
+\newblock \doi{10.1038/s41467-020-18717-w}.
+\newblock URL \url{https://doi.org/10.1038%2Fs41467-020-18717-w}.
+
+\bibitem[Breakspear(2017)]{Breakspear_2017}
+Michael Breakspear.
+\newblock Dynamic models of large-scale brain activity.
+\newblock \emph{Nature Neuroscience}, 20\penalty0 (3):\penalty0 340--352, feb
+  2017.
+\newblock \doi{10.1038/nn.4497}.
+\newblock URL \url{https://doi.org/10.1038%2Fnn.4497}.
+
+\bibitem[Doerig et~al.(2023)Doerig, Sommers, Seeliger, Richards, Ismael,
+  Lindsay, Kording, Konkle, van Gerven, Kriegeskorte, and
+  Kietzmann]{Doerig_2023}
+Adrien Doerig, Rowan~P. Sommers, Katja Seeliger, Blake Richards, Jenann Ismael,
+  Grace~W. Lindsay, Konrad~P. Kording, Talia Konkle, Marcel A.~J. van Gerven,
+  Nikolaus Kriegeskorte, and Tim~C. Kietzmann.
+\newblock The neuroconnectionist research programme.
+\newblock \emph{Nature Reviews Neuroscience}, 24\penalty0 (7):\penalty0
+  431--450, may 2023.
+\newblock \doi{10.1038/s41583-023-00705-w}.
+\newblock URL \url{https://doi.org/10.1038%2Fs41583-023-00705-w}.
+
+\bibitem[Richards et~al.(2019)Richards, Lillicrap, Beaudoin, Bengio, Bogacz,
+  Christensen, Clopath, Costa, de~Berker, Ganguli, Gillon, Hafner, Kepecs,
+  Kriegeskorte, Latham, Lindsay, Miller, Naud, Pack, Poirazi, Roelfsema,
+  Sacramento, Saxe, Scellier, Schapiro, Senn, Wayne, Yamins, Zenke, Zylberberg,
+  Therien, and Kording]{Richards_2019}
+Blake~A. Richards, Timothy~P. Lillicrap, Philippe Beaudoin, Yoshua Bengio,
+  Rafal Bogacz, Amelia Christensen, Claudia Clopath, Rui~Ponte Costa, Archy
+  de~Berker, Surya Ganguli, Colleen~J. Gillon, Danijar Hafner, Adam Kepecs,
+  Nikolaus Kriegeskorte, Peter Latham, Grace~W. Lindsay, Kenneth~D. Miller,
+  Richard Naud, Christopher~C. Pack, Panayiota Poirazi, Pieter Roelfsema,
+  Jo{\~{a}}o Sacramento, Andrew Saxe, Benjamin Scellier, Anna~C. Schapiro,
+  Walter Senn, Greg Wayne, Daniel Yamins, Friedemann Zenke, Joel Zylberberg,
+  Denis Therien, and Konrad~P. Kording.
+\newblock A deep learning framework for neuroscience.
+\newblock \emph{Nature Neuroscience}, 22\penalty0 (11):\penalty0 1761--1770,
+  oct 2019.
+\newblock \doi{10.1038/s41593-019-0520-2}.
+\newblock URL \url{https://doi.org/10.1038%2Fs41593-019-0520-2}.
+
+\end{thebibliography}
