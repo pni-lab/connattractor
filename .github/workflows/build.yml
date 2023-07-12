@@ -27,6 +27,13 @@ jobs:
         python -m pip install --upgrade pip
         npm install -g mystmd
     #   if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+    - name: Manually download docx template
+      run: |
+        cd docs
+        wget https://github.com/myst-templates/docx_default/archive/refs/heads/main.zip
+        unzip main.zip -d _build/templates/docx/myst/default  
+        cp _build/templates/docx/myst/default/docx_default-main/styles.xml _build/templates/docx/myst/default/styles.xml
+
     - name: Build docs with MySt
       run: |
         cd docs 
@@ -39,33 +46,6 @@ jobs:
         git add -A -f docs/exports/*
         git commit -a -m "autogen"
         git remote set-url origin https://spisakt:${{ secrets.GIT_TOKEN }}@github.com/pni-lab/connattractor.git
-        git push
-    #git push https://gitlab-ci-token:${{ secrets.GIT_TOKEN }}@github.com/myuser/myrepo.git <branch_name>
-    #- name: Push changes
-    #  uses: ad-m/github-push-action@master
-    #  with:
-    #    github_token: ${{ secrets.GIT_TOKEN }}
-    #    branch: master
-        
-        
-    #- name: Commit exported docs to main branch
-    #  run: |
-    #    git config user.name 'github-actions[bot]' && git config user.email 'github-actions[bot]@users.noreply.github.com'
-    #    git add -A docs/exports 
-    #    git commit -a -m "autogen"
-    #    git diff-index --quiet HEAD || git commit -m "exports" -a
-    #    git push origin master  
-        
-    #- name: GitHub Pages
-    #  uses: crazy-max/ghaction-github-pages@v3.1.0
-    #  with:
-    #    # Build directory to deploy
-    #    build_dir: docs/_build
-    #    jekyll: false # optional, default is true
-    #    # If enabled, nothing will be pushed
-    #    dry_run: false # optional, default is false
-    #    # Enable verbose output
-    #    verbose: true # optional, default is false
-    #  env:
-    #s      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        git push origin myst
+   
 
