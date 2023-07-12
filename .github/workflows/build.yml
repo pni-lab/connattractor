@@ -31,6 +31,7 @@ jobs:
       run: |
         cd docs
         wget https://github.com/myst-templates/docx_default/archive/refs/heads/main.zip
+        mkdir -p _build/templates/docx/myst/default
         unzip main.zip -d _build/templates/docx/myst/default  
         cp _build/templates/docx/myst/default/docx_default-main/styles.xml _build/templates/docx/myst/default/styles.xml
 
@@ -43,6 +44,7 @@ jobs:
       run: |
         git config --local user.email "github-actions[bot]@users.noreply.github.com"
         git config --local user.name "github-actions[bot]"
+        git switch myst
         git add -A -f docs/exports/*
         git add -A -f docs/_build
         git commit -a -m "autogen"
