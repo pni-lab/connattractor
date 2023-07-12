@@ -50,8 +50,8 @@ jobs:
         git branch -a
         git checkout -b myst origin/myst
         git pull
+        rm -rf docs
         mv /tmp/docs .
-        ls docs
         git add --all
         git commit -a -m "autogen"
         git remote set-url origin https://spisakt:${{ secrets.GIT_TOKEN }}@github.com/pni-lab/connattractor.git
