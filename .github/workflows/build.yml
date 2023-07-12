@@ -40,7 +40,7 @@ jobs:
         cd docs 
         myst build -a
         cd ..
-        mv docs /tmp/docs
+        mv docs /tmp/.
         
     - name: Commit files
       run: |
@@ -50,9 +50,9 @@ jobs:
         git branch -a
         git checkout -b myst origin/myst
         git pull
-        mv /tmp/docs docs
-        git add -A -f docs/exports/*
-        git add -A -f docs/_build
+        rm -rf docs
+        mv /tmp/docs .
+        git add --all
         git commit -a -m "autogen"
         git remote set-url origin https://spisakt:${{ secrets.GIT_TOKEN }}@github.com/pni-lab/connattractor.git
         git push origin myst
