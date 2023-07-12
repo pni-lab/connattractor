@@ -21,9 +21,8 @@ exports:
   - format: pdf
     template: arxiv_nips
     output: exports/connattractor_manuscript.pdf
-#  - format: docx
-#    template: curvenote
-#    output: exports/connattractor_manuscript.docx
+  - format: docx
+    output: exports/connattractor_manuscript.docx
 ---
 +++ {"part": "key-points"}
 **Key Points:**
@@ -195,11 +194,13 @@ Outlook: Empirical Hopfield-networks' clinical validity.
 
 # Discussion
 
-## Neurobiological validity
+Here, we have proposed a novel computational generative model for the dyanmics of spontaneously fluctuating brain activity
+
+## Neurobiological basis
 
 The activity flow principle has been shown to successfully predict held out brain activations by combining the activations and connection weights to the target region [1]. The proposed empirical Hopfield network builds on the knowledge derived from this framework, combining the architecture of a Hopfield network with the connectome as its pre-trained weights. Given an input activation for every region, the network will iterate upon this input state until a mathematical minimum is reached, producing an attractor state. An attractor state represents a configuration of activations in every region and is considered a recalled memory of the network. The network topology is multistable, producing different stable attractor states based on the temperature of the network and the initial activation pattern, which stimulates the network.
 
-- significance
+## Neurobiological validity
 
 > A further scenario rests on the role of ghost attractors [109](https://www.nature.com/articles/nn.4497#ref-CR109 "Deco, G. & Jirsa, V.K. Ongoing cortical activity at rest: criticality, multistability, and ghost attractors. J. Neurosci. 32, 3366–3375 (2012).", a dynamic landscape of remnant attractors each of which has an incomplete basin, hence allowing the system to 'wander' through large swathes of the phase space under the influence of weak noise [110](https://www.nature.com/articles/nn.4497#ref-CR110 "Tsuda, I. Toward an interpretation of dynamic neural activity in terms of chaotic dynamical systems. Behav. Brain Sci. 24, 793–810 discussion 810–848 (2001).").
 
