@@ -40,7 +40,7 @@ jobs:
         cd docs 
         myst build -a
         cd ..
-        mv docs /tmp/docs
+        mv docs /tmp/.
         
     - name: Commit files
       run: |
@@ -50,7 +50,7 @@ jobs:
         git branch -a
         git checkout -b myst origin/myst
         git pull
-        mv /tmp/docs docs
+        mv /tmp/docs .
         ls docs
         git add --all
         git commit -a -m "autogen"
