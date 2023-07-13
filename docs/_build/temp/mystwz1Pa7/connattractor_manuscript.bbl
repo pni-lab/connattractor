@@ -1,0 +1,58 @@
+\begin{thebibliography}{5}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Bassett and Sporns(2017)]{Bassett_2017}
+Danielle~S Bassett and Olaf Sporns.
+\newblock Network neuroscience.
+\newblock \emph{Nature Neuroscience}, 20\penalty0 (3):\penalty0 353--364, feb
+  2017.
+\newblock \doi{10.1038/nn.4502}.
+\newblock URL \url{https://doi.org/10.1038%2Fnn.4502}.
+
+\bibitem[Gutierrez-Barragan et~al.(2019)Gutierrez-Barragan, Basson, Panzeri,
+  and Gozzi]{Gutierrez_Barragan_2019}
+Daniel Gutierrez-Barragan, M.~Albert Basson, Stefano Panzeri, and Alessandro
+  Gozzi.
+\newblock Infraslow state fluctuations govern spontaneous {fMRI} network
+  dynamics.
+\newblock \emph{Current Biology}, 29\penalty0 (14):\penalty0 2295--2306.e5, jul
+  2019.
+\newblock \doi{10.1016/j.cub.2019.06.017}.
+\newblock URL \url{https://doi.org/10.1016%2Fj.cub.2019.06.017}.
+
+\bibitem[Liu and Duyn(2013)]{Liu_2013}
+Xiao Liu and Jeff~H. Duyn.
+\newblock Time-varying functional network information extracted from brief
+  instances of spontaneous brain activity.
+\newblock \emph{Proceedings of the National Academy of Sciences}, 110\penalty0
+  (11):\penalty0 4392--4397, feb 2013.
+\newblock \doi{10.1073/pnas.1216856110}.
+\newblock URL \url{https://doi.org/10.1073%2Fpnas.1216856110}.
+
+\bibitem[Smith et~al.(2012)Smith, Miller, Moeller, Xu, Auerbach, Woolrich,
+  Beckmann, Jenkinson, Andersson, Glasser, Essen, Feinberg, Yacoub, and
+  Ugurbil]{Smith_2012}
+Stephen~M. Smith, Karla~L. Miller, Steen Moeller, Junqian Xu, Edward~J.
+  Auerbach, Mark~W. Woolrich, Christian~F. Beckmann, Mark Jenkinson, Jesper
+  Andersson, Matthew~F. Glasser, David C.~Van Essen, David~A. Feinberg, Essa~S.
+  Yacoub, and Kamil Ugurbil.
+\newblock Temporally-independent functional modes of spontaneous brain
+  activity.
+\newblock \emph{Proceedings of the National Academy of Sciences}, 109\penalty0
+  (8):\penalty0 3131--3136, feb 2012.
+\newblock \doi{10.1073/pnas.1121329109}.
+\newblock URL \url{https://doi.org/10.1073%2Fpnas.1121329109}.
+
+\bibitem[Vidaurre et~al.(2017)Vidaurre, Smith, and Woolrich]{Vidaurre_2017}
+Diego Vidaurre, Stephen~M. Smith, and Mark~W. Woolrich.
+\newblock Brain network dynamics are hierarchically organized in time.
+\newblock \emph{Proceedings of the National Academy of Sciences}, 114\penalty0
+  (48):\penalty0 12827--12832, oct 2017.
+\newblock \doi{10.1073/pnas.1705120114}.
+\newblock URL \url{https://doi.org/10.1073%2Fpnas.1705120114}.
+
+\end{thebibliography}
