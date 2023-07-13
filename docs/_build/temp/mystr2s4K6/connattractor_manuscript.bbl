@@ -1,0 +1,92 @@
+\begin{thebibliography}{8}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Liu and Duyn(2013)]{Liu_2013}
+Xiao Liu and Jeff~H. Duyn.
+\newblock Time-varying functional network information extracted from brief
+  instances of spontaneous brain activity.
+\newblock \emph{Proceedings of the National Academy of Sciences}, 110\penalty0
+  (11):\penalty0 4392--4397, feb 2013.
+\newblock \doi{10.1073/pnas.1216856110}.
+\newblock URL \url{https://doi.org/10.1073%2Fpnas.1216856110}.
+
+\bibitem[Heinz et~al.(2018)Heinz, Murray, Schlagenhauf, Sterzer, Grace, and
+  Waltz]{Heinz_2018}
+Andreas Heinz, Graham~K Murray, Florian Schlagenhauf, Philipp Sterzer,
+  Anthony~A Grace, and James~A Waltz.
+\newblock Towards a unifying cognitive, neurophysiological, and computational
+  neuroscience account of schizophrenia.
+\newblock \emph{Schizophrenia Bulletin}, 45\penalty0 (5):\penalty0 1092--1100,
+  nov 2018.
+\newblock \doi{10.1093/schbul/sby154}.
+\newblock URL \url{https://doi.org/10.1093%2Fschbul%2Fsby154}.
+
+\bibitem[Doerig et~al.(2023)Doerig, Sommers, Seeliger, Richards, Ismael,
+  Lindsay, Kording, Konkle, van Gerven, Kriegeskorte, and
+  Kietzmann]{Doerig_2023}
+Adrien Doerig, Rowan~P. Sommers, Katja Seeliger, Blake Richards, Jenann Ismael,
+  Grace~W. Lindsay, Konrad~P. Kording, Talia Konkle, Marcel A.~J. van Gerven,
+  Nikolaus Kriegeskorte, and Tim~C. Kietzmann.
+\newblock The neuroconnectionist research programme.
+\newblock \emph{Nature Reviews Neuroscience}, 24\penalty0 (7):\penalty0
+  431--450, may 2023.
+\newblock \doi{10.1038/s41583-023-00705-w}.
+\newblock URL \url{https://doi.org/10.1038%2Fs41583-023-00705-w}.
+
+\bibitem[Kriegeskorte and Douglas(2018)]{Kriegeskorte_2018}
+Nikolaus Kriegeskorte and Pamela~K. Douglas.
+\newblock Cognitive computational neuroscience.
+\newblock \emph{Nature Neuroscience}, 21\penalty0 (9):\penalty0 1148--1160, aug
+  2018.
+\newblock \doi{10.1038/s41593-018-0210-5}.
+\newblock URL \url{https://doi.org/10.1038%2Fs41593-018-0210-5}.
+
+\bibitem[Richards et~al.(2019)Richards, Lillicrap, Beaudoin, Bengio, Bogacz,
+  Christensen, Clopath, Costa, de~Berker, Ganguli, Gillon, Hafner, Kepecs,
+  Kriegeskorte, Latham, Lindsay, Miller, Naud, Pack, Poirazi, Roelfsema,
+  Sacramento, Saxe, Scellier, Schapiro, Senn, Wayne, Yamins, Zenke, Zylberberg,
+  Therien, and Kording]{Richards_2019}
+Blake~A. Richards, Timothy~P. Lillicrap, Philippe Beaudoin, Yoshua Bengio,
+  Rafal Bogacz, Amelia Christensen, Claudia Clopath, Rui~Ponte Costa, Archy
+  de~Berker, Surya Ganguli, Colleen~J. Gillon, Danijar Hafner, Adam Kepecs,
+  Nikolaus Kriegeskorte, Peter Latham, Grace~W. Lindsay, Kenneth~D. Miller,
+  Richard Naud, Christopher~C. Pack, Panayiota Poirazi, Pieter Roelfsema,
+  Jo{\~{a}}o Sacramento, Andrew Saxe, Benjamin Scellier, Anna~C. Schapiro,
+  Walter Senn, Greg Wayne, Daniel Yamins, Friedemann Zenke, Joel Zylberberg,
+  Denis Therien, and Konrad~P. Kording.
+\newblock A deep learning framework for neuroscience.
+\newblock \emph{Nature Neuroscience}, 22\penalty0 (11):\penalty0 1761--1770,
+  oct 2019.
+\newblock \doi{10.1038/s41593-019-0520-2}.
+\newblock URL \url{https://doi.org/10.1038%2Fs41593-019-0520-2}.
+
+\bibitem[Cole et~al.(2016)Cole, Ito, Bassett, and Schultz]{Cole_2016}
+Michael~W Cole, Takuya Ito, Danielle~S Bassett, and Douglas~H Schultz.
+\newblock Activity flow over resting-state networks shapes cognitive task
+  activations.
+\newblock \emph{Nature Neuroscience}, 19\penalty0 (12):\penalty0 1718--1726,
+  oct 2016.
+\newblock \doi{10.1038/nn.4406}.
+\newblock URL \url{https://doi.org/10.1038%2Fnn.4406}.
+
+\bibitem[Krotov(2023)]{Krotov_2023}
+Dmitry Krotov.
+\newblock A new frontier for hopfield networks.
+\newblock \emph{Nature Reviews Physics}, 5\penalty0 (7):\penalty0 366--367, may
+  2023.
+\newblock \doi{10.1038/s42254-023-00595-y}.
+\newblock URL \url{https://doi.org/10.1038%2Fs42254-023-00595-y}.
+
+\bibitem[Koiran(1994)]{Koiran_1994}
+Pascal Koiran.
+\newblock Dynamics of discrete time, continuous state hopfield networks.
+\newblock \emph{Neural Computation}, 6\penalty0 (3):\penalty0 459--468, may
+  1994.
+\newblock \doi{10.1162/neco.1994.6.3.459}.
+\newblock URL \url{https://doi.org/10.1162%2Fneco.1994.6.3.459}.
+
+\end{thebibliography}
