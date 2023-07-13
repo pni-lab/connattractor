@@ -254,6 +254,7 @@ The generative nature of the proposed model opens up a series of exciting opport
 
 # Methods
 
+
 ```{list-table}
 :header-rows: 1
 :name: samples
