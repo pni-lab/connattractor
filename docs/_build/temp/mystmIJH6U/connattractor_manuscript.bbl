@@ -1,0 +1,53 @@
+\begin{thebibliography}{5}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Hopfield(1982)]{Hopfield_1982}
+J~J Hopfield.
+\newblock Neural networks and physical systems with emergent collective
+  computational abilities.
+\newblock \emph{Proceedings of the National Academy of Sciences}, 79\penalty0
+  (8):\penalty0 2554--2558, apr 1982.
+\newblock \doi{10.1073/pnas.79.8.2554}.
+\newblock URL \url{https://doi.org/10.1073%2Fpnas.79.8.2554}.
+
+\bibitem[Robinson et~al.(2005)Robinson, Rennie, Rowe,
+  O{\textquotesingle}Connor, and Gordon]{Robinson_2005}
+P.~A Robinson, C.~J Rennie, D.~L Rowe, S.~C O{\textquotesingle}Connor, and
+  E~Gordon.
+\newblock Multiscale brain modelling.
+\newblock \emph{Philosophical Transactions of the Royal Society B: Biological
+  Sciences}, 360\penalty0 (1457):\penalty0 1043--1050, may 2005.
+\newblock \doi{10.1098/rstb.2005.1638}.
+\newblock URL \url{https://doi.org/10.1098%2Frstb.2005.1638}.
+
+\bibitem[Daunizeau et~al.(2012)Daunizeau, Stephan, and Friston]{Daunizeau_2012}
+J.~Daunizeau, K.E. Stephan, and K.J. Friston.
+\newblock Stochastic dynamic causal modelling of {fMRI} data: Should we care
+  about neural noise?
+\newblock \emph{{NeuroImage}}, 62\penalty0 (1):\penalty0 464--481, aug 2012.
+\newblock \doi{10.1016/j.neuroimage.2012.04.061}.
+\newblock URL \url{https://doi.org/10.1016%2Fj.neuroimage.2012.04.061}.
+
+\bibitem[Golland et~al.(2008)Golland, Golland, Bentin, and
+  Malach]{Golland_2008}
+Yulia Golland, Polina Golland, Shlomo Bentin, and Rafael Malach.
+\newblock Data-driven clustering reveals a fundamental subdivision of the human
+  cortex into two global systems.
+\newblock \emph{Neuropsychologia}, 46\penalty0 (2):\penalty0 540--553, 2008.
+\newblock \doi{10.1016/j.neuropsychologia.2007.10.003}.
+\newblock URL \url{https://doi.org/10.1016%2Fj.neuropsychologia.2007.10.003}.
+
+\bibitem[Chen et~al.(2018)Chen, Ito, Kulkarni, and Cole]{Chen_2018}
+Richard~H. Chen, Takuya Ito, Kaustubh~R. Kulkarni, and Michael~W. Cole.
+\newblock The human brain traverses a common activation-pattern state space
+  across task and rest.
+\newblock \emph{Brain Connectivity}, 8\penalty0 (7):\penalty0 429--443, sep
+  2018.
+\newblock \doi{10.1089/brain.2018.0586}.
+\newblock URL \url{https://doi.org/10.1089%2Fbrain.2018.0586}.
+
+\end{thebibliography}
