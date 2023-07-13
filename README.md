@@ -2,8 +2,6 @@ connattractor
 ==========================
 Laboratory for Predictive Neuroimaging - University Hospital Essen, Germany
 
-Manuscripot file (autobuilt by Myst):
-
-[pdf](https://github.com/pni-lab/connattractor/blob/master/docs/exports/connattractor_manuscript.pdf)
-
-[docx](https://github.com/pni-lab/connattractor/blob/master/docs/exports/connattractor_manuscript.docx)
+### Manuscript file (autobuilt by Myst):
+- [pdf](https://github.com/pni-lab/connattractor/blob/master/docs/exports/connattractor_manuscript.pdf)
+- [docx](https://github.com/pni-lab/connattractor/blob/master/docs/exports/connattractor_manuscript.docx)
