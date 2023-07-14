@@ -206,7 +206,12 @@ In the AD vs. MCI comparison, we found significant differences in two of the fou
 
 :::{figure} figures/state_analysis.*
 :name: clinical-validity
-Outlook: Empirical Hopfield-networks' clinical validity.
+**Connectome-based Hopfield analysis as a sensitive tool for the study of clinical disorders.** <br><\br>
+We quantified attractor state activations in three clincal datasets (([studies 6, 7 and 8](tab-samples)) as the individual-level mean activation of all time-frames belonging to the same attractor state. 
+CBH analysis of attractor state activations revealed significant differences in all three datasets.
+**A** Comparison of individuals with autism spectrum disorder (ASD) and typically developing controls (TD) is characterized by **todo**.
+**B** The most prominent Schizophrenia (SCZ)-related differences (as compared to healthy controls (HC) are related to the activity of the internalalization-related subsystem. **todo** 
+**C** Alzheimer's disease (AD) is characterized by altered activation in **todo** the subsystems for passive inference and internal context (both of which together host long-term memory processes, see {numref}`task-validity`F). All results are corrected for multiple comparisons across brain regions and attractor states (122*4 comparisons) with Bonferroni-correction. See Table **X** for detailed results.
 :::
 
 # Discussion
@@ -250,8 +255,13 @@ Brain dynamics can not only be perturbed by task or other types of experimental 
 In our analysis of clinical samples study 6-8 we found that mean attractor activations show characteristic alteration in autism spectrum disorder (ASD), Schizophrenia (SCH) and Alzheimer's disease (AD). These changes were also detectable on the Hopfield projection, and were accompanied by significant changes in the state energies.
 The Hopfiled projection also allowed us to visualize the effect of different types of perturbations on the brain's attractor landscape, providing a novel perspective on the pathophysiology of these disorders.
 
-> ToDo: more details
+> ToDo: more details on clinical outlook
 
+> ToDo: discuss: what are attractor states at all? Platonic idealizations of brain states, that are continously approximated by the brain?
+
+> Todo: for spontaneous and task-based brain dynamics. In the proposed framework, taks-based activity is not a mere response to external stimuli in certain brain locations but a perturbation of the brain's charcteristic dynamic trajectories. In this framework, conventional task-based fMRI analyses capture mean differences of the whole brain dyanmics, resulting in the widely reported focal "activation maps" thought to be specific to various taks and stimuli. In the CBH framework, the brain's characteristic trajectories are constrained by the underlying functional connectivity and only perturbed by external inpout, rather than predestinated.
+
+> ToDo: discuss: the CBH model is not a model of brain function, but a model of brain dynamics. It does not strice to explain various brain regions ability to perform certain computations, but the brain's characteristic trajectories, which are perturbed by tasks and other types of interventions.
 
 Together, these results open up a series of exciting opportunities for the mechanistic understanding of brain function. By its generative nature, the CBH model could foster analyses that aim at disentangling causal relationships, which are extremely difficult to infer in case of systems as complex as the brain. It could, for instance, aid the differentiation of primary causes and secondary effects of particular activity or connectivity changes in various clinical conditions.
 
