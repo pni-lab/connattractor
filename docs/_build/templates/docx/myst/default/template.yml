@@ -3,11 +3,11 @@ title: 'Default Docx Template'
 description: 'Template for docx myst exports'
 version: 1.0.0
 license: CC-BY-4.0
-source: 'https://github.com/executablebooks/mystjs'
+source: 'https://github.com/executablebooks/mystmd'
 thumbnail: ./thumbnail.png
 authors:
   - name: 'Franklin Koch'
-    website: 'https://github.com/executablebooks/mystjs'
+    website: 'https://github.com/executablebooks/mystmd'
     affiliations:
       - 'executablebooks'
 tags:
