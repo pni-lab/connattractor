@@ -26,15 +26,13 @@ exports:
 ---
 +++ {"part": "key-points"}
 **Key Points:**
-
-- We propose a high-level computational model of "activity flow" across brain regions
-- The model considers the funcional brain connectome as an already-trained Hopfield neural network
-- It defines an energy level for any arbitrary brain activation patterns
-- and a trajectory towards one of the finite number of stable patterns (attractor states) that minimize this energy
-- The model reproduces and explains the dynamic repertoir of the brain's spontanous activity at rest
-- It conceptualizes both task-induced and pathological changes in brain activity as a shift on the "attractor landscape"
-- We validate our findings on healthy and clinical samples (~2000 participants)
-
+- We present a simple yet powerful computational model large-scale brain dynamics
+- The model computes "activity flow" across brain regions using a continuous Hopfield artificial neural network.
+- Instead of training the network weights to solve specific tasks, they are initialized with empirical functional brain connectivity.
+- It defines an energy level for any arbitrary brain activation patterns and a trajectory towards one of the finite number of stable patterns (attractor states) that minimize this energy
+- The model captures the dynamic repertoire of the brain in resting conditions
+- It conceptualizes both task-induced and pathological changes in brain activity as a shift in these dynamics.
+- We validate the model through eight studies involving approximately 2000 participants.
 +++
 
 +++ {"part": "abstract"}
@@ -49,14 +47,17 @@ todo
 
 Brain function is characterized by the continuous activation and deactivation of anatomically distributed neuronal populations.
 While the focus of related research is often on the direct mapping between changes in the activity of a single brain area and a specific task or condition, in reality, regional activation never seems to occur in isolation ([](https://doi.org/10.1038/nn.4502)).
-Regardless of the presence or absence of explicit stimuli, brain regions seem to work in concert, resulting in a rich and complex spatiotemporal fluctuation ([](https://doi.org/10.1016/j.cub.2019.06.017)).
-This fluctuation is neither random, nor stationary over time [](https://doi.org/10.1073/pnas.1216856110); [](https://doi.org/10.1073/pnas.1400181111). It shows quasi-periodic properties ([](https://doi.org/10.1016/j.neuroimage.2013.09.029)), with a limited number of recurring patterns known as “brain states” ([](https://doi.org/10.1016/j.tins.2023.04.001); [](https://doi.org/10.1073/pnas.1705120114); [](https://doi.org/10.1073/pnas.1216856110); [](https://doi.org/10.1016/j.neuroimage.2010.05.081)).
+ ([](https://doi.org/10.1038/nn.4502)).
+Irrespective of the presence or absence of explicit stimuli, brain regions appear to work in concert, giving rise to a rich and complex spatiotemporal fluctuation ([](https://doi.org/10.1016/j.cub.2019.06.017)).
+This fluctuation is neither random, nor stationary over time [](https://doi.org/10.1073/pnas.1216856110); [](https://doi.org/10.1073/pnas.1400181111).
+It exhibits quasi-periodic properties ([](https://doi.org/10.1016/j.neuroimage.2013.09.029)), with a limited number of recurring patterns known as "brain states" ([](https://doi.org/10.1016/j.tins.2023.04.001); [](https://doi.org/10.1073/pnas.1705120114); [](https://doi.org/10.1073/pnas.1216856110); [](https://doi.org/10.1016/j.neuroimage.2010.05.081)).
 
-Whole-brain dynamics have previously been characterized with various descriptive techniques ([](https://doi.org/10.1073/pnas.1121329109); [](https://doi.org/10.1073/pnas.1705120114); [](https://doi.org/10.1073/pnas.1216856110); [](10.1089/brain.2018.0586)), providing accumulating evidence not only for the existence, but also for the high neurobiological and clinical significance, of such dynamics ([](https://doi.org/10.1016/j.neuroimage.2013.05.079); [](https://doi.org/10.1073/pnas.1418031112); [](10.1038/s41467-020-18717-w)). However, due to the nature of such studies, the underlying driving forces remain elusive.
+From hidden Markov models, to point-process analyses, a wide variety of descriptive techniques have been previously employed to characterize whole-brain dynamics. ([](https://doi.org/10.1073/pnas.1121329109); [](https://doi.org/10.1073/pnas.1705120114); [](https://doi.org/10.1073/pnas.1216856110); [](10.1089/brain.2018.0586)), accumulating evidence that not only supports the existence of such brain states but also highlights their high neurobiological and clinical significance. ([](https://doi.org/10.1016/j.neuroimage.2013.05.079); [](https://doi.org/10.1073/pnas.1418031112); [](10.1038/s41467-020-18717-w)). 
+However, the underlying driving forces remain elusive due to the descriptive nature of such studies.
 
 % Brain state dynamics can be assessed with multiple techniques, dynamic connectivity analysis (), including independent component analysis ([](https://doi.org/10.1073/pnas.1121329109)), hidden markov models ([](https://doi.org/10.1073/pnas.1705120114)) or point-process analyses to capture co-activation patterns (CAPs, [](https://doi.org/10.1073/pnas.1216856110); [](https://doi.org/10.1016/j.neuroimage.2015.01.057); [](https://doi.org/10.3389/fnsys.2013.00101); [](https://doi.org/10.1038/s41467-020-18717-w)), clustering [](10.1089/brain.2018.0586)
 
-Questions regarding the mechanisms that cause these remarkable dynamics can be addressed through computational models, which have the potential to shift our understanding from mere associations to causal explanations.
+Computational models have the potential to address questions regarding the mechanisms that underlie these remarkable dynamics, shifting our understanding from mere associations to causal explanations.
 Conventional computational approaches try to solve the puzzle by delving all the way down to the biophysical properties of single neurons and then aim to construct a model of larger neural populations, or even the entire brain ([](https://doi.org/10.1038/nn.4497)).
 While such approaches have demonstrated numerous successful applications ([](https://doi.org/10.1038/s41593-018-0210-5); [](https://doi.org/10.1093/schbul/sby154)), the estimation of all the free parameters in such models presents a grand challenge. This limitation hampers the ability of these techniques to effectively bridge the gap between explanations at the level of single neurons and the complexity of behavior ([](https://doi.org/10.1038/nn.4497)).
 
