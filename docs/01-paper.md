@@ -234,8 +234,8 @@ These results highlight a very powerful feature of the proposed generative frame
 ## Clinical relevance
 
 In our final analysis, we provide a brief outlook towards the potential clinical applications of CBH analysis. We analyzed three large public clinical databases as provided by the Autism Brain Imaging Data Exchange ([study 6](#tab-samples): ABIDE, **ref**), the Centers of Biomedical Research Excellence ([study 7](#tab-samples): COBRE, **ref**) and the Alzheimer’s Disease Neuroimaging Initiative ([study 8](#tab-samples): ADNI, **ref**).
-Resting state fMRI data of patients with autism spectrum disorder (ASD), schizophrenia (SCZ) and Alzheimer's disease (AD) was contrasted to their respective control groups (typically developing controls for ASD, healthy control participants for SCH and individuals with mild cognitive impairment (MCI), respectively.
-In all three datasets, we used the CBH model from study 1 and projected the fMRI timeseries of all involved participants onto the Hopfield projection. For each participant, we obtained the average activation of all time-frames belonging to the same attractor state (4 maps per participant) and compared these across groups with permutation tests, controlled for the **family-wise error rate** across brain regions and attractor states (122*4 comparisons).
+Resting state fMRI data of patients with autism spectrum disorder (ASD), schizophrenia (SCZ) and Alzheimer's disease (AD) was contrasted to their respective control groups (typically developing controls for ASD, healthy control participants for SCH and individuals with mild cognitive impairment (MCI), respectively).
+In all three datasets, we used the CBH model from study 1 and projected the fMRI timeseries of all involved participants onto the Hopfield projection. For each participant, we obtained the average activation of all time-frames belonging to the same attractor state (4 maps per participant) and compared these across groups with permutation tests, Bonferroni corrected across brain regions and attractor states (122*4 comparisons).
 
 We found several significant differences the mean attractor activation of patients as compared to the respective controls. In ASD, all four attractor activation maps showed significant differences ({numref}`clinical-validity`A, **table**), characterized by altered activation in the *precuneus, posterior congulate, sensory-motor system, posterior insula, and cerebellum*.
 
@@ -256,7 +256,7 @@ CBH analysis of attractor state activations revealed significant differences in 
 # Discussion
 
 Regions of the brain engage in an ongoing exchange of information, leading to co-activations that are commonly known as functional connectivity.
-The quantity of information exchanged between brain regions is not uniform but rather exhibits substantial variation among different pairs of regions, encompassing the intricate network referred to as the functional connectome.
+The quantity of information exchanged between brain regions is not uniform, but rather exhibits substantial variation among different pairs of regions, encompassing the intricate network referred to as the functional connectome.
 In this study, we have introduced a simple yet robust model that elucidates how activity propagates through the intricate network topology of the brain, thereby constraining the system's dynamics and giving rise to distinct brain states along with characteristic dynamic responses to perturbations.
 Through a series of experiments, we have demonstrated that the proposed model can effectively reconstruct and predict large-scale brain activity across diverse conditions. These findings offer unprecedented possibilities for forecasting the impact of interventions, including pharmacological treatments or non-invasive brain stimulation, on brain function.
 
@@ -264,17 +264,17 @@ The construct validity of our model is rooted in the activity flow principle, fi
 
 > ToDo: latent FC-based modelling: [](https://doi.org/10.1162/netn_a_00234)
 
-Our model was born from the intuition that the repeated, iterative application of the activity flow equation results in a system showing close analogies with a type of recurrent artificial neural networks, know as Hopfiled networks ([](10.1073/pnas.79.8.2554)).
+Our model was born from the intuition that the repeated, iterative application of the activity flow equation results in a system showing close analogies with a type of recurrent artificial neural network, know as Hopfiled networks ([](10.1073/pnas.79.8.2554)).
 
 Hopfield networks have previously been shown to exhibit a series of characteristics that are also highly relevant for brain function, including the ability to store and recall memories (**ref**), self-repair (**ref**), a staggering robustness to noisy or corrupted inputs (**ref**) and the tendency to produce multistable dynamics organized by the "gravitational pull" of a finite number of attractor states (**ref**). 
 
-The proposed link between activity flow and Hopfield networks has and important implication: network weights must be initialized with functional connectivity values, (specifically, partial correlations, as recommend by []( 10.1038/nn.4406)), instead of applying an explicit training procedure (common in the "neuroconnectomist" approach (**ref**)) or using the structural connectome (a standard practice of conventional computational neuroscience (**ref**)).
+The proposed link between activity flow and Hopfield networks has an important implication: network weights must be initialized with functional connectivity values, (specifically, partial correlations, as recommend by []( 10.1038/nn.4406)), instead of applying an explicit training procedure (common in the "neuroconnectomist" approach (**ref**)) or using the structural connectome (a standard practice of conventional computational neuroscience (**ref**)).
 
-Using functional conncetome-based Hopfield (CBH) model provides a simple yet powerful framework for the mechanistic understanding of brian dynamics. Its simplicity comes with an important advantages. 
+Using functional conncetome-based Hopfield (CBH) model provides a simple yet powerful framework for the mechanistic understanding of brian dynamics. Its simplicity comes with important advantages. 
 
 First, increasing model complexity results in an exponential explosion of the parameter space. Although complex, fine-grained computation models hold promise a full-blown understanding, they very easily overfit real data (**ref**). The basic CBH approach has only two hyperparameters (temperature and noise) and produce fairly consistent behavior on a wide range of parameter values. To demonstrate the power of simplicity, in the present work, we deliberately minimized fine-tuning of any free parameters. We fixed the temperature parameter at a value that robustly provides 4 attractor states and used a single noise level for all experiments (selected with a coarse optimization procedure to approximately mimic the distribution of real data). 
 
-Second, increasing complexity means increasing burden in terms of interpretability. The CBH model establishes a simple, direct link between two most popular measures of brain function: functional connectivity and brain activity. This link is not only conceptual, but also mathematical, and allows us to investigate and forecast changes of the system's dyanmics in response to perturbations of both activity and connectivity. 
+Second, increasing complexity means increasing burden in terms of interpretability. The CBH model establishes a simple and direct link between two most popular measures of brain function: functional connectivity and brain activity. This link is not only conceptual, but also mathematical, and allows us to investigate and forecast changes of the system's dyanmics in response to perturbations of both activity and connectivity. 
 
 In this initial investigation, we further reduced complexity by restricting the analysis to a simplified 2-dimensional embedding of the state-space generated by the CBH approach, which we refer to as the Hopfield projection. This projection is a powerful tool for the visualization of the CBH model's dynamics, and allows for a direct comparison with the dynamics of the original brain activity. 
 
@@ -289,7 +289,7 @@ the highly noise tolerant nature and the self-repair properties of the CBH archi
 The noise-tolerance of the proposed architecture also explains the high replicability of CBH attractors across different datasets (study 2 and 3).
 The observed level of replicability allowed us to re-use the CBH model constructed with the connectome of study 1 for all subsequent studies, without any further fine-tuning or study-specific parameter optimization.
 
-The connectome obtained form study 1 was also used to evaluate the model's ability to capture and forecast task-induced brain dynamics in study 4 and 5. In these analyses, was not only able to capture participant-level activity changes induced by pain and self-regulation (showing significant differences on the Hopfield projection and in terms of state energy) but also accurately predicted the non-linear changes in activity flow induced by activity changes characteristic.
+The connectome obtained form study 1 was also used to evaluate the model's ability to capture and forecast task-induced brain dynamics in study 4 and 5. In these analyses, the CBH model was not only able to capture participant-level activity changes induced by pain and self-regulation (showing significant differences on the Hopfield projection and in terms of state energy), but also accurately predicted the non-linear changes in activity flow induced by characteristic activity changes.
 
 Brain dynamics can not only be perturbed by task or other types of experimental or naturalistic interventions, but also by pathological alterations.
 In our analysis of clinical samples study 6-8 we found that mean attractor activations show characteristic alteration in autism spectrum disorder (ASD), Schizophrenia (SCH) and Alzheimer's disease (AD). These changes were also detectable on the Hopfield projection, and were accompanied by significant changes in the state energies.
@@ -305,9 +305,9 @@ The Hopfiled projection also allowed us to visualize the effect of different typ
 
 Together, these results open up a series of exciting opportunities for the mechanistic understanding of brain function. By its generative nature, the CBH model could foster analyses that aim at disentangling causal relationships, which are extremely difficult to infer in case of systems as complex as the brain. It could, for instance, aid the differentiation of primary causes and secondary effects of particular activity or connectivity changes in various clinical conditions.
 
-Moreover, the CBH approach might provide testable predictions about the effects of interventions, like pharmacological or non-invasive brain stimulation (e.g. transcranial magnetic or direct current stimulation, focused ultrasound) or neurofeedback, on brain function.
+Moreover, the CBH approach might provide testable predictions about the effects of interventions on brain functions, like pharmacological or non-invasive brain stimulation (e.g. transcranial magnetic or direct current stimulation, focused ultrasound) or neurofeedback.
 For instance, in the context of pain, the CBH model might be used to predict the effect of various analgesic drugs (or other treatment strategies with known neural correlates) on the individual level (e.g. based on the individual functional connectome). 
-Aidng the design of personalized medicine approaches is a particularly promising field of application for the proposed framework.
+Aiding the design of personalized medicine approaches is a particularly promising field of application for the proposed framework.
 
 The generative nature of the proposed framework may be also used to generate synthetic brain activity data, which can be used to train and test machine learning algorithms, such as deep neural networks, for the prediction of brain activity from functional connectivity. This approach may be particularly useful in the context of clinical applications, where the amount of available data is often limited. 
 
@@ -317,7 +317,7 @@ To conclude, here we have proposed a novel computational framework that accurate
 The framework models large-scale activity flow in the brain with a recurrent artificial neural network architecture that, instead of being trained to solve specific tasks or mimic certain dynamics, is simply initialized with the empirical functional connectome. The framework identifies biologically meaningful attractor states and provides a model for how these restrict brain dyanmics. 
 The proposed framework, referred to as the connectome-based Hopfield (CBH) model, can accurately reconstruct and predict brain dynamics under a wide range of conditions, including resting state, task-induced activity changes, and pathological alterations.
 CBH analyses provide a simple, robust, and highly interpretable computational alternative to the conventional descriptive approach to investigating brain function and establish a link between connectivity and activity.
-The generative nature of the proposed model opens up a series of exciting opportunities for future research, including novel ways of assessing causality and mechanistic understanding and the possibility to predict the effects of various interventions, thereby paving the way for novel personalized medical approaches.
+The generative nature of the proposed model opens up a series of exciting opportunities for future research, including novel ways of assessing causality and mechanistic understanding, and the possibility to predict the effects of various interventions, thereby paving the way for novel personalized medical approaches.
 
 # Methods
 
