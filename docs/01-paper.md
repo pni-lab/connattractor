@@ -211,9 +211,20 @@ The attractor basins were visualized by using the decision boundaries obtained f
 
 ## Reconstruction of resting state brain dynamics
 
+The obtained attractor states closely resemble frequently described brain patterns. ({numref}rest-validityA). The first pair of attractors (mapped on PC1) resemble the two complementary “macro” systems described by and as well as the two primary brain states previously described by . This state-pair has previously been described as an “extrinsic” system which exhibits a stronger direct connection to the immediate sensory environment and an "intrinsic" system, whose activity is primarily associated with dynamic changes in higher-level internal context and closely linked to the default mode network. The other pair of attractors spans an orthogonal axis connecting regions that are commonly associated with perception–action cycles
 
+:::{figure} figures/face_validity.png 
+:name: rest-validity
+**Connectome-based Hopfield networks reconstruct characteristics of real resting state brain activity.**<br/><br/>
+**A** The four attractor states of the connectome-based Hopfiled (CBH) network from study 1 reflect brain activation patterns with a high neurobiologicasl relevance, resembling to sub-systems previously described as being associated for "internal context" (blue), "external context" (yellow), "action/execution" (red) and "perception" (green) (; ; ; ). 
+**B** The attractor states show excellent replicability in two external datasets (study 2 and 3, mean correlation 0.93). 
+**C** The Hopfield projection (first two PCs of the CBH state space) explains more variance (p<0.0001) in the real resting state fMRI data than principal components derived from the real resting state data itself and generalizes better (p<0.0001) to out-of-sample data (study 2). Error bars denote 99% bootstrapped confidence intervals. 
+**D** The CBH analysis accurately predicts (p<0.0001) the fraction of time spent on the basis of the four attractor states in real restring state fMRI data (study 1) and 
+**E** reconstructs the characteristic bimodal distribution of the real resting state data. 
+**F** CBH networks perform self-reconstruction: the timeseries resulting from the stochastic relaxation procedure mirror the co-variance structure of the functional connectome the CBH network was initialized with. 
+:::
 
-Importantly, the discovered attractor states demonstrate a remarkable level of replicability (mean Pearson's correlation **XX**) across the discovery datasets (study 1) and two independent replication datasets ([study 2 and 3](#tab-samples), {numref}`rest-validity`C).
+Importantly, the discovered attractor states demonstrate a remarkable level of replicability (mean Pearson's correlation 0.93) across the discovery datasets (study 1) and two independent replication datasets ([study 2 and 3](#tab-samples), {numref}`rest-validity`C).
 This is in line with the previously described, high robustness of Hopfield networks to noisy input ([](https://doi.org/10.1073/pnas.79.8.2554)) as well as their ability to tolerate corrupted weights. (**ref**, Supplementary Material **X**) and renders CBH networks highly promising for computational analyses of brain dynamics.
 
 Further analysis in study 1 showed that connectome-based Hopfield models accurately reconstructed multiple characteristics of true resting-state data.
