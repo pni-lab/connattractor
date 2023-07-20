@@ -28,8 +28,10 @@ exports:
 **Key Points:**
 - We present a simple yet powerful computational model large-scale brain dynamics
 - The model computes "activity flow" across brain regions using a continuous Hopfield artificial neural network.
-- Instead of training the network weights to solve specific tasks, they are initialized with empirical functional brain connectivity.
-- It defines an energy level for any arbitrary brain activation patterns and a trajectory towards one of the finite number of stable patterns (attractor states) that minimize this energy
+- Instead of training the network weights to solve specific tasks, they are initialized with empirical functional brain
+connectivity.
+- It defines an energy level for any arbitrary brain activation patterns and a trajectory towards one of the finite 
+number of stable patterns (attractor states) that minimize this energy
 - The model captures the dynamic repertoire of the brain in resting conditions
 - It conceptualizes both task-induced and pathological changes in brain activity as a shift in these dynamics.
 - We validate the model through eight studies involving approximately 2000 participants.
@@ -45,50 +47,114 @@ todo
 
 # Introduction
 
-Brain function is characterized by the continuous activation and deactivation of anatomically distributed neuronal populations.
-While the focus of related research is often on the direct mapping between changes in the activity of a single brain area and a specific task or condition, in reality, regional activation never seems to occur in isolation ([](https://doi.org/10.1038/nn.4502)).
+Brain function is characterized by the continuous activation and deactivation of anatomically distributed neuronal 
+populations.
+While the focus of related research is often on the direct mapping between changes in the activity of a single brain 
+area and a specific task or condition, in reality, regional activation never seems to occur in isolation 
+([](https://doi.org/10.1038/nn.4502)).
  ([](https://doi.org/10.1038/nn.4502)).
-Irrespective of the presence or absence of explicit stimuli, brain regions appear to work in concert, giving rise to a rich and complex spatiotemporal fluctuation ([](https://doi.org/10.1016/j.cub.2019.06.017)).
-This fluctuation is neither random, nor stationary over time [](https://doi.org/10.1073/pnas.1216856110); [](https://doi.org/10.1073/pnas.1400181111).
-It exhibits quasi-periodic properties ([](https://doi.org/10.1016/j.neuroimage.2013.09.029)), with a limited number of recurring patterns known as "brain states" ([](https://doi.org/10.1016/j.tins.2023.04.001); [](https://doi.org/10.1073/pnas.1705120114); [](https://doi.org/10.1073/pnas.1216856110); [](https://doi.org/10.1016/j.neuroimage.2010.05.081)).
+Irrespective of the presence or absence of explicit stimuli, brain regions appear to work in concert, giving rise to a
+rich and complex spatiotemporal fluctuation ([](https://doi.org/10.1016/j.cub.2019.06.017)).
+This fluctuation is neither random, nor stationary over time [](https://doi.org/10.1073/pnas.1216856110);
+[](https://doi.org/10.1073/pnas.1400181111).
+It exhibits quasi-periodic properties ([](https://doi.org/10.1016/j.neuroimage.2013.09.029)), with a limited number of
+recurring patterns known as "brain states" ([](https://doi.org/10.1016/j.tins.2023.04.001);
+[](https://doi.org/10.1073/pnas.1705120114); [](https://doi.org/10.1073/pnas.1216856110); 
+[](https://doi.org/10.1016/j.neuroimage.2010.05.081)).
 
-From hidden Markov models, to point-process analyses, a wide variety of descriptive techniques have been previously employed to characterize whole-brain dynamics. ([](https://doi.org/10.1073/pnas.1121329109); [](https://doi.org/10.1073/pnas.1705120114); [](https://doi.org/10.1073/pnas.1216856110); [](10.1089/brain.2018.0586)), providing accumulating evidence not only for the existence of dynamic brain states but also for their clinical significance. ([](https://doi.org/10.1016/j.neuroimage.2013.05.079); [](https://doi.org/10.1073/pnas.1418031112); [](10.1038/s41467-020-18717-w)). 
+From hidden Markov models, to point-process analyses, a wide variety of descriptive techniques have been previously 
+employed to characterize whole-brain dynamics. ([](https://doi.org/10.1073/pnas.1121329109);
+[](https://doi.org/10.1073/pnas.1705120114); [](https://doi.org/10.1073/pnas.1216856110); [](doi:10.1089/brain.2018.0586)), 
+providing accumulating evidence not only for the existence of dynamic brain states but also for their clinical 
+significance. ([](https://doi.org/10.1016/j.neuroimage.2013.05.079); [](https://doi.org/10.1073/pnas.1418031112); 
+[](10.1038/s41467-020-18717-w)). 
 However, the underlying driving forces remain elusive due to the descriptive nature of such studies.
 
-% Brain state dynamics can be assessed with multiple techniques, such as dynamic connectivity analysis (), independent component analysis ([](https://doi.org/10.1073/pnas.1121329109)), hidden markov models ([](https://doi.org/10.1073/pnas.1705120114)), clustering [](10.1089/brain.2018.0586) or point-process analyses to capture co-activation patterns (CAPs, [](https://doi.org/10.1073/pnas.1216856110); [](https://doi.org/10.1016/j.neuroimage.2015.01.057); [](https://doi.org/10.3389/fnsys.2013.00101); [](https://doi.org/10.1038/s41467-020-18717-w)).
+Brain state dynamics can be assessed with multiple techniques, such as dynamic connectivity analysis (), independent
+component analysis ([](https://doi.org/10.1073/pnas.1121329109)), hidden markov models 
+([](https://doi.org/10.1073/pnas.1705120114)), clustering [](doi:10.1089/brain.2018.0586) or point-process analyses to 
+capture co-activation patterns (CAPs, [](https://doi.org/10.1073/pnas.1216856110); 
+[](https://doi.org/10.1016/j.neuroimage.2015.01.057); [](https://doi.org/10.3389/fnsys.2013.00101); 
+[](https://doi.org/10.1038/s41467-020-18717-w)).
 
-Questions regarding the mechanisms, that cause these remarkable dynamics, can be addressed through approaches that are based on computational models, which have the potential to shift our understanding from mere associations to causal explanations.
-Conventional computational approaches attempt to solve this puzzle by going all the way to the biophysical properties of single neurons, and aim to construct a model of larger neural populations, or even the entire brain ([](https://doi.org/10.1038/nn.4497)).
-Although these approaches have shown numerous successful applications  ([](https://doi.org/10.1038/s41593-018-0210-5); [](https://doi.org/10.1093/schbul/sby154)), the estimation of all the free parameters in such models presents a grand challenge. 
-This hampers the ability of these techniques to effectively bridge the gap between explanations at the level of single neurons and the complexity of behavior ([](https://doi.org/10.1038/nn.4497)).
+Questions regarding the mechanisms, that cause these remarkable dynamics, can be addressed through approaches that are 
+based on computational models, which have the potential to shift our understanding from mere associations to causal 
+explanations.
+Conventional computational approaches attempt to solve this puzzle by going all the way to the biophysical properties 
+of single neurons, and aim to construct a model of larger neural populations, or even the entire brain 
+([](https://doi.org/10.1038/nn.4497)).
+Although these approaches have shown numerous successful applications  ([](https://doi.org/10.1038/s41593-018-0210-5);
+[](https://doi.org/10.1093/schbul/sby154)), the estimation of all the free parameters in such models presents a grand 
+challenge. 
+This hampers the ability of these techniques to effectively bridge the gap between explanations at the level of single 
+neurons and the complexity of behavior ([](https://doi.org/10.1038/nn.4497)).
 
-An alternative approach, known as "neuroconnectomism" ([](https://doi.org/10.1038/s41583-023-00705-w)) shifts the emphasis from "biophysical fidelity" of models to "cognitive/behavioral fidelity" ([](https://doi.org/10.1038/s41593-018-0210-5)), by using artificial neural networks (ANNs) that are trained to perform various tasks, as brain models.
-While this novel paradigm has already made significant contributions to expanding our understanding of the general computational principles of the brain (see [](https://doi.org/10.1038/s41583-023-00705-w)), the need to train ANNs for specific tasks inherently limits their ability to explain the spontaneous, and largely task-independent, macro-scale dynamics of neural activity  ([](https://doi.org/10.1038/s41593-019-0520-2)).
+An alternative approach, known as "neuroconnectomism" ([](https://doi.org/10.1038/s41583-023-00705-w)) shifts the 
+emphasis from "biophysical fidelity" of models to "cognitive/behavioral fidelity" 
+([](https://doi.org/10.1038/s41593-018-0210-5)), by using artificial neural networks (ANNs) that are trained to 
+perform various tasks, as brain models.
+While this novel paradigm has already made significant contributions to expanding our understanding of the general 
+computational principles of the brain (see [](https://doi.org/10.1038/s41583-023-00705-w)), the need to train ANNs for 
+specific tasks inherently limits their ability to explain the spontaneous, and largely task-independent, macro-scale 
+dynamics of neural activity  ([](https://doi.org/10.1038/s41593-019-0520-2)).
 
-In this work, we adopt a middle ground between traditional computational modeling and neuroconnectionism to investigate the phenomenon of brain dynamics.
-Similar to neuroconnectionism, our objective is not to attain a comprehensive bottom-up understanding of neural mechanisms. Therefore, we utilize an artificial neural network (ANN) as a high-level computational model of the brain ({numref}`concept`A).
-However, we do not train our ANN for a specific task, instead we set its weights empirically, with data based on the "activity flow" ([](http://dx.doi.org/10.1038/nn.4406); [](http://dx.doi.org/10.1038/s41467-017-01000-w)) across regions within the functional brain connectome, as measured with functional magnetic resonance imaging (fMRI, {numref}`concept`B).
+In this work, we adopt a middle ground between traditional computational modeling and neuroconnectionism to investigate
+the phenomenon of brain dynamics.
+Similar to neuroconnectionism, our objective is not to attain a comprehensive bottom-up understanding of neural 
+mechanisms. Therefore, we utilize an artificial neural network (ANN) as a high-level computational model of the 
+brain ({numref}`concept`A).
+However, we do not train our ANN for a specific task, instead we set its weights empirically, with data based 
+on the "activity flow" ([](http://dx.doi.org/10.1038/nn.4406); [](http://dx.doi.org/10.1038/s41467-017-01000-w)) 
+across regions within the functional brain connectome, as measured with functional magnetic resonance imaging 
+(fMRI, {numref}`concept`B).
 
-We employ this neurobiologically motivated ANN architecture, based on the established architecture of a continuous-space Hopfield network ([](https://doi.org/10.1073/pnas.79.8.2554); [](https://doi.org/10.1038/s42254-023-00595-y)).
-Within this architecture, the topology of the functional connectome naturally establishes an "energy" level for any arbitrary activation patterns and determines a trajectory towards one of the finite number of stable patterns, known as attractor states, that minimize this energy.
-In the presence of weak noise, the system does not reach equilibrium (i.e. it does not converge to an attractor state). Instead, it traverses extensive regions of the state space, with dynamics influenced by multiple attractor states, arising form the topology of the functional brain connectome ({numref}`concept`C).
+We employ this neurobiologically motivated ANN architecture, based on the established architecture of a continuous-space
+Hopfield network ([](https://doi.org/10.1073/pnas.79.8.2554); [](https://doi.org/10.1038/s42254-023-00595-y)).
+Within this architecture, the topology of the functional connectome naturally establishes an "energy" level for any 
+arbitrary activation patterns and determines a trajectory towards one of the finite number of stable patterns, known as
+attractor states, that minimize this energy.
+In the presence of weak noise, the system does not reach equilibrium (i.e. it does not converge to an attractor state).
+Instead, it traverses extensive regions of the state space, with dynamics influenced by multiple attractor states, 
+arising form the topology of the functional brain connectome ({numref}`concept`C).
 Through this walk across the state space, our model also offers a natural explanation for brain state dynamics.
 
 :::{figure} figures/concept.png
 :name: concept
 **Connectome-based Hopfield networks as models of macro-scale brain dynamics.** <br/><br/>
-**A** Hopfield artificial neural networks (ANNs)  are a form of recurrent ANNs that serve as content-addressable ("associative") memory systems. Hopfield networks can be trained to store a finite number of patterns (e.g. via Hebbian learning). During the training procedure, the weights of the Hopfield ANN are trained so that the stored patterns become stable attractor states of the network. Thus, when the trained network is presented partial or noisy variations of the stored patterns, it can effectively reconstruct the original pattern via an iterative relaxation procedure that converges to the attractor states.
-**B** We consider regions of the brain as nodes of a Hopfield network. Instead of training the Hopfield network to specific tasks, we use the set its weights empirically, with the interregional activity flow estimated via functional brain connectivity. Following form the strong analogies between the relaxation rule of Hopfield networks and the activity flow principle that links activity to connectivity in brain networks, we propose the constructed connectome-based Hopfield (CBH) network as a computational model for macro-scale brain dynamics.  **C** The proposed computational framework assigns an energy level, an attractor state and a position in a low-dimensional embedding to brain activation patterns. Additionally, it models how the entire state-space of viable activation patterns is restricted by the dynamics of the system and how alterations in activity and/or connectivity modify these dynamics.
+**A** Hopfield artificial neural networks (ANNs)  are a form of recurrent ANNs that serve as content-addressable 
+("associative") memory systems. Hopfield networks can be trained to store a finite number of patterns (e.g. via 
+Hebbian learning). During the training procedure, the weights of the Hopfield ANN are trained so that the stored 
+patterns become stable attractor states of the network. Thus, when the trained network is presented partial or noisy
+variations of the stored patterns, it can effectively reconstruct the original pattern via an iterative relaxation 
+procedure that converges to the attractor states.
+**B** We consider regions of the brain as nodes of a Hopfield network. Instead of training the Hopfield network to 
+specific tasks, we use the set its weights empirically, with the interregional activity flow estimated via functional
+brain connectivity. Following form the strong analogies between the relaxation rule of Hopfield networks and the 
+activity flow principle that links activity to connectivity in brain networks, we propose the constructed 
+connectome-based Hopfield (CBH) network as a computational model for macro-scale brain dynamics.  
+**C** The proposed computational framework assigns an energy level, an attractor state and a position in a 
+low-dimensional embedding to brain activation patterns. Additionally, it models how the entire state-space of viable
+activation patterns is restricted by the dynamics of the system and how alterations in activity and/or connectivity 
+modify these dynamics.
 :::
 
-In this simplistic yet powerful framework, both spontaneous and task-induced brain dynamics can be conceptualized as a winding, high-dimensional path that meanders on the energy landscape, restricted by the "gravitational pull" of the attractors states.
-The framework provides a generative model for both resting state and task-related brain dynamics, offering novel perspectives on the mechanistic origins of resting state brain states and task-based activation maps.
+In this simplistic yet powerful framework, both spontaneous and task-induced brain dynamics can be conceptualized as a
+winding, high-dimensional path that meanders on the energy landscape, restricted by the "gravitational pull" of the 
+attractors states.
+The framework provides a generative model for both resting state and task-related brain dynamics, offering novel 
+perspectives on the mechanistic origins of resting state brain states and task-based activation maps.
 
-In the present work, we first explore the attractor states of the functional brain connectome and construct a low-dimensional representation of the energy landscape.
-Subsequently, we rigorously test the proposed model through a series of experiments, conducted on data obtained from 8 experimental and clincial studies, encompassing a total of n≈2000 individuals.
-These analyses encompass the evaluation of robustness and replicability, testing the model's ability to reconstruct various characteristics of resting state brain dynamics, as well as its capacity to detect and explain changes induced by experimental tasks or alterations characteristic to brain disorders.
+In the present work, we first explore the attractor states of the functional brain connectome and construct a 
+low-dimensional representation of the energy landscape.
+Subsequently, we rigorously test the proposed model through a series of experiments, conducted on data obtained 
+from 8 experimental and clincial studies, encompassing a total of n≈2000 individuals.
+These analyses encompass the evaluation of robustness and replicability, testing the model's ability to reconstruct 
+various characteristics of resting state brain dynamics, as well as its capacity to detect and explain changes induced 
+by experimental tasks or alterations characteristic to brain disorders.
 
-These experiments provide converging evidence for the validity of connectome-based Hopfield networks (CBH) as models of brain dynamics, and highlight their potential to provide a fresh perspective on a wide range of research questions in basic and translational neuroscience.
+These experiments provide converging evidence for the validity of connectome-based Hopfield networks (CBH) as models 
+of brain dynamics, and highlight their potential to provide a fresh perspective on a wide range of research questions
+in basic and translational neuroscience.
 
 # Results
 
@@ -145,21 +211,9 @@ The attractor basins were visualized by using the decision boundaries obtained f
 
 ## Reconstruction of resting state brain dynamics
 
-The obtained attractor states closely resemble frequently described brain patterns. ({numref}`rest-validity`A). 
-The first pair of attractors (mapped on PC1) resemble the two complementary “macro” systems described by [](https://doi.org/10.1016/j.neuropsychologia.2007.10.003) and [](https://doi.org/10.1371/journal.pone.0115913) as well as the two primary brain states previously described by [](10.1089/brain.2018.0586). This state-pair has previously been described as an “extrinsic” system which exhibits a stronger direct connection to the immediate sensory environment and an "intrinsic" system, whose activity is primarily associated with dynamic changes in higher-level internal context and closely linked to the default mode network. 
-The other pair of attractors spans an orthogonal axis connecting regions that are commonly associated with perception–action cycles [](https://doi.org/10.1016/j.tics.2004.02.004)
 
-:::{figure} figures/face_validity.png
-:name: rest-validity
-**Connectome-based Hopfield networks reconstruct characteristics of real resting state brain activity.**  <br></br>
-**A** The four attractor states of the connectome-based Hopfiled (CBH) network from study 1 reflect brain activation patterns with a high neurobiologicasl relevance, resembling to sub-systems previously described as being associated for "internal context" (blue), "external context" (yellow), "action/execution" (red) and "perception" (green) ([](https://doi.org/10.1016/j.neuropsychologia.2007.10.003); [](https://doi.org/10.1371/journal.pone.0115913); [](10.1089/brain.2018.0586); [](https://doi.org/10.1016/j.tics.2004.02.004)). 
-**B**  The attractor states show excellent replicability in two external datasets ([study 2 and 3](#tab-samples), mean correlation *XX*).
-**C** The Hopfield projection (first two PCs of the CBH state space) explains more variance (p<0.0001) in the real resting state fMRI data than principal components derived from the real resting state data itself and generalizes better (p<0.0001) to out-of-sample data (study 2). Error bars denote 99% bootstrapped confidence intervals.
-**D** The CBH analysis accurately predicts (p<0.0001) the fraction of time spent on the basis of the four attractor states in real restring state fMRI data (study 1) and **E** reconstructs the characteristic bimodal distribution of the real resting state data.
-**F** CBH networks perform self-reconstruction: the timeseries resulting from the stochastic relaxation procedure mirror the co-variance structure of the functional connectome the CBH network was initialized with.
-:::
 
-Importantly, the discoverd attractor states demonstrate a remarkable level of replicability (mean Pearson's correlation **XX**) across the discovery datasets (study 1) and two independent replication datasets ([study 2 and 3](#tab-samples), {numref}`rest-validity`C).
+Importantly, the discovered attractor states demonstrate a remarkable level of replicability (mean Pearson's correlation **XX**) across the discovery datasets (study 1) and two independent replication datasets ([study 2 and 3](#tab-samples), {numref}`rest-validity`C).
 This is in line with the previously described, high robustness of Hopfield networks to noisy input ([](https://doi.org/10.1073/pnas.79.8.2554)) as well as their ability to tolerate corrupted weights. (**ref**, Supplementary Material **X**) and renders CBH networks highly promising for computational analyses of brain dynamics.
 
 Further analysis in study 1 showed that connectome-based Hopfield models accurately reconstructed multiple characteristics of true resting-state data.
@@ -260,15 +314,15 @@ The quantity of information exchanged between brain regions is not uniform, but 
 In this study, we have introduced a simple yet robust model that elucidates how activity propagates through the intricate network topology of the brain, thereby constraining the system's dynamics and giving rise to distinct brain states along with characteristic dynamic responses to perturbations.
 Through a series of experiments, we have demonstrated that the proposed model can effectively reconstruct and predict large-scale brain activity across diverse conditions. These findings offer unprecedented possibilities for forecasting the impact of interventions, including pharmacological treatments or non-invasive brain stimulation, on brain function.
 
-The construct validity of our model is rooted in the activity flow principle, first introduced by []( 10.1038/nn.4406). The activity flow principle states that functional connectivity between regions A and B can be conceptualized as the degree to which activity is transferred form A to B. This principle has been shown to successfully predict held out brain activations by a weighted sum of the activations of all the regions where the weights are set to the functional connectivity of those regions to the held-out region ([]( 10.1038/nn.4406); [](10.1038/s41467-017-01000-w); [](https://doi.org/10.1371/journal.pbio.3001686); [](doi:10.1126/sciadv.abf2513); [](10.1089/brain.2018.0586))).
+The construct validity of our model is rooted in the activity flow principle, first introduced by []( doi:10.1038/nn.4406). The activity flow principle states that functional connectivity between regions A and B can be conceptualized as the degree to which activity is transferred form A to B. This principle has been shown to successfully predict held out brain activations by a weighted sum of the activations of all the regions where the weights are set to the functional connectivity of those regions to the held-out region ([]( doi:10.1038/nn.4406); [](10.1038/s41467-017-01000-w); [](https://doi.org/10.1371/journal.pbio.3001686); [](doi:10.1126/sciadv.abf2513); [](doi:10.1089/brain.2018.0586))).
 
 > ToDo: latent FC-based modelling: [](https://doi.org/10.1162/netn_a_00234)
 
-Our model was born from the intuition that the repeated, iterative application of the activity flow equation results in a system showing close analogies with a type of recurrent artificial neural network, know as Hopfiled networks ([](10.1073/pnas.79.8.2554)).
+Our model was born from the intuition that the repeated, iterative application of the activity flow equation results in a system showing close analogies with a type of recurrent artificial neural network, know as Hopfiled networks ([](doi:10.1073/pnas.79.8.2554)).
 
 Hopfield networks have previously been shown to exhibit a series of characteristics that are also highly relevant for brain function, including the ability to store and recall memories (**ref**), self-repair (**ref**), a staggering robustness to noisy or corrupted inputs (**ref**) and the tendency to produce multistable dynamics organized by the "gravitational pull" of a finite number of attractor states (**ref**). 
 
-The proposed link between activity flow and Hopfield networks has an important implication: network weights must be initialized with functional connectivity values, (specifically, partial correlations, as recommend by []( 10.1038/nn.4406)), instead of applying an explicit training procedure (common in the "neuroconnectomist" approach (**ref**)) or using the structural connectome (a standard practice of conventional computational neuroscience (**ref**)).
+The proposed link between activity flow and Hopfield networks has an important implication: network weights must be initialized with functional connectivity values, (specifically, partial correlations, as recommend by []( doi:10.1038/nn.4406)), instead of applying an explicit training procedure (common in the "neuroconnectomist" approach (**ref**)) or using the structural connectome (a standard practice of conventional computational neuroscience (**ref**)).
 
 Using functional conncetome-based Hopfield (CBH) model provides a simple yet powerful framework for the mechanistic understanding of brian dynamics. Its simplicity comes with important advantages. 
 
