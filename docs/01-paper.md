@@ -263,7 +263,8 @@ with perception–action cycles
 **Connectome-based Hopfield networks reconstruct characteristics of real resting state brain activity.**<br/><br/>
 **A** The four attractor states of the connectome-based Hopfiled (CBH) network from study 1 reflect brain activation 
 patterns with a high neurobiologicasl relevance, resembling to sub-systems previously described as being associated for
-"internal context" (blue), "external context" (yellow), "action/execution" (red) and "perception" (green) (; ; ; ). 
+"internal context" (blue), "external context" (yellow), "action/execution" (red) and "perception" (green)  
+{cite:p}`golland2008data; cioli2014differences; chen2018human; fuster2004upper`.
 **B** The attractor states show excellent replicability in two external datasets (study 2 and 3, mean correlation 0.93). 
 **C** The Hopfield projection (first two PCs of the CBH state space) explains more variance (p<0.0001) in the real 
 resting state fMRI data than principal components derived from the real resting state data itself and generalizes 
@@ -275,141 +276,305 @@ states in real restring state fMRI data (study 1) and
 mirror the co-variance structure of the functional connectome the CBH network was initialized with. 
 :::
 
-Importantly, the discovered attractor states demonstrate a remarkable level of replicability (mean Pearson's correlation 0.93) across the discovery datasets (study 1) and two independent replication datasets ([study 2 and 3](#tab-samples), {numref}`rest-validity`C).
-This is in line with the previously described, high robustness of Hopfield networks to noisy input ([](https://doi.org/10.1073/pnas.79.8.2554)) as well as their ability to tolerate corrupted weights. (**ref**, Supplementary Material **X**) and renders CBH networks highly promising for computational analyses of brain dynamics.
+Importantly, the discovered attractor states demonstrate a remarkable level of replicability (mean Pearson's 
+correlation 0.93) across the discovery datasets (study 1) and two independent replication datasets 
+([study 2 and 3](#tab-samples), {numref}`rest-validity`C). This is in line with the previously described, high 
+robustness of Hopfield networks to noisy input {cite:p}`hopfield1982neural` as well as their ability to tolerate 
+corrupted weights. (**ref**, Supplementary Material **X**) and renders CBH networks highly promising for computational 
+analyses of brain dynamics.
 
-Further analysis in study 1 showed that connectome-based Hopfield models accurately reconstructed multiple characteristics of true resting-state data.
-First, the Hopfield projection accounted for a substantial amount of variance in the real resting-state fMRI data in study 1 (mean $R^2=0.15$) and generalized well to study 2 (mean $R^2=0.13$) and study 3 (mean $R^2=0.12$) ({numref}`rest-validity`E).
-Remarkably, the explained variance of the Hopfield projection significantly exceeded that of a PCA performed directly on the real resting-state fMRI data itself.({numref}`rest-validity`E).
+Further analysis in study 1 showed that connectome-based Hopfield models accurately reconstructed multiple 
+characteristics of true resting-state data. First, the Hopfield projection accounted for a substantial amount of 
+variance in the real resting-state fMRI data in study 1 (mean $R^2=0.15$) and generalized well to study 2 
+(mean $R^2=0.13$) and study 3 (mean $R^2=0.12$) ({numref}`rest-validity`E). Remarkably, the explained variance of the 
+Hopfield projection significantly exceeded that of a PCA performed directly on the real resting-state fMRI data itself
+({numref}`rest-validity`E).
 
-Second, CBH analyses accurately reconstruts true resting state brain state dynamics.
-During stochastic relaxation, the CBH network spends approximately three-quarters of the time on the basis of the first two attractor states, with an equal distribution between them. 
-The remaining one-quarter of the time is spent on the basis of the second pair of attractor states, also equally distributed.
-This ratios match the properties of real resting state data very closely. We obtained normalized and cleaned mean timeseries in $m=122$ regions from all participants in study 1 and calculated the attractor state of each time-frame via the CBH network. We observed highly similar temporal occupancies to those predicted by the model ($\Chi^2$-test with the null hypothesis of uniform occupancies: p<0.00001, {numref}`rest-validity`B).
+Second, CBH analyses accurately reconstruts true resting state brain state dynamics. During stochastic relaxation, the
+CBH network spends approximately three-quarters of the time on the basis of the first two attractor states, with an 
+equal distribution between them. The remaining one-quarter of the time is spent on the basis of the second pair of 
+attractor states, also equally distributed. This ratios match the properties of real resting state data very closely. 
+We obtained normalized and cleaned mean timeseries in $m=122$ regions from all participants in study 1 and calculated 
+the attractor state of each time-frame via the CBH network. We observed highly similar temporal occupancies to those 
+predicted by the model ($\Chi^2$-test with the null hypothesis of uniform occupancies: p<0.00001, 
+{numref}`rest-validity`B).
 
-The validity of the CBH model extends beyond the accurate reconstruction of brain state temporal occupancies. It successfully reproduces the bimodal distribution observed in the real resting-state fMRI data when projected onto the Hopfield projection ({numref}`rest-validity`F and {numref}`attractors`E). These findings suggest that brain dynamics are indeed governed by a limited number of attractor states that emerge from the flow of activity across functional connectivity networks.
+The validity of the CBH model extends beyond the accurate reconstruction of brain state temporal occupancies. It 
+successfully reproduces the bimodal distribution observed in the real resting-state fMRI data when projected onto the 
+Hopfield projection ({numref}`rest-validity`F and {numref}`attractors`E). These findings suggest that brain dynamics 
+are indeed governed by a limited number of attractor states that emerge from the flow of activity across functional 
+connectivity networks.
 
-Finally, during the stochastic relaxation procedure, CBH models were found to generate regional time series that preserve the partial correlation structure of the real functional connectome used for network initialization. 
-This important result indicates that a dynamic system in which activity flows across nodes of a complex network inevitably "leaks" its underlying structure into the activity time series, providing a high level of construct validity for the proposed approach ({numref}`rest-validity`D),
+Finally, during the stochastic relaxation procedure, CBH models were found to generate regional time series that 
+preserve the partial correlation structure of the real functional connectome used for network initialization. This 
+important result indicates that a dynamic system in which activity flows across nodes of a complex network inevitably 
+"leaks" its underlying structure into the activity time series, providing a high level of construct validity for the 
+proposed approach ({numref}`rest-validity`D).
 
-The ability of the connectome-based Hopfield model to reconstruct all these characteristics of real data is remarkable, especially considering that the model was neither trained to reconstruct nor informed about any spatial (bi-model distribution, explanatory performance) or temporal patterns (temporal state occupancy) of the brain. 
+The ability of the connectome-based Hopfield model to reconstruct all these characteristics of real data is remarkable, 
+especially considering that the model was neither trained to reconstruct nor informed about any spatial (bi-modal 
+distribution, explanatory performance) or temporal patterns (temporal state occupancy) of the brain. 
 
-The CBH model was solely provided with the functional connectome as initialization and constraint during stochastic relaxation. The model's ability to accurately reconstruct characteristics of resting-state brain dynamics, which are not explicitly encoded in the connectome, strongly suggests that it captures essential relationships between the topology of the brain's connectome and the dynamics of its activation. 
+The CBH model was solely provided with the functional connectome as initialization and constraint during stochastic 
+relaxation. The model's ability to accurately reconstruct characteristics of resting-state brain dynamics, which are 
+not explicitly encoded in the connectome, strongly suggests that it captures essential relationships between the 
+topology of the brain's connectome and the dynamics of its activation. 
 
 ## An explanatory framework for task-based brain activity
 
-The proposed framework offers a natural account for how activation patterns in the brain dynamically emerge form the underlying functional connectivity. To illustrate this, we obtained task-based fMRI data from a study by [](https://doi.org/10.1371/journal.pbio.1002036) ([study 4](#tab-samples), n=33, see {numref}`rest-validity`), investigating the neural correlates of pain and its self-regulation.
-We found that time-frames obtained from periods with pain stimulation (taking into account hemodynamics, see Methods for details) locate significantly differently on the Hopfield projection than time-frames obtained from periods without pain stimulation (permutation test, p<0.001, {numref}`task-validity`A, left). 
-Energies, as defined by the Hopfield model, were also significantly different between the two conditions (permutation test, p<0.001), with higher energies during pain stimulation.
+The proposed framework offers a natural account for how activation patterns in the brain dynamically emerge form the 
+underlying functional connectivity. To illustrate this, we obtained task-based fMRI data from a study by 
+{cite:p}`woo2015distinct` ([study 4](#tab-samples), n=33, see {numref}`rest-validity`), investigating the neural 
+correlates of pain and its self-regulation. We found that time-frames obtained from periods with pain stimulation 
+(taking into account hemodynamics, see Methods for details) locate significantly differently on the Hopfield projection 
+than time-frames obtained from periods without pain stimulation (permutation test, p<0.001, {numref}`task-validity`A, 
+left). Energies, as defined by the Hopfield model, were also significantly different between the two conditions 
+(permutation test, p<0.001), with higher energies during pain stimulation.
 
-When participants were instructed to up- or down-regulate their pain sensation (resulting in increased and decreased pain reports and differential brain activity in the nucleus accumbens, NAc, see [](https://doi.org/10.1371/journal.pbio.1002036) details) we observed further changes of the location of momentary brain states on the Hopfield-projection (permutation test, p<0.001, {numref}`task-validity`A, right).
-Interestingly, self-regulation did not manifest in significant energy changes (permutation test, p=0.36). 
+When participants were instructed to up- or down-regulate their pain sensation (resulting in increased and decreased 
+pain reports and differential brain activity in the nucleus accumbens, NAc, (see {cite:p}`woo2015distinct` for details) 
+we observed further changes of the location of momentary brain states on the Hopfield-projection (permutation test, 
+p<0.001, {numref}`task-validity`A, right). Interestingly, self-regulation did not manifest in significant energy changes
+(permutation test, p=0.36). 
 
 :::{figure} figures/task_validity.png
 :name: task-validity
 **Empirical Hopfield-networks reconstruct real task-based brain activity.** <br></br>
-**A** Functional MRI time-frames during pain stimulation from [study 4](#tab-samples) (second Hopfiled projection plot) and self-regulation (third and fourth) locate significantly differently on the Hopfield projection than brain states during rest (first projection, permutation test, p<0.001 for all). Energies, as defined by the Hopfield model, are also significantly different between rest and the pain conditions (permutation test, p<0.001), with higher energies during pain stimulation. Triangles denote participant-level mean activations in the various blocks (corrected for hemodynamics). Circle plots show the directions of the change for each individual (points) as well as the mean direction across participants (arrow), as compared to the reference state (downregulation for the last circle plot, rest for all other circle plots).
-**B** The average difference between the characteristic directions of the single time-frames on the Hopfield projection reveal a non-linear flow difference between pain the brain dynamics during pain and rest (left). When introducing weak pain-related signal in the CBH network during stochastic relaxation, it accurately reproduces these non-linear flow differences (right).
-**C** Similarly simulating activity in the nucleaus accumbens (NAc) reconstructs a non-linear flow difference between up- and downregulation (left). When introducing weak self-regulation-related signal similar to the observed dynamics (characterized by NAc activation differences, as observed by [](https://doi.org/10.1371/journal.pbio.1002036).
-**D** Schematic representation of brain dynamics during pain and its up- and downregulation, visualized on the Hopfiled projection. Pain shifts spontanous brain dynamics towards the "action" subsystem, converging to a putative "ghost attractor of pain". Up-regulation by NAc de-activation exerts force towards a similar dircetionm while down-regulation by NAc activation exhibist an opposite effect on brain dynamics, leading to the brain less frequent "visiting" pain-associated states.
-**E** Visualizing meta-analyitic activation maps on the Hopfiled projection informs our theoretical interpretative framework 
-**F**  for spontaneous and task-based brain dynamics. In the proposed framework, taks-based activity is not a mere response to external stimuli in certain brain locations but a perturbation of the brain's charcteristic dynamic trajectories. In this framework, conventional task-based fMRI analyses capture mean differences of the whole brain dyanmics, resulting in the widely reported focal "activation maps" thought to be specific to various taks and stimuli. In the CBH framework, the brain's characteristic trajectories are constrained by the underlying functional connectivity and only perturbed by external inpout, rather than predestinated.
+**A** Functional MRI time-frames during pain stimulation from [study 4](#tab-samples) (second Hopfiled projection plot)
+and self-regulation (third and fourth) locate significantly differently on the Hopfield projection than brain states 
+during rest (first projection, permutation test, p<0.001 for all). Energies, as defined by the Hopfield model, are also
+significantly different between rest and the pain conditions (permutation test, p<0.001), with higher energies during 
+pain stimulation. Triangles denote participant-level mean activations in the various blocks (corrected for 
+hemodynamics). Circle plots show the directions of the change for each individual (points) as well as the mean direction
+across participants (arrow), as compared to the reference state (downregulation for the last circle plot, rest for all 
+other circle plots).
+**B** The average difference between the characteristic directions of the single time-frames on the Hopfield projection 
+reveal a non-linear flow difference between pain the brain dynamics during pain and rest (left). When introducing weak 
+pain-related signal in the CBH network during stochastic relaxation, it accurately reproduces these non-linear flow 
+differences (right).
+**C** Similarly simulating activity in the nucleaus accumbens (NAc) reconstructs a non-linear flow difference between 
+up- and downregulation (left). When introducing weak self-regulation-related signal similar to the observed dynamics 
+(characterized by NAc activation differences, as observed by {cite:p}`woo2015distinct`.
+**D** Schematic representation of brain dynamics during pain and its up- and downregulation, visualized on the Hopfield
+projection. Pain shifts spontanous brain dynamics towards the "action" subsystem, converging to a putative "ghost 
+attractor of pain". Up-regulation by NAc de-activation exerts force towards a similar dircetionm while down-regulation
+by NAc activation exhibist an opposite effect on brain dynamics, leading to the brain less frequent "visiting" 
+pain-associated states.
+**E** Visualizing meta-analyitic activation maps on the Hopfiled projection informs our theoretical interpretative 
+framework 
+**F**  for spontaneous and task-based brain dynamics. In the proposed framework, taks-based activity is not a mere 
+response to external stimuli in certain brain locations but a perturbation of the brain's charcteristic dynamic 
+trajectories. In this framework, conventional task-based fMRI analyses capture mean differences of the whole brain 
+dyanmics, resulting in the widely reported focal "activation maps" thought to be specific to various taks and stimuli. 
+In the CBH framework, the brain's characteristic trajectories are constrained by the underlying functional connectivity 
+and only perturbed by external inpout, rather than predestinated.
 :::
 
-These results provide an intuitive account for how the underlying functional connectivity of the brain can give rise to different activation patterns, depending on the current (extrinsic or intrinsic) input. 
-In the CBH framework, change in input (i.e. a task or stimulation) does not simply switch to the brain into a distinct "mode" of operation but acts as a perturbation of the system's dyanmics, resulting in mean activations changes that are only reliable measurable over an extended period of time, as done by conventional task-based fMRI analyses. 
+These results provide an intuitive account for how the underlying functional connectivity of the brain can give rise to
+different activation patterns, depending on the current (extrinsic or intrinsic) input. In the CBH framework, change in
+input (i.e. a task or stimulation) does not simply switch to the brain into a distinct "mode" of operation but acts as 
+a perturbation of the system's dyanmics, resulting in mean activations changes that are only reliable measurable over
+an extended period of time, as done by conventional task-based fMRI analyses. 
 
-The proposed framework offers much more than visualization and inference of resting state and task based data on the Hopfield projection.
-It provides a generative model for observed activity changes, enabling the prediction of brain activity under different conditions.
-To illustrate this, we used the CBHs model to simulate brain activity during pain stimulation and self-regulation.
-First, we registered the frame-to-frame transitions in the real fMRI data for all four conditions: rest, pain without self-regulation, downregulation, and upregulation. We then transformed these transitions into the Hopfield embedding, resulting in two-dimensional vectors on the Hopfield projection for each transition.
+The proposed framework offers much more than visualization and inference of resting state and task based data on the 
+Hopfield projection. It provides a generative model for observed activity changes, enabling the prediction of brain 
+activity under different conditions. To illustrate this, we used the CBHs model to simulate brain activity during pain
+stimulation and self-regulation. First, we registered the frame-to-frame transitions in the real fMRI data for all four
+conditions: rest, pain without self-regulation, downregulation, and upregulation. We then transformed these transitions
+into the Hopfield embedding, resulting in two-dimensional vectors on the Hopfield projection for each transition.
 
-Next, we evaluated the average direction in different segments of the projection on a 6x6 grid. Subsequently, we computed the difference between the mean directions observed during rest and pain (without regulation, {numref}`task-validity`B, left side), as well as between down- and upregulation ({numref}`task-validity`C, left side).
-This analysis unveiled non-linear trajectory patterns, indicating the most probable direction the brain follows from a specific state (activity pattern) in a particular condition (pain without self-regulation or upregulation), in comparison to the reference state (rest and downregulation, respectively).
-In the case of pain versus rest, brain activity tends to gravitate towards a "ghost attractor" situated near the Hopfield projection of a typical pain activation map (see e.g. {numref}`task-validity`E). In terms of attractor states, this belongs to the basin of attractor corresponding to action/execution. In case of up vs. downregulation, brain activity is pulled generally towards a similar direction, but with a lack of a clear ghost attractor, potentially resulting in more extreme states.
+Next, we evaluated the average direction in different segments of the projection on a 6x6 grid. Subsequently, we 
+computed the difference between the mean directions observed during rest and pain (without regulation, 
+{numref}`task-validity`B, left side), as well as between down- and upregulation ({numref}`task-validity`C, left side).
+This analysis unveiled non-linear trajectory patterns, indicating the most probable direction the brain follows from a 
+specific state (activity pattern) in a particular condition (pain without self-regulation or upregulation), in 
+comparison to the reference state (rest and downregulation, respectively). In the case of pain versus rest, brain 
+activity tends to gravitate towards a "ghost attractor" situated near the Hopfield projection of a typical pain 
+activation map (see e.g. {numref}`task-validity`E). In terms of attractor states, this belongs to the basin of 
+attractor corresponding to action/execution. In case of up vs. downregulation, brain activity is pulled generally 
+towards a similar direction, but with a lack of a clear ghost attractor, potentially resulting in more extreme states.
 
-Next, our objective was to evaluate the extent to which the proposed framework can reconstruct these non-linear dynamics.
-To simulate the alterations in brain dynamics during pain stimulation, we acquired a meta-analytic pain activation map ([](10.1038/s41467-021-21179-3)) and incorporated it as an additional signal, along with Gaussian noise, during the stochastic relaxation procedure. 
-While incorporating such a signal naturally induces a minor linear shift on the Hopfield projection for each state generated during the stochastic relaxation procedure, this alone could only marginally explain the observed nonlinear dynamics in the real data (Supplementary material X). 
-After conducting a coarse-grained optimization across five different signal-to-noise (SNR) values (logarithmically spaced between 0.001 and 0.1), we found that by adding a minimal amount of signal (SNR = 0.01), the CbH model achieved a remarkably precise reconstruction of the observed non-linear disparities in brain dynamics between the pain and rest conditions, encompassing the characteristic pain related "ghost attractor". (Spearman's $\rho$ = 0.42, p=0.003, {numref}`task-validity`B, right side).
+Next, our objective was to evaluate the extent to which the proposed framework can reconstruct these non-linear 
+dynamics. To simulate the alterations in brain dynamics during pain stimulation, we acquired a meta-analytic pain 
+activation map {cite:p}`zunhammer2021meta` and incorporated it as an additional signal, along with Gaussian noise, 
+during the stochastic relaxation procedure. While incorporating such a signal naturally induces a minor linear shift 
+on the Hopfield projection for each state generated during the stochastic relaxation procedure, this alone could only 
+marginally explain the observed nonlinear dynamics in the real data (Supplementary material X). After conducting a 
+coarse-grained optimization across five different signal-to-noise (SNR) values (logarithmically spaced between 
+0.001 and 0.1), we found that by adding a minimal amount of signal (SNR = 0.01), the CbH model achieved a remarkably 
+precise reconstruction of the observed non-linear disparities in brain dynamics between the pain and rest conditions,
+encompassing the characteristic pain related "ghost attractor". (Spearman's $\rho$ = 0.42, p=0.003, 
+{numref}`task-validity`B, right side).
 
-The same model was also able to reconstruct the observed non-linear differences in brain dynamics between the up- and downregulation conditions (Spearman's $\rho$ = 0.59, p=0.004) without any further optimization (SNR=0.01, {numref}`task-validity`C, right side).
-The only change we made to the model was the addition (downregulation) or subtraction (upregulation) of activation in the NAc (the region in which [](https://doi.org/10.1371/journal.pbio.1002036) observed significant changes between up- and downregulation).
+The same model was also able to reconstruct the observed non-linear differences in brain dynamics between the up- and 
+downregulation conditions (Spearman's $\rho$ = 0.59, p=0.004) without any further optimization (SNR=0.01, 
+{numref}`task-validity`C, right side). The only change we made to the model was the addition (downregulation) or 
+subtraction (upregulation) of activation in the NAc (the region in which {cite:p}`woo2015distinct` observed significant
+changes between up- and downregulation).
 
-These findings offer a novel insight into the neural mechanisms underlying pain and its self-regulation, providing a mechanistic explanation for the involvement of both nociception-related regions and the NAc (nucleus accumbens) in pain regulation. ({numref}`task-validity`D).
-Additionally, these findings emphasize that the conceptual differentiation between resting and task states may, to a considerable extent, be an artificial dichotomy. Instead, the brain remains in a continuous state of flux, which is not radically altered by task states, even in the presence of highly salient stimuli such as pain.
+These findings offer a novel insight into the neural mechanisms underlying pain and its self-regulation, providing a 
+mechanistic explanation for the involvement of both nociception-related regions and the NAc (nucleus accumbens) in pain
+regulation. ({numref}`task-validity`D). Additionally, these findings emphasize that the conceptual differentiation 
+between resting and task states may, to a considerable extent, be an artificial dichotomy. Instead, the brain remains
+in a continuous state of flux, which is not radically altered by task states, even in the presence of highly salient 
+stimuli such as pain.
 
 % -> discussion
 
-To provide a comprehensive picture on how other tasks map onto the Hopfield projection, we obtained various task-based meta-analytic activation maps from Neurosynth (see Supplementary material X for details) and plotted them on the Hopfield projection ({numref}`task-validity`E). This analysis demonstrated that the Hopfield projection can effectively visualize and quantify the dynamics of various cognitive processes, encompassing sensory, motor, cognitive, and social domains. Furthermore, the analysis revealed that the two primary axes of the projection correspond well to the differentiation between internal and external context, as well as the perception-action axis, respectively.
+To provide a comprehensive picture on how other tasks map onto the Hopfield projection, we obtained various task-based
+meta-analytic activation maps from Neurosynth (see Supplementary material X for details) and plotted them on the 
+Hopfield projection ({numref}`task-validity`E). This analysis demonstrated that the Hopfield projection can effectively
+visualize and quantify the dynamics of various cognitive processes, encompassing sensory, motor, cognitive, and social
+domains. Furthermore, the analysis revealed that the two primary axes of the projection correspond well to the 
+differentiation between internal and external context, as well as the perception-action axis, respectively.
 
-In this coordinate system, visual processing is labeled "external-perception", sensory-motor processes "external-active", language, verbal cognition and working memory is labelled "internal-active" and long-term memory as well as social and autobiographic narrative fall into the "internal-perception" regime ({numref}`task-validity`F).
+In this coordinate system, visual processing is labeled "external-perception", sensory-motor processes 
+"external-active", language, verbal cognition and working memory is labelled "internal-active" and long-term memory 
+as well as social and autobiographic narrative fall into the "internal-perception" regime ({numref}`task-validity`F).
 
-These results highlight a very powerful feature of the proposed generative framework, namely that it can be used to simulate and predict brain activity under different conditions. Predicting the effect of lower or higher level of activity in certain regions, or lower or higher connectivity among them, on global brain dynamics and responses to various tasks provides unprecedented opportunities for forecasting the effect of interventions, such as pharmacological or non-invasive brain stimulation, on brain function.
+These results highlight a very powerful feature of the proposed generative framework, namely that it can be used to 
+simulate and predict brain activity under different conditions. Predicting the effect of lower or higher level of 
+activity in certain regions, or lower or higher connectivity among them, on global brain dynamics and responses to 
+various tasks provides unprecedented opportunities for forecasting the effect of interventions, such as pharmacological 
+or non-invasive brain stimulation, on brain function.
 
 ## Clinical relevance
 
-In our final analysis, we provide a brief outlook towards the potential clinical applications of CBH analysis. We analyzed three large public clinical databases as provided by the Autism Brain Imaging Data Exchange ([study 6](#tab-samples): ABIDE, [](doi:10.1038/mp.2013.78)), the Centers of Biomedical Research Excellence ([study 7](#tab-samples): COBRE, [](doi:10.1007/s12021-017-9338-9)) and the Alzheimer’s Disease Neuroimaging Initiative ([study 8](#tab-samples): ADNI, [](doi: 10.1212/WNL.0b013e3181cb3e25)).
-Resting state fMRI data of patients with autism spectrum disorder (ASD), schizophrenia (SCZ) and Alzheimer's disease (AD) was contrasted to their respective control groups (typically developing controls for ASD, healthy control participants for SCH and individuals with mild cognitive impairment (MCI), respectively).
-In all three datasets, we used the CBH model from study 1 and projected the fMRI timeseries of all involved participants onto the Hopfield projection. For each participant, we obtained the average activation of all time-frames belonging to the same attractor state (4 maps per participant) and compared these across groups with permutation tests, Bonferroni corrected across brain regions and attractor states (122*4 comparisons).
+In our final analysis, we provide a brief outlook towards the potential clinical applications of CBH analysis. We 
+analyzed three large public clinical databases as provided by the Autism Brain Imaging Data Exchange 
+([study 6](#tab-samples): ABIDE, {cite:p}`di2014autism`, the Centers of Biomedical Research Excellence 
+([study 7](#tab-samples): COBRE, {cite:p}`aine2017multimodal`) and the Alzheimer’s Disease Neuroimaging Initiative 
+([study 8](#tab-samples): ADNI, {cite:p}`petersen2010alzheimer`).
+Resting state fMRI data of patients with autism spectrum disorder (ASD), schizophrenia (SCZ) and Alzheimer's disease 
+(AD) was contrasted to their respective control groups (typically developing controls for ASD, healthy control 
+participants for SCH and individuals with mild cognitive impairment (MCI), respectively). In all three datasets, we used
+the CBH model from study 1 and projected the fMRI timeseries of all involved participants onto the Hopfield projection. 
+For each participant, we obtained the average activation of all time-frames belonging to the same attractor state 
+(4 maps per participant) and compared these across groups with permutation tests, Bonferroni corrected across brain 
+regions and attractor states (122*4 comparisons).
 
-We found several significant differences the mean attractor activation of patients as compared to the respective controls. In ASD, all four attractor activation maps showed significant differences ({numref}`clinical-validity`A, **table**), characterized by altered activation in the *precuneus, posterior congulate, sensory-motor system, posterior insula, and cerebellum*.
+We found several significant differences the mean attractor activation of patients as compared to the respective 
+controls. In ASD, all four attractor activation maps showed significant differences ({numref}`clinical-validity`A, 
+**table**), characterized by altered activation in the *precuneus, posterior congulate, sensory-motor system, 
+posterior insula, and cerebellum*.
 
-In SCZ, the most prominent differences were found in the subsystem for internal context, with elevated activity of regions that are not typically active in this state, including the *thalamus, the striatum and several cortical regions* ({numref}`clinical-validity`B, **table**). Additional activation increases in *visual and motor* areas were observed in the active inference subsystem.
+In SCZ, the most prominent differences were found in the subsystem for internal context, with elevated activity of 
+regions that are not typically active in this state, including the *thalamus, the striatum and several cortical regions*
+({numref}`clinical-validity`B, **table**). Additional activation increases in *visual and motor* areas were observed in
+the active inference subsystem.
 
-In the AD vs. MCI comparison, we found significant differences in two of the four attractor activation maps ({numref}`clinical-validity`C, **table**), indicating changes in the resting state activity of subsystems for passive inference and internal context (both of which together host long-term memory processes, see {numref}`task-validity`F). At the regional level, differences are characterized by altered activation in the *dorsolateral prefrontal cortex (DLPFC) and the cerebellum*.
+In the AD vs. MCI comparison, we found significant differences in two of the four attractor activation maps 
+({numref}`clinical-validity`C, **table**), indicating changes in the resting state activity of subsystems for passive
+inference and internal context (both of which together host long-term memory processes, see {numref}`task-validity`F).
+At the regional level, differences are characterized by altered activation in the *dorsolateral prefrontal cortex
+(DLPFC) and the cerebellum*.
 
 :::{figure} figures/state_analysis.*
 :name: clinical-validity
 **Connectome-based Hopfield analysis as a sensitive tool for the study of clinical disorders.** <br><\br>
-We quantified attractor state activations in three clincal datasets (([studies 6, 7 and 8](#tab-samples)) as the individual-level mean activation of all time-frames belonging to the same attractor state. 
-CBH analysis of attractor state activations revealed significant differences in all three datasets.
-**A** Comparison of individuals with autism spectrum disorder (ASD) and typically developing controls (TD) is characterized by **todo**.
-**B** The most prominent Schizophrenia (SCZ)-related differences (as compared to healthy controls (HC) are related to the activity of the internalalization-related subsystem. **todo** 
-**C** Alzheimer's disease (AD) is characterized by altered activation in **todo** the subsystems for passive inference and internal context (both of which together host long-term memory processes, see {numref}`task-validity`F). All results are corrected for multiple comparisons across brain regions and attractor states (122*4 comparisons) with Bonferroni-correction. See Table **X** for detailed results.
+We quantified attractor state activations in three clincal datasets (([studies 6, 7 and 8](#tab-samples)) as the 
+individual-level mean activation of all time-frames belonging to the same attractor state. CBH analysis of attractor 
+state activations revealed significant differences in all three datasets.
+**A** Comparison of individuals with autism spectrum disorder (ASD) and typically developing controls (TD) is 
+characterized by **todo**.
+**B** The most prominent Schizophrenia (SCZ)-related differences (as compared to healthy controls (HC) are related to 
+the activity of the internalalization-related subsystem. **todo** 
+**C** Alzheimer's disease (AD) is characterized by altered activation in **todo** the subsystems for passive inference 
+and internal context (both of which together host long-term memory processes, see {numref}`task-validity`F). All 
+results are corrected for multiple comparisons across brain regions and attractor states (122*4 comparisons) 
+with Bonferroni-correction. See Table **X** for detailed results.
 :::
 
 # Discussion
 
-Regions of the brain engage in an ongoing exchange of information, leading to co-activations that are commonly known as functional connectivity.
-The quantity of information exchanged between brain regions is not uniform, but rather exhibits substantial variation among different pairs of regions, encompassing the intricate network referred to as the functional connectome.
-In this study, we have introduced a simple yet robust model that elucidates how activity propagates through the intricate network topology of the brain, thereby constraining the system's dynamics and giving rise to distinct brain states along with characteristic dynamic responses to perturbations.
-Through a series of experiments, we have demonstrated that the proposed model can effectively reconstruct and predict large-scale brain activity across diverse conditions. These findings offer unprecedented possibilities for forecasting the impact of interventions, including pharmacological treatments or non-invasive brain stimulation, on brain function.
+Regions of the brain engage in an ongoing exchange of information, leading to co-activations that are commonly known as
+functional connectivity. The quantity of information exchanged between brain regions is not uniform, but rather exhibits
+substantial variation among different pairs of regions, encompassing the intricate network referred to as the functional
+connectome. In this study, we have introduced a simple yet robust model that elucidates how activity propagates through 
+the intricate network topology of the brain, thereby constraining the system's dynamics and giving rise to distinct 
+brain states along with characteristic dynamic responses to perturbations. Through a series of experiments, we have 
+demonstrated that the proposed model can effectively reconstruct and predict large-scale brain activity across diverse
+conditions. These findings offer unprecedented possibilities for forecasting the impact of interventions, including 
+pharmacological treatments or non-invasive brain stimulation, on brain function.
 
-The construct validity of our model is rooted in the activity flow principle, first introduced by []( doi:10.1038/nn.4406). The activity flow principle states that functional connectivity between regions A and B can be conceptualized as the degree to which activity is transferred form A to B. This principle has been shown to successfully predict held out brain activations by a weighted sum of the activations of all the regions where the weights are set to the functional connectivity of those regions to the held-out region ([]( doi:10.1038/nn.4406); [](10.1038/s41467-017-01000-w); [](https://doi.org/10.1371/journal.pbio.3001686); [](doi:10.1126/sciadv.abf2513); [](doi:10.1089/brain.2018.0586))).
+The construct validity of our model is rooted in the activity flow principle, first introduced by 
+{cite:p}`cole2016activity`. The activity flow principle states that functional connectivity between regions A and B can
+be conceptualized as the degree to which activity is transferred form A to B. This principle has been shown to 
+successfully predict held out brain activations by a weighted sum of the activations of all the regions where the 
+weights are set to the functional connectivity of those regions to the held-out region 
+{cite:p}`cole2016activity; ito2017cognitive; mill2022network; hearne2021activity; chen2018human`.
 
 > ToDo: latent FC-based modelling: [](https://doi.org/10.1162/netn_a_00234)
 
-Our model was born from the intuition that the repeated, iterative application of the activity flow equation results in a system showing close analogies with a type of recurrent artificial neural network, know as Hopfiled networks ([](doi:10.1073/pnas.79.8.2554)).
+Our model was born from the intuition that the repeated, iterative application of the activity flow equation results in
+a system showing close analogies with a type of recurrent artificial neural network, know as Hopfield networks 
+{cite:p}`hopfield1982neural`.
 
-Hopfield networks have previously been shown to exhibit a series of characteristics that are also highly relevant for brain function, including the ability to store and recall memories ([]( doi: 10.1073/pnas.79.8.2554)), self-repair (**ref**), a staggering robustness to noisy or corrupted inputs ([](doi:10.1063/1.2810360)) and the tendency to produce multistable dynamics organized by the "gravitational pull" of a finite number of attractor states ([](doi:10.1038/s41583-022-00642-0)). 
+Hopfield networks have previously been shown to exhibit a series of characteristics that are also highly relevant for 
+brain function, including the ability to store and recall memories {cite:p}`hopfield1982neural`, self-repair (**ref**),
+a staggering robustness to noisy or corrupted inputs {cite:p}`hertz1991introduction` and the tendency to produce 
+multistable dynamics organized by the "gravitational pull" of a finite number of attractor states 
+{cite:p}`khona2022attractor`.
 
-The proposed link between activity flow and Hopfield networks has an important implication: network weights must be initialized with functional connectivity values, (specifically, partial correlations, as recommend by []( doi:10.1038/nn.4406)), instead of applying an explicit training procedure (common in the "neuroconnectomist" approach (**ref**)) or using the structural connectome (a standard practice of conventional computational neuroscience ([](https://doi.org/10.1016/j.neuroimage.2017.03.045))).
+The proposed link between activity flow and Hopfield networks has an important implication: network weights must be 
+initialized with functional connectivity values, (specifically, partial correlations, as recommend by 
+{cite:p}`cole2016activity`, instead of applying an explicit training procedure (common in the "neuroconnectomist" 
+approach {cite:p}`doerig2023neuroconnectionist`) or using the structural connectome (a standard practice of conventional
+computational neuroscience {cite:p}`cabral2017functional`.
 
-Using functional conncetome-based Hopfield (CBH) model provides a simple yet powerful framework for the mechanistic understanding of brian dynamics. Its simplicity comes with important advantages. 
+Using functional conncetome-based Hopfield (CBH) model provides a simple yet powerful framework for the mechanistic 
+understanding of brian dynamics. Its simplicity comes with important advantages. 
 
-First, increasing model complexity results in an exponential explosion of the parameter space. Although complex, fine-grained computation models hold promise a full-blown understanding, they very easily overfit real data (**ref**). The basic CBH approach has only two hyperparameters (temperature and noise) and produce fairly consistent behavior on a wide range of parameter values. To demonstrate the power of simplicity, in the present work, we deliberately minimized fine-tuning of any free parameters. We fixed the temperature parameter at a value that robustly provides 4 attractor states and used a single noise level for all experiments (selected with a coarse optimization procedure to approximately mimic the distribution of real data). 
+First, increasing model complexity results in an exponential explosion of the parameter space. Although complex, 
+fine-grained computation models hold promise a full-blown understanding, they very easily overfit real data (**ref**). 
+The basic CBH approach has only two hyperparameters (temperature and noise) and produce fairly consistent behavior on a
+wide range of parameter values. To demonstrate the power of simplicity, in the present work, we deliberately minimized
+fine-tuning of any free parameters. We fixed the temperature parameter at a value that robustly provides 4 attractor 
+states and used a single noise level for all experiments (selected with a coarse optimization procedure to approximately
+mimic the distribution of real data). 
 
-Second, increasing complexity means increasing burden in terms of interpretability. The CBH model establishes a simple and direct link between two most popular measures of brain function: functional connectivity and brain activity. This link is not only conceptual, but also mathematical, and allows us to investigate and forecast changes of the system's dyanmics in response to perturbations of both activity and connectivity. 
+Second, increasing complexity means increasing burden in terms of interpretability. The CBH model establishes a simple 
+and direct link between two most popular measures of brain function: functional connectivity and brain activity. This 
+link is not only conceptual, but also mathematical, and allows us to investigate and forecast changes of the system's 
+dyanmics in response to perturbations of both activity and connectivity. 
 
-In this initial investigation, we further reduced complexity by restricting the analysis to a simplified 2-dimensional embedding of the state-space generated by the CBH approach, which we refer to as the Hopfield projection. This projection is a powerful tool for the visualization of the CBH model's dynamics, and allows for a direct comparison with the dynamics of the original brain activity. 
+In this initial investigation, we further reduced complexity by restricting the analysis to a simplified 2-dimensional 
+embedding of the state-space generated by the CBH approach, which we refer to as the Hopfield projection. This 
+projection is a powerful tool for the visualization of the CBH model's dynamics, and allows for a direct comparison 
+with the dynamics of the original brain activity. 
 
-However, the Hopfield projection only conveys a small proportion of the richness of the full state-space dynamics reconstructed by the CBH model.
-Investigating higher-dimensional dynamics, fine-tuned hyperparameters, the effect of different initializations and perturbations is an important direction for future work, with the potential to further improve the model's accuracy and usefulness.
+However, the Hopfield projection only conveys a small proportion of the richness of the full state-space dynamics 
+reconstructed by the CBH model. Investigating higher-dimensional dynamics, fine-tuned hyperparameters, the effect of 
+different initializations and perturbations is an important direction for future work, with the potential to further 
+improve the model's accuracy and usefulness.
 
-Given these intentional simplifications, it is remarkable, if not surprising, how accurately the CBH model is able to reconstruct and predict brain dynamics under a wide range of conditions. Next to accurately reconstructing the distribution of, and the time spent in, different brain states during resting state, its superiority in explaining, and generalizing to, resting state brain activation patterns over principal components derived from the same data is particularly striking.
-The question arises, how can a relatively simple model, which is informed about empirical brain dynamics only through the functional connectome, be so powerful? 
-A possible answer is that, while empirical data (and its principal components) are corrupted by noise and low sampling rate, 
-the highly noise tolerant nature and the self-repair properties of the CBH architecture allow it to capture and reconstruct the basic principles of the underlying dynamics.
+Given these intentional simplifications, it is remarkable, if not surprising, how accurately the CBH model is able to 
+reconstruct and predict brain dynamics under a wide range of conditions. Next to accurately reconstructing the 
+distribution of, and the time spent in, different brain states during resting state, its superiority in explaining, and
+generalizing to, resting state brain activation patterns over principal components derived from the same data is 
+particularly striking. The question arises, how can a relatively simple model, which is informed about empirical brain
+dynamics only through the functional connectome, be so powerful? A possible answer is that, while empirical data (and 
+its principal components) are corrupted by noise and low sampling rate, the highly noise tolerant nature and the 
+self-repair properties of the CBH architecture allow it to capture and reconstruct the basic principles of the 
+underlying dynamics.
 
-The noise-tolerance of the proposed architecture also explains the high replicability of CBH attractors across different datasets (study 2 and 3).
-The observed level of replicability allowed us to re-use the CBH model constructed with the connectome of study 1 for all subsequent studies, without any further fine-tuning or study-specific parameter optimization.
+The noise-tolerance of the proposed architecture also explains the high replicability of CBH attractors across different
+datasets (study 2 and 3). The observed level of replicability allowed us to re-use the CBH model constructed with the 
+connectome of study 1 for all subsequent studies, without any further fine-tuning or study-specific parameter 
+optimization.
 
-The connectome obtained form study 1 was also used to evaluate the model's ability to capture and forecast task-induced brain dynamics in study 4 and 5. In these analyses, the CBH model was not only able to capture participant-level activity changes induced by pain and self-regulation (showing significant differences on the Hopfield projection and in terms of state energy), but also accurately predicted the non-linear changes in activity flow induced by characteristic activity changes.
+The connectome obtained form study 1 was also used to evaluate the model's ability to capture and forecast task-induced
+brain dynamics in study 4 and 5. In these analyses, the CBH model was not only able to capture participant-level 
+activity changes induced by pain and self-regulation (showing significant differences on the Hopfield projection and in
+terms of state energy), but also accurately predicted the non-linear changes in activity flow induced by characteristic
+activity changes.
 
-Brain dynamics can not only be perturbed by task or other types of experimental or naturalistic interventions, but also by pathological alterations.
-In our analysis of clinical samples study 6-8 we found that mean attractor activations show characteristic alteration in autism spectrum disorder (ASD), Schizophrenia (SCH) and Alzheimer's disease (AD). These changes were also detectable on the Hopfield projection, and were accompanied by significant changes in the state energies.
-The Hopfiled projection also allowed us to visualize the effect of different types of perturbations on the brain's attractor landscape, providing a novel perspective on the pathophysiology of these disorders.
+Brain dynamics can not only be perturbed by task or other types of experimental or naturalistic interventions, but also
+by pathological alterations. In our analysis of clinical samples study 6-8 we found that mean attractor activations show
+characteristic alteration in autism spectrum disorder (ASD), Schizophrenia (SCH) and Alzheimer's disease (AD). These 
+changes were also detectable on the Hopfield projection, and were accompanied by significant changes in the state 
+energies. The Hopfiled projection also allowed us to visualize the effect of different types of perturbations on the 
+brain's attractor landscape, providing a novel perspective on the pathophysiology of these disorders.
 
 > ToDo: more details on clinical outlook
 
@@ -419,21 +584,38 @@ The Hopfiled projection also allowed us to visualize the effect of different typ
 
 > ToDo: discuss: the CBH model is not a model of brain function, but a model of brain dynamics. It does not strice to explain various brain regions ability to perform certain computations, but the brain's characteristic trajectories, which are perturbed by tasks and other types of interventions.
 
-Together, these results open up a series of exciting opportunities for the mechanistic understanding of brain function. By its generative nature, the CBH model could foster analyses that aim at disentangling causal relationships, which are extremely difficult to infer in case of systems as complex as the brain. It could, for instance, aid the differentiation of primary causes and secondary effects of particular activity or connectivity changes in various clinical conditions.
+Together, these results open up a series of exciting opportunities for the mechanistic understanding of brain function. 
+By its generative nature, the CBH model could foster analyses that aim at disentangling causal relationships, which are
+extremely difficult to infer in case of systems as complex as the brain. It could, for instance, aid the differentiation
+of primary causes and secondary effects of particular activity or connectivity changes in various clinical conditions.
 
-Moreover, the CBH approach might provide testable predictions about the effects of interventions on brain functions, like pharmacological or non-invasive brain stimulation (e.g. transcranial magnetic or direct current stimulation, focused ultrasound) or neurofeedback.
-For instance, in the context of pain, the CBH model might be used to predict the effect of various analgesic drugs (or other treatment strategies with known neural correlates) on the individual level (e.g. based on the individual functional connectome). 
-Aiding the design of personalized medicine approaches is a particularly promising field of application for the proposed framework.
+Moreover, the CBH approach might provide testable predictions about the effects of interventions on brain functions, 
+like pharmacological or non-invasive brain stimulation (e.g. transcranial magnetic or direct current stimulation, 
+focused ultrasound) or neurofeedback.
+For instance, in the context of pain, the CBH model might be used to predict the effect of various analgesic drugs (or
+other treatment strategies with known neural correlates) on the individual level (e.g. based on the individual 
+functional connectome). Aiding the design of personalized medicine approaches is a particularly promising field of 
+application for the proposed framework.
 
-The generative nature of the proposed framework may be also used to generate synthetic brain activity data, which can be used to train and test machine learning algorithms, such as deep neural networks, for the prediction of brain activity from functional connectivity. This approach may be particularly useful in the context of clinical applications, where the amount of available data is often limited. 
+The generative nature of the proposed framework may be also used to generate synthetic brain activity data, which can 
+be used to train and test machine learning algorithms, such as deep neural networks, for the prediction of brain 
+activity from functional connectivity. This approach may be particularly useful in the context of clinical applications,
+where the amount of available data is often limited. 
 
 # Conclusion
 
-To conclude, here we have proposed a novel computational framework that accurately captures and predicts brain dynamics under a wide range of conditions.
-The framework models large-scale activity flow in the brain with a recurrent artificial neural network architecture that, instead of being trained to solve specific tasks or mimic certain dynamics, is simply initialized with the empirical functional connectome. The framework identifies biologically meaningful attractor states and provides a model for how these restrict brain dyanmics. 
-The proposed framework, referred to as the connectome-based Hopfield (CBH) model, can accurately reconstruct and predict brain dynamics under a wide range of conditions, including resting state, task-induced activity changes, and pathological alterations.
-CBH analyses provide a simple, robust, and highly interpretable computational alternative to the conventional descriptive approach to investigating brain function and establish a link between connectivity and activity.
-The generative nature of the proposed model opens up a series of exciting opportunities for future research, including novel ways of assessing causality and mechanistic understanding, and the possibility to predict the effects of various interventions, thereby paving the way for novel personalized medical approaches.
+To conclude, here we have proposed a novel computational framework that accurately captures and predicts brain dynamics
+under a wide range of conditions. The framework models large-scale activity flow in the brain with a recurrent 
+artificial neural network architecture that, instead of being trained to solve specific tasks or mimic certain dynamics,
+is simply initialized with the empirical functional connectome. The framework identifies biologically meaningful 
+attractor states and provides a model for how these restrict brain dynamics. The proposed framework, referred to as the
+connectome-based Hopfield (CBH) model, can accurately reconstruct and predict brain dynamics under a wide range of 
+conditions, including resting state, task-induced activity changes, and pathological alterations. CBH analyses provide
+a simple, robust, and highly interpretable computational alternative to the conventional descriptive approach to 
+investigating brain function and establish a link between connectivity and activity. The generative nature of the 
+proposed model opens up a series of exciting opportunities for future research, including novel ways of assessing 
+causality and mechanistic understanding, and the possibility to predict the effects of various interventions, thereby
+paving the way for novel personalized medical approaches.
 
 # Methods
 
