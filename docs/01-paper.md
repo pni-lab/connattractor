@@ -23,6 +23,9 @@ exports:
     output: exports/connattractor_manuscript.pdf
   - format: docx
     output: exports/connattractor_manuscript.docx
+
+bibliography:
+  - bibliography.bib
 ---
 +++ {"part": "key-points"}
 **Key Points:**
@@ -51,52 +54,44 @@ Brain function is characterized by the continuous activation and deactivation of
 populations.
 While the focus of related research is often on the direct mapping between changes in the activity of a single brain 
 area and a specific task or condition, in reality, regional activation never seems to occur in isolation 
-([](https://doi.org/10.1038/nn.4502)).
- ([](https://doi.org/10.1038/nn.4502)).
+{cite:p}`bassett2017network`.
+
 Irrespective of the presence or absence of explicit stimuli, brain regions appear to work in concert, giving rise to a
-rich and complex spatiotemporal fluctuation ([](https://doi.org/10.1016/j.cub.2019.06.017)).
-This fluctuation is neither random, nor stationary over time [](https://doi.org/10.1073/pnas.1216856110);
-[](https://doi.org/10.1073/pnas.1400181111).
-It exhibits quasi-periodic properties ([](https://doi.org/10.1016/j.neuroimage.2013.09.029)), with a limited number of
-recurring patterns known as "brain states" ([](https://doi.org/10.1016/j.tins.2023.04.001);
-[](https://doi.org/10.1073/pnas.1705120114); [](https://doi.org/10.1073/pnas.1216856110); 
-[](https://doi.org/10.1016/j.neuroimage.2010.05.081)).
+rich and complex spatiotemporal fluctuation {cite:p}`gutierrez2019infraslow`.
+This fluctuation is neither random, nor stationary over time {cite:p}`liu2013time; zalesky2014time`.
+It exhibits quasi-periodic properties {cite:p}`thompson2014quasi`, with a limited number of
+recurring patterns known as "brain states" {cite:p}`greene2023everyone; vidaurre2017brain; liu2013time; richiardi2011decoding`.
 
 From hidden Markov models, to point-process analyses, a wide variety of descriptive techniques have been previously 
-employed to characterize whole-brain dynamics. ([](https://doi.org/10.1073/pnas.1121329109);
-[](https://doi.org/10.1073/pnas.1705120114); [](https://doi.org/10.1073/pnas.1216856110); [](doi:10.1089/brain.2018.0586)), 
+employed to characterize whole-brain dynamics. {cite:p}`smith2012temporally; vidaurre2017brain; liu2013time; chen2018human`,
 providing accumulating evidence not only for the existence of dynamic brain states but also for their clinical 
-significance. ([](https://doi.org/10.1016/j.neuroimage.2013.05.079); [](https://doi.org/10.1073/pnas.1418031112); 
-[](10.1038/s41467-020-18717-w)). 
+significance. {cite:p}`hutchison2013dynamic; barttfeld2015signature; meer2020movie`. 
 However, the underlying driving forces remain elusive due to the descriptive nature of such studies.
 
 Brain state dynamics can be assessed with multiple techniques, such as dynamic connectivity analysis (), independent
-component analysis ([](https://doi.org/10.1073/pnas.1121329109)), hidden markov models 
-([](https://doi.org/10.1073/pnas.1705120114)), clustering [](doi:10.1089/brain.2018.0586) or point-process analyses to 
-capture co-activation patterns (CAPs, [](https://doi.org/10.1073/pnas.1216856110); 
-[](https://doi.org/10.1016/j.neuroimage.2015.01.057); [](https://doi.org/10.3389/fnsys.2013.00101); 
-[](https://doi.org/10.1038/s41467-020-18717-w)).
+component analysis {cite:p}`smith2012temporally`, hidden markov models {cite:p}`vidaurre2017brain`, 
+clustering {cite:p}`chen2018human` or point-process analyses to 
+capture co-activation patterns (CAPs, {cite:p}`liu2013time; chen2015introducing; liu2013decomposition; meer2020movie`.
 
 Questions regarding the mechanisms, that cause these remarkable dynamics, can be addressed through approaches that are 
 based on computational models, which have the potential to shift our understanding from mere associations to causal 
 explanations.
 Conventional computational approaches attempt to solve this puzzle by going all the way to the biophysical properties 
 of single neurons, and aim to construct a model of larger neural populations, or even the entire brain 
-([](https://doi.org/10.1038/nn.4497)).
-Although these approaches have shown numerous successful applications  ([](https://doi.org/10.1038/s41593-018-0210-5);
-[](https://doi.org/10.1093/schbul/sby154)), the estimation of all the free parameters in such models presents a grand 
-challenge. 
+{cite:p}`breakspear2017dynamic`.
+Although these approaches have shown numerous successful applications {cite:p}`kriegeskorte2018cognitive; heinz2019towards`,
+the estimation of all the free parameters in such models presents a grand challenge. 
 This hampers the ability of these techniques to effectively bridge the gap between explanations at the level of single 
-neurons and the complexity of behavior ([](https://doi.org/10.1038/nn.4497)).
+neurons and the complexity of behavior {cite:p}`breakspear2017dynamic`.
 
-An alternative approach, known as "neuroconnectomism" ([](https://doi.org/10.1038/s41583-023-00705-w)) shifts the 
+An alternative approach, known as "neuroconnectomism" {cite:p}`doerig2023neuroconnectionist` shifts the 
 emphasis from "biophysical fidelity" of models to "cognitive/behavioral fidelity" 
-([](https://doi.org/10.1038/s41593-018-0210-5)), by using artificial neural networks (ANNs) that are trained to 
+{cite:p}`kriegeskorte2018cognitive`, by using artificial neural networks (ANNs) that are trained to 
 perform various tasks, as brain models.
 While this novel paradigm has already made significant contributions to expanding our understanding of the general 
-computational principles of the brain (see [](https://doi.org/10.1038/s41583-023-00705-w)), the need to train ANNs for 
+computational principles of the brain (see {cite:p}`doerig2023neuroconnectionist`, the need to train ANNs for 
 specific tasks inherently limits their ability to explain the spontaneous, and largely task-independent, macro-scale 
-dynamics of neural activity  ([](https://doi.org/10.1038/s41593-019-0520-2)).
+dynamics of neural activity {cite:p}`richards2019deep`.
 
 In this work, we adopt a middle ground between traditional computational modeling and neuroconnectionism to investigate
 the phenomenon of brain dynamics.
@@ -104,12 +99,12 @@ Similar to neuroconnectionism, our objective is not to attain a comprehensive bo
 mechanisms. Therefore, we utilize an artificial neural network (ANN) as a high-level computational model of the 
 brain ({numref}`concept`A).
 However, we do not train our ANN for a specific task, instead we set its weights empirically, with data based 
-on the "activity flow" ([](http://dx.doi.org/10.1038/nn.4406); [](http://dx.doi.org/10.1038/s41467-017-01000-w)) 
+on the "activity flow" {cite:p}`cole2016activity; ito2017cognitive`
 across regions within the functional brain connectome, as measured with functional magnetic resonance imaging 
 (fMRI, {numref}`concept`B).
 
 We employ this neurobiologically motivated ANN architecture, based on the established architecture of a continuous-space
-Hopfield network ([](https://doi.org/10.1073/pnas.79.8.2554); [](https://doi.org/10.1038/s42254-023-00595-y)).
+Hopfield network {cite:p}`hopfield1982neural; krotov2023new`.
 Within this architecture, the topology of the functional connectome naturally establishes an "energy" level for any 
 arbitrary activation patterns and determines a trajectory towards one of the finite number of stable patterns, known as
 attractor states, that minimize this energy.
@@ -160,68 +155,124 @@ in basic and translational neuroscience.
 
 ## Connectome-based Hopfield network as a model of brain dynamics
 
-First, we explored the attractor states of the functional brain connectome in a sample of n=41 healthy young participants ([study 1](#tab-samples)). 
-We estimated interregional activity flow ([](http://dx.doi.org/10.1038/nn.4406); [](http://dx.doi.org/10.1038/s41467-017-01000-w)) as the study-level average of regularized partial correlations among the resting state fMRI timeseries of m = 122 functionally defined brain regions (BASC brain atlas, see Methods for details). 
-We then used the standardized functional connectome as the $w_{ij}$  weights of a continuous-state Hopfield network ([](https://doi.org/10.1073/pnas.79.8.2554), [](https://doi.org/10.1162/neco.1994.6.3.459)) consisting of $m$ neural units, each having an activity $a_i \in [-1,1]$.
-Hopfield networks can be initialized by an arbitrary activation pattern (consisting of $m$ activation values) and iteratively updated until convergence is reached (i.e. "relaxed"), according to the following equation:
+First, we explored the attractor states of the functional brain connectome in a sample of n=41 healthy young 
+participants ([study 1](#tab-samples)). We estimated interregional activity flow {cite:p}`cole2016activity; ito2017cognitive` 
+as the study-level average of regularized partial correlations among the resting state fMRI timeseries of m = 122 
+functionally defined brain regions (BASC brain atlas, see Methods for details). We then used the standardized 
+functional connectome as the $w_{ij}$  weights of a continuous-state Hopfield network 
+{cite:p}`hopfield1982neural; koiran1994dynamics` consisting of $m$ neural units, each having an activity 
+$a_i \in [-1,1]$. Hopfield networks can be initialized by an arbitrary activation pattern (consisting of 
+$m$ activation values) and iteratively updated until convergence is reached (i.e. "relaxed"), according to the 
+following equation:
 
 ```{math}
 :label: hopfield-update
 \dot{a}_i = S(\beta \sum_{j=1}^m w_{ij}a_j - b_i)
 ```
 
-where $\dot{a}_i$ is the activity of neural unit $i$ in the next iteration and $S(a_j)$ is the sigmoidal activation function $S(a) = tanh(a)$ and $b_i$ is the bias of unit $i$ and $\beta$ is the so-called temperature parameter. For the sake of simplicity, we set $b_i=0$ in all our experiments. We refer to this architecture as a connectome-based Hopfield network (CBH network).
-Importantly, the relaxation of a CBH network can be conceptualized as the repeated application of the activity flow principle ([](http://dx.doi.org/10.1038/nn.4406); [](http://dx.doi.org/10.1038/s41467-017-01000-w)), simultaneously for all regions: $\dot{a}_i = \sum_{j=1}^m w_{ij}a_j$. 
-The update rule also exhibits strong analogies with the inner workings of neural mass models  ([](https://doi.org/10.1038/nn.4497)) as applied e.g. in dynamic causal modeling (see Discussion for further details).
+where $\dot{a}_i$ is the activity of neural unit $i$ in the next iteration and $S(a_j)$ is the sigmoidal activation 
+function $S(a) = tanh(a)$ and $b_i$ is the bias of unit $i$ and $\beta$ is the so-called temperature parameter. For 
+the sake of simplicity, we set $b_i=0$ in all our experiments. We refer to this architecture as a connectome-based 
+Hopfield network (CBH network). Importantly, the relaxation of a CBH network can be conceptualized as the repeated 
+application of the activity flow principle {cite:p}`cole2016activity; ito2017cognitive` , simultaneously for all 
+regions: $\dot{a}_i = \sum_{j=1}^m w_{ij}a_j$. The update rule also exhibits strong analogies with the inner workings
+of neural mass models {cite:p}`breakspear2017dynamic` as applied e.g. in dynamic causal modeling(see Discussion for 
+further details).
 
-Hopfield networks assign an energy value to each possible activity configuration (see Methods), which decreases during the relaxation procedure until reaching an equilibrium state with minimal energy ({numref}`attractors`A, top panel, [](https://doi.org/10.1073/pnas.79.8.2554); [](https://doi.org/10.1162/neco.1994.6.3.459)).
-We used a large number of random initializations to obtain all possible attractor states of the connectome-based Hopfield network in study 1 ({numref}`attractors`A, bottom panel).
+Hopfield networks assign an energy value to each possible activity configuration (see Methods), which decreases during
+the relaxation procedure until reaching an equilibrium state with minimal energy ({numref}`attractors`A, top panel,
+{cite:p}`hopfield1982neural; koiran1994dynamics`.
+We used a large number of random initializations to obtain all possible attractor states of the connectome-based 
+Hopfield network in study 1 ({numref}`attractors`A, bottom panel).
 
 :::{figure} figures/embedding_method.png
 :name: attractors
 **Attractor states and state-space dynamics of connectome-based Hopfield networks** <br/><br/>
-**A** Top: During so-called relaxation procedure, activities in the nodes of a connectome-based Hopfield (CBH) network are iteratively updated based on the activity of all other regions and the connectivity between them.
-The energy of a connectome-based Hopfield network decreases during the relaxation procedure until reaching an equilibrium state with minimal energy, i.e. an attractor state.
-Bottom: Four attractor states obtained by a CBH, initialized with a group-level functional connectivity matrix from [study 1](#tab-samples) (n=44). 
-**B** Top: Similarly to stochastic dynamic causal modeling, in presence of weak noise (stochastic update), the system does not converge to an equilibrium anymore. Instead, it the system transverses on the state landscape in a way restricted by the topology of the connectome and the "gravitational pull" of the attractor states. 
-Bottom: We sample the state space by running the stochastic relaxation procedure for an extended amount of time (e.g. 100.000 consecutive stochatsic updates), each point representing a possible activation configuration (state). To construct a low-dimensional representation of the state space, we take the first principal components of the simulated activity patterns. The first two principal components explain approximately 55-85% of the variance of state energy (depending on the noise parameter $\sigma$, see Supplementary Material **X**).
-**C** We map all states of the state space sample to their corresponding attractor state, with the conventional Hopfield relaxation procedure (A). The four attractor states are also visualized in their corresponding position on the PCA-based projection. The first two principal components yield a clear separation of the attractive state basins (cross-validated classification accuracy: 95.5%, Supplementary Material **X**). We refer to the resulting visualization as the Hopfiled projection and use it to visualize CBH-derived and empirical brain dynamics throughout the rest of the manuscript.
-**E** At its simpliest form, the CBH framework entails only two free hyperparamters: the temperature parameter $\beta$ (left) that controls the number of attractor states and the noise parameter of the stochastic relaxation $\sigma$. To avoid overfitting these parameters to the empirical data, we set $\beta=0.4$ and $\sigma=0.01$ for the rest of the paper.
+**A** Top: During so-called relaxation procedure, activities in the nodes of a connectome-based Hopfield (CBH) network
+are iteratively updated based on the activity of all other regions and the connectivity between them. The energy of a
+connectome-based Hopfield network decreases during the relaxation procedure until reaching an equilibrium state with 
+minimal energy, i.e. an attractor state. Bottom: Four attractor states obtained by a CBH, initialized with a 
+group-level functional connectivity matrix from [study 1](#tab-samples) (n=44). 
+**B** Top: Similarly to stochastic dynamic causal modeling, in presence of weak noise (stochastic update), the system 
+does not converge to an equilibrium anymore. Instead, it the system transverses on the state landscape in a way 
+restricted by the topology of the connectome and the "gravitational pull" of the attractor states. Bottom: We sample 
+the state space by running the stochastic relaxation procedure for an extended amount of time (e.g. 100.000 consecutive
+stochatsic updates), each point representing a possible activation configuration (state). To construct a 
+low-dimensional representation of the state space, we take the first principal components of the simulated activity
+patterns. The first two principal components explain approximately 55-85% of the variance of state energy (depending 
+on the noise parameter $\sigma$, see Supplementary Material **X**).
+**C** We map all states of the state space sample to their corresponding attractor state, with the conventional 
+Hopfield relaxation procedure (A). The four attractor states are also visualized in their corresponding position on the
+PCA-based projection. The first two principal components yield a clear separation of the attractive state basins 
+(cross-validated classification accuracy: 95.5%, Supplementary Material **X**). We refer to the resulting visualization
+as the Hopfiled projection and use it to visualize CBH-derived and empirical brain dynamics throughout the rest of 
+the manuscript.
+**E** At its simpliest form, the CBH framework entails only two free hyperparamters: the temperature parameter 
+$\beta$ (left) that controls the number of attractor states and the noise parameter of the stochastic relaxation 
+$\sigma$. To avoid overfitting these parameters to the empirical data, we set $\beta=0.4$ and $\sigma=0.01$ for the 
+rest of the paper.
 :::
 
-Consistent with theoretical expectations, we observed that increasing the temperature parameter $\beta$ led to an increasing number of attractor states (({numref}`attractors`E, left), appearing in symmetric pairs (i.e. $a_i^{(1)} = -a_i^{(2)}$).
-For simplicity, we set the temperature parameter for the rest of the paper to a value resulting in 4 distinct attractor states ($\beta=0.4$).
+Consistent with theoretical expectations, we observed that increasing the temperature parameter $\beta$ led to an 
+increasing number of attractor states (({numref}`attractors`E, left), appearing in symmetric pairs 
+(i.e. $a_i^{(1)} = -a_i^{(2)}$).For simplicity, we set the temperature parameter for the rest of the paper to a value
+resulting in 4 distinct attractor states ($\beta=0.4$).
 
 Connectome-based Hopfield networks, without any modifications, always converge to an equilibrium state.
-To incorporate stochastic fluctuations in neuronal activity ([](https://doi.org/10.1098/rstb.2005.1638)), we introduce weak Gaussian noise to the CBH relaxation procedure. This procedure, referred to as stochastic relaxation, prevents the system from reaching equilibrium and, somewhat similarly to Stochastic DCM ([](https://doi.org/10.1016/j.neuroimage.2012.04.061))), induces complex CBH system dynamics  (equivalent to brain activity fluctuations in our framework) that may traverse extensive regions of the state space, determined by the "gravity field" (basins) of multiple attractor states ({numref}`attractors`B).
+To incorporate stochastic fluctuations in neuronal activity {cite:p}`robinson2005multiscale`, we introduce weak 
+Gaussian noise to the CBH relaxation procedure. This procedure, referred to as stochastic relaxation, prevents the 
+system from reaching equilibrium and, somewhat similarly to Stochastic DCM {cite:p}`daunizeau2012stochastic`, induces 
+complex CBH system dynamics  (equivalent to brain activity fluctuations in our framework) that may traverse extensive 
+regions of the state space, determined by the "gravity field" (basins) of multiple attractor states ({numref}`attractors`B).
 
-We hypothesise that the resulting dynamics capture essential characteristics of spontaneous activity fluctuations in the brain and can serve as a valuable generative computational model for large-scale brain dynamics.
-To sample the resulting state space, we obtained 100,000 iterations of the stochastic relaxation procedure with a Hopfield network initialized with the mean functional connectome in study 1.
-Next, in order to enhance interpretability, we conducted a principal component analysis (PCA) on the resulting state space sample and obtained the first two principal components. These components were used to construct a low-dimensional embedding.
-Largely independent on the free parameter $\sigma$ (variance of the noise), the first two principal components (PCs) explained around 15% of the variance in the state space, with attractor states (minimal energy) located at the extremes of the PCs ({numref}`attractors`B, bottom plot).
+We hypothesise that the resulting dynamics capture essential characteristics of spontaneous activity fluctuations in 
+the brain and can serve as a valuable generative computational model for large-scale brain dynamics. To sample the 
+resulting state space, we obtained 100,000 iterations of the stochastic relaxation procedure with a Hopfield network 
+initialized with the mean functional connectome in study 1. Next, in order to enhance interpretability, we conducted a
+principal component analysis (PCA) on the resulting state space sample and obtained the first two principal components.
+These components were used to construct a low-dimensional embedding. Largely independent on the free parameter $\sigma$
+(variance of the noise), the first two principal components (PCs) explained around 15% of the variance in the state 
+space, with attractor states (minimal energy) located at the extremes of the PCs ({numref}`attractors`B, bottom plot).
 
 The PCA embedding exhibited high consistency across different values of $\beta$ and $\sigma$ ({numref}`attractors`E).
-For all subsequent analyses, we set $\sigma=0.37$, which was determined through a coarse optimization procedure aimed at reconstructing the bimodal distribution of empirical data in the same projection. ({numref}`attractors`E, see Methods for details)
-On the low-dimensional embedding, which we refer to as the *Hopfield projection*, we observed a clear separation of the attractor states ({numref}`attractors`C), with the two symmetric pairs of attractor states located at the extremes of the first and second PC.
-To map the attractor basins on the space spanned by the first two PCs ({numref}`attractors`C), we obtained the attractor state of each point visited during the stochastic relaxation and fit a multinomial logistic regression model to predict the attractor state from the first two PCs. 
-The resulting model demonstrated high prediction accuracy, achieving an out-of-sample accuracy of 96.5%. 
-The attractor basins were visualized by using the decision boundaries obtained from this model. ({numref}`attractors`C).
- We propose the Hopfield projection depicted on ({numref}`attractors`C) as a simplified representation of brain dynamics, and use it as a basis for all subsequent analyses in this work.
+For all subsequent analyses, we set $\sigma=0.37$, which was determined through a coarse optimization procedure aimed 
+at reconstructing the bimodal distribution of empirical data in the same projection ({numref}`attractors`E, 
+see Methods for details). On the low-dimensional embedding, which we refer to as the *Hopfield projection*, we observed 
+a clear separation of the attractor states ({numref}`attractors`C), with the two symmetric pairs of attractor states 
+located at the extremes of the first and second PC. To map the attractor basins on the space spanned by the first two 
+PCs ({numref}`attractors`C), we obtained the attractor state of each point visited during the stochastic relaxation 
+and fit a multinomial logistic regression model to predict the attractor state from the first two PCs. The resulting 
+model demonstrated high prediction accuracy, achieving an out-of-sample accuracy of 96.5%. The attractor basins were
+visualized by using the decision boundaries obtained from this model. ({numref}`attractors`C). We propose the Hopfield
+projection depicted on ({numref}`attractors`C) as a simplified representation of brain dynamics, and use it as a basis
+for all subsequent analyses in this work.
 
 
 ## Reconstruction of resting state brain dynamics
 
-The obtained attractor states closely resemble frequently described brain patterns. ({numref}rest-validityA). The first pair of attractors (mapped on PC1) resemble the two complementary “macro” systems described by and as well as the two primary brain states previously described by . This state-pair has previously been described as an “extrinsic” system which exhibits a stronger direct connection to the immediate sensory environment and an "intrinsic" system, whose activity is primarily associated with dynamic changes in higher-level internal context and closely linked to the default mode network. The other pair of attractors spans an orthogonal axis connecting regions that are commonly associated with perception–action cycles
+The obtained attractor states closely resemble frequently described brain patterns. ({numref}rest-validityA). The first 
+pair of attractors (mapped on PC1) resemble the two complementary “macro” systems described by and as well as the two
+primary brain states previously described by . This state-pair has previously been described as an “extrinsic” system
+which exhibits a stronger direct connection to the immediate sensory environment and an "intrinsic" system, whose 
+activity is primarily associated with dynamic changes in higher-level internal context and closely linked to the default
+mode network. The other pair of attractors spans an orthogonal axis connecting regions that are commonly associated 
+with perception–action cycles
 
 :::{figure} figures/face_validity.png 
 :name: rest-validity
 **Connectome-based Hopfield networks reconstruct characteristics of real resting state brain activity.**<br/><br/>
-**A** The four attractor states of the connectome-based Hopfiled (CBH) network from study 1 reflect brain activation patterns with a high neurobiologicasl relevance, resembling to sub-systems previously described as being associated for "internal context" (blue), "external context" (yellow), "action/execution" (red) and "perception" (green) (; ; ; ). 
+**A** The four attractor states of the connectome-based Hopfiled (CBH) network from study 1 reflect brain activation 
+patterns with a high neurobiologicasl relevance, resembling to sub-systems previously described as being associated for
+"internal context" (blue), "external context" (yellow), "action/execution" (red) and "perception" (green) (; ; ; ). 
 **B** The attractor states show excellent replicability in two external datasets (study 2 and 3, mean correlation 0.93). 
-**C** The Hopfield projection (first two PCs of the CBH state space) explains more variance (p<0.0001) in the real resting state fMRI data than principal components derived from the real resting state data itself and generalizes better (p<0.0001) to out-of-sample data (study 2). Error bars denote 99% bootstrapped confidence intervals. 
-**D** The CBH analysis accurately predicts (p<0.0001) the fraction of time spent on the basis of the four attractor states in real restring state fMRI data (study 1) and 
+**C** The Hopfield projection (first two PCs of the CBH state space) explains more variance (p<0.0001) in the real 
+resting state fMRI data than principal components derived from the real resting state data itself and generalizes 
+better (p<0.0001) to out-of-sample data (study 2). Error bars denote 99% bootstrapped confidence intervals. 
+**D** The CBH analysis accurately predicts (p<0.0001) the fraction of time spent on the basis of the four attractor 
+states in real restring state fMRI data (study 1) and 
 **E** reconstructs the characteristic bimodal distribution of the real resting state data. 
-**F** CBH networks perform self-reconstruction: the timeseries resulting from the stochastic relaxation procedure mirror the co-variance structure of the functional connectome the CBH network was initialized with. 
+**F** CBH networks perform self-reconstruction: the timeseries resulting from the stochastic relaxation procedure 
+mirror the co-variance structure of the functional connectome the CBH network was initialized with. 
 :::
 
 Importantly, the discovered attractor states demonstrate a remarkable level of replicability (mean Pearson's correlation 0.93) across the discovery datasets (study 1) and two independent replication datasets ([study 2 and 3](#tab-samples), {numref}`rest-validity`C).
