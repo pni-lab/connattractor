@@ -656,8 +656,8 @@ paving the way for novel personalized medical approaches.
   - task-based
   - pain self-regulation
   - 33
-  - >todo
-  - >todo
+  - 27.9 ± 9.0 
+  - 66%
   - [](https://doi.org/10.1371/journal.pbio.1002036)
 * - study 5 (Neurosynth)
   - task-based
@@ -666,27 +666,27 @@ paving the way for novel personalized medical approaches.
   - -
   - -
   - [](https://doi.org/10.3389/conf.fninf.2011.08.00058)
-* - study 6 (ABIDE)
+* - study 6 (ABIDE, NYU sample)
   - resting state
   - Autism Spectrum Disorder
   - ASD: 98, NC: 74
-  - >todo
-  - >todo
-  - >todo
+  - 15.3±6.6
+  - 20.9%
+  - {cite:p}`di2014autism`
 * - study 7 (ADNI)
   - resting state
   - Alzheimer's Disease vs. Mild Cognitive Impairment
-  - AD:, MCI: 
-  - >todo
-  - >todo
-  - >todo
+  - AD: 34, MCI 99: 
+  - 72.5±7.5
+  - 50.4%
+  - {cite:p}`petersen2010alzheimer`
 * - study 8 (COBRE)
   - resting state
   - Schizophrenia
-  - SCH: , HC:
-  - >todo
-  - >todo
-  - >todo
+  - SCH: 60, HC: 72
+  - 37.0±12.6
+  - 29.4 %
+  - {cite:p}`aine2017multimodal`
 ```
 
 ## Hopfield network
