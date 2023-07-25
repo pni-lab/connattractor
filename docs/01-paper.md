@@ -618,8 +618,38 @@ causality and mechanistic understanding, and the possibility to predict the effe
 paving the way for novel personalized medical approaches.
 
 # Methods
+## Hopfield network
+We employ an empirical, connectome-based Hopfield network as a means to model brain activation and dynamics, aiming to 
+bridge the gap between classical computational modeling and neuroconnectionism. The architecture of the Hopfield network
+consists of a single layer of fully connected nodes, the undirected weights connecting all the nodes serve as the 
+system's memory. Instead of training the weights on known patterns, we initialize the weights with a group-level 
+connectivity matrix; each node in the network representing a brain region. Through its associative memory capabilities,
+the network can retrieve patterns embedded within its memory, when presented with an input similar to the target 
+pattern. During the retrieval process, the network will iterate on the output pattern until the system converges to a 
+stable state, a so-called attractor state. The mathematical energy of all possible states of a trained Hopfield network
+spans an N dimensional, multi-stable state landscape. This landscape constrains the state configurations, which can be 
+recalled by the Hopfield network across all dimensions. During the memory retrieval process, the network will try to 
+find a state which minimizes the energy function E
+```{math}
+:label: energy-function
+E = - \frac{1}{2}  \bold{a}^{T} \bold{W} \bold{a} + \bold{a}^{T}\bold{b}
+```
+with the weight matrix $W$, the activation pattern $a$ and the bias $b$, which is set to $b = 0$ for all experiments. 
+The network navigates the state landscape by synchronously updating all regions in the current state, according to the 
+[update rule](#hopfield-update). The temperature parameter $\beta$ scales the estimated activation (activity flow) 
+and therefore constrains, how many attractor states can be found, given the convergence criterium of minimal 
+[energy](#energy-function). If the value of $\beta$ is too high however, the network might retrieve spurious states,
+which meet the convergence criterium, but are composite states which merge multiple states and are not "true" 
+attractor states. 
 
+### Hopfield projection
 
+## Data preprocessing
+- BASC/MIST parcellation
+- partial correlation
+- The weights $w_{ij}$ have to be symmetric and the diagonal elements are set to zero.
+
+## Data
 ```{list-table}
 :header-rows: 1
 :name: tab-samples
@@ -689,9 +719,6 @@ paving the way for novel personalized medical approaches.
   - {cite:p}`aine2017multimodal`
 ```
 
-## Hopfield network
-
-The weights $w_{ij}$ have to be symmetric and the diagonal elements are set to zero.
 
 +++ {"part": "acknowledgements"}
 
