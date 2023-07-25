@@ -209,7 +209,7 @@ as the Hopfiled projection and use it to visualize CBH-derived and empirical bra
 the manuscript.
 **E** At its simpliest form, the CBH framework entails only two free hyperparamters: the temperature parameter 
 $\beta$ (left) that controls the number of attractor states and the noise parameter of the stochastic relaxation 
-$\sigma$. To avoid overfitting these parameters to the empirical data, we set $\beta=0.4$ and $\sigma=0.01$ for the 
+$\sigma$. To avoid overfitting these parameters to the empirical data, we set $\beta=0.04$ and $\sigma=0.37$ for the 
 rest of the paper.
 :::
 
@@ -624,7 +624,7 @@ bridge the gap between classical computational modeling and neuroconnectionism. 
 consists of a single layer of fully connected nodes, the undirected weights connecting all the nodes serve as the 
 system's memory. Instead of training the weights on known patterns, we initialize the weights with a group-level 
 connectivity matrix; each node in the network representing a brain region. Through its associative memory capabilities,
-the network can retrieve patterns embedded within its memory, when presented with an input similar to the target 
+the network can retrieve patterns embedded within its memory, when presented with an input similar to a target 
 pattern. During the retrieval process, the network will iterate on the output pattern until the system converges to a 
 stable state, a so-called attractor state. The mathematical energy of all possible states of a trained Hopfield network
 spans an N dimensional, multi-stable state landscape. This landscape constrains the state configurations, which can be 
@@ -642,13 +642,39 @@ and therefore constrains, how many attractor states can be found, given the conv
 which meet the convergence criterium, but are composite states which merge multiple states and are not "true" 
 attractor states. 
 
-### Hopfield projection
+## Hopfield projection
+The attractor landscape can be mapped out by stimulating our CBH network with a random input, and adding noise after 
+each iteration of the network relaxation. This prevents the network to reach an energy minimum and the network 
+produces possible state configurations within the landscape, while avoiding the energy minimal attractor basins. 
+We do a principal component analysis (PCA) on the state samples, and the resulting first two principal components (PC)
+lay out the coordinate system for our Hopfield projection. Using a Multinomial Logistic Regression, we predict to which 
+attractor state each of the state samples converges to, using the first two PCs as features. We visualize the attractor
+states position in the projection as well as the decision boundaries between the attractor states, based on the 
+regression model. We set $\beta = 0.04$, which results in 4 attractor states given the connectome of study 1, and do a
+coarse optimization for the noise level ($\sigma=0.37$) of the stochastic walk, to reproduce the bimodal distribution
+of the real fMRI timeseries in the state space (see [figure](#rest-validity)).
+
+todo: 
+- explained variance of energy through state sample 
+- attractor classification accuracy
+
+## Reconstruction 
+The attractor states are highly reproducible across various datasets and scanners, as the attractor states from studies
+1,2 and 3 show a 0.93 mean correlation across the first two attractor states. 
+
+We compared the explained variance from the first two PCs of our simulated state sample data to the first two PCs of
+raw fMRI timeseries data (see **ref** for preprocessing). For in sample data, the first 2 components of the real data 
+were able to explain 37.0% variance, whereas the simulated counterpart could account for 39.9% variance. For out of 
+sample time series data from study 2, the first two principal components of the hopfield projection of study 1 were 
+able to explain 36.4% and 39.6% variance for real and simulated data respectively. 
+
 
 ## Data preprocessing
 - BASC/MIST parcellation
 - partial correlation
 - The weights $w_{ij}$ have to be symmetric and the diagonal elements are set to zero.
-
+- framewise displacement threshold 0.15
+- perc scrub 0.5
 ## Data
 ```{list-table}
 :header-rows: 1
