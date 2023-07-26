@@ -715,11 +715,13 @@ We adjust the significance threshold with a bonferroni correction, accounting fo
 resulting in $\alpha = 0.0102$. 
 
 ## Data preprocessing
-- BASC/MIST parcellation
-- partial correlation
-- The weights $w_{ij}$ have to be symmetric and the diagonal elements are set to zero.
-- framewise displacement threshold 0.15
-- perc scrub 0.5
+The data from studies 1-4 and 6-8 is parcellated with the BASC multiscale atlas into 122 regions 
+{cite:p}`bellec2010multi`.
+The timeseries is scrubbed with a threshold of $50\%$ and a frame-wise displacement threshold of $0.15$, to 
+correct for motion artifacts present in the data. 
+The connectivity matrix used to set the weights of the CBH, is calculated with a partial correlation of the 
+parcellated, scrubbed timeseries, with the diagonal elements set to zero. When initializing the CBH with the connectome, 
+the weights are standard scaled to mean=0 and std=1; the weights $w_{ij}$ are symmetric. 
 
 ## Data
 ```{list-table}
