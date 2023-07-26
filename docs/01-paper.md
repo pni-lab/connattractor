@@ -677,14 +677,29 @@ way $\tilde{\chi}^2$ test was performed on the given frequencies against expecte
 
 ## Task-based activity
 The Hopfield projection provides a unique framework in which we can analyze and visualize how activations dynamically
-change between task and rest conditions. We highlight these properties on the dataset of study 4, which investigated
+change between two conditions. We highlight these properties on the dataset of study 4, which investigated
 the self-regulation of pain. We preprocess the timeseries data as discussed in **ref**, and divide the samples into 
 task and rest, taking into account the $6 s$ delay to adjust for the hemodynamic response function. 
 We group the activations into "rest" and "pain", and transform all single TR activations (density plot) as well was the
 participant-level mean activations to the Hopfield projection plane. 
 The difference between rest and pain is visualized with a radial plot, showing the participant-level trajectory on 
 the projection plane from rest to pain, denoted with circles, as well as the group level trajectory (arrow). 
-
+Additionally, we test the significance of the spatial difference of the participant-level mean activation in 
+the projection plane with the L2 norm,
+as well as the energy difference between the two conditions, both with a permutation test $n_{perms}=1000$, 
+randomly swapping the conditions.
+To further highlight the difference between the task and rest conditions, we generate streamplots that visualize the 
+dynamic trajectory of group-level activations. 
+We calculate the direction in the projection plane between each successive TR and calculate a bidimensional binned 
+mean for the x,y position across the direction. 
+We repeat the same for the second condition and visualize the difference in direction between the two conditions,
+visualized as streamplots. 
+For the simulated data, we introduce a weak signal of SNR=0.01 according to a meta-analytic pain activation map 
+{cite:p}`zunhammer2021meta` to the stochastic walk, aiming to simulate the shift from rest to pain also in the 
+simulated data. We compare the simulated difference to the actual difference through a permutation test
+($n_{perm}=1000$) with the spearman rank-ordered correlation coefficient as the test statistic. 
+The analysis documented in this section is repeated, comparing the pain upregulation and pain downregulation 
+data provided with study 4. 
 
 
 ## Data preprocessing
