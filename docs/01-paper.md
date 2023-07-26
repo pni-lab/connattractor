@@ -621,8 +621,9 @@ paving the way for novel personalized medical approaches.
 ## Hopfield network
 We employ an empirical, connectome-based Hopfield network as a means to model brain activation and dynamics, aiming to 
 bridge the gap between classical computational modeling and neuroconnectionism. The architecture of the Hopfield network
-consists of a single layer of fully connected nodes, the undirected weights connecting all the nodes serve as the 
-system's memory. Instead of training the weights on known patterns, we initialize the weights with a group-level 
+{cite:p}`hopfield1982neural` consists of a single layer of fully connected nodes, the undirected weights connecting 
+all the nodes serve as the system's memory. 
+Instead of training the weights on known patterns, we initialize the weights with a group-level 
 connectivity matrix; each node in the network representing a brain region. Through its associative memory capabilities,
 the network can retrieve patterns embedded within its memory, when presented with an input similar to a target 
 pattern. During the retrieval process, the network will iterate on the output pattern until the system converges to a 
@@ -634,11 +635,12 @@ find a state which minimizes the energy function E
 :label: energy-function
 E = - \frac{1}{2}  \bold{a}^{T} \bold{W} \bold{a} + \bold{a}^{T}\bold{b}
 ```
-with the weight matrix $W$, the activation pattern $a$ and the bias $b$, which is set to $b = 0$ for all experiments. 
+where $W$ is the weight matrix, $a$ the activation pattern and $b$ the bias, which is set to $b = 0$ for all experiments. 
 The network navigates the state landscape by synchronously updating all regions in the current state, according to the 
 [update rule](#hopfield-update). The temperature parameter $\beta$ scales the estimated activation (activity flow) 
-and therefore constrains, how many attractor states can be found, given the convergence criterium of minimal 
-[energy](#energy-function). If the value of $\beta$ is too high however, the network might retrieve spurious states,
+{cite:p}`cole2016activity`and therefore constrains, how many attractor states can be found, given the convergence 
+criterium of minimal [energy](#energy-function). 
+If the value of $\beta$ is too high however, the network might retrieve spurious states,
 which meet the convergence criterium, but are composite states which merge multiple states and are not "true" 
 attractor states. 
 
@@ -659,14 +661,30 @@ todo:
 - attractor classification accuracy
 
 ## Reconstruction 
+We use several experiments to investigate the validity of the CBH model and its ability to reconstruct resting state
+brain dynamics. First, we investigate the reproducibility  of the attractor states across studies.
 The attractor states are highly reproducible across various datasets and scanners, as the attractor states from studies
-1,2 and 3 show a 0.93 mean correlation across the first two attractor states. 
-
-We compared the explained variance from the first two PCs of our simulated state sample data to the first two PCs of
-raw fMRI timeseries data (see **ref** for preprocessing). For in sample data, the first 2 components of the real data 
+1,2 and 3 show a 0.93 mean correlation across the first two attractor states.
+We then compared the explained variance from the first two PCs of our simulated state sample data to the first two PCs of
+raw fMRI timeseries data (see **ref** for preprocessing), using a linear regression model.
+For in sample data, the first 2 components of the real data 
 were able to explain 37.0% variance, whereas the simulated counterpart could account for 39.9% variance. For out of 
 sample time series data from study 2, the first two principal components of the hopfield projection of study 1 were 
 able to explain 36.4% and 39.6% variance for real and simulated data respectively. 
+We also investigated the fractional time occupied by each attractor state in real timeseries vs simulated data. For 
+this analysis each timeframe was used as an input to the CBH to generate its corresponding attractor state, a one 
+way $\tilde{\chi}^2$ test was performed on the given frequencies against expected uniform frequencies.  
+
+## Task-based activity
+The Hopfield projection provides a unique framework in which we can analyze and visualize how activations dynamically
+change between task and rest conditions. We highlight these properties on the dataset of study 4, which investigated
+the self-regulation of pain. We preprocess the timeseries data as discussed in **ref**, and divide the samples into 
+task and rest, taking into account the $6 s$ delay to adjust for the hemodynamic response function. 
+We group the activations into "rest" and "pain", and transform all single TR activations (density plot) as well was the
+participant-level mean activations to the Hopfield projection plane. 
+The difference between rest and pain is visualized with a radial plot, showing the participant-level trajectory on 
+the projection plane from rest to pain, denoted with circles, as well as the group level trajectory (arrow). 
+
 
 
 ## Data preprocessing
