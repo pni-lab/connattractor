@@ -656,6 +656,9 @@ regression model. We set $\beta = 0.04$, which results in 4 attractor states giv
 coarse optimization for the noise level ($\sigma=0.37$) of the stochastic walk, to reproduce the bimodal distribution
 of the real fMRI timeseries in the state space (see [figure](#rest-validity)).
 
+For all experiments conducted, the connectome of study 1 is used as a base for the CBH and the projection, with the
+hyperparameters $\beta = 0.04$ and $\sigma=0.37$, resulting in 4 distinct attractor states.
+
 todo: 
 - explained variance of energy through state sample 
 - attractor classification accuracy
@@ -701,6 +704,15 @@ simulated data. We compare the simulated difference to the actual difference thr
 The analysis documented in this section is repeated, comparing the pain upregulation and pain downregulation 
 data provided with study 4. 
 
+## Clinical data
+To assess clinical relevance, we introduce a pipeline that investigates the group differences in raw timeseries 
+activation, during each of the attractor states. 
+We assign each TR a label according to its attractor state, by relaxing the CBH for each TR and then calculate the 
+average participant-level activation for each attractor state. 
+We implement a permutation test with $n_{perm}=5000$ to investigate the difference in the average activation during the 
+attractor states between the groups, randomly assigning the group label (preserving the original group stratification). 
+We adjust the significance threshold with a bonferroni correction, accounting for tests across 4 states and 122 regions,
+resulting in $\alpha = 0.0102$. 
 
 ## Data preprocessing
 - BASC/MIST parcellation
@@ -708,6 +720,7 @@ data provided with study 4.
 - The weights $w_{ij}$ have to be symmetric and the diagonal elements are set to zero.
 - framewise displacement threshold 0.15
 - perc scrub 0.5
+
 ## Data
 ```{list-table}
 :header-rows: 1
