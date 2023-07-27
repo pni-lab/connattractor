@@ -485,6 +485,12 @@ results are corrected for multiple comparisons across brain regions and attracto
 with Bonferroni-correction. See Table **X** for detailed results.
 :::
 
+:::{figure} figures/clinical_results_combined.svg
+:name: clinical-results-table
+**this is the title**
+
+:::
+
 # Discussion
 
 Regions of the brain engage in an ongoing exchange of information, leading to co-activations that are commonly known as
