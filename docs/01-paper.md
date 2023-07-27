@@ -709,7 +709,7 @@ To assess clinical relevance, we introduce a pipeline that investigates the grou
 activation, during each of the attractor states. 
 We assign each TR a label according to its attractor state, by relaxing the CBH for each TR and then calculate the 
 average participant-level activation for each attractor state. 
-We implement a permutation test with $n_{perm}=5000$ to investigate the difference in the average activation during the 
+We implement a permutation test with $n_{perm}=50000$ to investigate the difference in the average activation during the 
 attractor states between the groups, randomly assigning the group label (preserving the original group stratification). 
 We adjust the significance threshold with a bonferroni correction, accounting for tests across 4 states and 122 regions,
 resulting in $\alpha = 0.0102$. 
