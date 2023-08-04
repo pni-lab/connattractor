@@ -6,14 +6,55 @@ short_title: ConnAttractor Preprint
 authors:
     - name: Robert Englert
       affiliations:
-        - University Medicine Essen
+        - Department of Diagnostic and Interventional Radiology and Neuroradiology,  University Medicine Essen, Germany
       #orcid: 0000-0002-7859-8394
       email: robert.englert@uk-essen.de
+      
+    - name: Balint Kincses
+      affiliations:
+        - Department of Neurology, University Medicine Essen, Germany
+        
+    - name: Raviteja Kotikalapudi
+      affiliations:
+        - Department of Neurology, University Medicine Essen, Germany
+        
+    - name: Giuseppe Gallitto
+      affiliations:
+        - Department of Neurology, University Medicine Essen, Germany
+        
+    - name: Jialin Li
+      affiliations:
+        - Department of Neurology, University Medicine Essen, Germany
+        - Max Planck School of Cognition, Leipzig, Germany
+        
+    - name: Kevin Hoffschlag
+      affiliations:
+        - Department of Neurology, University Medicine Essen, Germany
+    
+    - name: Choong-Wan Woo
+      affiliations:
+        - Center for Neuroscience Imaging Research, Institute for Basic Science, Suwon, South Korea
+        - Department of Biomedical Engineering, Sungkyunkwan University, Suwon, South Korea
+        
+    - name: Tor D. Wager
+      affiliations:
+        - Department of Psychological and Brain Sciences, Dartmouth College, Hanover, NH, USA
+
+    - name: Dagmar Timmann
+      affiliations:
+        - Department of Neurology, University Medicine Essen, Germany
+        - Center for Translational Neuro- and Behavioral Sciences (C-TNBS), University Medicine Essen, Germany
+      
+    - name: Ulrike Bingel
+      affiliations:
+        - Department of Neurology, University Medicine Essen, Germany
+        - Center for Translational Neuro- and Behavioral Sciences (C-TNBS), University Medicine Essen, Germany
 
     - name: Tamas Spisak
       affiliations:
-        - University Medicine Essen
-      #orcid: 0000-0002-7859-8394
+        - Department of Diagnostic and Interventional Radiology and Neuroradiology,  University Medicine Essen, Germany
+        - Center for Translational Neuro- and Behavioral Sciences (C-TNBS), University Medicine Essen, Germany
+      orcid: 0000-0002-2942-0821
       email: tamas.spisak@uk-essen.de
       corresponding: True
 
