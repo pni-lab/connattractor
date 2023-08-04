@@ -1,0 +1,55 @@
+This is BibTeX, Version 0.99d (TeX Live 2022/dev/Debian)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: connattractor_manuscript.aux
+The style file: unsrtnat.bst
+Database file #1: main.bib
+Repeated entry---line 74 of file main.bib
+ : @article{liu2013time
+ :                     ,
+I'm skipping whatever remains of this entry
+Name 5 in "Robinson, Peter A and Rennie, CJ and Rowe, Donald L and O'Connor, SC and Gordon, and E" has a comma at the end for entry robinson2005multiscale
+while executing---line 1315 of file unsrtnat.bst
+Name 5 in "Robinson, Peter A and Rennie, CJ and Rowe, Donald L and O'Connor, SC and Gordon, and E" has a comma at the end for entry robinson2005multiscale
+while executing---line 1315 of file unsrtnat.bst
+You've used 46 entries,
+            2481 wiz_defined-function locations,
+            848 strings with 15253 characters,
+and the built_in function-call counts, 21007 in all, are:
+= -- 1610
+> -- 1476
+< -- 13
++ -- 543
+- -- 450
+* -- 1954
+:= -- 3518
+add.period$ -- 146
+call.type$ -- 46
+change.case$ -- 92
+chr.to.int$ -- 45
+cite$ -- 46
+duplicate$ -- 880
+empty$ -- 1720
+format.name$ -- 506
+if$ -- 4273
+int.to.chr$ -- 2
+int.to.str$ -- 47
+missing$ -- 46
+newline$ -- 246
+num.names$ -- 138
+pop$ -- 320
+preamble$ -- 1
+purify$ -- 46
+quote$ -- 0
+skip$ -- 487
+stack$ -- 0
+substring$ -- 1138
+swap$ -- 106
+text.length$ -- 2
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 322
+warning$ -- 0
+while$ -- 168
+width$ -- 0
+write$ -- 620
+(There were 3 error messages)
