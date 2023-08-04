@@ -450,32 +450,15 @@ or non-invasive brain stimulation, on brain function.
 
 ## Clinical relevance
 
-In our final analysis, we provide a brief outlook towards the potential clinical applications of CHNN analysis. We 
-analyzed three large public clinical databases as provided by the Autism Brain Imaging Data Exchange 
+In our final analyses, we provide a brief outlook towards the potential clinical applications of the CHNN approach. For the sake of simplicity, we 
+employed one of the rudimentary CHNN-based analysis strategies; we used the CHNN model from study 1 to assign each time-frame of resting state data to one of the 4 attractor states and compared average resting state activity within each state across various clinical groups (Bonferroni corrected across brain 
+regions and attractor states, for a total of 122*4 comparisons per dataset). We analyzed three large public clinical databases as provided by the Autism Brain Imaging Data Exchange 
 ([study 6](#tab-samples): ABIDE, {cite:p}`di2014autism`, the Centers of Biomedical Research Excellence 
 ([study 7](#tab-samples): COBRE, {cite:p}`aine2017multimodal`) and the Alzheimer’s Disease Neuroimaging Initiative 
 ([study 8](#tab-samples): ADNI, {cite:p}`petersen2010alzheimer`).
-Resting state fMRI data of patients with autism spectrum disorder (ASD), schizophrenia (SCZ) and Alzheimer's disease 
+In these analyses, resting state fMRI data of patients with autism spectrum disorder (ASD), schizophrenia (SCZ) and Alzheimer's disease 
 (AD) was contrasted to their respective control groups (typically developing controls for ASD, healthy control 
-participants for SCH and individuals with mild cognitive impairment (MCI), respectively). In all three datasets, we used
-the CHNN model from study 1 and projected the fMRI timeseries of all involved participants onto the CHNN projection. 
-For each participant, we obtained the average activation of all time-frames belonging to the same attractor state 
-(4 maps per participant) and compared these across groups with permutation tests, Bonferroni corrected across brain 
-regions and attractor states (122*4 comparisons).
-
-We found several significant differences in the mean attractor activation of patients as compared to the respective 
-controls. ASD ({numref}`clinical-validity` left side) was found to be characterized by increased activity of the sensory-motor and middle cingular cortices during the "action-execution" states and increased visual and decreased sensory and auditory activity during "perception" states, likely reflecting the widely acknowledged, yet poorly understood, perceptual atypicalities in ASD {cite:p}`hadad2019perception`.
-ASD related changes in the "internal"-"external" axis were characterized by more involvement of the posterior cingulate, the precuneus, the nucleus accumbens, the dorsolateral prefrontal cortex (pFC), the cerebellum (Crus II and lobule VII) and inferior temporal regions in internalizing states (Table **X**). While similar, default mode network (DMN)-related changes have often been attributed to an atypical integration of information about the “self” and the “other”, a more detailed CHNN-analysis may help to further disentangle the specific nature of these changes.
-
-In SCZ, the most prominent differences were found on the internal-external axis, with elevated internalization activity in most DMN-regions.
-({numref}`clinical-validity`B, **table**). Additional activation increases in *visual and motor* areas were observed in
-the active inference subsystem.
-
-In the AD vs. MCI comparison, we found significant differences in two of the four attractor activation maps 
-({numref}`clinical-validity`C, **table**), indicating changes in the resting state activity of subsystems for passive
-inference and internal context (both of which together host long-term memory processes, see {numref}`task-validity`F).
-At the regional level, differences are characterized by altered activation in the *dorsolateral prefrontal cortex
-(DLPFC) and the cerebellum*.
+participants for SCH and individuals with mild cognitive impairment (MCI) for AD, respectively).
 
 :::{figure} figures/state_analysis.*
 :name: clinical-validity
@@ -492,6 +475,20 @@ and internal context (both of which together host long-term memory processes, se
 results are corrected for multiple comparisons across brain regions and attractor states (122*4 comparisons) 
 with Bonferroni-correction. See Table **X** for detailed results.
 :::
+
+We found several significant differences in the mean attractor activation of patients as compared to the respective 
+controls. ASD ({numref}`clinical-validity` left side) was found to be characterized by increased activity of the sensory-motor and middle cingular cortices during "action-execution" related states and increased visual and decreased sensory and auditory activity during "perception" states, likely reflecting the widely acknowledged, yet poorly understood, perceptual atypicalities in ASD {cite:p}`hadad2019perception`.
+ASD related changes in the internal-external axis were characterized by more involvement of the posterior cingulate, the precuneus, the nucleus accumbens, the dorsolateral prefrontal cortex (dlPFC), the cerebellum (Crus II and lobule VII) and inferior temporal regions in internalizing states (Table **X**). While similar, default mode network (DMN)-related changes have often been attributed to an atypical integration of information about the “self” and the “other”, a more detailed CHNN-analysis may help to further disentangle the specific nature of these changes.
+
+In SCZ, the most prominent differences were found on the internal-external axis, with elevated activity in several brain regions during brain activity on the basin of the internal subsystem and decreased activity in the external subsystem. ({numref}`clinical-validity`B, **table**).
+the active inference subsystem. These findings are in line with the notion that, in schizophrenia, the forward projections have decreased functional connectivity relative to the back projections, and this may reduce the effects of external bottom-up inputs from the world relative to internal top-down thought processes {cite:p}`rolls2021attractor`. 
+
+In the AD vs. MCI comparison, we found significant differences in two of the four attractor activation maps 
+({numref}`clinical-validity`C, **table**), indicating changes in the resting state activity of subsystems for passive
+inference and internal context (both of which together host long-term memory processes, see {numref}`task-validity`F).
+At the regional level, differences are characterized by altered activation in the *dorsolateral prefrontal cortex
+(DLPFC) and the cerebellum*.
+
 
 :::{figure} figures/clinical_results_combined.svg
 :name: clinical-results-table
