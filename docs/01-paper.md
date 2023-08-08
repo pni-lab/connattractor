@@ -450,9 +450,9 @@ or non-invasive brain stimulation, on brain function.
 
 ## Clinical relevance
 
-In our final analyses, we provide a brief outlook towards the potential clinical applications of the CHNN approach. For the sake of simplicity, we 
-employed one of the rudimentary CHNN-based analysis strategies; we used the CHNN model from study 1 to assign each time-frame of resting state data to one of the 4 attractor states and compared average resting state activity within each state across various clinical groups (Bonferroni corrected across brain 
-regions and attractor states, for a total of 122*4 comparisons per dataset). We analyzed three large public clinical databases as provided by the Autism Brain Imaging Data Exchange 
+Computational models, such as the CHNN approach, have the potential to make a significant contribution to our mechanistic comprehension of various neurological and psychiatric disorders. This represents a crucial stride towards developing effective treatments. While providing a demonstration of the CHNN approach to yield such mechanistic insights in clinical populations is well outside the scope of the current study, here we present evidence that CHNN-based attractor state analysis can effectively capture and quantify several disease-related alterations in resting state brain dynamics.
+ 
+For the sake of simplicity, we utilized one of the basic CHNN-based analysis methods. Specifically, we applied the CHNN model from study 1 to allocate each time-frame of resting state data to one of the 4 attractor states. Then, we compared the average activity during resting state within each state across different clinical groups (with Bonferroni correction applied across brain regions and attractor states), resulting in a total of 122*4 comparisons per dataset. We analyzed three large public clinical databases as provided by the Autism Brain Imaging Data Exchange 
 ([study 6](#tab-samples): ABIDE, {cite:p}`di2014autism`, the Centers of Biomedical Research Excellence 
 ([study 7](#tab-samples): COBRE, {cite:p}`aine2017multimodal`) and the Alzheimer’s Disease Neuroimaging Initiative 
 ([study 8](#tab-samples): ADNI, {cite:p}`petersen2010alzheimer`).
@@ -462,41 +462,58 @@ participants for SCH and individuals with mild cognitive impairment (MCI) for AD
 
 :::{figure} figures/state_analysis.*
 :name: clinical-validity
-**Connectome-based Hopfield analysis as a sensitive tool for the study of clinical disorders.** <br><\br>
-We quantified attractor state activations in three clincal datasets (([studies 6, 7 and 8](#tab-samples)) as the 
+**Connectome-based Hopfield analysis as a sensitive tool for the study of clinical disorders.** <br></br>
+We quantified attractor state activations in three clinical datasets ([studies 6, 7 and 8](#tab-samples)) as the 
 individual-level mean activation of all time-frames belonging to the same attractor state. CHNN analyses of attractor 
 state activations revealed significant differences in all three datasets.
-**A** Comparison of individuals with autism spectrum disorder (ASD) and typically developing controls (TD) is 
-characterized by **todo**.
-**B** The most prominent Schizophrenia (SCZ)-related differences (as compared to healthy controls (HC) are related to 
-the activity of the internalalization-related subsystem. **todo** 
-**C** Alzheimer's disease (AD) is characterized by altered activation in **todo** the subsystems for passive inference 
+**A** Attractor state analysis of individuals with autism spectrum disorder (ASD) and typically developing controls (TD)
+captures alterations similar to those previously associated to ASD-related perceptual atypicalities as well as atypical integration of information about the “self” and the “other”.
+**B** The most prominent Schizophrenia (SCZ)-related differences (as compared to healthy controls (HC) are related increased 
+activity of the internal subsystem and increased visual activations on the basis of the attractor state associated with perception.
+**C** In Alzheimer's disease (AD), CHNN analysis revealed, among others, hyperactivity in the hippocampal formation (collateral sulcus) during perception, a commonly reported finding in AD.
 and internal context (both of which together host long-term memory processes, see {numref}`task-validity`F). All 
 results are corrected for multiple comparisons across brain regions and attractor states (122*4 comparisons) 
 with Bonferroni-correction. See Table **X** for detailed results.
 :::
 
 We found several significant differences in the mean attractor activation of patients as compared to the respective 
-controls. ASD ({numref}`clinical-validity` left side) was found to be characterized by increased activity of the sensory-motor and middle cingular cortices during "action-execution" related states and increased visual and decreased sensory and auditory activity during "perception" states, likely reflecting the widely acknowledged, yet poorly understood, perceptual atypicalities in ASD {cite:p}`hadad2019perception`.
-ASD related changes in the internal-external axis were characterized by more involvement of the posterior cingulate, the precuneus, the nucleus accumbens, the dorsolateral prefrontal cortex (dlPFC), the cerebellum (Crus II and lobule VII) and inferior temporal regions in internalizing states (Table **X**). While similar, default mode network (DMN)-related changes have often been attributed to an atypical integration of information about the “self” and the “other”, a more detailed CHNN-analysis may help to further disentangle the specific nature of these changes.
+controls. 
 
-In SCZ, the most prominent differences were found on the internal-external axis, with elevated activity in several brain regions during brain activity on the basin of the internal subsystem and decreased activity in the external subsystem. ({numref}`clinical-validity`B, **table**).
-the active inference subsystem. These findings are in line with the notion that, in schizophrenia, the forward projections have decreased functional connectivity relative to the back projections, and this may reduce the effects of external bottom-up inputs from the world relative to internal top-down thought processes {cite:p}`rolls2021attractor`. 
+ASD ({numref}`clinical-validity` left side) was found to be characterized by increased activity of the sensory-motor and middle cingular cortices during "action-execution" related states and increased visual and decreased sensory and auditory activity during "perception" states, likely reflecting the widely acknowledged, yet poorly understood, perceptual atypicalities in ASD {cite:p}`hadad2019perception`.
+ASD related changes in the internal-external axis were characterized by more involvement of the posterior cingulate, the precuneus, the nucleus accumbens, the dorsolateral prefrontal cortex (dlPFC), the cerebellum (Crus II and lobule VII) and inferior temporal regions during activity of the internalizing subsystem (Table **X**). While similar, default mode network (DMN)-related changes have often been attributed to an atypical integration of information about the “self” and the “other”, a more detailed CHNN-analysis may help to further disentangle the specific nature of these changes.
 
-In the AD vs. MCI comparison, we found significant differences in two of the four attractor activation maps 
-({numref}`clinical-validity`C, **table**), indicating changes in the resting state activity of subsystems for passive
-inference and internal context (both of which together host long-term memory processes, see {numref}`task-validity`F).
-At the regional level, differences are characterized by altered activation in the *dorsolateral prefrontal cortex
-(DLPFC) and the cerebellum*.
+In SCZ, the most prominent differences were found on the internal-external axis, with elevated activity in several brain regions during brain activity on the basin of the internal subsystem and decreased activity in the external subsystem. ({numref}`clinical-validity`B, Table **X**). These findings are in line with the notion that, in schizophrenia, the forward projections have decreased functional connectivity relative to the back projections, and this may reduce the effects of external bottom-up inputs from the world relative to internal top-down thought processes {cite:p}`rolls2021attractor`. 
+On the axis of the perception-action subsystems, the main difference was found in the visual and sensorimotor cortices, concordant with the widespread notion of visual and sensory deficits in SCZ {cite:p}`javitt2009sensory; butler2008visual; adamek2022early`.
 
+In the AD vs. MCI comparison, we found decreased resting state activations in several regions, including the inferior parietal lobule (IPL) and primary visual cortex, likely a consequence of high levels of amyloid-ß reducing synaptic excitatory transmission, resulting in synaptic failure and neuronal hypoactivity {cite:p}`selkoe2002alzheimer`. A significant hyperactivity was found in the hippocampal formation (collateral sulcus) during perception states, which is
+a commonly reported finding in AD {cite:p}`aizenstein2015hippocampal; ewers2011neuroimaging`
+({numref}`clinical-validity`C, **table**). Moreover, we found increased activity in supplementary motor cortex (SMA), an area that is known to display relatively little atrophy and hypomethabolism with AD and has previously brought into relation with the presevation of musical memories in AD {cite:p}`jacobsen2015musical`.
 
 :::{figure} figures/clinical_results_combined.svg
 :name: clinical-results-table
-**this is the title**
+**todo**
 
 :::
 
 # **Discussion**
+
+- Summary of findings
+- construct validity
+- despite the simplicity: striking performnace
+- why? (captures the essential mechanisms of which we only have noise measurements)
+- basic research perspectives: new view on brain dyanmics: rest vs. task = false dichotomy
+- basic research perspectives: generative model -> causal inference(?), mechanistic understanding (as opposed to correlational studies)
+- a common framework for interpretations: interpretaive schematic map of brain activation states
+- translational and clinical research perspectives: generative model for diseases, predicts brain activity, e.g. to optimize tretament strategies
+- practical utility: replicability, stability, tolerance to noise, self-healing, etc.
+- outlook: future directions, e.g., parameter fine tuning, more attractor states, higher-dimension projections, latent FC, extensions like HRF modelling, etc.
+
+# other potential topics:
+- why no HRF modelling (could be a possible extension, but it is also not part of the activity flow approach and we don't recosntruct time series, but rather activations)
+- is the connectome stationary? See arguments by the Cole-group.
+- why rs-fMRI connectome (could be latent-FC a'la McCormick, 2022)
+
+
 
 Regions of the brain engage in an ongoing exchange of information, leading to co-activations that are commonly known as
 functional connectivity. The quantity of information exchanged between brain regions is not uniform, but rather exhibits
