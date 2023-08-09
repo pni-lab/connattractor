@@ -491,44 +491,44 @@ a commonly reported finding in AD {cite:p}`aizenstein2015hippocampal; ewers2011n
 ({numref}`clinical-validity`C, **table**). Moreover, we found increased activity in supplementary motor cortex (SMA), an area that is known to display relatively little atrophy and hypomethabolism with AD and has previously brought into relation with the presevation of musical memories in AD {cite:p}`jacobsen2015musical`.
 
 
-| region                                  |      state | effect size | p value |
-|:----------------------------------------|-----------:|------------:|--------:|
-| <br> Autism spectrum disorder (ABIDE)   | 
-| HESCHLS GYRUS                           |          1 |      -0.126 | <0.0001 |
-| POSTERIOR_CINGULATE_CORTEX              |          0 |       0.109 | <0.0001 |
-| CEREBELLUM_VIIb_medial                  |          3 |       0.104 | <0.0001 |
-| SOMATOMOTOR_NETWORK_mediolateral        |          1 |      -0.099 | 0.00976 |
-| INFERIOR_MARGINAL_SULCUS                |          0 |       0.098 | <0.0001 |
-| SUPERIOR_TEMPORAL_GYRUS_middle          |          1 |      -0.098 | <0.0001 |
-| FRONTAL_EYE_FIELD                       |          1 |      -0.095 | <0.0001 |
-| left_SOMATOMOTOR_NETWORK_dorsolateral   |          1 |      -0.094 | 0.00976 |
-| CINGULATE_SULCUS_posterior              |          0 |       0.092 | <0.0001 |
-| left_MIDDLE_FRONTAL_GYRUS_posterocaudal |          2 |      -0.092 | <0.0001 |
-| INFERIOR_TEMPORAL_GYRUS                 |          3 |       0.091 | <0.0001 |
-| <br> Schizophrenia (COBRE)              |
-| left_ANGULAR_GYRUS                      |          1 |      -0.139 | <0.0001 |
-| MEDIODORSAL_VISUAL_NETWORK_posterior    |          1 |       0.138 | <0.0001 |
-| SUPERIOR_PARIETAL_LOBULE                |          0 |       0.128 | <0.0001 |
-| MEDIODORSAL_VISUAL_NETWORK_posterior    |          0 |      -0.119 | <0.0001 |
-| POSTERIOR_VISUAL_NETWORK_dorsomedial    |          1 |       0.114 | 0.00976 |
-| right_MIDDLE_FRONTAL_GYRUS_anterior     |          2 |      -0.105 | <0.0001 |
-| MEDIAL_ORBITAL_GYRUS                    |          2 |      -0.102 | <0.0001 |
-| POSTERIOR_CINGULATE_CORTEX              |          3 |       0.102 | <0.0001 |
-| right_MIDDLE_FRONTAL_GYRUS_anterior     |          3 |       0.101 | <0.0001 |
-| MEDIAL_ORBITAL_GYRUS                    |          3 |       0.099 | <0.0001 |
-| right_MIDDLE_FRONTAL_GYRUS_posterior    |          2 |      -0.098 | <0.0001 |
-| <br> Alzheimer's disease (ADNI)         |
-| CEREBELLUM_IX_middle                    |          0 |      -0.154 | 0.00976 |
-| COLLATERAL_SULCUS                       |          1 |       0.139 | <0.0001 |
-| CEREBELLUM_IX_dorsal                    |          1 |       0.132 | 0.02928 |
-| MEDIAL_VISUAL_NETWORK_posterior         |          0 |      -0.129 | <0.0001 |
-| PARIETO_OCCIPITAL_SULCUS_ventral        |          0 |      -0.128 | 0.00976 |
-| PARIETO_OCCIPITAL_SULCUS_ventral        |          1 |       0.127 | 0.00976 |
-| VENTRAL_VISUAL_NETWORK_medial           |          0 |      -0.124 | 0.02928 |
-| left_INFERIOR_PARIETAL_LOBULE           |          2 |       -0.11 | <0.0001 |
-| right_INFERIOR_PARIETAL_LOBULE          |          2 |      -0.095 | <0.0001 |
-| left_CEREBELLUM_CRUSII_posterior        |          2 |      -0.094 | <0.0001 |
-| SOMATOMOTOR_NETWORK_anteromedial        |          2 |       0.093 | <0.0001 |
+| region                                   |      state | effect size | p value |
+|:-----------------------------------------|-----------:|------------:|--------:|
+| <br>**Autism spectrum disorder (ABIDE)** | 
+| HESCHLS GYRUS                            |          1 |      -0.126 | <0.0001 |
+| POSTERIOR_CINGULATE_CORTEX               |          0 |       0.109 | <0.0001 |
+| CEREBELLUM_VIIb_medial                   |          3 |       0.104 | <0.0001 |
+| SOMATOMOTOR_NETWORK_mediolateral         |          1 |      -0.099 | 0.00976 |
+| INFERIOR_MARGINAL_SULCUS                 |          0 |       0.098 | <0.0001 |
+| SUPERIOR_TEMPORAL_GYRUS_middle           |          1 |      -0.098 | <0.0001 |
+| FRONTAL_EYE_FIELD                        |          1 |      -0.095 | <0.0001 |
+| left_SOMATOMOTOR_NETWORK_dorsolateral    |          1 |      -0.094 | 0.00976 |
+| CINGULATE_SULCUS_posterior               |          0 |       0.092 | <0.0001 |
+| left_MIDDLE_FRONTAL_GYRUS_posterocaudal  |          2 |      -0.092 | <0.0001 |
+| INFERIOR_TEMPORAL_GYRUS                  |          3 |       0.091 | <0.0001 |
+| <br> **Schizophrenia (COBRE)**           |
+| left_ANGULAR_GYRUS                       |          1 |      -0.139 | <0.0001 |
+| MEDIODORSAL_VISUAL_NETWORK_posterior     |          1 |       0.138 | <0.0001 |
+| SUPERIOR_PARIETAL_LOBULE                 |          0 |       0.128 | <0.0001 |
+| MEDIODORSAL_VISUAL_NETWORK_posterior     |          0 |      -0.119 | <0.0001 |
+| POSTERIOR_VISUAL_NETWORK_dorsomedial     |          1 |       0.114 | 0.00976 |
+| right_MIDDLE_FRONTAL_GYRUS_anterior      |          2 |      -0.105 | <0.0001 |
+| MEDIAL_ORBITAL_GYRUS                     |          2 |      -0.102 | <0.0001 |
+| POSTERIOR_CINGULATE_CORTEX               |          3 |       0.102 | <0.0001 |
+| right_MIDDLE_FRONTAL_GYRUS_anterior      |          3 |       0.101 | <0.0001 |
+| MEDIAL_ORBITAL_GYRUS                     |          3 |       0.099 | <0.0001 |
+| right_MIDDLE_FRONTAL_GYRUS_posterior     |          2 |      -0.098 | <0.0001 |
+| <br> **Alzheimer's disease (ADNI)**      |
+| CEREBELLUM_IX_middle                     |          0 |      -0.154 | 0.00976 |
+| COLLATERAL_SULCUS                        |          1 |       0.139 | <0.0001 |
+| CEREBELLUM_IX_dorsal                     |          1 |       0.132 | 0.02928 |
+| MEDIAL_VISUAL_NETWORK_posterior          |          0 |      -0.129 | <0.0001 |
+| PARIETO_OCCIPITAL_SULCUS_ventral         |          0 |      -0.128 | 0.00976 |
+| PARIETO_OCCIPITAL_SULCUS_ventral         |          1 |       0.127 | 0.00976 |
+| VENTRAL_VISUAL_NETWORK_medial            |          0 |      -0.124 | 0.02928 |
+| left_INFERIOR_PARIETAL_LOBULE            |          2 |       -0.11 | <0.0001 |
+| right_INFERIOR_PARIETAL_LOBULE           |          2 |      -0.095 | <0.0001 |
+| left_CEREBELLUM_CRUSII_posterior         |          2 |      -0.094 | <0.0001 |
+| SOMATOMOTOR_NETWORK_anteromedial         |          2 |       0.093 | <0.0001 |
 
 
 # **Discussion**
