@@ -2,7 +2,7 @@ name: MyST GitHub Pages Deploy
 on:
   push:
     # Runs on pushes targeting the default branch
-    branches: [main]
+    branches: [master]
 env:
   BASE_URL: /${{ github.event.repository.name }}
 
