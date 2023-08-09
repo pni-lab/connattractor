@@ -23,8 +23,9 @@ jobs:
     - name: Install dependencies
       run: |
         sudo apt-get update
-        sudo apt-get install texlive-xetex latexmk -y
+        sudo apt-get install texlive-xetex latexmk libpng-dev libjpeg-dev libtiff-dev imagemagick -y
         python -m pip install --upgrade pip
+        python -m pip install ghp-import
         npm install -g mystmd
     #   if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
     - name: Manually download docx template
@@ -39,6 +40,7 @@ jobs:
       run: |
         cd docs 
         myst build -a
+        ghp-import -n -p -f _build/site
         cd ..
         mv docs /tmp/.
         
@@ -51,7 +53,7 @@ jobs:
         git checkout -b myst origin/myst
         git pull
         rm -rf docs
-        mv /tmp/docs/_build/site/* .
+        mv /tmp/docs .
         git add --all
         git commit -a -m "autogen"
         git remote set-url origin https://spisakt:${{ secrets.GIT_TOKEN }}@github.com/pni-lab/connattractor.git
