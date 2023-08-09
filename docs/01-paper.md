@@ -514,7 +514,6 @@ a commonly reported finding in AD {cite:p}`aizenstein2015hippocampal; ewers2011n
 - why rs-fMRI connectome (could be latent-FC a'la McCormick, 2022)
 
 
-
 Regions of the brain engage in an ongoing exchange of information, leading to co-activations that are commonly known as
 functional connectivity. The quantity of information exchanged between brain regions is not uniform, but rather exhibits
 substantial variation among different pairs of regions, encompassing the intricate network referred to as the functional
