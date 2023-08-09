@@ -573,10 +573,10 @@ a system showing close analogies with a type of recurrent artificial neural netw
 {cite:p}`hopfield1982neural`.
 
 Hopfield networks have previously been shown to exhibit a series of characteristics that are also highly relevant for 
-brain function, including the ability to store and recall memories {cite:p}`hopfield1982neural`, self-repair (**ref**),
-a staggering robustness to noisy or corrupted inputs {cite:p}`hertz1991introduction` and the tendency to produce 
-multistable dynamics organized by the "gravitational pull" of a finite number of attractor states 
-{cite:p}`khona2022attractor`.
+brain function, including the ability to store and recall memories {cite:p}`hopfield1982neural`, 
+self-repair {cite:p}'agliari2020tolerance', a staggering robustness to noisy or corrupted inputs 
+{cite:p}`hertz1991introduction` and the tendency to produce multistable dynamics organized by the "gravitational pull" 
+of a finite number of attractor states {cite:p}`khona2022attractor`.
 
 The proposed link between activity flow and Hopfield networks has an important implication: network weights must be 
 initialized with functional connectivity values, (specifically, partial correlations, as recommend by 
