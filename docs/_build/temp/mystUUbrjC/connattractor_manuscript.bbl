@@ -1,0 +1,403 @@
+\begin{thebibliography}{54}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Bassett and Sporns(2017)]{bassett2017network}
+Danielle~S Bassett and Olaf Sporns.
+\newblock Network neuroscience.
+\newblock \emph{Nature neuroscience}, 20\penalty0 (3):\penalty0 353--364, 2017.
+
+\bibitem[Gutierrez-Barragan et~al.(2019)Gutierrez-Barragan, Basson, Panzeri,
+  and Gozzi]{gutierrez2019infraslow}
+Daniel Gutierrez-Barragan, M~Albert Basson, Stefano Panzeri, and Alessandro
+  Gozzi.
+\newblock Infraslow state fluctuations govern spontaneous fmri network
+  dynamics.
+\newblock \emph{Current Biology}, 29\penalty0 (14):\penalty0 2295--2306, 2019.
+
+\bibitem[Liu and Duyn(2013)]{liu2013time}
+Xiao Liu and Jeff~H Duyn.
+\newblock Time-varying functional network information extracted from brief
+  instances of spontaneous brain activity.
+\newblock \emph{Proceedings of the National Academy of Sciences}, 110\penalty0
+  (11):\penalty0 4392--4397, 2013.
+
+\bibitem[Zalesky et~al.(2014)Zalesky, Fornito, Cocchi, Gollo, and
+  Breakspear]{zalesky2014time}
+Andrew Zalesky, Alex Fornito, Luca Cocchi, Leonardo~L Gollo, and Michael
+  Breakspear.
+\newblock Time-resolved resting-state brain networks.
+\newblock \emph{Proceedings of the National Academy of Sciences}, 111\penalty0
+  (28):\penalty0 10341--10346, 2014.
+
+\bibitem[Thompson et~al.(2014)Thompson, Pan, Magnuson, Jaeger, and
+  Keilholz]{thompson2014quasi}
+Garth~John Thompson, Wen-Ju Pan, Matthew~Evan Magnuson, Dieter Jaeger, and
+  Shella~Dawn Keilholz.
+\newblock Quasi-periodic patterns (qpp): large-scale dynamics in resting state
+  fmri that correlate with local infraslow electrical activity.
+\newblock \emph{Neuroimage}, 84:\penalty0 1018--1031, 2014.
+
+\bibitem[Greene et~al.(2023)Greene, Horien, Barson, Scheinost, and
+  Constable]{greene2023everyone}
+Abigail~S Greene, Corey Horien, Daniel Barson, Dustin Scheinost, and R~Todd
+  Constable.
+\newblock Why is everyone talking about brain state?
+\newblock \emph{Trends in Neurosciences}, 2023.
+
+\bibitem[Vidaurre et~al.(2017)Vidaurre, Smith, and Woolrich]{vidaurre2017brain}
+Diego Vidaurre, Stephen~M Smith, and Mark~W Woolrich.
+\newblock Brain network dynamics are hierarchically organized in time.
+\newblock \emph{Proceedings of the National Academy of Sciences}, 114\penalty0
+  (48):\penalty0 12827--12832, 2017.
+
+\bibitem[Richiardi et~al.(2011)Richiardi, Eryilmaz, Schwartz, Vuilleumier, and
+  Van De~Ville]{richiardi2011decoding}
+Jonas Richiardi, Hamdi Eryilmaz, Sophie Schwartz, Patrik Vuilleumier, and
+  Dimitri Van De~Ville.
+\newblock Decoding brain states from fmri connectivity graphs.
+\newblock \emph{Neuroimage}, 56\penalty0 (2):\penalty0 616--626, 2011.
+
+\bibitem[Smith et~al.(2012)Smith, Miller, Moeller, Xu, Auerbach, Woolrich,
+  Beckmann, Jenkinson, Andersson, Glasser, et~al.]{smith2012temporally}
+Stephen~M Smith, Karla~L Miller, Steen Moeller, Junqian Xu, Edward~J Auerbach,
+  Mark~W Woolrich, Christian~F Beckmann, Mark Jenkinson, Jesper Andersson,
+  Matthew~F Glasser, et~al.
+\newblock Temporally-independent functional modes of spontaneous brain
+  activity.
+\newblock \emph{Proceedings of the National Academy of Sciences}, 109\penalty0
+  (8):\penalty0 3131--3136, 2012.
+
+\bibitem[Chen et~al.(2018)Chen, Ito, Kulkarni, and Cole]{chen2018human}
+Richard~H Chen, Takuya Ito, Kaustubh~R Kulkarni, and Michael~W Cole.
+\newblock The human brain traverses a common activation-pattern state space
+  across task and rest.
+\newblock \emph{Brain Connectivity}, 8\penalty0 (7):\penalty0 429--443, 2018.
+
+\bibitem[Hutchison et~al.(2013)Hutchison, Womelsdorf, Allen, Bandettini,
+  Calhoun, Corbetta, Della~Penna, Duyn, Glover, Gonzalez-Castillo,
+  et~al.]{hutchison2013dynamic}
+R~Matthew Hutchison, Thilo Womelsdorf, Elena~A Allen, Peter~A Bandettini,
+  Vince~D Calhoun, Maurizio Corbetta, Stefania Della~Penna, Jeff~H Duyn, Gary~H
+  Glover, Javier Gonzalez-Castillo, et~al.
+\newblock Dynamic functional connectivity: promise, issues, and
+  interpretations.
+\newblock \emph{Neuroimage}, 80:\penalty0 360--378, 2013.
+
+\bibitem[Barttfeld et~al.(2015)Barttfeld, Uhrig, Sitt, Sigman, Jarraya, and
+  Dehaene]{barttfeld2015signature}
+Pablo Barttfeld, Lynn Uhrig, Jacobo~D Sitt, Mariano Sigman, B{\'e}chir Jarraya,
+  and Stanislas Dehaene.
+\newblock Signature of consciousness in the dynamics of resting-state brain
+  activity.
+\newblock \emph{Proceedings of the National Academy of Sciences}, 112\penalty0
+  (3):\penalty0 887--892, 2015.
+
+\bibitem[Meer et~al.(2020)Meer, Breakspear, Chang, Sonkusare, and
+  Cocchi]{meer2020movie}
+Johan N van~der Meer, Michael Breakspear, Luke~J Chang, Saurabh Sonkusare, and
+  Luca Cocchi.
+\newblock Movie viewing elicits rich and reliable brain state dynamics.
+\newblock \emph{Nature communications}, 11\penalty0 (1):\penalty0 5004, 2020.
+
+\bibitem[Breakspear(2017)]{breakspear2017dynamic}
+Michael Breakspear.
+\newblock Dynamic models of large-scale brain activity.
+\newblock \emph{Nature neuroscience}, 20\penalty0 (3):\penalty0 340--352, 2017.
+
+\bibitem[Murray et~al.(2018)Murray, Demirta{\c{s}}, and
+  Anticevic]{murray2018biophysical}
+John~D Murray, Murat Demirta{\c{s}}, and Alan Anticevic.
+\newblock Biophysical modeling of large-scale brain dynamics and applications
+  for computational psychiatry.
+\newblock \emph{Biological Psychiatry: Cognitive Neuroscience and
+  Neuroimaging}, 3\penalty0 (9):\penalty0 777--787, 2018.
+
+\bibitem[Kriegeskorte and Douglas(2018)]{kriegeskorte2018cognitive}
+Nikolaus Kriegeskorte and Pamela~K Douglas.
+\newblock Cognitive computational neuroscience.
+\newblock \emph{Nature neuroscience}, 21\penalty0 (9):\penalty0 1148--1160,
+  2018.
+
+\bibitem[Heinz et~al.(2019)Heinz, Murray, Schlagenhauf, Sterzer, Grace, and
+  Waltz]{heinz2019towards}
+Andreas Heinz, Graham~K Murray, Florian Schlagenhauf, Philipp Sterzer,
+  Anthony~A Grace, and James~A Waltz.
+\newblock Towards a unifying cognitive, neurophysiological, and computational
+  neuroscience account of schizophrenia.
+\newblock \emph{Schizophrenia bulletin}, 45\penalty0 (5):\penalty0 1092--1100,
+  2019.
+
+\bibitem[Doerig et~al.(2023)Doerig, Sommers, Seeliger, Richards, Ismael,
+  Lindsay, Kording, Konkle, Van~Gerven, Kriegeskorte,
+  et~al.]{doerig2023neuroconnectionist}
+Adrien Doerig, Rowan~P Sommers, Katja Seeliger, Blake Richards, Jenann Ismael,
+  Grace~W Lindsay, Konrad~P Kording, Talia Konkle, Marcel~AJ Van~Gerven,
+  Nikolaus Kriegeskorte, et~al.
+\newblock The neuroconnectionist research programme.
+\newblock \emph{Nature Reviews Neuroscience}, pages 1--20, 2023.
+
+\bibitem[Richards et~al.(2019)Richards, Lillicrap, Beaudoin, Bengio, Bogacz,
+  Christensen, Clopath, Costa, de~Berker, Ganguli, et~al.]{richards2019deep}
+Blake~A Richards, Timothy~P Lillicrap, Philippe Beaudoin, Yoshua Bengio, Rafal
+  Bogacz, Amelia Christensen, Claudia Clopath, Rui~Ponte Costa, Archy
+  de~Berker, Surya Ganguli, et~al.
+\newblock A deep learning framework for neuroscience.
+\newblock \emph{Nature neuroscience}, 22\penalty0 (11):\penalty0 1761--1770,
+  2019.
+
+\bibitem[Cole et~al.(2016)Cole, Ito, Bassett, and Schultz]{cole2016activity}
+Michael~W Cole, Takuya Ito, Danielle~S Bassett, and Douglas~H Schultz.
+\newblock Activity flow over resting-state networks shapes cognitive task
+  activations.
+\newblock \emph{Nature neuroscience}, 19\penalty0 (12):\penalty0 1718--1726,
+  2016.
+
+\bibitem[Ito et~al.(2017)Ito, Kulkarni, Schultz, Mill, Chen, Solomyak, and
+  Cole]{ito2017cognitive}
+Takuya Ito, Kaustubh~R Kulkarni, Douglas~H Schultz, Ravi~D Mill, Richard~H
+  Chen, Levi~I Solomyak, and Michael~W Cole.
+\newblock Cognitive task information is transferred between brain regions via
+  resting-state network topology.
+\newblock \emph{Nature communications}, 8\penalty0 (1):\penalty0 1027, 2017.
+
+\bibitem[Hopfield(1982)]{hopfield1982neural}
+John~J Hopfield.
+\newblock Neural networks and physical systems with emergent collective
+  computational abilities.
+\newblock \emph{Proceedings of the national academy of sciences}, 79\penalty0
+  (8):\penalty0 2554--2558, 1982.
+
+\bibitem[Krotov(2023)]{krotov2023new}
+Dmitry Krotov.
+\newblock A new frontier for hopfield networks.
+\newblock \emph{Nature Reviews Physics}, pages 1--2, 2023.
+
+\bibitem[Koiran(1994)]{koiran1994dynamics}
+Pascal Koiran.
+\newblock Dynamics of discrete time, continuous state hopfield networks.
+\newblock \emph{Neural Computation}, 6\penalty0 (3):\penalty0 459--468, 1994.
+
+\bibitem[Robinson et~al.(2005)Robinson, Rennie, Rowe, O'Connor, Gordon, and
+  E]{robinson2005multiscale}
+Peter~A Robinson, CJ~Rennie, Donald~L Rowe, SC~O'Connor, Gordon, and E.
+\newblock Multiscale brain modelling.
+\newblock \emph{Philosophical Transactions of the Royal Society B: Biological
+  Sciences}, 360\penalty0 (1457):\penalty0 1043--1050, 2005.
+
+\bibitem[Daunizeau et~al.(2012)Daunizeau, Stephan, and
+  Friston]{daunizeau2012stochastic}
+Jean Daunizeau, Klaas~Enno Stephan, and Karl~J Friston.
+\newblock Stochastic dynamic causal modelling of fmri data: should we care
+  about neural noise?
+\newblock \emph{Neuroimage}, 62\penalty0 (1):\penalty0 464--481, 2012.
+
+\bibitem[Golland et~al.(2008)Golland, Golland, Bentin, and
+  Malach]{golland2008data}
+Yulia Golland, Polina Golland, Shlomo Bentin, and Rafael Malach.
+\newblock Data-driven clustering reveals a fundamental subdivision of the human
+  cortex into two global systems.
+\newblock \emph{Neuropsychologia}, 46\penalty0 (2):\penalty0 540--553, 2008.
+
+\bibitem[Cioli et~al.(2014)Cioli, Abdi, Beaton, Burnod, and
+  Mesmoudi]{cioli2014differences}
+Claudia Cioli, Herv{\'e} Abdi, Derek Beaton, Yves Burnod, and Salma Mesmoudi.
+\newblock Differences in human cortical gene expression match the temporal
+  properties of large-scale functional networks.
+\newblock \emph{PloS one}, 9\penalty0 (12):\penalty0 e115913, 2014.
+
+\bibitem[Fuster(2004)]{fuster2004upper}
+Joaqu{\i}n~M Fuster.
+\newblock Upper processing stages of the perception--action cycle.
+\newblock \emph{Trends in cognitive sciences}, 8\penalty0 (4):\penalty0
+  143--145, 2004.
+
+\bibitem[Woo et~al.(2015{\natexlab{a}})Woo, Roy, Buhle, and
+  Wager]{woo2015distinct}
+Choong-Wan Woo, Mathieu Roy, Jason~T Buhle, and Tor~D Wager.
+\newblock Distinct brain systems mediate the effects of nociceptive input and
+  self-regulation on pain.
+\newblock \emph{PLoS biology}, 13\penalty0 (1):\penalty0 e1002036,
+  2015{\natexlab{a}}.
+
+\bibitem[Vohryzek et~al.(2020)Vohryzek, Deco, Cessac, Kringelbach, and
+  Cabral]{vohryzek2020ghost}
+Jakub Vohryzek, Gustavo Deco, Bruno Cessac, Morten~L Kringelbach, and Joana
+  Cabral.
+\newblock Ghost attractors in spontaneous brain activity: Recurrent excursions
+  into functionally-relevant bold phase-locking states.
+\newblock \emph{Frontiers in systems neuroscience}, 14:\penalty0 20, 2020.
+
+\bibitem[Zunhammer et~al.(2021)Zunhammer, Spis{\'a}k, Wager, and
+  Bingel]{zunhammer2021meta}
+Matthias Zunhammer, Tam{\'a}s Spis{\'a}k, Tor~D Wager, and Ulrike Bingel.
+\newblock Meta-analysis of neural systems underlying placebo analgesia from
+  individual participant fmri data.
+\newblock \emph{Nature communications}, 12\penalty0 (1):\penalty0 1391, 2021.
+
+\bibitem[Di~Martino et~al.(2014)Di~Martino, Yan, Li, Denio, Castellanos,
+  Alaerts, Anderson, Assaf, Bookheimer, Dapretto, et~al.]{di2014autism}
+Adriana Di~Martino, Chao-Gan Yan, Qingyang Li, Erin Denio, Francisco~X
+  Castellanos, Kaat Alaerts, Jeffrey~S Anderson, Michal Assaf, Susan~Y
+  Bookheimer, Mirella Dapretto, et~al.
+\newblock The autism brain imaging data exchange: towards a large-scale
+  evaluation of the intrinsic brain architecture in autism.
+\newblock \emph{Molecular psychiatry}, 19\penalty0 (6):\penalty0 659--667,
+  2014.
+
+\bibitem[Aine et~al.(2017)Aine, Bockholt, Bustillo, Ca{\~n}ive, Caprihan,
+  Gasparovic, Hanlon, Houck, Jung, Lauriello, et~al.]{aine2017multimodal}
+CJ~Aine, Henry~Jeremy Bockholt, Juan~R Bustillo, Jos{\'e}~M Ca{\~n}ive, Arvind
+  Caprihan, Charles Gasparovic, Faith~M Hanlon, Jon~M Houck, Rex~E Jung, John
+  Lauriello, et~al.
+\newblock Multimodal neuroimaging in schizophrenia: description and
+  dissemination.
+\newblock \emph{Neuroinformatics}, 15:\penalty0 343--364, 2017.
+
+\bibitem[Petersen et~al.(2010)Petersen, Aisen, Beckett, Donohue, Gamst, Harvey,
+  Jack, Jagust, Shaw, Toga, et~al.]{petersen2010alzheimer}
+Ronald~Carl Petersen, Paul~S Aisen, Laurel~A Beckett, Michael~C Donohue,
+  Anthony~Collins Gamst, Danielle~J Harvey, Clifford~R Jack, William~J Jagust,
+  Leslie~M Shaw, Arthur~W Toga, et~al.
+\newblock Alzheimer's disease neuroimaging initiative (adni): clinical
+  characterization.
+\newblock \emph{Neurology}, 74\penalty0 (3):\penalty0 201--209, 2010.
+
+\bibitem[Hadad and Schwartz(2019)]{hadad2019perception}
+Bat-Sheva Hadad and Sivan Schwartz.
+\newblock Perception in autism does not adhere to weber’s law.
+\newblock \emph{Elife}, 8:\penalty0 e42223, 2019.
+
+\bibitem[Rolls(2021)]{rolls2021attractor}
+Edmund~T Rolls.
+\newblock Attractor cortical neurodynamics, schizophrenia, and depression.
+\newblock \emph{Translational Psychiatry}, 11\penalty0 (1):\penalty0 215, 2021.
+
+\bibitem[Javitt(2009)]{javitt2009sensory}
+Daniel~C Javitt.
+\newblock Sensory processing in schizophrenia: neither simple nor intact.
+\newblock \emph{Schizophrenia bulletin}, 35\penalty0 (6):\penalty0 1059--1064,
+  2009.
+
+\bibitem[Butler et~al.(2008)Butler, Silverstein, and Dakin]{butler2008visual}
+Pamela~D Butler, Steven~M Silverstein, and Steven~C Dakin.
+\newblock Visual perception and its impairment in schizophrenia.
+\newblock \emph{Biological psychiatry}, 64\penalty0 (1):\penalty0 40--47, 2008.
+
+\bibitem[Ad{\'a}mek et~al.(2022)Ad{\'a}mek, Langov{\'a}, and
+  Hor{\'a}{\v{c}}ek]{adamek2022early}
+Petr Ad{\'a}mek, Veronika Langov{\'a}, and Ji{\v{r}}{\'\i} Hor{\'a}{\v{c}}ek.
+\newblock Early-stage visual perception impairment in schizophrenia, bottom-up
+  and back again.
+\newblock \emph{Schizophrenia}, 8\penalty0 (1):\penalty0 27, 2022.
+
+\bibitem[Selkoe(2002)]{selkoe2002alzheimer}
+Dennis~J Selkoe.
+\newblock Alzheimer's disease is a synaptic failure.
+\newblock \emph{Science}, 298\penalty0 (5594):\penalty0 789--791, 2002.
+
+\bibitem[Aizenstein and Klunk(2015)]{aizenstein2015hippocampal}
+Howard~J Aizenstein and William~E Klunk.
+\newblock Where is hippocampal activity in the cascade of alzheimer’s disease
+  biomarkers?
+\newblock \emph{Brain}, 138\penalty0 (4):\penalty0 831--833, 2015.
+
+\bibitem[Ewers et~al.(2011)Ewers, Sperling, Klunk, Weiner, and
+  Hampel]{ewers2011neuroimaging}
+Michael Ewers, Reisa~A Sperling, William~E Klunk, Michael~W Weiner, and Harald
+  Hampel.
+\newblock Neuroimaging markers for the prediction and early diagnosis of
+  alzheimer's disease dementia.
+\newblock \emph{Trends in neurosciences}, 34\penalty0 (8):\penalty0 430--442,
+  2011.
+
+\bibitem[Jacobsen et~al.(2015)Jacobsen, Stelzer, Fritz, Ch{\'e}telat, La~Joie,
+  and Turner]{jacobsen2015musical}
+J{\"o}rn-Henrik Jacobsen, Johannes Stelzer, Thomas~Hans Fritz, Gael
+  Ch{\'e}telat, Renaud La~Joie, and Robert Turner.
+\newblock Why musical memory can be preserved in advanced alzheimer’s
+  disease.
+\newblock \emph{Brain}, 138\penalty0 (8):\penalty0 2438--2450, 2015.
+
+\bibitem[Mill et~al.(2022)Mill, Hamilton, Winfield, Lalta, Chen, and
+  Cole]{mill2022network}
+Ravi~D Mill, Julia~L Hamilton, Emily~C Winfield, Nicole Lalta, Richard~H Chen,
+  and Michael~W Cole.
+\newblock Network modeling of dynamic brain interactions predicts emergence of
+  neural information that supports human cognitive behavior.
+\newblock \emph{PLoS Biology}, 20\penalty0 (8):\penalty0 e3001686, 2022.
+
+\bibitem[Hearne et~al.(2021)Hearne, Mill, Keane, Repov{\v{s}}, Anticevic, and
+  Cole]{hearne2021activity}
+Luke~J Hearne, Ravi~D Mill, Brian~P Keane, Grega Repov{\v{s}}, Alan Anticevic,
+  and Michael~W Cole.
+\newblock Activity flow underlying abnormalities in brain activations and
+  cognition in schizophrenia.
+\newblock \emph{Science advances}, 7\penalty0 (29):\penalty0 eabf2513, 2021.
+
+\bibitem[McCormick et~al.(2022)McCormick, Arnemann, Ito, Hanson, and
+  Cole]{McCormick_2022}
+Ethan~M. McCormick, Katelyn~L. Arnemann, Takuya Ito, Stephen~Jos{\'{e}} Hanson,
+  and Michael~W. Cole.
+\newblock Latent functional connectivity underlying multiple brain states.
+\newblock \emph{Network Neuroscience}, 6\penalty0 (2):\penalty0 570--590, 2022.
+\newblock \doi{10.1162/netn_a_00234}.
+\newblock URL \url{https://doi.org/10.1162%2Fnetn_a_00234}.
+
+\bibitem[Hertz et~al.(1991)Hertz, Krogh, and Palmer]{hertz1991introduction}
+John Hertz, Andres Krogh, and Richard~G Palmer.
+\newblock Introduction to the theory of neural computation, chapter 7.
+\newblock \emph{Lecture Notes}, 1, 1991.
+
+\bibitem[Khona and Fiete(2022)]{khona2022attractor}
+Mikail Khona and Ila~R Fiete.
+\newblock Attractor and integrator networks in the brain.
+\newblock \emph{Nature Reviews Neuroscience}, 23\penalty0 (12):\penalty0
+  744--766, 2022.
+
+\bibitem[Cabral et~al.(2017)Cabral, Kringelbach, and
+  Deco]{cabral2017functional}
+Joana Cabral, Morten~L Kringelbach, and Gustavo Deco.
+\newblock Functional connectivity dynamically evolves on multiple time-scales
+  over a static structural connectome: Models and mechanisms.
+\newblock \emph{NeuroImage}, 160:\penalty0 84--96, 2017.
+
+\bibitem[Bellec et~al.(2010)Bellec, Rosa-Neto, Lyttelton, Benali, and
+  Evans]{bellec2010multi}
+Pierre Bellec, Pedro Rosa-Neto, Oliver~C Lyttelton, Habib Benali, and Alan~C
+  Evans.
+\newblock Multi-level bootstrap analysis of stable clusters in resting-state
+  fmri.
+\newblock \emph{Neuroimage}, 51\penalty0 (3):\penalty0 1126--1139, 2010.
+
+\bibitem[Spisak et~al.(2020)Spisak, Kincses, Schlitt, Zunhammer,
+  Schmidt-Wilcke, Kincses, and Bingel]{Spisak_2020}
+Tamas Spisak, Balint Kincses, Frederik Schlitt, Matthias Zunhammer, Tobias
+  Schmidt-Wilcke, Zsigmond~T. Kincses, and Ulrike Bingel.
+\newblock Pain-free resting-state functional brain connectivity predicts
+  individual pain sensitivity.
+\newblock \emph{Nature Communications}, 11\penalty0 (1), jan 2020.
+\newblock \doi{10.1038/s41467-019-13785-z}.
+\newblock URL \url{https://doi.org/10.1038%2Fs41467-019-13785-z}.
+
+\bibitem[Woo et~al.(2015{\natexlab{b}})Woo, Roy, Buhle, and Wager]{Woo_2015}
+Choong-Wan Woo, Mathieu Roy, Jason~T. Buhle, and Tor~D. Wager.
+\newblock Distinct brain systems mediate the effects of nociceptive input and
+  self-regulation on pain.
+\newblock \emph{{PLoS} Biology}, 13\penalty0 (1):\penalty0 e1002036, jan
+  2015{\natexlab{b}}.
+\newblock \doi{10.1371/journal.pbio.1002036}.
+\newblock URL \url{https://doi.org/10.1371%2Fjournal.pbio.1002036}.
+
+\bibitem[D.(2011)]{Tor_D__2011}
+Wager~Tor D.
+\newblock {NeuroSynth}: a new platform for large-scale automated synthesis of
+  human functional neuroimaging data.
+\newblock \emph{Frontiers in Neuroinformatics}, 5, 2011.
+\newblock \doi{10.3389/conf.fninf.2011.08.00058}.
+\newblock URL \url{https://doi.org/10.3389%2Fconf.fninf.2011.08.00058}.
+
+\end{thebibliography}
