@@ -574,7 +574,7 @@ a system showing close analogies with a type of recurrent artificial neural netw
 
 Hopfield networks have previously been shown to exhibit a series of characteristics that are also highly relevant for 
 brain function, including the ability to store and recall memories {cite:p}`hopfield1982neural`, 
-self-repair {cite:p}'agliari2020tolerance', a staggering robustness to noisy or corrupted inputs 
+self-repair {cite:p}`agliari2020tolerance`, a staggering robustness to noisy or corrupted inputs 
 {cite:p}`hertz1991introduction` and the tendency to produce multistable dynamics organized by the "gravitational pull" 
 of a finite number of attractor states {cite:p}`khona2022attractor`.
 
@@ -588,7 +588,7 @@ Using functional connectome-based Hopfield  neural network (CHNN) model provides
 understanding of brian dynamics. Its simplicity comes with important advantages. 
 
 First, increasing model complexity results in an exponential explosion of the parameter space. Although complex, 
-fine-grained computation models hold promise a full-blown understanding, they very easily overfit real data (**ref**). 
+fine-grained computation models hold promise a full-blown understanding, they very easily overfit real data {cite:p}`deco2014great`. 
 The basic CHNN approach has only two hyperparameters (temperature and noise) and produce fairly consistent behavior on a
 wide range of parameter values. To demonstrate the power of simplicity, in the present work, we deliberately minimized
 fine-tuning of any free parameters. We fixed the temperature parameter at a value that robustly provides 4 attractor 
