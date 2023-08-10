@@ -89,7 +89,7 @@ todo
 
 +++
 
-# **Introduction**
+## Introduction
 
 Brain function is characterized by the continuous activation and deactivation of anatomically distributed neuronal 
 populations.
@@ -184,9 +184,9 @@ These experiments provide converging evidence for the validity of connectome-bas
 of brain dynamics, and highlight their potential to provide a fresh perspective on a wide range of research questions
 in basic and translational neuroscience.
 
-# **Main**
+## Main
 
-## Connectome-based Hopfield network as a model of brain dynamics
+### Connectome-based Hopfield network as a model of brain dynamics
 
 First, we explored the attractor states of the functional connectome in a sample of n=41 healthy young 
 participants ([study 1](#tab-samples)). We estimated interregional activity flow {cite:p}`cole2016activity; ito2017cognitive` 
@@ -279,7 +279,7 @@ projection depicted on ({numref}`attractors`C) as a simplified representation of
 for all subsequent analyses in this work.
 
 
-## Reconstruction of resting state brain dynamics
+### Reconstruction of resting state brain dynamics
 
 The spatial patterns of the obtained attractor states exhibit high neuroscientific relevance and closely resemble previously described large-scale brain systems. ({numref}`rest-validity`A). The first pair of attractors (mapped on PC1, horizontal axis) resemble the two complementary “macro” systems described, among others, by {cite:t}`golland2008data` and {cite:t}`cioli2014differences` as well as the two "primary" brain states observed by {cite:t}`chen2018human` and the dysphoric and anxiosomatic clusters that emerge as targets for circuit-based neuromodulation {cite:p}`siddiqi2020distinct`. A common interpretation of this state-pair is that it consists of (i) an “extrinsic” system
 which exhibits a stronger direct connection to the immediate sensory environment and (ii) an "intrinsic" system, whose 
@@ -342,7 +342,7 @@ proposed approach ({numref}`rest-validity`D).
 It is important to reiterate that the proposed model was neither explicitly informed about, nor trained or optimized to reconstruct any of the investigated spatial (bi-modal distribution, explanatory performance) or temporal patterns (temporal state occupancy) of the brain. 
 The ability of the proposed connectome-based Hopfield model to reconstruct all these characteristics of real data strongly suggests that it captures essential relationships between the topology of the brain's functional connectome and the dynamics of its activation. 
 
-## An explanatory framework for task-based brain activity
+### An explanatory framework for task-based brain activity
 
 The proposed framework offers a natural account for how activation patterns in the brain dynamically emerge form the 
 underlying functional connectivity. To illustrate this, we obtained task-based fMRI data from a study by 
@@ -449,7 +449,7 @@ activity in certain regions (or lower or higher connectivity between them) on gl
 various tasks provides unprecedented opportunities for forecasting the effect of interventions, such as pharmacological 
 or non-invasive brain stimulation, on brain function.
 
-## Clinical relevance
+### Clinical relevance
 
 Computational models, such as the CHNN approach, have the potential to make a significant contribution to our mechanistic comprehension of various neurological and psychiatric disorders. This represents a crucial stride towards developing effective treatments. While providing a demonstration of the CHNN approach to yield such mechanistic insights in clinical populations is well outside the scope of the current study, here we present evidence that CHNN-based attractor state analysis can effectively capture and quantify several disease-related alterations in resting state brain dynamics.
  
@@ -531,9 +531,9 @@ a commonly reported finding in AD {cite:p}`aizenstein2015hippocampal; ewers2011n
 | SOMATOMOTOR_NETWORK_anteromedial         |          2 |       0.093 | <0.0001 |
 
 
-# **Discussion**
+## Discussion
 
-> #### Main points:
+>  **Main points**:
 > - Summary of findings
 > - construct validity
 > - despite the simplicity: striking performnace
@@ -546,7 +546,7 @@ a commonly reported finding in AD {cite:p}`aizenstein2015hippocampal; ewers2011n
 > - practical utility: replicability, stability, tolerance to noise, self-healing, etc.
 > - outlook: future directions, e.g., parameter fine tuning, more attractor states, higher-dimension projections, latent FC, extensions like HRF modelling, etc.
 >
-> #### other potential topics:
+> **other potential topics**:
 > - why no HRF modelling (could be a possible extension, but it is also not part of the activity flow approach and we don't recosntruct time series, but rather activations)
 > - is the connectome stationary? See arguments by the Cole-group.
 > - why rs-fMRI connectome (could be latent-FC a'la McCormick, 2022)
@@ -635,13 +635,13 @@ be used to train and test machine learning algorithms, such as deep neural netwo
 activity from functional connectivity. This approach may be particularly useful in the context of clinical applications,
 where the amount of available data is often limited. 
 
-# Limitations
+### Limitations
 However, the CHNN projection only conveys a small proportion of the richness of the full state-space dynamics 
 reconstructed by the CHNN model. Investigating higher-dimensional dynamics, fine-tuned hyperparameters, the effect of 
 different initializations and perturbations is an important direction for future work, with the potential to further 
 improve the model's accuracy and usefulness.
 
-# **Conclusion**
+## Conclusion
 
 To conclude, here we have proposed a novel computational framework that accurately captures and predicts brain dynamics
 under a wide range of conditions. The framework models large-scale activity flow in the brain with a recurrent 
@@ -656,8 +656,8 @@ proposed model opens up a series of exciting opportunities for future research, 
 causality and mechanistic understanding, and the possibility to predict the effects of various interventions, thereby
 paving the way for novel personalized medical approaches.
 
-# **Methods**
-## Hopfield network
+## Methods
+### Hopfield network
 We employ an empirical, connectome-based Hopfield neural network (CHNN) as a means to model brain activation and dynamics, aiming to 
 bridge the gap between classical computational modeling and neuroconnectionism. The architecture of the Hopfield network
 {cite:p}`hopfield1982neural` consists of a single layer of fully connected nodes, the undirected weights connecting 
@@ -683,7 +683,7 @@ If the value of $\beta$ is too high however, the network might retrieve spurious
 which meet the convergence criterium, but are composite states which merge multiple states and are not "true" 
 attractor states. 
 
-## CHNN projection
+### CHNN projection
 The attractor landscape can be mapped out by stimulating our CHNN model with a random input, and adding noise after 
 each iteration of the network relaxation. This prevents the network to reach an energy minimum and the network 
 produces possible state configurations within the landscape, while avoiding the energy minimal attractor basins. 
@@ -702,7 +702,7 @@ todo:
 - explained variance of energy through state sample 
 - attractor classification accuracy
 
-## Reconstruction 
+### Reconstruction 
 We use several experiments to investigate the validity of the CHNN model and its ability to reconstruct resting state
 brain dynamics. First, we investigate the reproducibility  of the attractor states across studies.
 The attractor states are highly reproducible across various datasets and scanners, as the attractor states from studies
@@ -717,7 +717,7 @@ We also investigated the fractional time occupied by each attractor state in rea
 this analysis each timeframe was used as an input to the CHNN to generate its corresponding attractor state, a one 
 way $\tilde{\chi}^2$ test was performed on the given frequencies against expected uniform frequencies.  
 
-## Task-based activity
+### Task-based activity
 The CHNN projection provides a unique framework in which we can analyze and visualize how activations dynamically
 change between two conditions. We highlight these properties on the dataset of study 4, which investigated
 the self-regulation of pain. We preprocess the timeseries data as discussed in **ref**, and divide the samples into 
@@ -743,7 +743,7 @@ simulated data. We compare the simulated difference to the actual difference thr
 The analysis documented in this section is repeated, comparing the pain upregulation and pain downregulation 
 data provided with study 4. 
 
-## Clinical data
+### Clinical data
 To assess clinical relevance, we introduce a pipeline that investigates the group differences in raw timeseries 
 activation, during each of the attractor states. 
 We assign each TR a label according to its attractor state, by relaxing the CHNN for each TR and then calculate the 
@@ -753,7 +753,7 @@ attractor states between the groups, randomly assigning the group label (preserv
 We adjust the significance threshold with a bonferroni correction, accounting for tests across 4 states and 122 regions,
 resulting in $\alpha = 0.0102$. 
 
-## Data preprocessing
+### Data preprocessing
 The data from studies 1-4 and 6-8 is parcellated with the BASC multiscale atlas into 122 regions 
 {cite:p}`bellec2010multi`.
 The timeseries is scrubbed with a threshold of $50\%$ and a frame-wise displacement threshold of $0.15$, to 
@@ -762,7 +762,7 @@ The connectivity matrix used to set the weights of the CHNN, is calculated with 
 parcellated, scrubbed timeseries, with the diagonal elements set to zero. When initializing the CHNN with the connectome, 
 the weights are standard scaled to mean=0 and std=1; the weights $w_{ij}$ are symmetric. 
 
-## Data
+### Data
 ```{list-table}
 :header-rows: 1
 :name: tab-samples
