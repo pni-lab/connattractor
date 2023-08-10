@@ -70,29 +70,20 @@ bibliography:
 ---
 +++ {"part": "key-points"}
 **Key Points:**
-- We present a simple yet powerful computational model large-scale brain dynamics
-- The model computes "activity flow" across brain regions using a continuous Hopfield artificial neural network.
-- Instead of training the network weights to solve specific tasks, they are initialized with empirical functional brain
-connectivity.
-- It defines an energy level for any arbitrary brain activation patterns and a trajectory towards one of the finite 
-number of stable patterns (attractor states) that minimize this energy
-- The model captures the dynamic repertoire of the brain in resting conditions
-- It conceptualizes both task-induced and pathological changes in brain activity as a shift in these dynamics.
-- We validate the model through eight studies involving approximately 2000 participants.
+- We present a simple yet powerful computational model for large-scale brain dynamics
+- The model computes recurrent "activity flow" trough the fucntional brain connectome using a connectome-based Hopfield artificial neural network (CHNN).
+- CHNNs accurately reconstruct the dynamic repertoire of the brain in resting conditions
+- CHNNs conceptualize both task-induced and pathological changes in brain activity as a shift in these dynamics.
+- Our approach is validated through eight studies involving approximately 2000 participants.
 +++
 
 +++ {"part": "abstract"}
-
-**Abstract:**
-
+Understanding large-scale brain dynamics is a grand challenge in neuroscience. 
 Here we have proposed a lightweight, high-level computational framework that accurately captures and predicts brain dynamics
-under a wide range of conditions. The framework models large-scale activity flow in the brain with a recurrent 
-artificial neural network architecture that, instead of being trained to solve specific tasks or mimic certain dynamics,
-is simply initialized with the empirical functional connectome. The framework identifies neurobiologically meaningful 
-attractor states and provides a model for how these restrict brain dynamics. The proposed framework, referred to as the
-connectome-based Hopfield neural network (CHNN) model, can accurately reconstruct and predict brain dynamics under a wide range of 
-conditions, including resting state, task-induced activity changes, as well as in various brain disorders. CHNNs establish a conceptual link between connectivity and activity provide and offer a simple, robust, and highly interpretable computational alternative to the conventional descriptive approaches to investigating brain function. The generative nature of the proposed model opens up a series of exciting opportunities for future research, including novel ways of assessing causality and mechanistic understanding, and the possibility to predict the effects of various interventions, thereby paving the way for novel personalized medical approaches.
-
+under a wide range of conditions. The framework models large-scale activity flow in the brain with a connectome-based Hopfield 
+artificial neural network (CHNN) architecture. CHNNs are neither optimized to mimic certain brain characteristics nor trained to solve specific tasks, but simply initialized with the empirical functional connectome. The CHNN framework identifies neurobiologically meaningful attractor states and provides a model for how these restrict brain dynamics.
+Our results show that CHNNs can accurately reconstruct and predict brain dynamics under a wide range of conditions, including resting state, task-induced activity changes, as well as in various brain disorders. 
+CHNNs establish a conceptual link between connectivity and activity provide and offer a simple, robust, and highly interpretable computational alternative to the conventional descriptive approaches to investigating brain function. The generative nature of the proposed model opens up a series of exciting opportunities for future research, including novel ways of assessing causality and mechanistic understanding, and the possibility to predict the effects of various interventions, thereby paving the way for novel personalized medical approaches.
 +++
 
 ## Introduction
@@ -590,7 +581,7 @@ optimization of the CHNN model.
 
 Attractor states are a key concept in the CHNN framework. They are not only local minima in the state-space but act as a driving force for the dynamic trajectories of brain activity. Nevertheless, attractor states should not be confused with the conventional notion of brain states (e.g. co-activation patterns {cite:p}`chen2015introducing`). In the CHNN framework, attractor states can rather be conceptualized as "Platonic idealizations" of brain activity, that are continuously approximated - but never reached - by the brain, resulting in a complex, clustered distribution of actual brain activation patterns. In or notion, this clusteredness is what gives rise to the commonly described reoccurring quasi-periodic patterns, commonly referred to as brain states. 
 
-Relying on previous work, we can establish a relatively straightforward (yet somewhat speculative) mapping between attractor states and brain function. We refer to the first two attractor states as the internal and external subsystems {cite:p}`golland2008data; cioli2014differences; `. Both CHNN-reconstructed and empirical brain activity spans the highest variance along the axis corresponding to this attractor state pair, suggesting that the robust and widely described observation of the brain state we commonly refer to as the DMN is a consequence of the brain's tendency to commute between the two state-space clusters emerging along this primary axis.
+Relying on previous work, we can establish a relatively straightforward (yet somewhat speculative) mapping between attractor states and brain function. We refer to the first two attractor states as the internal and external subsystems {cite:p}`golland2008data; cioli2014differences`. Both CHNN-reconstructed and empirical brain activity spans the highest variance along the axis corresponding to this attractor state pair, suggesting that the robust and widely described observation of the brain state we commonly refer to as the DMN is a consequence of the brain's tendency to commute between the two state-space clusters emerging along this primary axis.
 The third and fourth attractor states accurately map to the previously described perception-execution axis within the brain {cite:p}`fuster2004upper`. The four investigated attractor states display an appealing correspondence to recent theories of brain function that capitalize on Friston's free energy principle {cite:p}`friston2006free` and postulate the necessary existence of subsystems for active and perceptual inference {cite:p}`friston2023free` as well as a hierarchically organized (i.e. external and internal) subsystems that give rise to consciousness {cite:p}`ramstead2023inner`.
 
 In the CHNN framework, the brain is in a constant state of flux, traversing extended areas of the state space. Task-based brain activity in this framework is not a mere response to external stimuli in certain brain locations but a perturbation of the brain's charcteristic dynamic trajectories, shifting towards the realms of those attractor states that represent the type of function required by the task or stimuli. In other words brain activity is only perturbed by external inpout, rather than predestined. We exemplified this with the case of the self-regulation of pain (study 4).
