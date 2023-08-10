@@ -85,13 +85,7 @@ number of stable patterns (attractor states) that minimize this energy
 
 **Abstract:**
 
-Here we have proposed a lightweight, high-level computational framework that accurately captures and predicts brain dynamics
-under a wide range of conditions. The framework models large-scale activity flow in the brain with a recurrent 
-artificial neural network architecture that, instead of being trained to solve specific tasks or mimic certain dynamics,
-is simply initialized with the empirical functional connectome. The framework identifies neurobiologically meaningful 
-attractor states and provides a model for how these restrict brain dynamics. The proposed framework, referred to as the
-connectome-based Hopfield neural network (CHNN) model, can accurately reconstruct and predict brain dynamics under a wide range of 
-conditions, including resting state, task-induced activity changes, as well as in various brain disorders. CHNNs establish a conceptual link between connectivity and activity provide and offer a simple, robust, and highly interpretable computational alternative to the conventional descriptive approaches to investigating brain function. The generative nature of the proposed model opens up a series of exciting opportunities for future research, including novel ways of assessing causality and mechanistic understanding, and the possibility to predict the effects of various interventions, thereby paving the way for novel personalized medical approaches.
+todo
 
 +++
 
@@ -539,14 +533,32 @@ a commonly reported finding in AD {cite:p}`aizenstein2015hippocampal; ewers2011n
 
 ## Discussion
 
-Regions of the brain are in a constant flux of information exchange, giving rise to characteristic co-activations patterns.
+>  **Main points**:
+> - Summary of findings
+> - construct validity
+> - despite the simplicity: striking performnace
+> - why? (captures the essential mechanisms of which we only have noise measurements)
+> - what are attractor states at all? (platonic ideals, neurobiological significance, etc.)))
+> - basic research perspectives: new view on brain dyanmics: rest vs. task = false dichotomy
+> - basic research perspectives: generative model -> causal inference(?), mechanistic understanding (as opposed to correlational studies)
+> - a common framework for interpretations: interpretaive schematic map of brain activation states
+> - translational and clinical research perspectives: generative model for diseases, predicts brain activity, e.g. to optimize tretament strategies
+> - practical utility: replicability, stability, tolerance to noise, self-healing, etc.
+> - outlook: future directions, e.g., parameter fine tuning, more attractor states, higher-dimension projections, latent FC, extensions like HRF modelling, etc.
+>
+> **other potential topics**:
+> - why no HRF modelling (could be a possible extension, but it is also not part of the activity flow approach and we don't recosntruct time series, but rather activations)
+> - is the connectome stationary? See arguments by the Cole-group.
+> - why rs-fMRI connectome (could be latent-FC a'la McCormick, 2022)
+> the CHNN model is not a model of brain function, but a model of brain dynamics. It does not strice to explain various brain regions ability to perform certain computations, but the brain's characteristic trajectories, which are perturbed by tasks and other types of interventions.
+
+Regions of the brain are in a constant flux of information exchange, leading to characteristic co-activations.
 The degree to which activation in a region triggers activation in another is different for every pair of regions, spanning an 
 intricate network, commonly referred to as the functional connectome. 
 
-In this study, we have introduced a simple yet robust framework that elucidates how activity propagation within the functional connectome orchestrates large-scale brain dynamics, leading to distinct brain states accompanied by characteristic dynamic responses to perturbations.
-Through a series of experiments, we have demonstrated that the proposed model can effectively reconstruct and predict large-scale brain dynamics across diverse conditions.
-
-The presented approach offers a fresh perspective on large scale brain dynamics and offers unparalleled prospects for forecasting the impact of interventions, including pharmacological treatments or non-invasive brain stimulation, on brain function.
+In this study, we have introduced a simple yet robust framework that elucidates how activity propagation within the functional connectome restricts the system's dynamics, leading to distinct brain states accompanied by characteristic dynamic responses to perturbations.
+Through a series of experiments, we have demonstrated that the proposed model can effectively reconstruct and predict large-scale brain dynamics across diverse
+conditions. The presented approach offers a fresh perspective on large scale brain dynamics and offers unparalleled prospects for forecasting the impact of interventions, including pharmacological treatments or non-invasive brain stimulation, on brain function.
 
 The construct validity of our model is rooted in the activity flow principle, first introduced by 
 {cite:t}`cole2016activity`. The activity flow principle states that activity in a brain region can be predicted by a weighted combination of the activity of all other regions, where the weights are set to the functional connectivity of those regions to the held-out region. This principle has been shown to hold across a wide range of experimental and clinical conditions
@@ -554,33 +566,35 @@ The construct validity of our model is rooted in the activity flow principle, fi
 
 > ToDo: latent FC-based modelling: [](https://doi.org/10.1162/netn_a_00234)
 
-Our model was born from the intuition that the repeated, iterative application of the activity flow equation in a system that exhibits close analogies with a type of recurrent artificial neural network known as Hopfield networks 
+Our model was born from the intuition that the repeated, iterative application of the activity flow equation results in
+a system showing close analogies with a type of recurrent artificial neural network, know as Hopfield networks 
 {cite:p}`hopfield1982neural`.
 
 Hopfield networks have previously been shown to exhibit a series of characteristics that are also highly relevant for 
 brain function, including the ability to store and recall memories {cite:p}`hopfield1982neural`, self-repair {cite:p}`murre2003selfreparing`,
 a staggering robustness to noisy or corrupted inputs {cite:p}`hertz1991introduction` and the ability to produce 
 multistable dynamics organized by the "gravitational pull" of a finite number of attractor states 
-{cite:p}`khona2022attractor`. While many of such properties of Hopfiled networks have previously been proposed as a model for micro-scale neural systems (see {cite}`khona2022attractor` for a review), the proposed link between macro-scale activity propagation and Hopfield networks allows transferring the vast body of knowledge on Hopfield networks to the study of large-scale brain dynamics.
+{cite:p}`khona2022attractor`. While many of such properties of Hopfiled networks have previously been proposed as a model for micro-scale neural systems, the proposed link between macro-scale activity propagation and Hopfield networks allows transferring the vast body of knowledge on Hopfield networks to the study of large-scale brain dynamics.
 
-Integrating Cole's activity flow principle with the Hopfield neural network architecture mandates the initiation of network weights with functional connectivity values, specifically partial correlations as suggested by {cite:t}`cole2016activity`.
-Considering the functional connectome as weights of an already trained neural network distinguishes our methodology not only from conventional computational modeling strategies, which usually rely on the structural connectome as a proxy for polysynaptic connectivity {cite:p}`cabral2017functional`, but also from "neuroconnectomist" approaches that employ explicit training procedures {cite:p}`doerig2023neuroconnectionist`.
-Functional connectome-based Hopfield neural network (CHNN) models can be conceptualized as a streamlined alternative to those methodologies, offering significant advantages.
+Integrating Cole's activity flow principle with the Hopfield neural network architecture mandates the initiation of network weights with functional connectivity values, specifically partial correlations as suggested by {cite:t}`cole2016activity`). Starting from the functional connectome distinguishes our methodology not only from conventional computational modeling strategies, which usually rely on the structural connectome as a proxy for polysynaptic connectivity {cite:p}`cabral2017functional`, but also from "neuroconnectomist" approaches that employ explicit training procedures {cite:p}`doerig2023neuroconnectionist`.
+Functional connectome-based Hopfield neural network (CHNN) models as can be conceptualized as a streamlined alternative to those methodologies, offering significant advantages.
 
-Firstly, the intricate nature of conventional computational models of the brain leads to an exponential proliferation of the parameter space. 
-While finely detailed computational models hold promise for providing comprehensive insights, they are prone to overfitting real data {cite:p}`breakspear2017dynamic`. 
-In contrast to those approaches, the basic form of the CHNN approach comprises solely two hyperparameters (temperature and noise) and yields notably consistent outcomes across an extensive range of these parameter. To underscore the potency of this simplicity and stability, in the present work, we intentionally minimized the fine-tuning of these parameters. We fixed the temperature parameter at a value that robustly provides 4 attractor 
+Firstly, the intricate nature of conventional computational models of the brain leads to an exponential proliferation of the parameter space. While finely detailed computational models hold promise for providing comprehensive insights, they are prone to overfitting real data {cite:p}`breakspear2017dynamic`. 
+The basic form of the CHNN approach comprises solely two hyperparameters (temperature and noise) and yields notably consistent outcomes across an extensive range of these parameter. To underscore the potency of this simplicity, in the present work, we intentionally minimized the fine-tuning of these parameters. We fixed the temperature parameter at a value that robustly provides 4 attractor 
 states and used a single noise level for all experiments (selected with a coarse optimization procedure to approximately
 mimic the distribution of real data). 
 
-Secondly, high model complexity usually translates to a greater challenge in terms of interpretability. 
-The CHNN approach offers straightforward interpretations, as it establishes a
+Secondly, heightened complexity usually translates to a greater challenge in terms of interpretability. 
+The CHNN approach offers straightforward, intuitive interpretations, as it establishes a
 direct link between two highly prevalent metrics of brain function: functional connectivity and brain activity. 
 This connection is not solely conceptual, but also mathematical, facilitating the exploration and prediction of alterations in the system's dynamics in response to perturbations affecting both activity and connectivity.
 
+In the present work, we further we enhanced interpretability by confining a portion of the analysis to a streamlined two-dimensional embedding within the state-space derived from the CHNN approach, denoted as the CHNN projection. This 
+projection is a powerful tool for the visualization of the CHNN model's dynamics, and facilitates comparison with the dynamics of the native real activity.
+
 Given its simplicity, it is remarkable, if not surprising, how accurately the CHNN model is able to 
 reconstruct and predict brain dynamics under a wide range of conditions. Particularly surprising is the result
-that the 2-dimensional CHNN projection can explain more variance in real resting state fMRI data than the first two principal components derived from the data itself. 
+that the CHNN projection can explain more variance in real resting state fMRI data than the first two principal components derived from the data itself. 
 Here we propose that the explanation for the extraordinary performance of the CHNN model in reconstructing brain function is that it captures essential principles of the underlying dynamics that can be used to reconstruct the brain's activation state-space even if our empirical measurements are corrupted by noise and low sampling rate.
 
 The known noise-tolerance of the proposed architecture may also explain the high replicability of CHNN attractors across different
@@ -588,47 +602,59 @@ datasets (study 2 and 3). The observed level of replicability allowed us to re-u
 connectome of study 1 for all subsequent studies (2-8), without any further fine-tuning or study-specific parameter 
 optimization of the CHNN model.
 
-Attractor states are a key concept in the CHNN framework. They are not only local minima in the state-space but act as a driving force for the dynamic trajectories of brain activity. Nevertheless, attractor states should not be confused with the conventional notion of brain states (e.g. co-activation patterns {cite:p}`chen2015introducing`). In the CHNN framework, attractor states can rather be conceptualized as "Platonic idealizations" of brain activity, that are continuously approximated - but never reached - by the brain, resulting in a complex, clustered distribution of actual brain activation patterns. In or notion, this clusteredness is what gives rise to the commonly described reoccurring quasi-periodic patterns, commonly referred to as brain states. 
+Attractor states are a key concept in the CHNN framework, as they are not only local minima in the state-space but a driving force for the dynamic trajectories of brain activity. Yet, it seems like real brain activity never reaches the attractor states. Thus attractor states should not be confused with the conventional notion of brain states (e.g. co-activation patterns {cite:p}`chen2015introducing`). In the CHNN framework, attractor states can rather be conceptualized as Platonic idealizations of brain activity, that are continuously approximated - but never reached - by the brain, resulting in a complex, clustered distribution of actual brain activation patterns. In or notion, this clusteredness is what gives rise to the commonly described reoccurring quasi-periodic patterns we commonly refer to as brain states. 
 
-Relying on previous work, we can establish a relatively straightforward (yet somewhat speculative) mapping between attractor states and brain function. We refer to the first two attractor states as the internal and external subsystems {cite:p}`golland2008data; cioli2014differences; `. Both CHNN-reconstructed and empirical brain activity spans the highest variance along the axis corresponding to this attractor state pair, suggesting that the robust and widely described observation of the brain state we commonly refer to as the DMN is a consequence of the brain's tendency to commute between the two state-space clusters emerging along this primary axis.
-The third and fourth attractor states accurately map to the previously described perception-execution axis within the brain {cite:p}`fuster2004upper`. The four investigated attractor states display an appealing correspondence to recent theories of brain function that capitalize on Friston's free energy principle {cite:p}`friston2006free` and postulate the necessary existence of subsystems for active and perceptual inference {cite:p}`friston2023free` as well as a hierarchically organized (i.e. external and internal) subsystems that give rise to consciousness {cite:p}`ramstead2023inner`.
+Relying on previous work, we can establish a relatively straightforward (yet somewhat speculative) mapping between attractor states and brain function. The first two attractor states, that we refer to as the external and internal subsystems. Both CHNN-reconstructed and empirical brain activity spans the highest variance along the axis corresponding to this attractor state pair, suggesting that the robust and widely described observation of the brain state we commonly refer to as the DMN is a consequence of the brain's tendency to commute between the two state-space clusters emerging along this primary axis.
 
-In the CHNN framework, the brain is in a constant state of flux, traversing extended areas of the state space. Task-based brain activity in this framework is not a mere response to external stimuli in certain brain locations but a perturbation of the brain's charcteristic dynamic trajectories, shifting towards the realms of those attractor states that represent the type of function required by the task or stimuli. In other words brain activity is only perturbed by external inpout, rather than predestined. We exemplified this with the case of the self-regulation of pain (study 4).
-In our analyses, the CHNN approach was not only able to capture participant-level activity changes induced by pain and its self-regulation (showing significant differences on the CHNN projection and in terms of state energy), but also accurately predicted the non-linear changes in activity flow induced by characteristic activity changes and give a mechanistic account for how activity change in a single region (NAcc) may result in a significantly altered pain experience.
+The third and fourth attractor states accurately map to the previously described perception-execution axis within the brain. The four investigated attractor states display an appealing correspondence to recent theories of brain function that capitalize on Friston's free energy principle (FEP ref) and postulate the necessary existence of subsystems for active and perceptual inference (ref) as well as a hierarchically organized (i.e. external and internal) subsystems that give rise to consciousness (ref).
+
+In the CHNN framework, the brain is in a constant flux on the state space. Thus, taks-based brain activity in this framework is not a mere response to external stimuli in certain brain locations but a perturbation of the brain's charcteristic dynamic trajectories, shifting towards the realms of attractor states that represent the type of function required by the task or stimuli. In other words brain activity is only perturbed by external inpout, rather than predestined. This model may give a natural account for many task-based fMRI findings. We exemplified this with the case of the self-regulation of pain (study 4).
+In our analyses, the CHNN approach was not only able to capture participant-level 
+activity changes induced by pain and self-regulation (showing significant differences on the CHNN projection and in
+terms of state energy), but also accurately predicted the non-linear changes in activity flow induced by characteristic
+activity changes and give a mechanistic account for how activity change in a single region (NAcc) may result in a significantly altered pain experience.
 
 Brain dynamics can not only be perturbed by task or other types of experimental or naturalistic interventions, but also
-by pathological alterations. In our analysis of clinical samples (studies 6-8), we found that CHNN-based analysis of mean attractor activations is a highly sensitive tool to characterise neural correlates of autism spectrum disorder (ASD), Schizophrenia (SCH) and Alzheimer's disease (AD), even with the most conservative correction for multiple comparisons. These results - altough descriptiuve in their nature - provide a proof-of-concept regarding the clinical potential of the proposed approach and pave the way for more elaborate applications of the CHNN approach in clinical and translational research.
+by pathological alterations. In our analysis of clinical samples study 6-8 we found that CHNN-based analysis of mean attractor activations is a highly sensitive tool to characterise neural correlates of autism spectrum disorder (ASD), Schizophrenia (SCH) and Alzheimer's disease (AD).
 
-Together, our findings open up a series of exciting opportunities for the mechanistic understanding of brain function. 
+Together, these results open up a series of exciting opportunities for the mechanistic understanding of brain function. 
+By its generative nature, the CHNN model could foster analyses that aim at disentangling causal relationships, which are
+extremely difficult to infer in case of systems as complex as the brain. It could, for instance, aid the differentiation
+of primary causes and secondary effects of particular activity or connectivity changes in various clinical conditions.
 
-First, the 2-dimensional CHNN projection offers a common framework for the interpretations of any brain activity patterns, and conceptualize changes related to various behavioral or clinical states or traits as a shift in brain dynamics along the axes determined by the attractor states.
-
-Second, the CHNN model's utility extends far beyind the sole detection of such altered brain dynamics. By its generative nature, CHNN analyses may provide insights into the causes of changes in brain dynamics, by for instance, identifying the regions or connections that act as an Achilles heel in generating such changes. Such analyses could, for instance, aid the differentiation of primary causes and secondary effects of particular activity or connectivity changes in various clinical conditions.
-
-Third, the CHNN approach might provide testable predictions about the effects of interventions on brain functions, 
+Moreover, the CHNN approach might provide testable predictions about the effects of interventions on brain functions, 
 like pharmacological or non-invasive brain stimulation (e.g. transcranial magnetic or direct current stimulation, 
-focused ultrasound) or neurofeedback. Obtaining such predictions on the individual level (e.g. based on the individual functional connectome) might aid the design of personalized medicine approaches.
+focused ultrasound) or neurofeedback.
+For instance, in the context of pain, the CHNN model might be used to predict the effect of various analgesic drugs (or
+other treatment strategies with known neural correlates) on the individual level (e.g. based on the individual 
+functional connectome). Aiding the design of personalized medicine approaches is a particularly promising field of 
+application for the proposed framework.
 
-In this initial work, we presneted the similiest possible implementation of the CHNN concept. It is clear that the presented analyses   exploit only a small proportion of the richness of the full state-space dynamics reconstructed by the CHNN model. 
-There are many potential way to further improve the utility of the CHNN apporach. Increasing the number of reconstructed attractor states (by increasing the temperature parameter), investigating higher-dimensional dynamics, fine-tuned hyperparameters, the effect of 
-different initializations and perturbations are all important direction for future work, with the potential to further 
+The generative nature of the proposed framework may be also used to generate synthetic brain activity data, which can 
+be used to train and test machine learning algorithms, such as deep neural networks, for the prediction of brain 
+activity from functional connectivity. This approach may be particularly useful in the context of clinical applications,
+where the amount of available data is often limited. 
+
+### Limitations
+However, the CHNN projection only conveys a small proportion of the richness of the full state-space dynamics 
+reconstructed by the CHNN model. Investigating higher-dimensional dynamics, fine-tuned hyperparameters, the effect of 
+different initializations and perturbations is an important direction for future work, with the potential to further 
 improve the model's accuracy and usefulness.
-
-> **other potential topics**:
-> - why no HRF modelling (could be a possible extension, but it is also not part of the activity flow approach and we don't recosntruct time series, but rather activations)
-> - is the connectome stationary? See arguments by the Cole-group.
-> - why rs-fMRI connectome (could be latent-FC a'la McCormick, 2022)
-> - the CHNN model is not a model of brain function, but a model of brain dynamics. It does not strice to explain various brain regions ability to perform certain computations, but the brain's characteristic trajectories, which are perturbed by tasks and other types of interventions.
 
 ## Conclusion
 
-To conclude, here we have proposed a lightweight, high-level computational framework that accurately captures and predicts brain dynamics
+To conclude, here we have proposed a novel computational framework that accurately captures and predicts brain dynamics
 under a wide range of conditions. The framework models large-scale activity flow in the brain with a recurrent 
 artificial neural network architecture that, instead of being trained to solve specific tasks or mimic certain dynamics,
-is simply initialized with the empirical functional connectome. The framework identifies neurobiologically meaningful 
+is simply initialized with the empirical functional connectome. The framework identifies biologically meaningful 
 attractor states and provides a model for how these restrict brain dynamics. The proposed framework, referred to as the
 connectome-based Hopfield neural network (CHNN) model, can accurately reconstruct and predict brain dynamics under a wide range of 
-conditions, including resting state, task-induced activity changes, as well as in various brain disorders. CHNNs establish a conceptual link between connectivity and activity provide and offer a simple, robust, and highly interpretable computational alternative to the conventional descriptive approaches to investigating brain function. The generative nature of the proposed model opens up a series of exciting opportunities for future research, including novel ways of assessing causality and mechanistic understanding, and the possibility to predict the effects of various interventions, thereby paving the way for novel personalized medical approaches.
+conditions, including resting state, task-induced activity changes, and pathological alterations. CHNN analyses provide
+a simple, robust, and highly interpretable computational alternative to the conventional descriptive approach to 
+investigating brain function and establish a link between connectivity and activity. The generative nature of the 
+proposed model opens up a series of exciting opportunities for future research, including novel ways of assessing 
+causality and mechanistic understanding, and the possibility to predict the effects of various interventions, thereby
+paving the way for novel personalized medical approaches.
 
 ## Methods
 ### Hopfield network
