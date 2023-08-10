@@ -71,38 +71,39 @@ bibliography:
 +++ {"part": "key-points"}
 **Key Points:**
 - We present a simple yet powerful computational model for large-scale brain dynamics
-- The model computes recurrent "activity flow" trough the fucntional brain connectome using a connectome-based Hopfield artificial neural network (CHNN).
+- The model uses a connectome-based Hopfield artificial neural network (CHNN) architecture to compute recurrent "activity flow" trough the fucntional brain connectome
 - CHNNs accurately reconstruct the dynamic repertoire of the brain in resting conditions
-- CHNNs conceptualize both task-induced and pathological changes in brain activity as a shift in these dynamics.
-- Our approach is validated through eight studies involving approximately 2000 participants.
+- CHNNs conceptualize both task-induced and pathological changes in brain activity as a shift in these dynamics
+- Our approach is validated through eight studies involving approximately 2000 participants
 +++
 
 +++ {"part": "abstract"}
 Understanding large-scale brain dynamics is a grand challenge in neuroscience. 
-Here we have proposed a lightweight, high-level computational framework that accurately captures and predicts brain dynamics
-under a wide range of conditions. The framework models large-scale activity flow in the brain with a connectome-based Hopfield 
-artificial neural network (CHNN) architecture. CHNNs are neither optimized to mimic certain brain characteristics nor trained to solve specific tasks, but simply initialized with the empirical functional connectome. The CHNN framework identifies neurobiologically meaningful attractor states and provides a model for how these restrict brain dynamics.
-Our results show that CHNNs can accurately reconstruct and predict brain dynamics under a wide range of conditions, including resting state, task-induced activity changes, as well as in various brain disorders. 
-CHNNs establish a conceptual link between connectivity and activity provide and offer a simple, robust, and highly interpretable computational alternative to the conventional descriptive approaches to investigating brain function. The generative nature of the proposed model opens up a series of exciting opportunities for future research, including novel ways of assessing causality and mechanistic understanding, and the possibility to predict the effects of various interventions, thereby paving the way for novel personalized medical approaches.
+We proposed connectome-based Hopfield artificial neural networks (CHNNs) as a model of recurrent, macro-scale activity flow among brain regions.
+CHNNs are neither optimized to mimic certain brain characteristics nor trained to solve specific tasks, but simply initialized with the empirical functional connectome.
+The CHNN framework identifies neurobiologically meaningful attractor states and provides a model for how these constrain brain dynamics.
+Analyses of 8 distinct datasets (N≈2000) demonstrate that CHNNs can accurately reconstruct and predict brain dynamics under a wide range of conditions, including resting state and task-induced activity changes, as well as various brain disorders. 
+CHNNs establish a conceptual link between connectivity and activity and offer a simple, robust, and highly interpretable computational alternative to the conventional descriptive approaches for investigating brain function.
+CHNNs have the potential to unveil the mechanisms underlying altered large-scale brain dynamics in a wide range of clinical conditions and hold promise for identfying potential targets for novel treatment approaches.
 +++
 
 ## Introduction
 
 Brain function is characterized by the continuous activation and deactivation of anatomically distributed neuronal 
 populations.
-While the focus of related research is often on the direct mapping between changes in the activity of a single brain 
+While the focus of related research is often on the direct mapping between activity changes in a single brain 
 area and a specific task or condition, in reality, regional activation never seems to occur in isolation 
 {cite:p}`bassett2017network`.
 
 Irrespective of the presence or absence of explicit stimuli, brain regions appear to work in concert, giving rise to a
-rich and complex spatiotemporal fluctuation {cite:p}`gutierrez2019infraslow`.
+rich and spatiotemporally complex fluctuation {cite:p}`gutierrez2019infraslow`.
 This fluctuation is neither random, nor stationary over time {cite:p}`liu2013time; zalesky2014time`.
 It exhibits quasi-periodic properties {cite:p}`thompson2014quasi`, with a limited number of
 recurring patterns known as "brain states" {cite:p}`greene2023everyone; vidaurre2017brain; liu2013time; richiardi2011decoding`.
 
 From hidden Markov models, to point-process analyses, a wide variety of descriptive techniques have been previously 
 employed to characterize whole-brain dynamics. {cite:p}`smith2012temporally; vidaurre2017brain; liu2013time; chen2018human`,
-providing accumulating evidence not only for the existence of dynamic brain states but also for their clinical 
+These efforts have provided accumulating evidence not only for the existence of dynamic brain states but also for their clinical 
 significance. {cite:p}`hutchison2013dynamic; barttfeld2015signature; meer2020movie`. 
 However, the underlying driving forces remain elusive due to the descriptive nature of such studies.
 
@@ -112,10 +113,8 @@ explanations.
 Conventional computational approaches attempt to solve this puzzle by going all the way down to the biophysical properties 
 of single neurons, and aim to construct a model of larger neural populations, or even the entire brain 
 {cite:p}`breakspear2017dynamic`.
-Although these approaches have shown numerous successful applications {cite:p}`murray2018biophysical; kriegeskorte2018cognitive; heinz2019towards`,
-the estimation of the vast number of free parameters in such models presents a grand challenge. 
-This hampers the ability of these techniques to effectively bridge the gap between explanations at the level of single 
-neurons and the complexity of behavior {cite:p}`breakspear2017dynamic`.
+These approaches have shown numerous successful applications {cite:p}`murray2018biophysical; kriegeskorte2018cognitive; heinz2019towards`.
+However, the estimation of the vast number of free parameters in such models presents a grand challenge, hampering the ability of these techniques to effectively bridge the gap between explanations at the level of single neurons and the complexity of behavior {cite:p}`breakspear2017dynamic`.
 
 An alternative approach, known as "neuroconnectomism" {cite:p}`doerig2023neuroconnectionist` shifts the 
 emphasis from "biophysical fidelity" of models to "cognitive/behavioral fidelity" 
@@ -138,10 +137,10 @@ We employ a neurobiologically motivated ANN architecture, a continuous-space Hop
 With our approach, the topology of the functional connectome naturally establishes an "energy" level for any 
 arbitrary activation patterns and determines a "trajectory of least action" towards one of the finite number of stable patterns, known as
 attractor states, that minimize this energy.
-In the presence of weak noise, the system does not reach equilibrium (i.e. it does not converge to an attractor state).
+If the stochastic nature of neural activity is apprximated by adding weak noise to the system, it does not reach equilibrium anymore (i.e. it does not converge to an attractor state).
 Instead, it traverses extensive regions of the state space, with dynamics influenced by multiple attractor states, 
 arising form the topology of the functional brain connectome ({numref}`concept`C).
-Through this walk across the state space, our model also offers a natural explanation for brain state dynamics.
+Through this walk across the state space, our model offers a natural explanation for brain state dynamics.
 
 :::{figure} figures/concept.png
 :name: concept
