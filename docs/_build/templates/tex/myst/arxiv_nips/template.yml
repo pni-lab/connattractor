@@ -57,6 +57,7 @@ packages:
   - amsfonts
   - arxiv
   - booktabs
+  - datetime
   - doi
   - fancyhdr
   - fontenc

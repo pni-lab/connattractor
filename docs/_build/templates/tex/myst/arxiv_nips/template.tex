@@ -42,7 +42,7 @@ anchorcolor = black}
 [# if author.corresponding #]
 \footnotemark[[-author.corresponding.index-]]
 [#- endif #]\\
-[# for affiliation in author.affiliations #][-affiliation.value-]\\[# endfor #]
+[# for affiliation in author.affiliations #][-affiliation.value.name-]\\[# endfor #]
 [# if not loop.last #]
 \AND
 [# endif #]
