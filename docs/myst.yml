@@ -11,7 +11,7 @@ project:
 site:
   template: book-theme
   title: ConnAttractor
-  analytics_google: G-16X8EW2S8 # Measurement ID or Tracking ID
+  analytics_google: G-16X8EW2S89 # Measurement ID or Tracking ID
   # logo:
   nav: []
   actions:
