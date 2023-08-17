@@ -79,7 +79,7 @@ bibliography:
 
 +++ {"part": "abstract"}
 Understanding large-scale brain dynamics is a grand challenge in neuroscience. 
-We proposed connectome-based Hopfield artificial neural networks (CHNNs) as a model of recurrent, macro-scale activity flow among brain regions.
+We propose connectome-based Hopfield artificial neural networks (CHNNs) as a model of recurrent, macro-scale activity flow among brain regions.
 CHNNs are neither optimized to mimic certain brain characteristics nor trained to solve specific tasks, but simply initialized with the empirical functional connectome.
 The CHNN framework identifies neurobiologically meaningful attractor states and provides a model for how these constrain brain dynamics.
 Analyses of 8 distinct datasets (N≈2000) demonstrate that CHNNs can accurately reconstruct and predict brain dynamics under a wide range of conditions, including resting state and task-induced activity changes, as well as various brain disorders. 
