@@ -592,11 +592,10 @@ paving the way for novel personalized medical approaches.
 
 # **Methods**
 ## Hopfield network
-We employ an empirical, connectome-based Hopfield neural network (CHNN) as a means to model brain activation and dynamics, aiming to 
-bridge the gap between classical computational modeling and neuroconnectionism. The architecture of the Hopfield network
-{cite:p}`hopfield1982neural` consists of a single layer of fully connected nodes, the undirected weights connecting 
-all the nodes serve as the system's memory. 
-Instead of training the weights on known patterns, we initialize the weights with a group-level 
+Hopfield networks are artificial neural networks that consist of a single layer of fully connected nodes {cite:p}`hopfield1982neural`. During the relaxation process, the activities of the nodes are updated in an iterative manner, as described by , until the network converges to a stable state, a so-called attractor state. The network's dynamics are governed by the following equation:
+```{math}
+
+we initialize the weights with a group-level 
 connectivity matrix; each node in the network representing a brain region. Through its associative memory capabilities,
 the network can retrieve patterns embedded within its memory, when presented with an input similar to a target 
 pattern. During the retrieval process, the network will iterate on the output pattern until the system converges to a 
