@@ -58,6 +58,10 @@ authors:
       email: tamas.spisak@uk-essen.de
       corresponding: True
 
+    - name: for the Alzheimer’s Disease Neuroimaging Initiative
+      affiliations:
+        - "One of the dataset used in preparation of this article were obtained from the Alzheimer’s Disease Neuroimaging Initiative (ADNI)  database (adni.loni.usc.edu). As such, the investigators within the ADNI contributed to the design and implementation of ADNI and/or provided data but did not participate in analysis or writing of this report. A complete listing of ADNI investigators can be found at: http://adni.loni.usc.edu/wp-content/uploads/how_to_apply/ADNI_Acknowledgement_List.pdf"
+
 exports:
   - format: pdf
     template: arxiv_nips
@@ -68,6 +72,7 @@ exports:
 bibliography:
   - bibliography.bib
 ---
+
 +++ {"part": "key-points"}
 **Key Points:**
 - We present a simple yet powerful computational model for large-scale brain dynamics
@@ -599,116 +604,15 @@ attractor states and provides a model for how these restrict brain dynamics. The
 connectome-based Hopfield neural network (CHNN) model, can accurately reconstruct and predict brain dynamics under a wide range of 
 conditions, including resting state, task-induced activity changes, as well as in various brain disorders. CHNNs establish a conceptual link between connectivity and activity provide and offer a simple, robust, and highly interpretable computational alternative to the conventional descriptive approaches to investigating brain function. The generative nature of the proposed model opens up a series of exciting opportunities for future research, including novel ways of assessing causality and mechanistic understanding, and the possibility to predict the effects of various interventions, thereby paving the way for novel personalized medical approaches.
 
-# **Methods**
-## Hopfield network
-Hopfield networks are artificial neural networks that consist of a single layer of fully connected nodes {cite:p}`hopfield1982neural`. During the relaxation process, the activities of the nodes are updated in an iterative manner, as described by , until the network converges to a stable state, a so-called attractor state. The network's dynamics are governed by the following equation:
-```{math}
-:label: energy-function
-E = - \frac{1}{2}  \bold{a}^{T} \bold{W} \bold{a} + \bold{a}^{T}\bold{b}
-```
-
-we initialize the weights with a group-level 
-connectivity matrix; each node in the network representing a brain region. Through its associative memory capabilities,
-the network can retrieve patterns embedded within its memory, when presented with an input similar to a target 
-pattern. During the retrieval process, the network will iterate on the output pattern until the system converges to a 
-stable state, a so-called attractor state. The mathematical energy of all possible states of a trained Hopfield network
-spans an N dimensional, multi-stable state landscape. This landscape constrains the state configurations, which can be 
-recalled by the Hopfield network across all dimensions. During the memory retrieval process, the network will try to 
-find a state which minimizes the energy function E
-```{math}
-:label: energy-function
-E = - \frac{1}{2}  \bold{a}^{T} \bold{W} \bold{a} + \bold{a}^{T}\bold{b}
-```
-where $W$ is the weight matrix, $a$ the activation pattern and $b$ the bias, which is set to $b = 0$ for all experiments. 
-The network navigates the state landscape by synchronously updating all regions in the current state, according to the 
-[update rule](#hopfield-update). The temperature parameter $\beta$ scales the estimated activation (activity flow) 
-{cite:p}`cole2016activity`and therefore constrains, how many attractor states can be found, given the convergence 
-criterium of minimal [energy](#energy-function). 
-If the value of $\beta$ is too high however, the network might retrieve spurious states,
-which meet the convergence criterium, but are composite states which merge multiple states and are not "true" 
-attractor states. 
-
-### CHNN projection
-The attractor landscape can be mapped out by stimulating our CHNN model with a random input, and adding noise after 
-each iteration of the network relaxation. This prevents the network to reach an energy minimum and the network 
-produces possible state configurations within the landscape, while avoiding the energy minimal attractor basins. 
-We do a principal component analysis (PCA) on the state samples, and the resulting first two principal components (PC)
-lay out the coordinate system for our CHNN projection. Using a Multinomial Logistic Regression, we predict to which 
-attractor state each of the state samples converges to, using the first two PCs as features. We visualize the attractor
-states position in the projection as well as the decision boundaries between the attractor states, based on the 
-regression model. We set $\beta = 0.04$, which results in 4 attractor states given the connectome of study 1, and do a
-coarse optimization for the noise level ($\sigma=0.37$) of the stochastic walk, to reproduce the bimodal distribution
-of the real fMRI timeseries in the state space (see [figure](#rest-validity)).
-
-For all experiments conducted, the connectome of study 1 is used as a base for the CHNN and the projection, with the
-hyperparameters $\beta = 0.04$ and $\sigma=0.37$, resulting in 4 distinct attractor states.
-
-todo: 
-- explained variance of energy through state sample 
-- attractor classification accuracy
-
-### Reconstruction 
-We use several experiments to investigate the validity of the CHNN model and its ability to reconstruct resting state
-brain dynamics. First, we investigate the reproducibility  of the attractor states across studies.
-The attractor states are highly reproducible across various datasets and scanners, as the attractor states from studies
-1,2 and 3 show a 0.93 mean correlation across the first two attractor states.
-We then compared the explained variance from the first two PCs of our simulated state sample data to the first two PCs of
-raw fMRI timeseries data (see **ref** for preprocessing), using a linear regression model.
-For in sample data, the first 2 components of the real data 
-were able to explain 37.0% variance, whereas the simulated counterpart could account for 39.9% variance. For out of 
-sample time series data from study 2, the first two principal components of the CHNN projection of study 1 were 
-able to explain 36.4% and 39.6% variance for real and simulated data respectively. 
-We also investigated the fractional time occupied by each attractor state in real timeseries vs simulated data. For 
-this analysis each timeframe was used as an input to the CHNN to generate its corresponding attractor state, a one 
-way $\tilde{\chi}^2$ test was performed on the given frequencies against expected uniform frequencies.  
-
-### Task-based activity
-The CHNN projection provides a unique framework in which we can analyze and visualize how activations dynamically
-change between two conditions. We highlight these properties on the dataset of study 4, which investigated
-the self-regulation of pain. We preprocess the timeseries data as discussed in **ref**, and divide the samples into 
-task and rest, taking into account the $6 s$ delay to adjust for the hemodynamic response function. 
-We group the activations into "rest" and "pain", and transform all single TR activations (density plot) as well was the
-participant-level mean activations to the CHNN projection plane. 
-The difference between rest and pain is visualized with a radial plot, showing the participant-level trajectory on 
-the projection plane from rest to pain, denoted with circles, as well as the group level trajectory (arrow). 
-Additionally, we test the significance of the spatial difference of the participant-level mean activation in 
-the projection plane with the L2 norm,
-as well as the energy difference between the two conditions, both with a permutation test $n_{perms}=1000$, 
-randomly swapping the conditions.
-To further highlight the difference between the task and rest conditions, we generate streamplots that visualize the 
-dynamic trajectory of group-level activations. 
-We calculate the direction in the projection plane between each successive TR and calculate a bidimensional binned 
-mean for the x,y position across the direction. 
-We repeat the same for the second condition and visualize the difference in direction between the two conditions,
-visualized as streamplots. 
-For the simulated data, we introduce a weak signal of SNR=0.01 according to a meta-analytic pain activation map 
-{cite:p}`zunhammer2021meta` to the stochastic walk, aiming to simulate the shift from rest to pain also in the 
-simulated data. We compare the simulated difference to the actual difference through a permutation test
-($n_{perm}=1000$) with the spearman rank-ordered correlation coefficient as the test statistic. 
-The analysis documented in this section is repeated, comparing the pain upregulation and pain downregulation 
-data provided with study 4. 
-
-### Clinical data
-To assess clinical relevance, we introduce a pipeline that investigates the group differences in raw timeseries 
-activation, during each of the attractor states. 
-We assign each TR a label according to its attractor state, by relaxing the CHNN for each TR and then calculate the 
-average participant-level activation for each attractor state. 
-We implement a permutation test with $n_{perm}=50000$ to investigate the difference in the average activation during the 
-attractor states between the groups, randomly assigning the group label (preserving the original group stratification). 
-We adjust the significance threshold with a bonferroni correction, accounting for tests across 4 states and 122 regions,
-resulting in $\alpha = 0.0102$. 
-
-### Data preprocessing
-The data from studies 1-4 and 6-8 is parcellated with the BASC multiscale atlas into 122 regions 
-{cite:p}`bellec2010multi`.
-The timeseries is scrubbed with a threshold of $50\%$ and a frame-wise displacement threshold of $0.15$, to 
-correct for motion artifacts present in the data. 
-The connectivity matrix used to set the weights of the CHNN, is calculated with a partial correlation of the 
-parcellated, scrubbed timeseries, with the diagonal elements set to zero. When initializing the CHNN with the connectome, 
-the weights are standard scaled to mean=0 and std=1; the weights $w_{ij}$ are symmetric. 
+## Methods
 
 ### Data
-```{list-table}
+
+We obtained functional MRI data from 7 differemt sources ([](tab-samples)).
+We included three resting state studies with healthy volunteers (study 1, study 2, study 3), one task-based study (study 4), 8 meta-analytic task-based activation patterns obtained from Neurosynth (study 5), and three additional resting state studies focusing on specific disease conditions. These include the ABIDE (Autism Brain Imagig Data Exchange) study on Autism Spectrum Disorder (ASD, study 6, {cite}`di2014autism`), the COBRE (Center for Biomedical Research Excellence) study on Schizophrenia (study 8, {cite:p}`aine2017multimodal`) and data obtained from ADNI (Alzheimer’s Disease Neuroimaging Initiative database (adni.loni.usc.edu) on Alzheimer's Disease (study 7, {cite:p}`petersen2010alzheimer`).
+
+
+```{list-table} **Datasets and studies.** The table includes details about the study modality, analysis, sample size, mean age, gender distribution, and references.
 :header-rows: 1
 :name: tab-samples
 
@@ -761,26 +665,152 @@ the weights are standard scaled to mean=0 and std=1; the weights $w_{ij}$ are sy
   - 15.3±6.6
   - 20.9%
   - {cite:p}`di2014autism`
-* - study 7 (ADNI)
-  - resting state
-  - Alzheimer's Disease vs. Mild Cognitive Impairment
-  - AD: 34, MCI 99: 
-  - 72.5±7.5
-  - 50.4%
-  - {cite:p}`petersen2010alzheimer`
-* - study 8 (COBRE)
+* - study 7 (COBRE)
   - resting state
   - Schizophrenia
   - SCH: 60, HC: 72
   - 37.0±12.6
   - 29.4 %
   - {cite:p}`aine2017multimodal`
+* - study 8 (ADNI)
+  - resting state
+  - Alzheimer's Disease vs. Mild Cognitive Impairment
+  - AD: 34, MCI 99: 
+  - 72.5±7.5
+  - 50.4%
+  - {cite:p}`petersen2010alzheimer`
 ```
+
+Study 1 (n=41) was used to evaluate the ability of the proposed approach to reconstruct resting state brain activity. Study 2 and 3 (n = 48 and 29, reespectively) served es replications studies for these analyses. Further details on study 1-3 are described in [](10.1038/s41467-019-13785-z). The ability of the proposed approach to model task-based perturbation of brain dynamics was evaluated in Study 4, which consisted of 8 runs of nine task-based fMRI runs for each of the 33 healyth volunteers. In all runs, participants received heat pain stimulation. Each stimulus lasted 12.5 seconds, with 3-second ramp-up and 2-second ramp-down periods and 7.5 seconds at target temperature. Six levels of temperature were administered to the participants (level 1: 44.3°C; level 2: 45.3°C; level 3: 46.3°C; level 4: 47.3°C; level 5: 48.3°C; level 6: 49.3°C). In this analysis we used run 1 (passive experience)  run 3 (down-regulation) and run 7 (up-regulation). Participants were asked to cognitively “increase” (regulate-up) or “decrease” (regulate-down) pain intensity. See {cite:t}`woo2015distinct` for details.
+To obtain fMRI activation maps for tasks other than pain, we used Neurosynth([](https://doi.org/10.3389/conf.fninf.2011.08.00058)), a web-based platform for large-scale, automated synthesis of functional magnetic resonance imaging (fMRI) data. We performed 8 different coordinate-based meta-analyses with the terms "motor", "audatory", "visual", "face", "autobiographical", "theory mind", "language" and "pain" and obtained the z-scores maps from a two-way ANOVA, comparing the coordinates reported for studies with and without the term of interest, and testing for the presence of a non-zero association between term use and voxel activation. The meta-analyses encompassed a total  of 14371 different studies.
+
+In study 6 and 7 (ABIDE, COBRE respectively), we obtained preprocessed regional timeseries data from the Preprocessed Connectome Project {cite:p}`craddock2013towards`, as shared (https://osf.io/hc4md) by {cite:t}`dadi2019benchmarking`. Preprocessed regional timeseries data for study 8 (ADNI) was obtained from from the Alzheimer’s Disease Neuroimaging Initiative database (adni.loni.usc.edu). All preprocessed timeseries data were obtaoined with the 122-region version of the BASC (Bootstrap Analysis of Stable Clusters) brain atlas {cite:p}`bellec2010multi`.
+
+### Preprocessing and timeseries extractions
+
+Functinal MRI data from studies 1-4 was preprocessed with our in-house analysis pipeline, called the RPN-pipeline (https://github.com/spisakt/RPN-signature). The RPN-pipeline is based on PUMI (Neuroimaging Pipelines Using Modular workflow Integration, https://github.com/pni-lab/PUMI), a nipype-based {cite:p}`gorgolewski2011nipype` workflow management system. It capitalizes on tools from FSL {cite:p}`jenkinson2012fsl`, ANTS {cite:p}`avants2011reproducible` and AFNI {cite:p}`cox1996afni`, with code partially adapted from the software tools C-PAC {cite:p}`craddock2013towards` and niworkflows {cite:p}`esteban2019fmriprep`, as well as in-house python routines. We run the containerized version of the pipeline with default parameters, as in [](10.1038/s41467-019-13785-z). 
+
+Brain extraction from both the anatomical and the structural images, as well, as tissue-segmentation from the anatomical images was performed with FSL bet and fast64. Anatomical images were linearly and non-linearly co-registered to the 1mm-resolution MNI152 standard brain template brain with ANTs (see https://gist.github.com/spisakt/0caa7ec4bc18d3ed736d3a4e49da7415 for source code).
+
+Functional images were co-registered to the anatomical images with the boundary-based registration technique of FSL flirt. All resulting transformations were saved for further use. The preprocessing of functional images happened in the native image space, without resampling. Realignment-based motion-correction was performed with FSL mcflirt. The resulting six head motion estimates (3 rotations, 3 translations), their squared versions, their derivates and the squared derivates (known as the Friston-24-expansion, {cite}`friston1996movement`) was calculated and saved for nuisance correction. Additionally, head motion was summarised as framewise displacement (FD) timeseries, according to Power’s method {cite:p}`power2012spurious`, to be used in data censoring and exclusion. After motion-correction, outliers (e.g. motion spikes) in timeseries data were attenuated using AFNI despike. The union of the eroded white-matter maps and ventricle masks were transformed to the native functional space and used for extracting noise-signal for anatomical CompCor correction {cite:p}`behzadi2007component`.
+
+In a nuisance regression step, 6 CompCor parameters (the 6 first principal components of the noise-region timeseries), the Friston-24 motion parameters and the linear trend were removed from the timeseries data with a general linear model. On the residual data, temporal bandpass filtering was performed with AFNI’s 3DBandpass to retain the 0.008–0.08 Hz frequency band. To further attenuate the impact of motion artefacts, potentially motion-contaminated time-frames, defined by a conservative FD > 0.15 mm threshold, were dropped from the data (known as scrubbing, {cite}`satterthwaite2013improved`). Participants were excluded from further analysis if more then 50% of frames were scrubbed.
+
+The 122-parcel version of the BASC multi-resolution functional brain atlas {cite:p}`bellec2010multi` was individualized; it was transformed to the native functional space of each participant and masked by the  grey-matter mask obtained from the anatomical image, to retain grey-matter voxels only. Voxel-timeseries were averaged over these individualised BASC regions.
+
+### Functional connectome
+
+Regional timeseries were ordered into large-scale functional modules (defined by the 7-parcel level of the BASC atlas) for visualization purposes.
+Next, in all datasets, we estimated study-level mean connectivity matrices by regularized partial correlation, via the Graphical Lasso algorithm that estimates a sparse precision matrix by solving a Lasso problem and an L1 penalty for sparsity, as implemented in nilearn {cite:p}`abraham2014machine`. Diagonal elements of the matrices were set to zero. 
+
+
+### Hopfield networks
+
+Hopfield networks, a type of artificial neural network, consist of a single layer of $m$ fully connected nodes {cite:p}`hopfield1982neural`, with activations $\bold{a} = (a_1, \dots, a_m )$. Hopfield netwrorks assign an energy to any arbitrary activity configurations:
+```{math}
+:label: energy-function
+E = - \frac{1}{2}  \bold{a}^{T} \bold{W} \bold{a} + \bold{a}^{T}\bold{b}
+```
+where $W$ is the weight matrix with element w_{i,j} denoting the weight between nodes i and j and $\bold{b}$ is the bias, which is set to $\bold{b} = 0$ for all experiments. 
+
+ During the so-called relaxation process, the activities of the nodes are iteratively updated until the network converges to a stable state, known as an attractor state. The dynamics of the network are governed by the equation referenced as eq [](#hopfield-update), or in matrix form:
+
+ ```{math}
+ :label: hopfield-update-matrix
+ \dot{\bold{a}} = S(\beta \bold{W} \bold{a} - \bold{b})
+ ```
+where $\dot{\bold{a}} = (\dot{a}_1, \dots, \dot{a}_m)$ is the activity in the next iteration and $S(.)$ is the sigmoidal activation function ($S(a) = tanh(a)$ in our implementation) and $\beta$ is the temperature parameter.
+During the stochastic relaxation procedure, we add weak Gaussian noise to each node's activity at every iteration:
+
+```{math}
+:label: hopfield-update-matrix-stochastic
+\dot{\bold{a}} = S(\beta \bold{W} \bold{a} - \bold{b}) + \mathcal{N}(0, \sigma),
+```
+
+ where $\sigma$ regulates the amount of noise added.
+ 
+### Connectome-based Hopfield networks
+
+In this work we propose connectome-based Hopfield neural networks (CHNNs) as a model for large-scale brain dynamics. CHNNs are continous-state Hopfield neural networks with each node representing a brain region and weights initilaized with a group-level functional connectivity matrix. The weights are scaled to zero mean and unit standard deviation.
+
+In studies 1-3m, we obtained the finite number of attractor states for all CHNNs by repeteadly (100000-times) initilaizinhg the CHNN with random activations and relaxing them until convergence. 
+
+### CHNN projection
+We mapped out the CHNN state-space by initializing our CHNN model with a random input, and applying the stochastic update step for 100.000 iterations and storing all visited activity configurations.
+We performed a principal component analysis (PCA) on the state samples, and proposed the the first two principal  componens (PCs) as the coordinate system for the CHNN projection. Using a Multinomial Logistic Regression, we predicted to which attractor state each of the state samples converges to, using the first two PCs as features. The model's performance was evaluated with 10-fold cross-validation. We visualized the attractor states position in the projection as well as the decision boundaries between the attractor states, based on this regression model. We set $\beta = 0.04$, which results in 4 attractor states given the connectome of study 1. We  generated CHNN projections in study 1 with four different \sigma values (0.33, 0.35, 0.37, 0.39) and fixed $\sigma$ at 0.37 for all subsequent anal'yses. The value of $\sigma$ was selected based on visual inspection of the state space distriubution and its similartiy to real fMRI data in the CHNN projection (see [figure](#rest-validity)).
+
+todo: 
+- explained variance of energy through state sample 
+- attractor classification accuracy
+
+### Replicability
+We obtained the four attractor states in study 1, as described above. We then constructed two other CHNNs, based on the study-mean functional connectome obtained in studies 2 and 3 and  obtained all attractor states of these models, with the same parameter settings ($\beta = 0.04$ and $\sigma = 0.37$) as in study 1. In both replications studies we found four attractor states. The spatial similarity of attractor states across studies was evaluated by Pearson's correlation coefficient.
+
+### Evaluation: resting state dynamics
+Analogously to the methodology of the CHNN projection, we performed PCA on the preprocessed fMRI time-frames from study 1 (based on the regional timeseries data).
+To compare the explanatory power of the first two PCs derived from CHNN-based simulated data and real fMRIO data, we fit linear regression models wich used the firts two CHNN or real data-based PCs as regressors to recoinstruct the real fMRI time-frames. In-sample explained variances and the corresponding confidence intervals were calculated for both models with bootstrapping (100 samples). To evaluate the out-of-sample generalization of the PCAs (CHNN- and real data-based) from study 1, we calulated how much variance they can explain in study 2.
+
+To calulate fractional time occupancies of the attractor states in real timeseries vs simulated data, we used each real and simulated timeframe as an input to the CHNN of study 1 and obtained the corresponding attractor state. We performed a $\tilde{\chi}^2$ test on the resulting frequencies against the expected uniform frequencies.  
+
+### Evaluation:  task-based dynamics
+The CHNN projection provides a unique framework in which we can analyze and visualize how activations dynamically
+change between two conditions. We highlight these properties on the dataset of study 4, which investigated
+the self-regulation of pain. We preprocess the timeseries data as discussed in **ref**, and divide the samples into 
+task and rest, taking into account the $6 s$ delay to adjust for the hemodynamic response function. 
+We group the activations into "rest" and "pain", and transform all single TR activations (density plot) as well was the
+participant-level mean activations to the CHNN projection plane. 
+The difference between rest and pain is visualized with a radial plot, showing the participant-level trajectory on 
+the projection plane from rest to pain, denoted with circles, as well as the group level trajectory (arrow). 
+Additionally, we test the significance of the spatial difference of the participant-level mean activation in 
+the projection plane with the L2 norm,
+as well as the energy difference between the two conditions, both with a permutation test $n_{perms}=1000$, 
+randomly swapping the conditions.
+To further highlight the difference between the task and rest conditions, we generate streamplots that visualize the 
+dynamic trajectory of group-level activations. 
+We calculate the direction in the projection plane between each successive TR and calculate a bidimensional binned 
+mean for the x,y position across the direction. 
+We repeat the same for the second condition and visualize the difference in direction between the two conditions,
+visualized as streamplots. 
+For the simulated data, we introduce a weak signal of SNR=0.01 according to a meta-analytic pain activation map 
+{cite:p}`zunhammer2021meta` to the stochastic walk, aiming to simulate the shift from rest to pain also in the 
+simulated data. We compare the simulated difference to the actual difference through a permutation test
+($n_{perm}=1000$) with the spearman rank-ordered correlation coefficient as the test statistic. 
+The analysis documented in this section is repeated, comparing the pain upregulation and pain downregulation 
+data provided with study 4. 
+
+### Clinical data
+To assess clinical relevance, we introduce a pipeline that investigates the group differences in raw timeseries 
+activation, during each of the attractor states. 
+We assign each TR a label according to its attractor state, by relaxing the CHNN for each TR and then calculate the 
+average participant-level activation for each attractor state. 
+We implement a permutation test with $n_{perm}=50000$ to investigate the difference in the average activation during the 
+attractor states between the groups, randomly assigning the group label (preserving the original group stratification). 
+We adjust the significance threshold with a bonferroni correction, accounting for tests across 4 states and 122 regions,
+resulting in $\alpha = 0.0102$. 
 
 
 +++ {"part": "acknowledgements"}
 
-Todo
+Data collection and sharing for this project was funded by the Alzheimer's Disease
+Neuroimaging Initiative (ADNI) (National Institutes of Health Grant U01 AG024904) and
+DOD ADNI (Department of Defense award number W81XWH-12-2-0012). ADNI is funded
+by the National Institute on Aging, the National Institute of Biomedical Imaging and
+Bioengineering, and through generous contributions from the following: AbbVie, Alzheimer’s
+Association; Alzheimer’s Drug Discovery Foundation; Araclon Biotech; BioClinica, Inc.;
+Biogen; Bristol-Myers Squibb Company; CereSpir, Inc.; Cogstate; Eisai Inc.; Elan
+Pharmaceuticals, Inc.; Eli Lilly and Company; EuroImmun; F. Hoffmann-La Roche Ltd and
+its affiliated company Genentech, Inc.; Fujirebio; GE Healthcare; IXICO Ltd.; Janssen
+Alzheimer Immunotherapy Research & Development, LLC.; Johnson & Johnson
+Pharmaceutical Research & Development LLC.; Lumosity; Lundbeck; Merck & Co., Inc.;
+Meso Scale Diagnostics, LLC.; NeuroRx Research; Neurotrack Technologies; Novartis
+Pharmaceuticals Corporation; Pfizer Inc.; Piramal Imaging; Servier; Takeda Pharmaceutical
+Company; and Transition Therapeutics. The Canadian Institutes of Health Research is
+providing funds to support ADNI clinical sites in Canada. Private sector contributions are
+facilitated by the Foundation for the National Institutes of Health (www.fnih.org). The grantee
+organization is the Northern California Institute for Research and Education, and the study is
+coordinated by the Alzheimer’s Therapeutic Research Institute at the University of Southern
+California. ADNI data are disseminated by the Laboratory for Neuro Imaging at the
+University of Southern California. 
 
 +++
 
