@@ -1,5 +1,5 @@
 ---
-title: The attractor states of the functional brain connectome
+title: Attractor states of the functional brain connectome orchestrate large-scale brain dynamics
 subject: Preprint
 #subtitle: Optional Subtitle
 short_title: ConnAttractor Preprint
@@ -7,7 +7,6 @@ authors:
     - name: Robert Englert
       affiliations:
         - Department of Diagnostic and Interventional Radiology and Neuroradiology,  University Medicine Essen, Germany
-      #orcid: 0000-0002-7859-8394
       email: robert.englert@uk-essen.de
       
     - name: Balint Kincses
@@ -645,13 +644,13 @@ Integrating Cole's activity flow principle with the Hopfield neural network arch
 Considering the functional connectome as weights of an already trained neural network distinguishes our methodology not only from conventional computational modeling strategies, which usually rely on the structural connectome as a proxy for polysynaptic connectivity {cite:p}`cabral2017functional`, but also from "neuroconnectionist" approaches that employ explicit training procedures {cite:p}`doerig2023neuroconnectionist`.
 Functional connectome-based Hopfield neural network (CHNN) models can be conceptualized as a streamlined alternative to those methodologies, offering significant advantages.
 
-Firstly, the intricate nature of conventional computational models of the brain leads to an exponential proliferation of the parameter space. 
+First, the intricate nature of conventional computational models of the brain leads to an exponential proliferation of the parameter space. 
 While finely detailed computational models hold promise for providing comprehensive insights, they are prone to overfitting real data {cite:p}`breakspear2017dynamic`. 
 In contrast to those approaches, the basic form of the CHNN approach comprises solely two hyperparameters (temperature and noise) and yields notably consistent outcomes across an extensive range of these parameter. To underscore the potency of this simplicity and stability, in the present work, we intentionally minimized the fine-tuning of these parameters. We fixed the temperature parameter at a value that robustly provides 4 attractor 
 states and used a single noise level for all experiments (selected with a coarse optimization procedure to approximately
 mimic the distribution of real data). 
 
-Secondly, high model complexity usually translates to a greater challenge in terms of interpretability. 
+Second, high model complexity usually translates to a greater challenge in terms of interpretability. 
 The CHNN approach offers straightforward interpretations, as it establishes a
 direct link between two highly prevalent metrics of brain function: functional connectivity and brain activity. 
 This connection is not solely conceptual, but also mathematical, facilitating the exploration and prediction of alterations in the system's dynamics in response to perturbations affecting both activity and connectivity.
@@ -809,7 +808,7 @@ Regional timeseries were ordered into large-scale functional modules (defined by
 Next, in all datasets, we estimated study-level mean connectivity matrices by regularized partial correlation, via the Graphical Lasso algorithm that estimates a sparse precision matrix by solving a Lasso problem and an L1 penalty for sparsity, as implemented in nilearn {cite:p}`abraham2014machine`. Diagonal elements of the matrices were set to zero. 
 
 
-### Hopfield networks
+### Connectome-based Hopfield networks
 
 Hopfield networks, a type of artificial neural network, consist of a single layer of $m$ fully connected nodes {cite:p}`hopfield1982neural`, with activations $\bold{a} = (a_1, \dots, a_m )$. Hopfield networks assign an energy to any arbitrary activity configurations:
 ```{math}
@@ -829,68 +828,63 @@ During the stochastic relaxation procedure, we add weak Gaussian noise to each n
 
 ```{math}
 :label: hopfield-update-matrix-stochastic
-\dot{\bold{a}} = S(\beta \bold{W} \bold{a} - \bold{b}) + \mathcal{N}(0, \sigma),
+\dot{\bold{a}} = S(\beta \bold{W} \bold{a} - \bold{b}) + \mathcal{N}(\mathbf{\mu}, \sigma),
 ```
 
- where $\sigma$ regulates the amount of noise added.
- 
-### Connectome-based Hopfield networks
+ where $\sigma$ regulates the amount of noise added and $\mathbf{\mu}$ is set to 0 by default.
 
 In this work we propose connectome-based Hopfield neural networks (CHNNs) as a model for large-scale brain dynamics. CHNNs are continuous-state Hopfield neural networks with each node representing a brain region and weights initialized with a group-level functional connectivity matrix. The weights are scaled to zero mean and unit standard deviation.
 
-In studies 1-3m, we obtained the finite number of attractor states for all CHNNs by repeatedly (100000-times) initializing the CHNN with random activations and relaxing them until convergence. 
+In studies 1-3, we obtained the finite number of attractor states for all CHNNs by repeatedly (100000-times) initializing the CHNN with random activations and relaxing them until convergence. 
 
 ### CHNN projection
+
 We mapped out the CHNN state-space by initializing our CHNN model with a random input, and applying the stochastic update step for 100.000 iterations and storing all visited activity configurations.
 We performed a principal component analysis (PCA) on the state samples, and proposed the the first two principal  component (PCs) as the coordinate system for the CHNN projection. Using a Multinomial Logistic Regression, we predicted to which attractor state each of the state samples converges to, using the first two PCs as features. The model's performance was evaluated with 10-fold cross-validation. We visualized the attractor states position in the projection as well as the decision boundaries between the attractor states, based on this regression model. We set $\beta = 0.04$, which results in 4 attractor states given the connectome of study 1. We  generated CHNN projections in study 1 with four different \sigma values (0.33, 0.35, 0.37, 0.39) and fixed $\sigma$ at 0.37 for all subsequent analyses. The value of $\sigma$ was selected based on visual inspection of the state space distribution and its similarity to real fMRI data in the CHNN projection (see [figure](#rest-validity)).
 
-todo: 
-- explained variance of energy through state sample 
-- attractor classification accuracy
 
 ### Replicability
+
 We obtained the four attractor states in study 1, as described above. We then constructed two other CHNNs, based on the study-mean functional connectome obtained in studies 2 and 3 and  obtained all attractor states of these models, with the same parameter settings ($\beta = 0.04$ and $\sigma = 0.37$) as in study 1. In both replications studies we found four attractor states. The spatial similarity of attractor states across studies was evaluated by Pearson's correlation coefficient.
 
 ### Evaluation: resting state dynamics
+
 Analogously to the methodology of the CHNN projection, we performed PCA on the preprocessed fMRI time-frames from study 1 (based on the regional timeseries data).
 To compare the explanatory power of the first two PCs derived from CHNN-based simulated data and real fMRI data, we fit linear regression models which used the first two CHNN or real data-based PCs as regressors to reconstruct the real fMRI time-frames. In-sample explained variances and the corresponding confidence intervals were calculated for both models with bootstrapping (100 samples). To evaluate the out-of-sample generalization of the PCAs (CHNN- and real data-based) from study 1, we calculated how much variance they can explain in study 2.
 
 To calculate fractional time occupancies of the attractor states in real timeseries vs simulated data, we used each real and simulated timeframe as an input to the CHNN of study 1 and obtained the corresponding attractor state. We performed a $\tilde{\chi}^2$ test on the resulting frequencies against the expected uniform frequencies.  
 
-### Evaluation:  task-based dynamics
-The CHNN projection provides a unique framework in which we can analyze and visualize how activations dynamically
-change between two conditions. We highlight these properties on the dataset of study 4, which investigated
-the self-regulation of pain. We preprocess the timeseries data as discussed in **ref**, and divide the samples into 
-task and rest, taking into account the $6 s$ delay to adjust for the hemodynamic response function. 
-We group the activations into "rest" and "pain", and transform all single TR activations (density plot) as well was the
-participant-level mean activations to the CHNN projection plane. 
-The difference between rest and pain is visualized with a radial plot, showing the participant-level trajectory on 
-the projection plane from rest to pain, denoted with circles, as well as the group level trajectory (arrow). 
-Additionally, we test the significance of the spatial difference of the participant-level mean activation in 
-the projection plane with the L2 norm,
-as well as the energy difference between the two conditions, both with a permutation test $n_{perms}=1000$, 
-randomly swapping the conditions.
-To further highlight the difference between the task and rest conditions, we generate streamplots that visualize the 
-dynamic trajectory of group-level activations. 
-We calculate the direction in the projection plane between each successive TR and calculate a two-dimensional binned mean for the x,y position across the direction. 
-We repeat the same for the second condition and visualize the difference in direction between the two conditions,
-visualized as streamplots. 
-For the simulated data, we introduce a weak signal of SNR=0.01 according to a meta-analytic pain activation map 
-{cite:p}`zunhammer2021meta` to the stochastic walk, aiming to simulate the shift from rest to pain also in the 
-simulated data. We compare the simulated difference to the actual difference through a permutation test
-($n_{perm}=1000$) with the spearman rank-ordered correlation coefficient as the test statistic. 
-The analysis documented in this section is repeated, comparing the pain upregulation and pain downregulation 
-data provided with study 4. 
+### Evaluation: task-based dynamics
+
+We used study 4 to evaluate the ability of the CHNN approach to capture and predict task-induced alterations in large-scale brain dynamics.
+
+First, runs 1, 3 and 7 from all participants, which investigated the passive experience and the down- and up-regulation of pain, respectively, was preprocessed with the same workflow used to preprocess studies 1-3. Regional timeseries data was grouped to "pain" and "rest" blocks, taking into account a 6-second delay to adjust for the hemodynamic response function. All activation timeframes were transformed to the CHNN projection plane obtained from study 1. Within-participant differences of the average location on the CHNN projection was calculated and visualized with radial plots, showing the participant-level trajectory on the projection plane from rest to pain, denoted with circles, as well as the group level trajectory (arrow). The significance of the position difference and energy difference of the participant-level mean activations in the projection plane was tested with a permutation test. We used the L2 norm of the two-dimensional position difference and the absolute energy difference, respectively, as test statistics. The permutation tests were run with 1000 permutations, randomly swapping the conditions.
+
+To further highlight the difference between the task and rest conditions, streamplots were generated that visualize the dynamic trajectory of group-level activations.
+
+First we calculated the direction in the projection plane between each successive TR during the rest conditions, resulting a vector on the CHNN projection plane for each TR transition. 
+Next, we obtained a two-dimensional binned means for both the x and y coordinates of these transition vectors (pooled across all participants), calculated over a total of 36 uniformly distributed bins. 
+The same procedure was repeated for the pain condition and the difference in direction between the two conditions was visualized as streamplots (using matplotlib).
+We used the same approach the difference in characteristic state transition trajectories between the up- and downregulation conditions.
+
+The empirically estimated trajectory differences were contrasted to the trajectory differences predicted by the CHNN model from study 1.
+To obtain CHNN-simulated state transitions in resting conditions, we used the stochastic relaxation procedure ({numref}`hopfield-update-matrix-stochastic`), with $\mathbf{\mu}$ set zero.
+
+To simulate the effect of pain-related activation on large-scale brain dynamics, we set $\mu_i$ during the stochastic relaxation procedure simulate pain-elicited activity in region i. The region-wise activations were obtained calculating the parcel-level mean activations from the meta-analytic pain activation map from {cite:p}`zunhammer2021meta`, which contained Hedges' g effect sizes from an individual participant-level meta-analysis of 20 pain studies, encompassing a total of n=603 participants. The whole activation map was scaled with five different values ranging from 0.001 to 0.1, spaced logarithmically, to investigate various signal-to-noise scenarios. 
+
+We obtained the activity patterns of 100000 iterations from this stochastic relaxation procedure and calculated the state transition trajectories with the same approach used with the empirical data.
+
+Next we calculated the the simulated difference between the rest and pain conditions and compared it to the actual difference through a permutation test with 1000 permutations, using the Spearman rank-ordered correlation coefficient as the test statistic.
+From the five investigated signal-to-noise values, we chose the one that provided the highest similarity to the real pain vs. rest trajectory difference.
+
+When comparing the simulated and real trajectory differences between pain up- and downregulation, we used the same procedure, with two differences. First, when calculating the simulated state transition vectors for the self-regulation conditions, we used the same procedure as for the pain condition, but introduced and additional signal in the nucleus accumbens, with a negative and positive sign, for  up- and downregulation, respectively.We did not optimize the signal-to-noise ratio for the nucleus accumbens signal but, instead, simply used the value optimized for the pain vs. rest contrast.
+
 
 ### Clinical data
-To assess clinical relevance, we introduce a pipeline that investigates the group differences in raw timeseries 
-activation, during each of the attractor states. 
-We assign each TR a label according to its attractor state, by relaxing the CHNN for each TR and then calculate the 
-average participant-level activation for each attractor state. 
-We implement a permutation test with $n_{perm}=50000$ to investigate the difference in the average activation during the 
-attractor states between the groups, randomly assigning the group label (preserving the original group stratification). 
-We adjust the significance threshold with a bonferroni correction, accounting for tests across 4 states and 122 regions,
-resulting in $\alpha = 0.0102$. 
+
+To demonstrate the sensitivity of the CHNN approach to clinically relevant alterations in large-scale brain dynamics, we investigated grouped the timeframes from the regional timeseries data according to the corresponding attractor states (obtained with the CHNN model from study 1) and averaged timeframes corresponding to the same attractor state to calculated participant-level mean attractor activations.
+In all three datasets, we assessed mean attractor activity differences between the patient groups with a permutation test, randomly re-assigning the group labels 50000 times. 
+We adjusted the significance threshold with a bonferroni correction, accounting for tests across 4 states and 122 regions, resulting in $\alpha = 0.0102$. 
 
 
 +++ {"part": "acknowledgements"}
