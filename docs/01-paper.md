@@ -738,10 +738,10 @@ During the stochastic relaxation procedure, we add weak Gaussian noise to each n
 
 ```{math}
 :label: hopfield-update-matrix-stochastic
-\dot{\bold{a}} = S(\beta \bold{W} \bold{a} - \bold{b}) + \mathcal{N}(\mathbf{\mu}, \sigma),
+\dot{\bold{a}} = S(\beta \bold{W} \bold{a} - \bold{b}  + \epsilon),
 ```
 
- where $\sigma$ regulates the amount of noise added and $\mathbf{\mu}$ is set to 0 by default.
+ where $ \epsilon \sim \mathcal{N}(\mathbf{\mu}, \sigma)$, with $\sigma$ regulating the amount of noise added and $\mathbf{\mu}$ set to 0, by default.
 
 In this work we propose functional connectome-based Hopfield neural networks (FCHNs) as a model for large-scale brain dynamics. FCHNs are continuous-state Hopfield neural networks with each node representing a brain region and weights initialized with a group-level functional connectivity matrix. The weights are scaled to zero mean and unit standard deviation.
 
@@ -824,6 +824,9 @@ University of Southern California.
 +++
 
 +++ {"part": "data-availability"}
+
+## Analysis source code
+https://github.com/pni-lab/connattractor
 
 ## Data availability
 Todo
