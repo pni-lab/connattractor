@@ -62,7 +62,7 @@ authors:
         - "One of the dataset used in preparation of this article were obtained from the Alzheimer’s Disease Neuroimaging Initiative (ADNI)  database (adni.loni.usc.edu). As such, the investigators within the ADNI contributed to the design and implementation of ADNI and/or provided data but did not participate in analysis or writing of this report. A complete listing of ADNI investigators can be found at: http://adni.loni.usc.edu/wp-content/uploads/how_to_apply/ADNI_Acknowledgement_List.pdf"
 
 abbreviations:
-  CHNN: functional Connectome-based Hopfield Neural Network
+  FCHN: Functional Connectome-based Hopfield Network
   ABIDE: Autism Brain Imaging Data Exchange
   ADNI: Alzheimer’s Disease Neuroimaging Initiative
   COBRE: Center for Biomedical Research Excellence
@@ -105,20 +105,20 @@ bibliography:
 +++ {"part": "key-points"}
 **Key Points:**
 - We present a simple yet powerful computational model for large-scale brain dynamics
-- The model uses a connectome-based Hopfield artificial neural network (CHNN) architecture to compute recurrent "activity flow" trough the functional brain connectome
-- CHNNs accurately reconstruct the dynamic repertoire of the brain in resting conditions
-- CHNNs conceptualize both task-induced and pathological changes in brain activity as a shift in these dynamics
+- The model uses a functional connectome-based Hopfield artificial neural network (FCHN) architecture to compute recurrent "activity flow" trough the functional brain connectome
+- FCHNs accurately reconstruct the dynamic repertoire of the brain in resting conditions
+- FCHNs conceptualize both task-induced and pathological changes in brain activity as a shift in these dynamics
 - Our approach is validated through eight studies involving approximately 2000 participants
 +++
 
 +++ {"part": "abstract"}
 Understanding large-scale brain dynamics is a grand challenge in neuroscience. 
-We propose connectome-based Hopfield artificial neural networks (CHNNs) as a model of recurrent, macro-scale activity flow among brain regions.
-CHNNs are neither optimized to mimic certain brain characteristics nor trained to solve specific tasks, but simply initialized with the empirical functional connectome.
-The CHNN framework identifies neurobiologically meaningful attractor states and provides a model for how these constrain brain dynamics.
-Analyses of 8 distinct datasets (N≈2000) demonstrate that CHNNs can accurately reconstruct and predict brain dynamics under a wide range of conditions, including resting state and task-induced activity changes, as well as various brain disorders. 
-CHNNs establish a conceptual link between connectivity and activity and offer a simple, robust, and highly interpretable computational alternative to the conventional descriptive approaches for investigating brain function.
-CHNNs have the potential to unveil the mechanisms underlying altered large-scale brain dynamics in a wide range of clinical conditions and hold promise for identifying potential targets for novel treatment approaches.
+We propose functional connectome-based Hopfield artificial neural networks (FCHNs) as a model of recurrent, dynamic, macro-scale activity flow among brain regions.
+FCHNs are neither optimized to mimic certain brain characteristics nor trained to solve specific tasks, but simply initialized with the empirical functional connectome.
+The FCHN framework identifies neurobiologically meaningful attractor states and provides a model for how these constrain brain dynamics.
+Analyses of 8 distinct datasets (N≈2000) demonstrate that FCHNs can accurately reconstruct and predict brain dynamics under a wide range of conditions, including resting state and task-induced activity changes, as well as various brain disorders. 
+FCHNs establish a conceptual link between connectivity and activity and offer a simple, robust, and highly interpretable computational alternative to the conventional descriptive approaches for investigating brain function.
+FCHNs have the potential to unveil the mechanisms underlying altered large-scale brain dynamics in a wide range of clinical conditions and hold promise for identifying potential targets for novel treatment approaches.
 +++
 
 ## Introduction
@@ -183,7 +183,7 @@ procedure that converges to the attractor states.
 specific tasks, we set its weights empirically, with the interregional activity flow estimated via functional
 brain connectivity. Capitalizing on strong analogies between the relaxation rule of Hopfield networks and the 
 activity flow principle that links activity to connectivity in brain networks, we propose the resulting 
-connectome-based Hopfield neural network (CHNN) as a computational model for macro-scale brain dynamics.  
+functional connectome-based Hopfield neural network (FCHN) as a computational model for macro-scale brain dynamics.  
 **C** The proposed computational framework assigns an energy level, an attractor state and a position in a 
 low-dimensional embedding to brain activation patterns. Additionally, it models how the entire state-space of viable
 activation patterns is restricted by the dynamics of the system and how alterations in activity and/or connectivity 
@@ -228,8 +228,7 @@ This can be expressed by the following equation:
 ```
 
 where $\dot{a}_i$ is the activity of neural unit $i$ in the next iteration and $S(a_j)$ is the sigmoidal activation 
-function ($S(a) = tanh(a)$ in our implementation) and $b_i$ is the bias of unit $i$ and $\beta$ is the so-called temperature parameter. For the sake of simplicity, we set $b_i=0$ in all our experiments. We refer to this architecture as a connectome-based 
-Hopfield neural network (CHNN). Importantly, the relaxation of a CHNN model can be conceptualized as the repeated 
+function ($S(a) = tanh(a)$ in our implementation) and $b_i$ is the bias of unit $i$ and $\beta$ is the so-called temperature parameter. For the sake of simplicity, we set $b_i=0$ in all our experiments. We refer to this architecture as a functional connectivity-based Hopfield neural network (FCHN). Importantly, the relaxation of a FCHN model can be conceptualized as the repeated 
 application of the activity flow principle {cite:p}`cole2016activity; ito2017cognitive` , simultaneously for all 
 regions: $\dot{a}_i = \sum_{j=1}^m w_{ij}a_j$. The update rule also exhibits strong analogies with the inner workings
 of neural mass models {cite:p}`breakspear2017dynamic` as applied e.g. in dynamic causal modeling(see Discussion for 
@@ -244,8 +243,7 @@ Hopfield network in study 1 ({numref}`attractors`A, bottom panel).
 :::{figure} figures/embedding_method.png
 :name: attractors
 **Attractor states and state-space dynamics of connectome-based Hopfield networks** <br/><br/>
-**A** Top: During so-called relaxation procedure, activities in the nodes of a connectome-based Hopfield network (CHNN)
-are iteratively updated based on the activity of all other regions and the connectivity between them. The energy of a
+**A** Top: During so-called relaxation procedure, activities in the nodes of an FCNN model are iteratively updated based on the activity of all other regions and the connectivity between them. The energy of a
 connectome-based Hopfield network decreases during the relaxation procedure until reaching an equilibrium state with 
 minimal energy, i.e. an attractor state. Bottom: Four attractor states of the CHNN derived from the
 group-level functional connectivity matrix from [study 1](tab-samples) (n=44). 
@@ -261,9 +259,9 @@ on the noise parameter $\sigma$, see Supplementary Material **X**).
 Hopfield relaxation procedure (A). The four attractor states are also visualized in their corresponding position on the
 PCA-based projection. The first two principal components yield a clear separation of the attractive state basins 
 (cross-validated classification accuracy: 95.5%, Supplementary Material **X**). We refer to the resulting visualization
-as the Hopfield projection and use it to visualize CHNN-derived and empirical brain dynamics throughout the rest of 
+as the Hopfield projection and use it to visualize FCHN-derived and empirical brain dynamics throughout the rest of 
 the manuscript.
-**E** At its simplest form, the CHNN framework entails only two free hyperparameters: the temperature parameter 
+**E** At its simplest form, the FCHN framework entails only two free hyperparameters: the temperature parameter 
 $\beta$ (left) that controls the number of attractor states and the noise parameter of the stochastic relaxation 
 $\sigma$. To avoid overfitting these parameters to the empirical data, we set $\beta=0.04$ and $\sigma=0.37$ for the 
 rest of the paper  (dotted boxes).
@@ -276,7 +274,7 @@ resulting in 4 distinct attractor states ($\beta=0.4$).
 
 Connectome-based Hopfield networks, without any modifications, always converge to an equilibrium state.
 To incorporate stochastic fluctuations in neuronal activity {cite:p}`robinson2005multiscale`, we introduce weak 
-Gaussian noise to the CHNN relaxation procedure. This procedure, referred to as stochastic relaxation, prevents the 
+Gaussian noise to the FCHN relaxation procedure. This procedure, referred to as stochastic relaxation, prevents the 
 system from reaching equilibrium and, somewhat similarly to stochastic DCM {cite:p}`daunizeau2012stochastic`, induces 
 complex system dynamics  (equivalent to brain activity fluctuations in our framework). Such a system may traverse extensive 
 regions of the state space, in a way largely shaped by the "gravitational pull" (the so-called "basins") of multiple attractor states ({numref}`attractors`B).
@@ -291,12 +289,12 @@ These components were used to construct a low-dimensional embedding ({numref}`at
 The PCA embedding exhibited high consistency across different values of $\beta$ and $\sigma$ ({numref}`attractors`E).
 For all subsequent analyses, we set $\sigma=0.37$, which was determined through a coarse optimization procedure aimed 
 at reconstructing the bimodal distribution of empirical data in the same projection ({numref}`attractors`E, 
-see Methods for details). On the low-dimensional embedding, which we refer to as the *CHNN projection*, we observed 
+see Methods for details). On the low-dimensional embedding, which we refer to as the *FCHN projection*, we observed 
 a clear separation of the attractor states ({numref}`attractors`C), with the two symmetric pairs of attractor states 
 located at the extremes of the first and second PC. 
 To map the attractor basins on the space spanned by the first two PCs ({numref}`attractors`C), we obtained the attractor state of each point visited during the stochastic relaxation and fit a multinomial logistic regression model to predict the attractor state from the first two PCs. 
 The resulting model accurately predicted attractor states of arbitrary brain activity patterns, achieving a cross-validated accuracy of 96.5%.
-The attractor basins were visualized by using the decision boundaries obtained from this model. ({numref}`attractors`C). We propose the 2-dimensional CHNN projection depicted on ({numref}`attractors`C) as a simplified representation of brain dynamics, and use it as a basis for all subsequent analyses in this work.
+The attractor basins were visualized by using the decision boundaries obtained from this model. ({numref}`attractors`C). We propose the 2-dimensional FCHN projection depicted on ({numref}`attractors`C) as a simplified representation of brain dynamics, and use it as a basis for all subsequent analyses in this work.
 
 
 ### Reconstruction of resting state brain dynamics
@@ -311,19 +309,19 @@ with perception–action cycles {cite:p}`fuster2004upper` and recruits regions a
 :::{figure} figures/face_validity.png 
 :name: rest-validity
 **Connectome-based Hopfield networks reconstruct characteristics of real resting state brain activity.**<br/><br/>
-**A** The four attractor states of the CHNN model from study 1 reflect brain activation 
+**A** The four attractor states of the FCHN model from study 1 reflect brain activation 
 patterns with high neuroscientific relevance, representing sub-systems previously associated with 'internal context'
 (blue), "external context" (yellow), "action/execution" (red) and "perception" (green)
 {cite:p}`golland2008data; cioli2014differences; chen2018human; fuster2004upper`.
 **B** The attractor states show excellent replicability in two external datasets (study 2 and 3, mean correlation 0.93). 
-**C** The CHNN projection (first two PCs of the CHNN state space) explains significantly more variance (p<0.0001) in the real 
+**C** The FCHN projection (first two PCs of the FCHN state space) explains significantly more variance (p<0.0001) in the real 
 resting state fMRI data than principal components derived from the real resting state data itself and generalizes 
 better (p<0.0001) to out-of-sample data (study 2). Error bars denote 99% bootstrapped confidence intervals. 
-**D** The CHNN analysis accurately predicts (p<0.0001) the fraction of time spent on the basis of the four attractor 
+**D** The FCHN analysis accurately predicts (p<0.0001) the fraction of time spent on the basis of the four attractor 
 states in real restring state fMRI data (study 1) and, 
 **E**, reconstructs the characteristic bimodal distribution of the real resting state data. 
-**F** Stochastic CHNNs are capable of self-reconstruction: the timeseries resulting from the stochastic relaxation procedure 
-mirror the co-variance structure of the functional connectome the CHNN model was initialized with. 
+**F** Stochastic FCHNs are capable of self-reconstruction: the timeseries resulting from the stochastic relaxation procedure 
+mirror the co-variance structure of the functional connectome the FCHN model was initialized with. 
 :::
 
 Importantly, the discovered attractor states demonstrate a remarkable level of replicability (mean Pearson's 
@@ -333,26 +331,26 @@ correlation 0.93) across the discovery datasets (study 1) and two independent re
 Further analysis in study 1 showed that connectome-based Hopfield models accurately reconstructed multiple 
 characteristics of true resting-state data. 
 
-First, the CHNN projection accounted for a substantial amount of 
+First, the FCHN projection accounted for a substantial amount of 
 variance in the real resting-state fMRI data in study 1 (mean $R^2=0.399$) and generalized well to out-of-sample data (study 2) 
 (mean $R^2=0.396$)  ({numref}`rest-validity`E). Remarkably, the explained variance of the 
-CHNN projection significantly exceeded that of a PCA performed directly on the real resting-state fMRI data itself
+FCHN projection significantly exceeded that of a PCA performed directly on the real resting-state fMRI data itself
 ($R^2=0.37$ and $0.364$ for in- and out-of-sample analyses).
 
-Second, CHNN analyses accurately reconstruct true resting state brain state dynamics. During stochastic relaxation, the
-CHNN model spends approximately three-quarters of the time on the basis of the first two attractor states, with an 
+Second, FCHN analyses accurately reconstruct true resting state brain state dynamics. During stochastic relaxation, the
+FCHN model spends approximately three-quarters of the time on the basis of the first two attractor states, with an 
 equal distribution between them. The remaining one-quarter of the time is spent on the basis of the second pair of 
 attractor states, also equally distributed. To test whether we see similar state occupancy ratios in real resting state data, 
 we obtained normalized and cleaned mean timeseries in $m=122$ regions from all participants in study 1 and calculated 
-the attractor state of each time-frame via the CHNN model. We observed strikingly similar temporal occupancies to those 
+the attractor state of each time-frame via the FCHN model. We observed strikingly similar temporal occupancies to those 
 predicted by the model ($\Chi^2$-test with the null hypothesis of uniform occupancies: p<0.00001, 
 {numref}`rest-validity`B).
 
-Third, CHNNs successfully reproduce fine-grained details of the bimodal distribution observed in the real resting-state fMRI data when projected onto the CHNN projection ({numref}`rest-validity`F and {numref}`attractors`E), suggesting that brain dynamics 
+Third, FCHNs successfully reproduce fine-grained details of the bimodal distribution observed in the real resting-state fMRI data when projected onto the FCHN projection ({numref}`rest-validity`F and {numref}`attractors`E), suggesting that brain dynamics 
 are governed by a limited number of attractor states that emerge from the flow of activity across functional 
 connectivity networks.
 
-Finally, during the stochastic relaxation procedure, CHNNs were found to generate regional time series that 
+Finally, during the stochastic relaxation procedure, FCHNs were found to generate regional time series that 
 preserve the covariance structure of the real functional connectome used for network initialization. This 
 important result indicates that a dynamic system in which activity flows across nodes of a complex network inevitably 
 "leaks" its underlying structure into the activity time series, providing a high level of construct validity for the 
@@ -368,7 +366,7 @@ The proposed framework offers a natural account for how activation patterns in t
 underlying functional connectivity. To illustrate this, we obtained task-based fMRI data from a study by 
 {cite:t}`woo2015distinct` ([study 4](tab-samples), n=33, see {numref}`rest-validity`), investigating the neural 
 correlates of pain and its self-regulation. We found that time-frames obtained from periods with pain stimulation 
-(taking into account hemodynamics, see Methods for details) shoe a significantly different distribution on the CHNN projection 
+(taking into account hemodynamics, see Methods for details) shoe a significantly different distribution on the FCHN projection 
 than time-frames obtained from periods without pain stimulation (permutation test for mean projection difference, p<0.001, {numref}`task-validity`A, left). Energies, as defined by the Hopfield model, were also significantly different between the two conditions 
 (permutation test, p<0.001), with higher energies during pain stimulation.
 
@@ -381,8 +379,8 @@ p<0.001, {numref}`task-validity`A, right). Interestingly, self-regulation did no
 :::{figure} figures/task_validity.png
 :name: task-validity
 **Empirical Hopfield-networks reconstruct real task-based brain activity.** <br></br>
-**A** Functional MRI time-frames during pain stimulation from [study 4](tab-samples) (second CHNN projection plot)
-and self-regulation (third and fourth) locate significantly differently on the CHNN projection than brain states 
+**A** Functional MRI time-frames during pain stimulation from [study 4](tab-samples) (second FCHN projection plot)
+and self-regulation (third and fourth) locate significantly differently on the FCHN projection than brain states 
 during rest (first projection, permutation test, p<0.001 for all).  Energies, as defined by the Hopfield model, are also
 significantly different between rest and the pain conditions (permutation test, p<0.001), with higher energies during 
 pain stimulation. Triangles denote participant-level mean activations in the various blocks (corrected for 
@@ -391,27 +389,27 @@ across participants (arrow), as compared to the reference state (downregulation 
 other circle plots).
 **B** Flow-analysis of the single time-frames (based on the vector pointing to the next time-frame)
 reveal a non-linear difference in brain dynamics during pain and rest (left). When introducing weak 
-pain-related signal in the CHNN model during stochastic relaxation, it accurately reproduces these non-linear flow 
+pain-related signal in the FCHN model during stochastic relaxation, it accurately reproduces these non-linear flow 
 differences (right).
 **C** Simulating activity in the nucleus accumbens (NAc) (the region showing significant activity differences in {cite}`woo2015distinct`) reconstructs the observed non-linear flow difference between up- and downregulation (left).
-**D** Schematic representation of brain dynamics during pain and its up- and downregulation, visualized on the CHNN
+**D** Schematic representation of brain dynamics during pain and its up- and downregulation, visualized on the FCHN
 projection. In the proposed framework, pain does not simply elicit a direct response in certain regions, but instead, shifts spontaneous brain dynamics towards the "action" subsystem, converging to a characteristic "ghost 
 attractor" of pain. Up-regulation by NAc de-activation exerts force towards a similar direction (thus increasing the probability of the emergence of "pain-activations") while down-regulation
 by NAc activation exhibit an opposite effect on brain dynamics, leading to the brain less frequent "visiting" 
 pain-associated states.
-**E** Visualizing meta-analytic activation maps on the CHNN projection captures intimate relations between the corresponding tasks and **F** serves as a basis for a CHNN-based theoretical interpretative framework for spontaneous and task-based brain dynamics. In the proposed framework, task-based activity is not a mere response to external stimuli in certain brain locations but a perturbation of the brain's characteristic dynamic trajectories, constrained by the underlying functional connectivity. From this perspective, "activity maps" from conventional task-based fMRI analyses capture time-averaged differences in these whole brain dynamics. 
+**E** Visualizing meta-analytic activation maps on the FCHN projection captures intimate relations between the corresponding tasks and **F** serves as a basis for a FCHN-based theoretical interpretative framework for spontaneous and task-based brain dynamics. In the proposed framework, task-based activity is not a mere response to external stimuli in certain brain locations but a perturbation of the brain's characteristic dynamic trajectories, constrained by the underlying functional connectivity. From this perspective, "activity maps" from conventional task-based fMRI analyses capture time-averaged differences in these whole brain dynamics. 
 :::
 
 These results provide an intuitive account for how the underlying functional connectivity of the brain can give rise to
-different activation patterns, depending on the current (extrinsic or intrinsic) input. In the CHNN framework, change in
+different activation patterns, depending on the current (extrinsic or intrinsic) input. In the FCHN framework, change in
 input (i.e. a task or stimulation) does not simply switch to the brain into a distinct "mode" of operation but acts as 
 a perturbation of the system's dynamics, resulting in mean activations changes that are only reliable measurable over
 an extended period of time, as done by conventional task-based fMRI analyses. 
 
 The proposed framework offers much more than visualization and inference of resting state and task based data on the 
-CHNN projection. It provides a generative model for observed activity changes, enabling the prediction of brain 
-activity under different conditions. To illustrate this, we used the CHNN approach to simulate brain activity during pain
-stimulation and self-regulation. First, we registered the frame-to-frame transitions (i.e. the vector on the 2-dimensional CHNN projection, pointing from a time-frame to the next one) in the real fMRI data for all four
+FCHN projection. It provides a generative model for observed activity changes, enabling the prediction of brain 
+activity under different conditions. To illustrate this, we used the FCHN approach to simulate brain activity during pain
+stimulation and self-regulation. First, we registered the frame-to-frame transitions (i.e. the vector on the 2-dimensional FCHN projection, pointing from a time-frame to the next one) in the real fMRI data for all four
 conditions: rest, pain without self-regulation, downregulation, and upregulation.
 Next, we evaluated the average direction in different segments of the projection plane, on a 6x6 grid. Finally, we 
 computed the difference between the mean directions observed during rest and pain (without regulation, 
@@ -427,10 +425,10 @@ Next, our objective was to evaluate the extent to which the proposed framework c
 dynamics. To simulate the alterations in brain dynamics during pain stimulation, we acquired a meta-analytic pain 
 activation map {cite:p}`zunhammer2021meta` (n=603) and incorporated it as additional signal, along with Gaussian noise, 
 during the stochastic relaxation procedure. While incorporating such a signal naturally induces a minor linear shift 
-on the CHNN projection for each state generated during the stochastic relaxation procedure, this alone could not explain
+on the FCHN projection for each state generated during the stochastic relaxation procedure, this alone could not explain
 the observed nonlinear dynamics in the real data (Supplementary material **X**). After conducting a 
 coarse-grained optimization across five different signal-to-noise (SNR) values (logarithmically spaced between 
-0.001 and 0.1), we found that by adding a minimal amount of signal (SNR = 0.01), the CHNN model achieved a remarkably 
+0.001 and 0.1), we found that by adding a minimal amount of signal (SNR = 0.01), the FCHN model achieved a remarkably 
 precise reconstruction of the observed non-linear disparities in brain dynamics between the pain and rest conditions,
 including the characteristic pain-related "ghost attractor". (Spearman's $\rho$ = 0.42, p=0.003, 
 {numref}`task-validity`B, right side).
@@ -449,10 +447,10 @@ stimuli such as pain, the brain remains in a continuous state of flux, which is 
 
 % -> discussion
 
-To provide a comprehensive picture on how other tasks map onto the CHNN projection, we obtained various task-based
+To provide a comprehensive picture on how other tasks map onto the FCHN projection, we obtained various task-based
 meta-analytic activation maps from Neurosynth (see Supplementary material X for details) and plotted them on the 
-CHNN projection ({numref}`task-validity`E). This analysis reinforced and extended our interpretation of the four investigated attractor states and shed more light on how various functions are mapped on the axes of internal vs. external context and perception vs. action.
-In this coordinate system of the CHNN projection, visual processing is labeled "external-perception", sensory-motor processes 
+FCHN projection ({numref}`task-validity`E). This analysis reinforced and extended our interpretation of the four investigated attractor states and shed more light on how various functions are mapped on the axes of internal vs. external context and perception vs. action.
+In this coordinate system of the FCHN projection, visual processing is labeled "external-perception", sensory-motor processes 
 "external-active", language, verbal cognition and working memory is labelled "internal-active" and long-term memory 
 as well as social and autobiographic narrative fall into the "internal-perception" regime ({numref}`task-validity`F).
 
@@ -460,9 +458,9 @@ Together our results on task-based data highlight that the proposed generative f
 
 ### Clinical relevance
 
-Computational models, such as the CHNN approach, have the potential to make a significant contribution to our mechanistic comprehension of various neurological and psychiatric disorders; which represents a crucial stride towards developing effective treatments. While providing a demonstration of the CHNN approach to yield such mechanistic insights in clinical populations is well outside the scope of the current study, here we present evidence that CHNN-based attractor state analysis can effectively capture and quantify several disease-related alterations in resting state brain dynamics.
+Computational models, such as the FCHN approach, have the potential to make a significant contribution to our mechanistic comprehension of various neurological and psychiatric disorders; which represents a crucial stride towards developing effective treatments. While providing a demonstration of the FCHN approach to yield such mechanistic insights in clinical populations is well outside the scope of the current study, here we present evidence that FCHN-based attractor state analysis can effectively capture and quantify several disease-related alterations in resting state brain dynamics.
  
-For the sake of simplicity, we utilized one of the most simplistic CHNN-based analysis methods. Specifically, we applied the CHNN model from study 1 to allocate each time-frame of resting state data in the clinical samples ([studies 6-8](tab-samples)) to one of the 4 attractor states. Then, we compared the average activity during resting state within each state across different clinical groups (with Bonferroni correction applied across brain regions and attractor states), resulting in a total of 122*4 comparisons per dataset. We analyzed three large public clinical databases as provided by the Autism Brain Imaging Data Exchange 
+For the sake of simplicity, we utilized one of the most simplistic FCHN-based analysis methods. Specifically, we applied the FCHN model from study 1 to allocate each time-frame of resting state data in the clinical samples ([studies 6-8](tab-samples)) to one of the 4 attractor states. Then, we compared the average activity during resting state within each state across different clinical groups (with Bonferroni correction applied across brain regions and attractor states), resulting in a total of 122*4 comparisons per dataset. We analyzed three large public clinical databases as provided by the Autism Brain Imaging Data Exchange 
 ([study 6](tab-samples): ABIDE, {cite:p}`di2014autism`, the Centers of Biomedical Research Excellence 
 ([study 7](tab-samples): COBRE, {cite:p}`aine2017multimodal`) and the Alzheimer’s Disease Neuroimaging Initiative 
 ([study 8](tab-samples): ADNI, {cite:p}`petersen2010alzheimer`).
@@ -474,13 +472,13 @@ participants for SCH and individuals with mild cognitive impairment (MCI) for AD
 :name: clinical-validity
 **Connectome-based Hopfield analysis as a sensitive tool for the study of clinical disorders.** <br></br>
 We quantified attractor state activations in three clinical datasets ([studies 6, 7 and 8](tab-samples)) as the 
-individual-level mean activation of all time-frames belonging to the same attractor state. CHNN analyses of attractor 
+individual-level mean activation of all time-frames belonging to the same attractor state. FCHN analyses of attractor 
 state activations revealed significant differences in all three datasets.
 **A** Attractor state analysis of individuals with autism spectrum disorder (ASD) and typically developing controls (TD)
 captures alterations similar to those previously associated to ASD-related perceptual atypicalities as well as atypical integration of information about the “self” and the “other”.
 **B** The most prominent Schizophrenia (SCZ)-related differences (as compared to healthy controls (HC) are related increased 
 activity of the internal subsystem and increased visual activations on the basis of the attractor state associated with perception.
-**C** In Alzheimer's disease (AD), CHNN analysis revealed, among others, hyperactivity in the hippocampal formation (collateral sulcus) during perception, a commonly reported finding in AD.
+**C** In Alzheimer's disease (AD), FCHN analysis revealed, among others, hyperactivity in the hippocampal formation (collateral sulcus) during perception, a commonly reported finding in AD.
 and internal context (both of which together host long-term memory processes, see {numref}`task-validity`F). All 
 results are corrected for multiple comparisons across brain regions and attractor states (122*4 comparisons) 
 with Bonferroni-correction. See {numref}`tab-clinical-results` Supplementary Table **X** for detailed results. <br></br>
@@ -491,7 +489,7 @@ We found several significant differences in the mean attractor activation of pat
 controls. 
 
 ASD ({numref}`clinical-validity` left side) was found to be characterized by increased activity of the sensory-motor and middle cingular cortices during "action-execution" related states and increased visual and decreased sensory and auditory activity during "perception" states, likely reflecting the widely acknowledged, yet poorly understood, perceptual atypicalities in ASD {cite:p}`hadad2019perception`.
-ASD related changes in the internal-external axis were characterized by more involvement of the posterior cingulate, the precuneus, the nucleus accumbens, the dorsolateral prefrontal cortex (dlPFC), the cerebellum (Crus II and lobule VII) and inferior temporal regions during activity of the internalizing subsystem (Table **X**). While similar, default mode network (DMN)-related changes have often been attributed to an atypical integration of information about the “self” and the “other”, a more detailed CHNN-analysis may help to further disentangle the specific nature of these changes.
+ASD related changes in the internal-external axis were characterized by more involvement of the posterior cingulate, the precuneus, the nucleus accumbens, the dorsolateral prefrontal cortex (dlPFC), the cerebellum (Crus II and lobule VII) and inferior temporal regions during activity of the internalizing subsystem (Table **X**). While similar, default mode network (DMN)-related changes have often been attributed to an atypical integration of information about the “self” and the “other”, a more detailed FCHN-analysis may help to further disentangle the specific nature of these changes.
 
 In SCZ, the most prominent differences were found on the internal-external axis, with elevated activity in several brain regions during brain activity on the basin of the internal subsystem and decreased activity in the external subsystem. ({numref}`clinical-validity`B, Table **X**). These findings are in line with the notion that, in schizophrenia, the forward projections have decreased functional connectivity relative to the back projections, and this may reduce the effects of external bottom-up inputs from the world relative to internal top-down thought processes {cite:p}`rolls2021attractor`. 
 On the axis of the perception-action subsystems, the main difference was found in the visual and sensorimotor cortices, concordant with the widespread notion of visual and sensory deficits in SCZ {cite:p}`javitt2009sensory; butler2008visual; adamek2022early`.
@@ -672,52 +670,52 @@ multistable dynamics organized by the "gravitational pull" of a finite number of
 
 Integrating Cole's activity flow principle with the Hopfield neural network architecture mandates the initiation of network weights with functional connectivity values, specifically partial correlations as suggested by {cite:t}`cole2016activity`.
 Considering the functional connectome as weights of an already trained neural network distinguishes our methodology not only from conventional computational modeling strategies, which usually rely on the structural connectome as a proxy for polysynaptic connectivity {cite:p}`cabral2017functional`, but also from "neuroconnectionist" approaches that employ explicit training procedures {cite:p}`doerig2023neuroconnectionist`.
-Functional connectome-based Hopfield neural network (CHNN) models can be conceptualized as a streamlined alternative to those methodologies, offering significant advantages.
+Functional connectome-based Hopfield neural network (FCHN) models can be conceptualized as a streamlined alternative to those methodologies, offering significant advantages.
 
 First, the intricate nature of conventional computational models of the brain leads to an exponential proliferation of the parameter space. 
 While finely detailed computational models hold promise for providing comprehensive insights, they are prone to overfitting real data {cite:p}`breakspear2017dynamic`. 
-In contrast to those approaches, the basic form of the CHNN approach comprises solely two hyperparameters (temperature and noise) and yields notably consistent outcomes across an extensive range of these parameter. To underscore the potency of this simplicity and stability, in the present work, we intentionally minimized the fine-tuning of these parameters. We fixed the temperature parameter at a value that robustly provides 4 attractor 
+In contrast to those approaches, the basic form of the FCHN approach comprises solely two hyperparameters (temperature and noise) and yields notably consistent outcomes across an extensive range of these parameter. To underscore the potency of this simplicity and stability, in the present work, we intentionally minimized the fine-tuning of these parameters. We fixed the temperature parameter at a value that robustly provides 4 attractor 
 states and used a single noise level for all experiments (selected with a coarse optimization procedure to approximately
 mimic the distribution of real data). 
 
 Second, high model complexity usually translates to a greater challenge in terms of interpretability. 
-The CHNN approach offers straightforward interpretations, as it establishes a
+The FCHN approach offers straightforward interpretations, as it establishes a
 direct link between two highly prevalent metrics of brain function: functional connectivity and brain activity. 
 This connection is not solely conceptual, but also mathematical, facilitating the exploration and prediction of alterations in the system's dynamics in response to perturbations affecting both activity and connectivity.
 
-Given its simplicity, it is remarkable, if not surprising, how accurately the CHNN model is able to 
+Given its simplicity, it is remarkable, if not surprising, how accurately the FCHN model is able to 
 reconstruct and predict brain dynamics under a wide range of conditions. Particularly surprising is the result
-that the 2-dimensional CHNN projection can explain more variance in real resting state fMRI data than the first two principal components derived from the data itself. 
-Here we propose that the explanation for the extraordinary performance of the CHNN model in reconstructing brain function is that it captures essential principles of the underlying dynamics that can be used to reconstruct the brain's activation state-space even if our empirical measurements are corrupted by noise and low sampling rate.
+that the 2-dimensional FCHN projection can explain more variance in real resting state fMRI data than the first two principal components derived from the data itself. 
+Here we propose that the explanation for the extraordinary performance of the FCHN model in reconstructing brain function is that it captures essential principles of the underlying dynamics that can be used to reconstruct the brain's activation state-space even if our empirical measurements are corrupted by noise and low sampling rate.
 
-The known noise-tolerance of the proposed architecture may also explain the high replicability of CHNN attractors across different
-datasets (study 2 and 3). The observed level of replicability allowed us to re-use the CHNN model constructed with the 
+The known noise-tolerance of the proposed architecture may also explain the high replicability of FCHN attractors across different
+datasets (study 2 and 3). The observed level of replicability allowed us to re-use the FCHN model constructed with the 
 connectome of study 1 for all subsequent studies (2-8), without any further fine-tuning or study-specific parameter 
-optimization of the CHNN model.
+optimization of the FCHN model.
 
-Attractor states are a key concept in the CHNN framework. They are not only local minima in the state-space but act as a driving force for the dynamic trajectories of brain activity. Nevertheless, attractor states should not be confused with the conventional notion of brain states (e.g. co-activation patterns {cite:p}`chen2015introducing`). In the CHNN framework, attractor states can rather be conceptualized as "Platonic idealizations" of brain activity, that are continuously approximated - but never reached - by the brain, resulting in a complex, clustered distribution of actual brain activation patterns. In or notion, this clusteredness is what gives rise to the commonly described reoccurring quasi-periodic patterns, commonly referred to as brain states. 
+Attractor states are a key concept in the FCHN framework. They are not only local minima in the state-space but act as a driving force for the dynamic trajectories of brain activity. Nevertheless, attractor states should not be confused with the conventional notion of brain states (e.g. co-activation patterns {cite:p}`chen2015introducing`). In the FCHN framework, attractor states can rather be conceptualized as "Platonic idealizations" of brain activity, that are continuously approximated - but never reached - by the brain, resulting in a complex, clustered distribution of actual brain activation patterns. In or notion, this clusteredness is what gives rise to the commonly described reoccurring quasi-periodic patterns, commonly referred to as brain states. 
 
-Relying on previous work, we can establish a relatively straightforward (yet somewhat speculative) mapping between attractor states and brain function. We refer to the first two attractor states as the internal and external subsystems {cite:p}`golland2008data; cioli2014differences`. Both CHNN-reconstructed and empirical brain activity spans the highest variance along the axis corresponding to this attractor state pair, suggesting that the robust and widely described observation of the brain state we commonly refer to as the DMN is a consequence of the brain's tendency to commute between the two state-space clusters emerging along this primary axis.
+Relying on previous work, we can establish a relatively straightforward (yet somewhat speculative) mapping between attractor states and brain function. We refer to the first two attractor states as the internal and external subsystems {cite:p}`golland2008data; cioli2014differences`. Both FCHN-reconstructed and empirical brain activity spans the highest variance along the axis corresponding to this attractor state pair, suggesting that the robust and widely described observation of the brain state we commonly refer to as the DMN is a consequence of the brain's tendency to commute between the two state-space clusters emerging along this primary axis.
 The third and fourth attractor states accurately map to the previously described perception-execution axis within the brain {cite:p}`fuster2004upper`. The four investigated attractor states display an appealing correspondence to recent theories of brain function that capitalize on Friston's free energy principle {cite:p}`friston2006free` and postulate the necessary existence of subsystems for active and perceptual inference {cite:p}`friston2023free` as well as a hierarchically organized (i.e. external and internal) subsystems that give rise to consciousness {cite:p}`ramstead2023inner`.
 
-In the CHNN framework, the brain is in a constant state of flux, traversing extended areas of the state space. Task-based brain activity in this framework is not a mere response to external stimuli in certain brain locations but a perturbation of the brain's characteristic dynamic trajectories, shifting towards the realms of those attractor states that represent the type of function required by the task or stimuli. In other words brain activity is only perturbed by external input, rather than predestined. We exemplified this with the case of the self-regulation of pain (study 4).
-In our analyses, the CHNN approach was not only able to capture participant-level activity changes induced by pain and its self-regulation (showing significant differences on the CHNN projection and in terms of state energy), but also accurately predicted the non-linear changes in activity flow induced by characteristic activity changes and give a mechanistic account for how activity change in a single region (NAcc) may result in a significantly altered pain experience.
+In the FCHN framework, the brain is in a constant state of flux, traversing extended areas of the state space. Task-based brain activity in this framework is not a mere response to external stimuli in certain brain locations but a perturbation of the brain's characteristic dynamic trajectories, shifting towards the realms of those attractor states that represent the type of function required by the task or stimuli. In other words brain activity is only perturbed by external input, rather than predestined. We exemplified this with the case of the self-regulation of pain (study 4).
+In our analyses, the FCHN approach was not only able to capture participant-level activity changes induced by pain and its self-regulation (showing significant differences on the FCHN projection and in terms of state energy), but also accurately predicted the non-linear changes in activity flow induced by characteristic activity changes and give a mechanistic account for how activity change in a single region (NAcc) may result in a significantly altered pain experience.
 
 Brain dynamics can not only be perturbed by task or other types of experimental or naturalistic interventions, but also
-by pathological alterations. In our analysis of clinical samples (studies 6-8), we found that CHNN-based analysis of mean attractor activations is a highly sensitive tool to characterize neural correlates of autism spectrum disorder (ASD), Schizophrenia (SCH) and Alzheimer's disease (AD), even with the most conservative correction for multiple comparisons. These results - although descriptive in their nature - provide a proof-of-concept regarding the clinical potential of the proposed approach and pave the way for more elaborate applications of the CHNN approach in clinical and translational research.
+by pathological alterations. In our analysis of clinical samples (studies 6-8), we found that FCHN-based analysis of mean attractor activations is a highly sensitive tool to characterize neural correlates of autism spectrum disorder (ASD), Schizophrenia (SCH) and Alzheimer's disease (AD), even with the most conservative correction for multiple comparisons. These results - although descriptive in their nature - provide a proof-of-concept regarding the clinical potential of the proposed approach and pave the way for more elaborate applications of the FCHN approach in clinical and translational research.
 
 Together, our findings open up a series of exciting opportunities for the mechanistic understanding of brain function. 
 
-First, the 2-dimensional CHNN projection offers a common framework for the interpretations of any brain activity patterns, and conceptualize changes related to various behavioral or clinical states or traits as a shift in brain dynamics along the axes determined by the attractor states.
+First, the 2-dimensional FCHN projection offers a common framework for the interpretations of any brain activity patterns, and conceptualize changes related to various behavioral or clinical states or traits as a shift in brain dynamics along the axes determined by the attractor states.
 
-Second, the CHNN model's utility extends far beyond the sole detection of such altered brain dynamics. By its generative nature, CHNN analyses may provide insights into the causes of changes in brain dynamics, by for instance, identifying the regions or connections that act as an Achilles heel in generating such changes. Such analyses could, for instance, aid the differentiation of primary causes and secondary effects of particular activity or connectivity changes in various clinical conditions.
+Second, the FCHN model's utility extends far beyond the sole detection of such altered brain dynamics. By its generative nature, FCHN analyses may provide insights into the causes of changes in brain dynamics, by for instance, identifying the regions or connections that act as an Achilles heel in generating such changes. Such analyses could, for instance, aid the differentiation of primary causes and secondary effects of particular activity or connectivity changes in various clinical conditions.
 
-Third, the CHNN approach might provide testable predictions about the effects of interventions on brain functions, 
+Third, the FCHN approach might provide testable predictions about the effects of interventions on brain functions, 
 like pharmacological or non-invasive brain stimulation (e.g. transcranial magnetic or direct current stimulation, 
 focused ultrasound) or neurofeedback. Obtaining such predictions on the individual level (e.g. based on the individual functional connectome) might aid the design of personalized medicine approaches.
 
-In this initial work, we presented the simplest possible implementation of the CHNN concept. It is clear that the presented analyses   exploit only a small proportion of the richness of the full state-space dynamics reconstructed by the CHNN model. 
-There are many potential way to further improve the utility of the CHNN approach. Increasing the number of reconstructed attractor states (by increasing the temperature parameter), investigating higher-dimensional dynamics, fine-tuned hyperparameters, the effect of 
+In this initial work, we presented the simplest possible implementation of the FCHN concept. It is clear that the presented analyses   exploit only a small proportion of the richness of the full state-space dynamics reconstructed by the FCHN model. 
+There are many potential way to further improve the utility of the FCHN approach. Increasing the number of reconstructed attractor states (by increasing the temperature parameter), investigating higher-dimensional dynamics, fine-tuned hyperparameters, the effect of 
 different initializations and perturbations are all important direction for future work, with the potential to further 
 improve the model's accuracy and usefulness.
 
@@ -725,7 +723,7 @@ improve the model's accuracy and usefulness.
 > - why no HRF modelling (could be a possible extension, but it is also not part of the activity flow approach and we don't reconstruct time series, but rather activations)
 > - is the connectome stationary? See arguments by the Cole-group.
 > - why rs-fMRI connectome (could be latent-FC a'la McCormick, 2022)
-> - the CHNN model is not a model of brain function, but a model of brain dynamics. It does not strive to explain various brain regions ability to perform certain computations, but the brain's characteristic trajectories, which are perturbed by tasks and other types of interventions.
+> - the FCHN model is not a model of brain function, but a model of brain dynamics. It does not strive to explain various brain regions ability to perform certain computations, but the brain's characteristic trajectories, which are perturbed by tasks and other types of interventions.
 
 ## Conclusion
 
@@ -734,8 +732,8 @@ under a wide range of conditions. The framework models large-scale activity flow
 artificial neural network architecture that, instead of being trained to solve specific tasks or mimic certain dynamics,
 is simply initialized with the empirical functional connectome. The framework identifies neurobiologically meaningful 
 attractor states and provides a model for how these restrict brain dynamics. The proposed framework, referred to as the
-connectome-based Hopfield neural network (CHNN) model, can accurately reconstruct and predict brain dynamics under a wide range of 
-conditions, including resting state, task-induced activity changes, as well as in various brain disorders. CHNNs establish a conceptual link between connectivity and activity provide and offer a simple, robust, and highly interpretable computational alternative to the conventional descriptive approaches to investigating brain function. The generative nature of the proposed model opens up a series of exciting opportunities for future research, including novel ways of assessing causality and mechanistic understanding, and the possibility to predict the effects of various interventions, thereby paving the way for novel personalized medical approaches.
+connectome-based Hopfield neural network (FCHN) model, can accurately reconstruct and predict brain dynamics under a wide range of 
+conditions, including resting state, task-induced activity changes, as well as in various brain disorders. FCHNs establish a conceptual link between connectivity and activity provide and offer a simple, robust, and highly interpretable computational alternative to the conventional descriptive approaches to investigating brain function. The generative nature of the proposed model opens up a series of exciting opportunities for future research, including novel ways of assessing causality and mechanistic understanding, and the possibility to predict the effects of various interventions, thereby paving the way for novel personalized medical approaches.
 
 
 ## Methods
@@ -863,42 +861,42 @@ During the stochastic relaxation procedure, we add weak Gaussian noise to each n
 
  where $\sigma$ regulates the amount of noise added and $\mathbf{\mu}$ is set to 0 by default.
 
-In this work we propose connectome-based Hopfield neural networks (CHNNs) as a model for large-scale brain dynamics. CHNNs are continuous-state Hopfield neural networks with each node representing a brain region and weights initialized with a group-level functional connectivity matrix. The weights are scaled to zero mean and unit standard deviation.
+In this work we propose functional connectome-based Hopfield neural networks (FCHNs) as a model for large-scale brain dynamics. FCHNs are continuous-state Hopfield neural networks with each node representing a brain region and weights initialized with a group-level functional connectivity matrix. The weights are scaled to zero mean and unit standard deviation.
 
-In studies 1-3, we obtained the finite number of attractor states for all CHNNs by repeatedly (100000-times) initializing the CHNN with random activations and relaxing them until convergence. 
+In studies 1-3, we obtained the finite number of attractor states for all FCHNs by repeatedly (100000-times) initializing the FCHN with random activations and relaxing them until convergence. 
 
-### CHNN projection
+### FCHN projection
 
-We mapped out the CHNN state-space by initializing our CHNN model with a random input, and applying the stochastic update step for 100.000 iterations and storing all visited activity configurations.
-We performed a principal component analysis (PCA) on the state samples, and proposed the the first two principal  component (PCs) as the coordinate system for the CHNN projection. Using a Multinomial Logistic Regression, we predicted to which attractor state each of the state samples converges to, using the first two PCs as features. The model's performance was evaluated with 10-fold cross-validation. We visualized the attractor states position in the projection as well as the decision boundaries between the attractor states, based on this regression model. We set $\beta = 0.04$, which results in 4 attractor states given the connectome of study 1. We  generated CHNN projections in study 1 with four different \sigma values (0.33, 0.35, 0.37, 0.39) and fixed $\sigma$ at 0.37 for all subsequent analyses. The value of $\sigma$ was selected based on visual inspection of the state space distribution and its similarity to real fMRI data in the CHNN projection (see [figure](#rest-validity)).
+We mapped out the FCHN state-space by initializing our FCHN model with a random input, and applying the stochastic update step for 100.000 iterations and storing all visited activity configurations.
+We performed a principal component analysis (PCA) on the state samples, and proposed the the first two principal  component (PCs) as the coordinate system for the FCHN projection. Using a Multinomial Logistic Regression, we predicted to which attractor state each of the state samples converges to, using the first two PCs as features. The model's performance was evaluated with 10-fold cross-validation. We visualized the attractor states position in the projection as well as the decision boundaries between the attractor states, based on this regression model. We set $\beta = 0.04$, which results in 4 attractor states given the connectome of study 1. We  generated FCHN projections in study 1 with four different \sigma values (0.33, 0.35, 0.37, 0.39) and fixed $\sigma$ at 0.37 for all subsequent analyses. The value of $\sigma$ was selected based on visual inspection of the state space distribution and its similarity to real fMRI data in the FCHN projection (see [figure](#rest-validity)).
 
 
 ### Replicability
 
-We obtained the four attractor states in study 1, as described above. We then constructed two other CHNNs, based on the study-mean functional connectome obtained in studies 2 and 3 and  obtained all attractor states of these models, with the same parameter settings ($\beta = 0.04$ and $\sigma = 0.37$) as in study 1. In both replications studies we found four attractor states. The spatial similarity of attractor states across studies was evaluated by Pearson's correlation coefficient.
+We obtained the four attractor states in study 1, as described above. We then constructed two other FCHNs, based on the study-mean functional connectome obtained in studies 2 and 3 and  obtained all attractor states of these models, with the same parameter settings ($\beta = 0.04$ and $\sigma = 0.37$) as in study 1. In both replications studies we found four attractor states. The spatial similarity of attractor states across studies was evaluated by Pearson's correlation coefficient.
 
 ### Evaluation: resting state dynamics
 
-Analogously to the methodology of the CHNN projection, we performed PCA on the preprocessed fMRI time-frames from study 1 (based on the regional timeseries data).
-To compare the explanatory power of the first two PCs derived from CHNN-based simulated data and real fMRI data, we fit linear regression models which used the first two CHNN or real data-based PCs as regressors to reconstruct the real fMRI time-frames. In-sample explained variances and the corresponding confidence intervals were calculated for both models with bootstrapping (100 samples). To evaluate the out-of-sample generalization of the PCAs (CHNN- and real data-based) from study 1, we calculated how much variance they can explain in study 2.
+Analogously to the methodology of the FCHN projection, we performed PCA on the preprocessed fMRI time-frames from study 1 (based on the regional timeseries data).
+To compare the explanatory power of the first two PCs derived from FCHN-based simulated data and real fMRI data, we fit linear regression models which used the first two FCHN or real data-based PCs as regressors to reconstruct the real fMRI time-frames. In-sample explained variances and the corresponding confidence intervals were calculated for both models with bootstrapping (100 samples). To evaluate the out-of-sample generalization of the PCAs (FCHN- and real data-based) from study 1, we calculated how much variance they can explain in study 2.
 
-To calculate fractional time occupancies of the attractor states in real timeseries vs simulated data, we used each real and simulated timeframe as an input to the CHNN of study 1 and obtained the corresponding attractor state. We performed a $\tilde{\chi}^2$ test on the resulting frequencies against the expected uniform frequencies.  
+To calculate fractional time occupancies of the attractor states in real timeseries vs simulated data, we used each real and simulated timeframe as an input to the FCHN of study 1 and obtained the corresponding attractor state. We performed a $\tilde{\chi}^2$ test on the resulting frequencies against the expected uniform frequencies.  
 
 ### Evaluation: task-based dynamics
 
-We used study 4 to evaluate the ability of the CHNN approach to capture and predict task-induced alterations in large-scale brain dynamics.
+We used study 4 to evaluate the ability of the FCHN approach to capture and predict task-induced alterations in large-scale brain dynamics.
 
-First, runs 1, 3 and 7 from all participants, which investigated the passive experience and the down- and up-regulation of pain, respectively, was preprocessed with the same workflow used to preprocess studies 1-3. Regional timeseries data was grouped to "pain" and "rest" blocks, taking into account a 6-second delay to adjust for the hemodynamic response function. All activation timeframes were transformed to the CHNN projection plane obtained from study 1. Within-participant differences of the average location on the CHNN projection was calculated and visualized with radial plots, showing the participant-level trajectory on the projection plane from rest to pain, denoted with circles, as well as the group level trajectory (arrow). The significance of the position difference and energy difference of the participant-level mean activations in the projection plane was tested with a permutation test. We used the L2 norm of the two-dimensional position difference and the absolute energy difference, respectively, as test statistics. The permutation tests were run with 1000 permutations, randomly swapping the conditions.
+First, runs 1, 3 and 7 from all participants, which investigated the passive experience and the down- and up-regulation of pain, respectively, was preprocessed with the same workflow used to preprocess studies 1-3. Regional timeseries data was grouped to "pain" and "rest" blocks, taking into account a 6-second delay to adjust for the hemodynamic response function. All activation timeframes were transformed to the FCHN projection plane obtained from study 1. Within-participant differences of the average location on the FCHN projection was calculated and visualized with radial plots, showing the participant-level trajectory on the projection plane from rest to pain, denoted with circles, as well as the group level trajectory (arrow). The significance of the position difference and energy difference of the participant-level mean activations in the projection plane was tested with a permutation test. We used the L2 norm of the two-dimensional position difference and the absolute energy difference, respectively, as test statistics. The permutation tests were run with 1000 permutations, randomly swapping the conditions.
 
 To further highlight the difference between the task and rest conditions, streamplots were generated that visualize the dynamic trajectory of group-level activations.
 
-First we calculated the direction in the projection plane between each successive TR during the rest conditions, resulting a vector on the CHNN projection plane for each TR transition. 
+First we calculated the direction in the projection plane between each successive TR during the rest conditions, resulting a vector on the FCHN projection plane for each TR transition. 
 Next, we obtained a two-dimensional binned means for both the x and y coordinates of these transition vectors (pooled across all participants), calculated over a total of 36 uniformly distributed bins. 
 The same procedure was repeated for the pain condition and the difference in direction between the two conditions was visualized as streamplots (using matplotlib).
 We used the same approach the difference in characteristic state transition trajectories between the up- and downregulation conditions.
 
-The empirically estimated trajectory differences were contrasted to the trajectory differences predicted by the CHNN model from study 1.
-To obtain CHNN-simulated state transitions in resting conditions, we used the stochastic relaxation procedure ({numref}`hopfield-update-matrix-stochastic`), with $\mathbf{\mu}$ set zero.
+The empirically estimated trajectory differences were contrasted to the trajectory differences predicted by the FCHN model from study 1.
+To obtain FCHN-simulated state transitions in resting conditions, we used the stochastic relaxation procedure ({numref}`hopfield-update-matrix-stochastic`), with $\mathbf{\mu}$ set zero.
 
 To simulate the effect of pain-related activation on large-scale brain dynamics, we set $\mu_i$ during the stochastic relaxation procedure simulate pain-elicited activity in region i. The region-wise activations were obtained calculating the parcel-level mean activations from the meta-analytic pain activation map from {cite:p}`zunhammer2021meta`, which contained Hedges' g effect sizes from an individual participant-level meta-analysis of 20 pain studies, encompassing a total of n=603 participants. The whole activation map was scaled with five different values ranging from 0.001 to 0.1, spaced logarithmically, to investigate various signal-to-noise scenarios. 
 
@@ -912,7 +910,7 @@ When comparing the simulated and real trajectory differences between pain up- an
 
 ### Clinical data
 
-To demonstrate the sensitivity of the CHNN approach to clinically relevant alterations in large-scale brain dynamics, we investigated grouped the timeframes from the regional timeseries data according to the corresponding attractor states (obtained with the CHNN model from study 1) and averaged timeframes corresponding to the same attractor state to calculated participant-level mean attractor activations.
+To demonstrate the sensitivity of the FCHN approach to clinically relevant alterations in large-scale brain dynamics, we investigated grouped the timeframes from the regional timeseries data according to the corresponding attractor states (obtained with the FCHN model from study 1) and averaged timeframes corresponding to the same attractor state to calculated participant-level mean attractor activations.
 In all three datasets, we assessed mean attractor activity differences between the patient groups with a permutation test, randomly re-assigning the group labels 50000 times. 
 We adjusted the significance threshold with a bonferroni correction, accounting for tests across 4 states and 122 regions, resulting in $\alpha = 0.0001$. 
 
