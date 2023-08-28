@@ -1,0 +1,343 @@
+Rc files read:
+  NONE
+Latexmk: This is Latexmk, John Collins, 29 September 2020, version: 4.70b.
+Rule 'xelatex': The following rules & subrules became out-of-date:
+      'xelatex'
+------------
+Run number 1 of rule 'xelatex'
+------------
+------------
+Running 'xelatex -no-pdf -synctex=1 -interaction=batchmode -file-line-error -shell-escape -recorder  "connattractor_manuscript.tex"'
+------------
+Latexmk: applying rule 'xelatex'...
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex)
+ \write18 enabled.
+entering extended mode
+
+SyncTeX written on connattractor_manuscript.synctex.gz.Latexmk: References changed.
+Latexmk: Missing input file: 'files/state_analysis-c8b60a283a9be6ecd807e00cef1d5f49.svg' from line
+  'LaTeX Warning: File `files/state_analysis-c8b60a283a9be6ecd807e00cef1d5f49.svg' not found on input line 270.'
+Latexmk: Non-existent bbl file 'connattractor_manuscript.bbl in line'
+ No file connattractor_manuscript.bbl.
+Latexmk: References changed.
+Latexmk: References changed.
+Latexmk: Log file says output to 'connattractor_manuscript.xdv'
+Latexmk: List of undefined refs and citations:
+  Citation `Barttfeld_2015' on page 1 undefined on input line 93
+  Citation `Bassett_2017' on page 1 undefined on input line 87
+  Citation `Bassett_2017' on page 1 undefined on input line 88
+  Citation `Breakspear_2017' on page 1 undefined on input line 101
+  Citation `Breakspear_2017' on page 1 undefined on input line 99
+  Citation `Breakspear_2017' on page 4 undefined on input line 152
+  Citation `Chen_2018' on page 1 undefined on input line 93
+  Citation `Chen_2018' on page 4 undefined on input line 193
+  Citation `Cioli_2014' on page 4 undefined on input line 193
+  Citation `Cioli_2014' on page 6 undefined on input line 204
+  Citation `Cole_2016' on page 10 undefined on input line 288
+  Citation `Cole_2016' on page 10 undefined on input line 297
+  Citation `Cole_2016' on page 2 undefined on input line 108
+  Citation `Cole_2016' on page 2 undefined on input line 141
+  Citation `Cole_2016' on page 4 undefined on input line 151
+  Citation `Daunizeau_2012' on page 4 undefined on input line 177
+  Citation `Doerig_2023' on page 2 undefined on input line 103
+  Citation `Doerig_2023' on page 2 undefined on input line 104
+  Citation `Golland_2008' on page 6 undefined on input line 204
+  Citation `Greene_2023' on page 1 undefined on input line 91
+  Citation `Gutierrez_Barragan_2019' on page 1 undefined on input line 89
+  Citation `Hearne_2021' on page 10 undefined on input line 288
+  Citation `Heinz_2018' on page 1 undefined on input line 100
+  Citation `Hopfield_1982' on page 10 undefined on input line 294
+  Citation `Hopfield_1982' on page 2 undefined on input line 110
+  Citation `Hopfield_1982' on page 2 undefined on input line 142
+  Citation `Hopfield_1982' on page 4 undefined on input line 154
+  Citation `Hutchison_2013' on page 1 undefined on input line 93
+  Citation `Ito_2017' on page 2 undefined on input line 108
+  Citation `Ito_2017' on page 2 undefined on input line 141
+  Citation `Koiran_1994' on page 2 undefined on input line 142
+  Citation `Koiran_1994' on page 4 undefined on input line 154
+  Citation `Kriegeskorte_2018' on page 1 undefined on input line 100
+  Citation `Kriegeskorte_2018' on page 2 undefined on input line 103
+  Citation `Krotov_2023' on page 2 undefined on input line 110
+  Citation `Liu_2013' on page 1 undefined on input line 90
+  Citation `Liu_2013' on page 1 undefined on input line 91
+  Citation `Liu_2013' on page 1 undefined on input line 93
+  Citation `Meer_2020' on page 1 undefined on input line 93
+  Citation `Richards_2019' on page 2 undefined on input line 104
+  Citation `Richiardi_2011' on page 1 undefined on input line 91
+  Citation `Robinson_2005' on page 4 undefined on input line 177
+  Citation `Smith_2012' on page 1 undefined on input line 93
+  Citation `Tor_D__2011' on page 13 undefined on input line 378
+  Citation `Vidaurre_2017' on page 1 undefined on input line 91
+  Citation `Vidaurre_2017' on page 1 undefined on input line 93
+  Citation `Woo_2015' on page 6 undefined on input line 223
+  Citation `Woo_2015' on page 6 undefined on input line 226
+  Citation `Zalesky_2014' on page 1 undefined on input line 90
+  Citation `Zunhammer_2021' on page 9 undefined on input line 245
+  Reference `attractors' on page 4 undefined on input line 154
+  Reference `attractors' on page 4 undefined on input line 155
+  Reference `attractors' on page 4 undefined on input line 173
+  Reference `attractors' on page 4 undefined on input line 177
+  Reference `attractors' on page 4 undefined on input line 182
+  Reference `attractors' on page 4 undefined on input line 186
+  Reference `attractors' on page 4 undefined on input line 187
+  Reference `attractors' on page 4 undefined on input line 188
+  Reference `attractors' on page 4 undefined on input line 189
+  Reference `clinical-validity' on page 10 undefined on input line 262
+  Reference `clinical-validity' on page 10 undefined on input line 264
+  Reference `clinical-validity' on page 10 undefined on input line 266
+  Reference `concept' on page 2 undefined on input line 107
+  Reference `concept' on page 2 undefined on input line 108
+  Reference `concept' on page 2 undefined on input line 114
+  Reference `rest-validity' on page 4 undefined on input line 193
+  Reference `rest-validity' on page 6 undefined on input line 208
+  Reference `rest-validity' on page 6 undefined on input line 211
+  Reference `rest-validity' on page 6 undefined on input line 213
+  Reference `rest-validity' on page 6 undefined on input line 215
+  Reference `rest-validity' on page 6 undefined on input line 217
+  Reference `rest-validity' on page 6 undefined on input line 223
+  Reference `tab-samples' on page 10 undefined on input line 258
+  Reference `tab-samples' on page 10 undefined on input line 277
+  Reference `tab-samples' on page 2 undefined on input line 140
+  Reference `tab-samples' on page 4 undefined on input line 169
+  Reference `tab-samples' on page 6 undefined on input line 204
+  Reference `tab-samples' on page 6 undefined on input line 208
+  Reference `tab-samples' on page 6 undefined on input line 223
+  Reference `tab-samples' on page 6 undefined on input line 237
+  Reference `task-validity' on page 10 undefined on input line 266
+  Reference `task-validity' on page 10 undefined on input line 277
+  Reference `task-validity' on page 6 undefined on input line 224
+  Reference `task-validity' on page 6 undefined on input line 226
+  Reference `task-validity' on page 6 undefined on input line 243
+  Reference `task-validity' on page 9 undefined on input line 245
+  Reference `task-validity' on page 9 undefined on input line 247
+  Reference `task-validity' on page 9 undefined on input line 249
+  Reference `task-validity' on page 9 undefined on input line 251
+  Reference `task-validity' on page 9 undefined on input line 252
+Latexmk: Examining 'connattractor_manuscript.log'
+=== TeX engine is 'XeTeX'
+Latexmk: Found bibliography file(s) [main.bib]
+Rule 'bibtex connattractor_manuscript': File changes, etc:
+   Changed files, or newly in use since previous run(s):
+      'connattractor_manuscript.aux'
+------------
+Run number 1 of rule 'bibtex connattractor_manuscript'
+------------
+------------
+Running 'bibtex  "connattractor_manuscript.aux"'
+------------
+Latexmk: applying rule 'bibtex connattractor_manuscript'...
+For rule 'bibtex connattractor_manuscript', running '&run_bibtex(  )' ...
+This is BibTeX, Version 0.99d (TeX Live 2021)
+The top-level auxiliary file: connattractor_manuscript.aux
+The style file: unsrtnat.bst
+Database file #1: main.bib
+Rule 'xelatex': File changes, etc:
+   Changed files, or newly in use since previous run(s):
+      'connattractor_manuscript.aux'
+      'connattractor_manuscript.bbl'
+      'connattractor_manuscript.out'
+------------
+Run number 2 of rule 'xelatex'
+------------
+------------
+Running 'xelatex -no-pdf -synctex=1 -interaction=batchmode -file-line-error -shell-escape -recorder  "connattractor_manuscript.tex"'
+------------
+Latexmk: applying rule 'xelatex'...
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex)
+ \write18 enabled.
+entering extended mode
+
+SyncTeX written on connattractor_manuscript.synctex.gz.Latexmk: Missing input file: 'files/state_analysis-c8b60a283a9be6ecd807e00cef1d5f49.svg' from line
+  'LaTeX Warning: File `files/state_analysis-c8b60a283a9be6ecd807e00cef1d5f49.svg' not found on input line 270.'
+Latexmk: Found input bbl file 'connattractor_manuscript.bbl'
+Latexmk: References changed.
+Latexmk: Log file says output to 'connattractor_manuscript.xdv'
+Latexmk: List of undefined refs and citations:
+  Citation `Barttfeld_2015' on page 1 undefined on input line 93
+  Citation `Bassett_2017' on page 1 undefined on input line 87
+  Citation `Bassett_2017' on page 1 undefined on input line 88
+  Citation `Breakspear_2017' on page 1 undefined on input line 101
+  Citation `Breakspear_2017' on page 1 undefined on input line 99
+  Citation `Breakspear_2017' on page 4 undefined on input line 152
+  Citation `Chen_2018' on page 1 undefined on input line 93
+  Citation `Chen_2018' on page 4 undefined on input line 193
+  Citation `Cioli_2014' on page 4 undefined on input line 193
+  Citation `Cioli_2014' on page 6 undefined on input line 204
+  Citation `Cole_2016' on page 10 undefined on input line 288
+  Citation `Cole_2016' on page 10 undefined on input line 297
+  Citation `Cole_2016' on page 2 undefined on input line 108
+  Citation `Cole_2016' on page 2 undefined on input line 141
+  Citation `Cole_2016' on page 4 undefined on input line 151
+  Citation `Daunizeau_2012' on page 4 undefined on input line 177
+  Citation `Doerig_2023' on page 2 undefined on input line 103
+  Citation `Doerig_2023' on page 2 undefined on input line 104
+  Citation `Golland_2008' on page 6 undefined on input line 204
+  Citation `Greene_2023' on page 1 undefined on input line 91
+  Citation `Gutierrez_Barragan_2019' on page 1 undefined on input line 89
+  Citation `Hearne_2021' on page 10 undefined on input line 288
+  Citation `Heinz_2018' on page 1 undefined on input line 100
+  Citation `Hopfield_1982' on page 10 undefined on input line 294
+  Citation `Hopfield_1982' on page 2 undefined on input line 110
+  Citation `Hopfield_1982' on page 2 undefined on input line 142
+  Citation `Hopfield_1982' on page 4 undefined on input line 154
+  Citation `Hutchison_2013' on page 1 undefined on input line 93
+  Citation `Ito_2017' on page 2 undefined on input line 108
+  Citation `Ito_2017' on page 2 undefined on input line 141
+  Citation `Koiran_1994' on page 2 undefined on input line 142
+  Citation `Koiran_1994' on page 4 undefined on input line 154
+  Citation `Kriegeskorte_2018' on page 1 undefined on input line 100
+  Citation `Kriegeskorte_2018' on page 2 undefined on input line 103
+  Citation `Krotov_2023' on page 2 undefined on input line 110
+  Citation `Liu_2013' on page 1 undefined on input line 90
+  Citation `Liu_2013' on page 1 undefined on input line 91
+  Citation `Liu_2013' on page 1 undefined on input line 93
+  Citation `Meer_2020' on page 1 undefined on input line 93
+  Citation `Richards_2019' on page 2 undefined on input line 104
+  Citation `Richiardi_2011' on page 1 undefined on input line 91
+  Citation `Robinson_2005' on page 4 undefined on input line 177
+  Citation `Smith_2012' on page 1 undefined on input line 93
+  Citation `Tor_D__2011' on page 13 undefined on input line 378
+  Citation `Vidaurre_2017' on page 1 undefined on input line 91
+  Citation `Vidaurre_2017' on page 1 undefined on input line 93
+  Citation `Woo_2015' on page 6 undefined on input line 223
+  Citation `Woo_2015' on page 6 undefined on input line 226
+  Citation `Zalesky_2014' on page 1 undefined on input line 90
+  Citation `Zunhammer_2021' on page 9 undefined on input line 245
+  Reference `tab-samples' on page 10 undefined on input line 258
+  Reference `tab-samples' on page 10 undefined on input line 277
+  Reference `tab-samples' on page 2 undefined on input line 140
+  Reference `tab-samples' on page 4 undefined on input line 169
+  Reference `tab-samples' on page 6 undefined on input line 204
+  Reference `tab-samples' on page 6 undefined on input line 208
+  Reference `tab-samples' on page 6 undefined on input line 223
+  Reference `tab-samples' on page 6 undefined on input line 237
+Latexmk: Examining 'connattractor_manuscript.log'
+=== TeX engine is 'XeTeX'
+Latexmk: Found bibliography file(s) [main.bib]
+Rule 'bibtex connattractor_manuscript': File changes, etc:
+   Changed files, or newly in use since previous run(s):
+      'connattractor_manuscript.aux'
+------------
+Run number 2 of rule 'bibtex connattractor_manuscript'
+------------
+------------
+Running 'bibtex  "connattractor_manuscript.aux"'
+------------
+Latexmk: applying rule 'bibtex connattractor_manuscript'...
+For rule 'bibtex connattractor_manuscript', running '&run_bibtex(  )' ...
+This is BibTeX, Version 0.99d (TeX Live 2021)
+The top-level auxiliary file: connattractor_manuscript.aux
+The style file: unsrtnat.bst
+Database file #1: main.bib
+Rule 'xelatex': File changes, etc:
+   Changed files, or newly in use since previous run(s):
+      'connattractor_manuscript.aux'
+------------
+Run number 3 of rule 'xelatex'
+------------
+------------
+Running 'xelatex -no-pdf -synctex=1 -interaction=batchmode -file-line-error -shell-escape -recorder  "connattractor_manuscript.tex"'
+------------
+Latexmk: applying rule 'xelatex'...
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex)
+ \write18 enabled.
+entering extended mode
+
+SyncTeX written on connattractor_manuscript.synctex.gz.Latexmk: Missing input file: 'files/state_analysis-c8b60a283a9be6ecd807e00cef1d5f49.svg' from line
+  'LaTeX Warning: File `files/state_analysis-c8b60a283a9be6ecd807e00cef1d5f49.svg' not found on input line 270.'
+Latexmk: Found input bbl file 'connattractor_manuscript.bbl'
+Latexmk: References changed.
+Latexmk: Log file says output to 'connattractor_manuscript.xdv'
+Latexmk: List of undefined refs and citations:
+  Reference `tab-samples' on page 10 undefined on input line 258
+  Reference `tab-samples' on page 10 undefined on input line 277
+  Reference `tab-samples' on page 2 undefined on input line 140
+  Reference `tab-samples' on page 4 undefined on input line 169
+  Reference `tab-samples' on page 6 undefined on input line 204
+  Reference `tab-samples' on page 6 undefined on input line 208
+  Reference `tab-samples' on page 6 undefined on input line 223
+  Reference `tab-samples' on page 8 undefined on input line 237
+Latexmk: Examining 'connattractor_manuscript.log'
+=== TeX engine is 'XeTeX'
+Latexmk: Found bibliography file(s) [main.bib]
+Rule 'bibtex connattractor_manuscript': File changes, etc:
+   Changed files, or newly in use since previous run(s):
+      'connattractor_manuscript.aux'
+------------
+Run number 3 of rule 'bibtex connattractor_manuscript'
+------------
+------------
+Running 'bibtex  "connattractor_manuscript.aux"'
+------------
+Latexmk: applying rule 'bibtex connattractor_manuscript'...
+For rule 'bibtex connattractor_manuscript', running '&run_bibtex(  )' ...
+This is BibTeX, Version 0.99d (TeX Live 2021)
+The top-level auxiliary file: connattractor_manuscript.aux
+The style file: unsrtnat.bst
+Database file #1: main.bib
+Rule 'xelatex': File changes, etc:
+   Changed files, or newly in use since previous run(s):
+      'connattractor_manuscript.aux'
+------------
+Run number 4 of rule 'xelatex'
+------------
+------------
+Running 'xelatex -no-pdf -synctex=1 -interaction=batchmode -file-line-error -shell-escape -recorder  "connattractor_manuscript.tex"'
+------------
+Latexmk: applying rule 'xelatex'...
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex)
+ \write18 enabled.
+entering extended mode
+
+SyncTeX written on connattractor_manuscript.synctex.gz.Latexmk: Missing input file: 'files/state_analysis-c8b60a283a9be6ecd807e00cef1d5f49.svg' from line
+  'LaTeX Warning: File `files/state_analysis-c8b60a283a9be6ecd807e00cef1d5f49.svg' not found on input line 270.'
+Latexmk: Found input bbl file 'connattractor_manuscript.bbl'
+Latexmk: Log file says output to 'connattractor_manuscript.xdv'
+Latexmk: List of undefined refs and citations:
+  Reference `tab-samples' on page 10 undefined on input line 258
+  Reference `tab-samples' on page 10 undefined on input line 277
+  Reference `tab-samples' on page 2 undefined on input line 140
+  Reference `tab-samples' on page 4 undefined on input line 169
+  Reference `tab-samples' on page 6 undefined on input line 204
+  Reference `tab-samples' on page 6 undefined on input line 208
+  Reference `tab-samples' on page 6 undefined on input line 223
+  Reference `tab-samples' on page 8 undefined on input line 237
+Latexmk: Examining 'connattractor_manuscript.log'
+=== TeX engine is 'XeTeX'
+Latexmk: Found bibliography file(s) [main.bib]
+Rule 'xdvipdfmx': File changes, etc:
+   Changed files, or newly in use since previous run(s):
+      'connattractor_manuscript.xdv'
+   Rule(s) that have been run and require run of dependent rule:
+      'xelatex' which requires run of 'xdvipdfmx'
+------------
+Run number 1 of rule 'xdvipdfmx'
+------------
+------------
+Running 'xdvipdfmx -E -o "connattractor_manuscript.pdf"  "connattractor_manuscript.xdv"'
+------------
+Latexmk: applying rule 'xdvipdfmx'...
+For rule 'xdvipdfmx', running '&do_viewfile(  )' ...
+connattractor_manuscript.xdv -> connattractor_manuscript.pdf
+[1][2][3][4][5][6][7][8][9][10][11Error: /syntaxerror in /----nostringval----
+Operand stack:
+
+Execution stack:
+   %interp_exit   .runexec2   --nostringval--   --nostringval--   --nostringval--   2   %stopped_push   --nostringval--   --nostringval--   --nostringval--   false   1   %stopped_push   1974   1   3   %oparray_pop   1973   1   3   %oparray_pop   1961   1   3   %oparray_pop   1817   1   3   %oparray_pop   --nostringval--   %errorexec_pop   .runexec2   --nostringval--   --nostringval--   --nostringval--   2   %stopped_push
+Dictionary stack:
+   --dict:756/1123(ro)(G)--   --dict:0/20(G)--   --dict:75/200(L)--
+Current allocation mode is local
+GPL Ghostscript 9.53.3: Unrecoverable error, exit code 1
+
+xdvipdfmx:warning: Filtering file via command -->rungs -q -dALLOWPSTRANSPARENCY -dSAFER -dNOPAUSE -dBATCH -dEPSCrop -sPAPERSIZE=a0 -sDEVICE=pdfwrite -dCompatibilityLevel=1.5 -dAutoFilterGrayImages=false -dGrayImageFilter=/FlateEncode -dAutoFilterColorImages=false -dColorImageFilter=/FlateEncode -dAutoRotatePages=/None -sOutputFile='/var/folders/69/9f3dwqj10pg8d4jmjfkrvpww0000gn/T/dvipdfm-x.87ff22bb5f4272c4f3fde0149cd362dc' './files/state_analysis-c8b60a283a9be6ecd807e00cef1d5f49.svg' -c quit<-- failed.
+xdvipdfmx:warning: Image format conversion for "./files/state_analysis-c8b60a283a9be6ecd807e00cef1d5f49.svg" failed...
+xdvipdfmx:fatal: pdf_link_obj(): passed invalid object.
+
+No output PDF file written.
+Latexmk: Summary of warnings from last run of *latex:
+  Latex failed to resolve 20 reference(s)
+Collected error summary (may duplicate other messages):
+  xdvipdfmx: Command for 'xdvipdfmx' gave return code 256
+  xelatex: Command for 'xelatex' gave return code 1
+      Refer to 'connattractor_manuscript.log' for details
+Latexmk: Errors, in force_mode: so I tried finishing targets
