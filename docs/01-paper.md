@@ -136,37 +136,28 @@ It exhibits quasi-periodic properties {cite:p}`thompson2014quasi`, with a limite
 recurring patterns known as "brain states" {cite:p}`greene2023everyone; vidaurre2017brain; liu2013time; richiardi2011decoding`.
 
 From hidden Markov models, to point-process analyses, a wide variety of descriptive techniques have been previously 
-employed to characterize whole-brain dynamics. {cite:p}`smith2012temporally; vidaurre2017brain; liu2013time; chen2018human`,
+employed to characterize whole-brain dynamics {cite:p}`smith2012temporally; vidaurre2017brain; liu2013time; chen2018human`.
 These efforts have provided accumulating evidence not only for the existence of dynamic brain states but also for their clinical 
-significance. {cite:p}`hutchison2013dynamic; barttfeld2015signature; meer2020movie`. 
+significance {cite:p}`hutchison2013dynamic; barttfeld2015signature; meer2020movie`. 
 However, the underlying driving forces remain elusive due to the descriptive nature of such studies.
 
-Questions regarding the mechanisms, that cause these remarkable dynamics, can be addressed through computational models, which have the potential to shift our understanding from mere associations to causal 
-explanations.
-Conventional computational approaches attempt to solve this puzzle by going all the way down to the biophysical properties 
-of single neurons, and aim to construct a model of larger neural populations, or even the entire brain 
+Questions regarding the mechanisms, that cause these remarkable dynamics, can be addressed through computational models, which have the potential to shift our understanding from mere associations to causal explanations.
+Conventional computational approaches attempt to solve this puzzle by going all the way down to the biophysical properties of single neurons, and aim to construct a model of larger neural populations, or even the entire brain 
 {cite:p}`breakspear2017dynamic`.
 These approaches have shown numerous successful applications {cite:p}`murray2018biophysical; kriegeskorte2018cognitive; heinz2019towards`.
-However, the estimation of the vast number of free parameters in such models presents a grand challenge, hampering the ability of these techniques to effectively bridge the gap between explanations at the level of single neurons and the complexity of behavior {cite:p}`breakspear2017dynamic`.
+However, the estimation of the vast number of free parameters in such models presents a grand challenge, hampering the ability of these techniques to effectively bridge the gap between explanations at the level of single neurons and the complexity of behavior {cite:p}`breakspear2017dynamic`. As a result, several recent approaches have opted to trade biophysical detail for computational simplicity. They utilize phenomenological, coarse-grained models {cite:p}`schiff1994controlling; papadopoulos2017development` of neural activity, like linear network control theory  {cite:p}`luppi2023transitions; chiem2021structure; gu2017optimal; scheid2021time`, to gain insights into how structural connectivity constrains brain dynamics.
 
-An alternative approach, known as "neuroconnectionism" {cite:p}`doerig2023neuroconnectionist` shifts the 
-emphasis from "biophysical fidelity" of models to "cognitive/behavioral fidelity" 
+Another approach, the so-called "neuroconnectionism" {cite:p}`doerig2023neuroconnectionist` shifts the emphasis from "biophysical fidelity" of models to "cognitive/behavioral fidelity" 
 {cite:p}`kriegeskorte2018cognitive`, by using artificial neural networks (ANNs) that are trained to 
-perform various tasks, as brain models.
-While this novel paradigm has already made significant contributions to expanding our understanding of the general 
-computational principles of the brain (see {cite:p}`doerig2023neuroconnectionist`, the need to train ANNs for 
-specific tasks inherently limits their ability to explain the spontaneous, and largely task-independent, macro-scale 
-dynamics of neural activity {cite:p}`richards2019deep`.
+perform various tasks, as brain models. While this novel paradigm has already made significant contributions to expanding our understanding of the general computational principles of the brain (see {cite:p}`doerig2023neuroconnectionist`, the need to train ANNs for specific tasks inherently limits their ability to explain the spontaneous, and largely task-independent, macro-scale dynamics of neural activity {cite:p}`richards2019deep`.
 
-In this work, we adopt a middle ground between traditional computational modeling and neuroconnectionism to investigate brain dynamics.
-Similar to neuroconnectionism, we utilize an artificial neural network (ANN) as a high-level computational model of the brain, avoiding the need for a comprehensive bottom-up understanding of neural mechanisms ({numref}`concept`A).
-However, we do not train our ANN for a specific task, but instead we set its weights empirically, with data based 
-on the "activity flow" {cite:p}`cole2016activity; ito2017cognitive`
+Here we propose a novel approach that combines phenomenological computational modeling and neuroconnectionism to investigate brain dynamics.
+We utilize an artificial neural network (ANN) as a high-level computational model of the brain.
+However, we do not explicitly train our ANN for a specific task. Instead, we employ a neurobiologically well motivated ANN architecture, which shares main principles with phenological models, with its weights set empirically, with data based on the "activity flow" {cite:p}`cole2016activity; ito2017cognitive`
 across regions within the functional brain connectome, as measured with functional magnetic resonance imaging 
-(fMRI, {numref}`concept`B).
+(fMRI, {numref}`concept`B). 
 
-We employ a neurobiologically motivated ANN architecture, a continuous-space Hopfield neural network (HNN) {cite:p}`hopfield1982neural; krotov2023new`.
-After initializing the weights of this network with the functional connectivity values, the topology of the functional connectome naturally establishes an "energy" level for any arbitrary activation patterns and determines a "trajectory of least action" towards one of the finite number of stable patterns, known as attractor states, that minimize this energy.
+Specifically, we employ a continuous-space Hopfield neural network (HNN) {cite:p}`hopfield1982neural; krotov2023new` that, based on the topology of the functional connectome, establishes an "energy" level for any arbitrary activation patterns and determines a "trajectory of least action" towards one of the finite number of stable patterns, known as *attractor states*, that minimize this energy.
 If the stochastic nature of neural activity is approximated by adding weak noise to the system, it does not reach equilibrium anymore (i.e. it does not converge to an attractor state).
 Instead, it traverses extensive regions of the state space, with dynamics influenced by multiple attractor states, arising form the topology of the functional brain connectome ({numref}`concept`C). Through this walk across the state space, our model offers a natural explanation for brain state dynamics.
 
@@ -190,9 +181,7 @@ activation patterns is restricted by the dynamics of the system and how alterati
 modify these dynamics.
 :::
 
-In this simplistic yet powerful framework, both spontaneous and task-induced brain dynamics can be conceptualized as a
-winding, high-dimensional path that meanders on the energy landscape, restricted by the "gravitational pull" of the 
-attractors states.
+In this simplistic yet powerful framework, both spontaneous and task-induced brain dynamics can be conceptualized as an intricate, high-dimensional path that meanders on the energy landscape, restricted by the "gravitational pull" of the attractors states.
 The framework provides a generative model for both resting state and task-related brain dynamics, offering novel 
 perspectives on the mechanistic origins of resting state brain states and task-based activation maps.
 
