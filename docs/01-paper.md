@@ -61,6 +61,36 @@ authors:
       affiliations:
         - "One of the dataset used in preparation of this article were obtained from the Alzheimer’s Disease Neuroimaging Initiative (ADNI)  database (adni.loni.usc.edu). As such, the investigators within the ADNI contributed to the design and implementation of ADNI and/or provided data but did not participate in analysis or writing of this report. A complete listing of ADNI investigators can be found at: http://adni.loni.usc.edu/wp-content/uploads/how_to_apply/ADNI_Acknowledgement_List.pdf"
 
+abbreviations:
+  CHNN: functional Connectome-based Hopfield Neural Network
+  ABIDE: Autism Brain Imaging Data Exchange
+  ADNI: Alzheimer’s Disease Neuroimaging Initiative
+  COBRE: Center for Biomedical Research Excellence
+  ASD: Autism Spectrum Disorder
+  SCZ: Schizophrenia
+  AD: Alzheimer's Disease
+  MCI: Mild Cognitive Impairment
+  MCC: Middle Cingulate Cortex
+  ACC: Anterior Cingulate Cortex
+  pg: Perigenual
+  PFC: Prefrontal Cortex
+  dm: Dorsomedial
+  dl: Dorsolateral
+  STG: Superior Temporal Gyrus
+  MTG: Middle Temporal Gyrus
+  ITG: Inferior Temporal Gyrus
+  Caud/Acc: Caudate-Accumbens
+  SM: Sensorimotor
+  V1: Primary Visual
+  A1: Primary Auditory
+  Hipp: Parahippocampal Gyrus
+  Precun: Precuneus
+  SMA: Supplementary Motor Cortex
+  IPL: Inferior Parietal Lobule
+  HNN: Hopfield Neural Network
+  ANN: Artificial Neural Network
+  fMRI: Functional Magnetic Resonance Imaging
+
 exports:
   - format: pdf
     template: arxiv_nips
@@ -468,10 +498,10 @@ On the axis of the perception-action subsystems, the main difference was found i
 
 In the AD vs. MCI comparison, we found decreased resting state activations in several regions, including the inferior parietal lobule (IPL) and primary visual cortex, likely a consequence of high levels of amyloid-ß reducing synaptic excitatory transmission, resulting in synaptic failure and neuronal hypoactivity {cite:p}`selkoe2002alzheimer`. A significant hyperactivity was found in the hippocampal formation (collateral sulcus) during perception states, which is
 a commonly reported finding in AD {cite:p}`aizenstein2015hippocampal; ewers2011neuroimaging`
-({numref}`clinical-validity`C, **table**). Moreover, we found increased activity in supplementary motor cortex (SMA), an area that is known to display relatively little atrophy and hypomethabolism with AD and has previously brought into relation with the preservation of musical memories in AD {cite:p}`jacobsen2015musical`.
+({numref}`clinical-validity`C, **table**). Additionally, we observed increased activity in the supplementary motor cortex (SMA), a region known to exhibit minimal atrophy and hypometabolism in AD. This has been previously associated with the preservation of musical memories in AD {cite:p}`jacobsen2015musical`.
 
 
-:::{list-table} **The top ten largest activity changes in the three clinical studies.**  The attractor activity changes in ABIDE, COBRE and ADNI studies are presented in the order of their absolute effect size. All p-values are based on permutation tests and survive the Bonferroni correction for multiple comparisons. Attractor states are referred to with their index on {numref}`clinical-validity`.
+:::{list-table} **The top ten largest activity changes in the three clinical studies.**  The attractor activity changes in ABIDE, COBRE and ADNI studies are presented in the order of their absolute effect size. All p-values are based on permutation tests and corrected for multiple comparisons. Attractor states are referred to with their index on {numref}`clinical-validity`.
 :header-rows: 1
 :name: tab-clinical-results
 
@@ -884,10 +914,11 @@ When comparing the simulated and real trajectory differences between pain up- an
 
 To demonstrate the sensitivity of the CHNN approach to clinically relevant alterations in large-scale brain dynamics, we investigated grouped the timeframes from the regional timeseries data according to the corresponding attractor states (obtained with the CHNN model from study 1) and averaged timeframes corresponding to the same attractor state to calculated participant-level mean attractor activations.
 In all three datasets, we assessed mean attractor activity differences between the patient groups with a permutation test, randomly re-assigning the group labels 50000 times. 
-We adjusted the significance threshold with a bonferroni correction, accounting for tests across 4 states and 122 regions, resulting in $\alpha = 0.0102$. 
+We adjusted the significance threshold with a bonferroni correction, accounting for tests across 4 states and 122 regions, resulting in $\alpha = 0.0001$. 
 
 
 +++ {"part": "acknowledgements"}
+## Acknowledgements
 
 Data collection and sharing for this project was funded by the Alzheimer's Disease
 Neuroimaging Initiative (ADNI) (National Institutes of Health Grant U01 AG024904) and
@@ -914,6 +945,7 @@ University of Southern California.
 
 +++ {"part": "data-availability"}
 
+## Data availability
 Todo
 
 +++
