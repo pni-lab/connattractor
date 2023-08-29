@@ -554,6 +554,7 @@ The degree to which activation in a region triggers activation in another is dif
 In this study, we have introduced a simple yet robust framework that elucidates how activity propagation within the functional connectome orchestrates large-scale brain dynamics, leading to distinct brain states accompanied by characteristic dynamic responses to perturbations.
 Through a series of experiments, we have demonstrated that the proposed model can effectively reconstruct and predict large-scale brain dynamics across diverse conditions.
 The presented approach offers a fresh perspective on large scale brain dynamics and offers unparalleled prospects for forecasting the impact of interventions, including pharmacological treatments or non-invasive brain stimulation, on brain function.
+We have implemented the proposed framework in the publicly available Python package [*connattractor*](https://pni-lab.github.io/connattractor/quickstart), enabling researchers to apply the proposed framework to their own data and to further develop the approach.
 
 The construct validity of our model is rooted in the activity flow principle, first introduced by 
 {cite:t}`cole2016activity`. The activity flow principle states that activity in a brain region can be predicted by a weighted combination of the activity of all other regions, where the weights are set to the functional connectivity of those regions to the held-out region. This principle has been shown to hold across a wide range of experimental and clinical conditions
