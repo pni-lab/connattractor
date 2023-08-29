@@ -117,7 +117,7 @@ We propose functional connectome-based Hopfield artificial neural networks (FCHN
 FCHNs are neither optimized to mimic certain brain characteristics nor trained to solve specific tasks, but simply initialized with the empirical functional connectome.
 The FCHN framework identifies neurobiologically meaningful attractor states and provides a model for how these constrain brain dynamics.
 Analyses of 8 distinct datasets (N≈2000) demonstrate that FCHNs can accurately reconstruct and predict brain dynamics under a wide range of conditions, including resting state and task-induced activity changes, as well as different brain disorders. Implementation is available as an open-source Python package.
-By establishing a mathematical link between connectivity and activity, the proposed generative framework offers a simple and interpretable computational alternative to the conventional descriptive analyses for investigating brain function in health and disease and hold promise for identifying potential targets for novel treatment approaches.
+By establishing a mathematical link between connectivity and activity, the proposed generative framework offers a simple and interpretable computational alternative to conventional descriptive analyses for investigating brain function in health and disease and holds promise for identifying potential targets for novel treatment approaches.
 +++
 
 ## Introduction
