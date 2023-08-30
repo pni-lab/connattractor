@@ -144,7 +144,7 @@ Questions regarding the mechanisms, that cause these remarkable dynamics, can be
 Conventional computational approaches attempt to solve this puzzle by going all the way down to the biophysical properties of single neurons, and aim to construct a model of larger neural populations, or even the entire brain 
 {cite:p}`breakspear2017dynamic`.
 These approaches have shown numerous successful applications {cite:p}`murray2018biophysical; kriegeskorte2018cognitive; heinz2019towards`.
-However, the estimation of the vast number of free parameters in such models presents a grand challenge, hampering the ability of these techniques to effectively bridge the gap between explanations at the level of single neurons and the complexity of behavior {cite:p}`breakspear2017dynamic`. As a result, several recent approaches have opted to trade biophysical detail for computational simplicity. They utilize phenomenological, coarse-grained whole-brain models {cite:p}`schiff1994controlling; papadopoulos2017development` of neural activity, like linear network control theory  {cite:p}`luppi2023transitions; chiem2021structure; gu2017optimal; scheid2021time; gu2015controllability`, to gain insights into how structural connectivity constrains brain dynamics.
+However, the estimation of the vast number of free parameters in such models presents a grand challenge, hampering the ability of these techniques to effectively bridge the gap between explanations at the level of single neurons and the complexity of behavior {cite:p}`breakspear2017dynamic`. As a result, several recent approaches have opted to trade biophysical detail for computational simplicity. They utilize phenomenological, coarse-grained brain network models {cite:p}`schirner2022dynamic; schiff1994controlling; papadopoulos2017development` of neural activity and linear network control theory  {cite:p}`luppi2023transitions; chiem2021structure; gu2017optimal; scheid2021time; gu2015controllability`, to gain insights into how structural connectivity constrains brain dynamics.
 
 Another approach, the so-called "neuroconnectionism" {cite:p}`doerig2023neuroconnectionist` shifts the emphasis from "biophysical fidelity" of models to "cognitive/behavioral fidelity" 
 {cite:p}`kriegeskorte2018cognitive`, by using artificial neural networks (ANNs) that are trained to 
@@ -152,12 +152,10 @@ perform various tasks, as brain models. While this novel paradigm has already ma
 
 Here we propose a novel approach that combines the advantages of large-scale phenomenological computational modeling and neuroconnectionism, to investigate brain dynamics.
 Similar to neuroconnectionism, we utilize an artificial neural network (ANN) as a high-level computational model of the brain.
-However, we do not explicitly train our ANN for a specific task. Instead, we establish links to phenological computational models by setting its weights empirically, with data based on the "activity flow" {cite:p}`cole2016activity; ito2017cognitive`
-across regions within the functional brain connectome, as measured with functional magnetic resonance imaging 
-(fMRI, {numref}`concept`B). 
+However, we do not explicitly train our ANN for a specific task. Instead, we set its weights empirically, with data based on the "activity flow" {cite:p}`cole2016activity; ito2017cognitive` across regions within the functional brain connectome, as measured with functional magnetic resonance imaging (fMRI, {numref}`concept`B). 
 
-Specifically, we employ a continuous-space Hopfield neural network (HNN) {cite:p}`hopfield1982neural; krotov2023new` that, based on the topology of the functional connectome, establishes an "energy" level for any arbitrary activation patterns and determines a "trajectory of least action" towards one of the finite number of stable patterns, known as *attractor states*, that minimize this energy.
-With our approach, the topology of the functional connectome defines a position for any possible activation patterns on a high dimensional energy landscape ({numref}`concept`C) and the activity flow across regions acts as a "gravitational force" that pulls the system towards lower energy states. 
+Specifically, we employ a continuous-space Hopfield neural network (HNN) {cite:p}`hopfield1982neural; krotov2023new`, with its nodes representing large-scale brain areas. Based on the topology of the functional connectome, this architecture establishes an "energy" level for any arbitrary activation patterns and - similarly to multistable computational brain network models {cite:p}`schirner2022dynamic` - determines a "trajectory of least action" towards one of the finite number of stable patterns, known as *attractor states*, that minimize this energy.
+In this simplistic yet powerful framework, activity flow {cite:p}`cole2016activity across regions gives rise to spontaneous brain dynamics that can be conceptualized as an intricate, high-dimensional path on the energy landscape ({numref}`concept`C), restricted by the "gravitational pull" of the attractors states of the system. Due to its generative nature, our model provides testable predictions and mechanistic explanations for various perturbations and alterations of brain dynamics, from task-induced activity, to changes related to brain disorders.
 
 :::{figure} figures/concept.png
 :name: concept
@@ -172,8 +170,6 @@ functional connectome-based Hopfield neural network (FCHN) as a computational mo
 **C** The proposed computational framework assigns an energy level, an attractor state and a position in a 
 low-dimensional embedding to brain activation patterns. Additionally, it models how the entire state-space of viable activation patterns is restricted by the dynamics of the system and how alterations in activity and/or connectivity modify these dynamics.
 :::
-
-In this simplistic yet powerful framework, spontaneous brain dynamics can be conceptualized as an intricate, high-dimensional path that meanders on the energy landscape, restricted by the "gravitational pull" of the attractors states of the system. Due to its generative nature, our model provides testable predictions and mechanistic explanations for various perturbations and alterations of brain dynamics, from task-induced activity, to changes related to brain disorders.
 
 In the present work, we first explore the attractor states of the functional brain connectome and construct a streamlined, low-dimensional representation of the energy landscape.
 Subsequently, we rigorously test the proposed model through a series of experiments, conducted on data obtained 
