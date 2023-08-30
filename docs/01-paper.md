@@ -1,6 +1,6 @@
 ---
 title: Attractor states of the functional brain connectome orchestrate large-scale brain dynamics
-subject: Preprint
+subject: manuscript draft
 #subtitle: Optional Subtitle
 short_title: ConnAttractor Preprint
 authors:
