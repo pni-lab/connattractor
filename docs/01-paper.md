@@ -154,7 +154,7 @@ However, we do not explicitly train our ANN for a specific task. Instead, we set
 
 Specifically, we employ a continuous-space Hopfield neural network (HNN) {cite:p}`hopfield1982neural; krotov2023new`, with its nodes representing large-scale brain areas. Based on the topology of the functional connectome, this architecture establishes an "energy" level for any arbitrary activation patterns and - similarly to multistable computational brain network models {cite:p}`schirner2022dynamic` - determines a "trajectory of least action" towards one of the finite number of stable patterns, known as *attractor states*, that minimize this energy.
 In this simplistic yet powerful framework, activity flow {cite:p}`cole2016activity across regions gives rise to spontaneous brain dynamics that can be conceptualized as an intricate, high-dimensional path on the energy landscape ({numref}`concept`C), constrained by the "gravitational pull" of the attractors states of the system.
-Due to its generative nature, our model offers a mechanistic account for large-scale spontaneous brain dynamics and testable predictions for the effect of various perturbations and alterations of these dynamics, from task-induced activity, to changes related to brain disorders.
+Due to its generative nature, our model offers testable predictions for the effect of various perturbations and alterations of these dynamics, from task-induced activity, to changes related to brain disorders.
 
 :::{figure} figures/concept.png
 :name: concept
