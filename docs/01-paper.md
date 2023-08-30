@@ -123,7 +123,7 @@ By establishing a mathematical link between connectivity and activity, the propo
 ## Introduction
 
 Brain function is characterized by the continuous activation and deactivation of anatomically distributed neuronal 
-populations.
+populations {cite:p}`buzsaki2006rhythms`.
 While the focus of related research is often on the direct mapping between activity changes in a single brain 
 area and a specific task or condition, in reality, regional activation never seems to occur in isolation 
 {cite:p}`bassett2017network`.
@@ -608,10 +608,9 @@ There are many potential way to further improve the utility of the FCHN approach
 different initializations and perturbations are all important direction for future work, with the potential to further improve the model's accuracy and usefulness.
 
 > **other potential topics**:
-> - why no HRF modelling (could be a possible extension, but it is also not part of the activity flow approach and we don't reconstruct time series, but rather activations)
-> - is the connectome stationary? See arguments by the Cole-group.
-> - why rs-fMRI connectome (could be latent-FC a'la McCormick, 2022, [](https://doi.org/10.1162/netn_a_00234))
-> - the FCHN model is not a model of brain function, but a model of brain dynamics. It does not strive to explain various brain regions ability to perform certain computations, but the brain's characteristic trajectories, which are perturbed by tasks and other types of interventions.
+> - is the functional connectome stationary? Why don't we use dynamic connectivity? See arguments by the Cole-group. Also, the FCHN model can actually probably also reproduce task-based connectivity, when adding a task-related control signal to the stochastic relaxation procedure (as on Fig. 3). Thus it could be a model of how task-based connectivity and dynamic connectivity changes arise from the underlying rs-fMRI connectome. Maybe it could be even better to use "latent-FC" a'la McCormick, 2022, [](https://doi.org/10.1162/netn_a_00234))
+> - why no HRF modelling (could be a possible extension, but it is also not part of the activity flow approach and we don't reconstruct time series, per-se, but rather activations)
+> - the FCHN model is not a model of brain function, but a model of brain dynamics. It does not strive to explain various brain regions ability to perform certain computations, but the brain's characteristic dynamic "trajectories", and how these are perturbed by tasks and other types of interventions.
 
 ## Conclusion
 
