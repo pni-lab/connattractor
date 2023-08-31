@@ -105,7 +105,7 @@ bibliography:
 +++ {"part": "key-points"}
 **Key Points:**
 - We present a simple yet powerful computational model for large-scale brain dynamics
-- The model uses a functional connectome-based Hopfield artificial neural network (FCHN) architecture to compute recurrent "activity flow" trough the functional brain connectome
+- The model uses a functional connectome-based Hopfield artificial neural network (FCHN) architecture to compute recurrent "activity flow" through the functional brain connectome
 - FCHNs accurately reconstruct the dynamic repertoire of the brain in resting conditions
 - FCHNs conceptualize both task-induced and pathological changes in brain activity as a shift in these dynamics
 - Our approach is validated through eight studies involving approximately 2000 participants
