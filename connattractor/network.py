@@ -15,6 +15,7 @@ from itertools import combinations, permutations
 from . import config
 
 
+
 class State(np.ndarray):
 
     def __new__(cls, input, labelmap=None):
