@@ -1,0 +1,2 @@
+p(projection) = 0.0
+p(energy) = 0.0
