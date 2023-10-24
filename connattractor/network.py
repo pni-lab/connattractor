@@ -304,15 +304,20 @@ class Hopfield(object):
             s = self._state
         s.plot(smooth=smooth, **kwargs)
 
-    def plot_weights(self, **kwargs):
+    def plot_weights(self, colorbar=True, **kwargs):
         # todo: return the plot isntead of showing it
-        plt.figure(figsize=(6, 5))
-        w_mat = plt.imshow(self.W, cmap=cm.coolwarm, **kwargs)
-        plt.colorbar(w_mat)
-        plt.title("Network Weights")
-        plt.tight_layout()
-        # plt.savefig("weights.png")
-        #plt.show()
+        defaultKwargs = {'cmap': cm.coolwarm,
+                         'aspect': 'equal',
+                         'vmin': -abs(self.W).max(),
+                         'vmax': abs(self.W).max(),
+                         'interpolation': 'none'
+                         }
+        kwargs = {**defaultKwargs, **kwargs}
+        
+        w_mat = plt.imshow(self.W, **kwargs)
+        if colorbar:
+            plt.colorbar(w_mat)
+        return w_mat
 
 
 def fun_random_shuffle(prev_state):  # changes prev_state!

@@ -1,4 +1,6 @@
 docs/_build
 docs/node_modules
 .idea
+notebooks/cobre_data/
+notebooks/abide_data/
 
