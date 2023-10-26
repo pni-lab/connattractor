@@ -15,7 +15,7 @@ Laboratory for Predictive Neuroimaging - University Hospital Essen, Germany
 
 - **Run the analyses with 1 click (in the cloud)**
   - [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/pni-lab/connattractor/HEAD)
-  - [![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://github.com/codespaces/new?hide_repo_select=true&ref=master&repo=471481129) 
+  - Open in GitHub Codespaces (click `code` on top right on the github page of the repo)
 
 - **Set up everything to run in 5 mins (locally on your computer)**
   - install [docker](https://www.docker.com/)
