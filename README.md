@@ -19,7 +19,7 @@ Laboratory for Predictive Neuroimaging - University Hospital Essen, Germany
 
 - **Set up everything to run in 5 mins (locally on your computer)**
   - install [docker](https://www.docker.com/)
-  - clone this repository with git: `got clone https://github.com/pni-lab/connattractor.git`
+  - clone this repository with git: `git clone https://github.com/pni-lab/connattractor.git`
   - cd into the repo folder `cd connattractor`
   - run `docker run -it -v $PWD:/mounted/connattractor -p 8080:8080 -p 8888:8888 pnilab/connattractor:latest jupyter notebook`
   - copy paste the last link in your browser to start the notebook
