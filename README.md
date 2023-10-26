@@ -1,6 +1,6 @@
 # connattractor
 
-[![GitHub license](https://img.shields.io/github/license/pni-lab/connattractor.svg)](https://github.com/pni-lab/connattractor/blob/master/LICENSE)
+[![GitHub license](https://img.shields.io/github/license/pnilab/connattractor.svg)](https://github.com/pni-lab/connattractor/blob/master/LICENSE)
 [![GitHub release](https://img.shields.io/github/release/pni-lab/connattractor.svg)](https://github.com/pni-lab/connattractor/releases/)
 [![Docker Image Version (latest semver)](https://img.shields.io/docker/v/pnilab/connattractor?color=blue&label=pnilab%2Fconnattractor%3A&logo=docker&sort=semver)](https://hub.docker.com/repository/docker/pnilab/connattractor)
 ![Docker Image Size (latest semver)](https://img.shields.io/docker/image-size/pnilab/connattractor?label=%20pnilab%2Fconnattractor&logo=docker&sort=semver)
