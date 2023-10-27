@@ -1,6 +1,8 @@
 numpy
 pandas
+pingouin
 seaborn
 matplotlib
 scikit-learn
+mlxtend
 nilearn
