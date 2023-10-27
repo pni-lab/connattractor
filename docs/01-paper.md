@@ -109,10 +109,8 @@ bibliography:
 
 +++ {"part": "abstract"}
 Understanding large-scale brain dynamics is a grand challenge in neuroscience. 
-We propose functional connectome-based Hopfield artificial neural networks (fcHNNs) as a model of recurrent, dynamic, macro-scale activity flow among brain regions.
-fcHNNs are neither optimized to mimic certain brain characteristics nor trained to solve specific tasks, but simply initialized with the empirical functional connectome.
-The fcHNN framework identifies neurobiologically meaningful attractor states and provides a model for how these constrain brain dynamics.
-Analyses of 7 distinct datasets (N≈1000) demonstrate that fcHNNs can accurately reconstruct and predict brain dynamics under a wide range of conditions, including resting state and task-induced activity changes, as well as different brain disorders. Implementation is available as an open-source Python package.
+We propose functional connectome-based Hopfield artificial neural networks (fcHNNs) as a model of macro-scale brain dynamics, arising from recurrent activity flow among brain regions. FcHNNs are neither optimized to mimic certain brain characteristics nor trained to solve specific tasks, but simply initialized with the empirical functional connectome.
+Dynamics of fcHNNs are organized around neurobiologically meaningful attractor states, restricting the system's overall dynamic behavior. Analyses of 7 distinct datasets demonstrate that fcHNNs can accurately reconstruct and predict brain dynamics under a wide range of conditions, including resting and task states and brain disorders. Implementation is available as an open-source Python package.
 By establishing a mathematical link between connectivity and activity, the proposed generative framework offers a simple and interpretable computational alternative to conventional descriptive analyses for investigating brain function in health and disease and holds promise for identifying potential targets for novel treatment approaches.
 +++
 
