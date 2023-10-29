@@ -58,20 +58,18 @@ authors:
       corresponding: True
 
 abbreviations:
-  fcHNN: Functional Connectome-based Hopfield Network
+  fMRI: functional Magnetic Resonance Imaging
+  HNN: Hopfield Neural Network
+  ANN: Artificial Neural Network
+  fcHNN: functional connectome-based Hopfield Neural Network
   ABIDE: Autism Brain Imaging Data Exchange
-  ADNI: Alzheimer’s Disease Neuroimaging Initiative
-  COBRE: Center for Biomedical Research Excellence
   ASD: Autism Spectrum Disorder
-  SCZ: Schizophrenia
-  AD: Alzheimer's Disease
-  MCI: Mild Cognitive Impairment
   MCC: Middle Cingulate Cortex
   ACC: Anterior Cingulate Cortex
-  pg: Perigenual
+  pg: perigenual
   PFC: Prefrontal Cortex
-  dm: Dorsomedial
-  dl: Dorsolateral
+  dm: dorsomedial
+  dl: dorsolateral
   STG: Superior Temporal Gyrus
   MTG: Middle Temporal Gyrus
   ITG: Inferior Temporal Gyrus
@@ -83,9 +81,6 @@ abbreviations:
   Precun: Precuneus
   SMA: Supplementary Motor Cortex
   IPL: Inferior Parietal Lobule
-  HNN: Hopfield Neural Network
-  ANN: Artificial Neural Network
-  fMRI: Functional Magnetic Resonance Imaging
 
 exports:
   - format: pdf
@@ -109,20 +104,19 @@ bibliography:
 
 +++ {"part": "abstract"}
 Understanding large-scale brain dynamics is a grand challenge in neuroscience. 
-We propose functional connectome-based Hopfield artificial neural networks (fcHNNs) as a model of macro-scale brain dynamics, arising from recurrent activity flow among brain regions. FcHNNs are neither optimized to mimic certain brain characteristics nor trained to solve specific tasks, but simply initialized with the empirical functional connectome.
-Dynamics of fcHNNs are organized around neurobiologically meaningful attractor states, restricting the system's overall dynamic behavior. Analyses of 7 distinct datasets demonstrate that fcHNNs can accurately reconstruct and predict brain dynamics under a wide range of conditions, including resting and task states and brain disorders. Implementation is available as an open-source Python package.
-By establishing a mathematical link between connectivity and activity, the fcHNNs offers a simple and interpretable computational alternative to conventional descriptive analyses for investigating brain function in health and disease and holds promise for identifying novel treatment targets.
+We propose functional connectome-based Hopfield neural networks (fcHNNs) as a model of macro-scale brain dynamics, arising from recurrent activity flow among brain regions. An fcHNN is neither optimized to mimic certain brain characteristics, nor trained to solve specific tasks; its weights are simply initialized with empirical functional connectivity values.
+In the fcHNN framework, brain dynamics are understood in relation to so-called attractor states, i.e. neurobiologically meaningful low-energy activity configurations.
+Analyses of 7 distinct datasets demonstrate that fcHNNs can accurately reconstruct and predict brain dynamics under a wide range of conditions, including resting and task states and brain disorders.
+By establishing a mechanistic link between connectivity and activity, fcHNNs offers a simple and interpretable  computational alternative to conventional descriptive analyses of brain function. Being a generative framework, fCHNNs can yield mechanistic insights and hold potential to uncover novel treatment targets.
 +++
 
 ## Introduction
 
 Brain function is characterized by the continuous activation and deactivation of anatomically distributed neuronal 
 populations {cite:p}`buzsaki2006rhythms`.
-While the focus of related research is often on the direct mapping between activity changes in a single brain 
-area and a specific task or condition, in reality, regional activation never seems to occur in isolation 
-{cite:p}`bassett2017network`.
 
-Irrespective of the presence or absence of explicit stimuli, brain regions appear to work in concert, giving rise to a
+Irrespective of the presence or absence of explicit stimuli, regional activation never seems to occur in isolation 
+{cite:p}`bassett2017network`. Brain regions appear to work in concert, giving rise to a
 rich and spatiotemporally complex fluctuation {cite:p}`gutierrez2019infraslow`.
 This fluctuation is neither random, nor stationary over time {cite:p}`liu2013time; zalesky2014time`.
 It exhibits quasi-periodic properties {cite:p}`thompson2014quasi`, with a limited number of
@@ -217,7 +211,7 @@ on the noise parameter $\sigma$, see Supplementary Material **X**).
 Hopfield relaxation procedure (A). The four attractor states are also visualized in their corresponding position on the
 PCA-based projection. The first two principal components yield a clear separation of the attractive state basins 
 (cross-validated classification accuracy: 95.5%, Supplementary Material **X**). We refer to the resulting visualization
-as the Hopfield projection and use it to visualize fcHNN-derived and empirical brain dynamics throughout the rest of 
+as the fcHNN projection and use it to visualize fcHNN-derived and empirical brain dynamics throughout the rest of 
 the manuscript.
 **E** At its simplest form, the fcHNN framework entails only two free hyperparameters: the temperature parameter 
 $\beta$ (left) that controls the number of attractor states and the noise parameter of the stochastic relaxation 
