@@ -234,7 +234,7 @@ To map the attractor basins on the space spanned by the first two PCs ({numref}`
 The resulting model accurately predicted attractor states of arbitrary brain activity patterns, achieving a cross-validated accuracy of 96.5%.
 The attractor basins were visualized by using the decision boundaries obtained from this model. ({numref}`attractors`C). We propose the 2-dimensional fcHNN projection depicted on ({numref}`attractors`C) as a simplified representation of brain dynamics, and use it as a basis for all subsequent analyses in this work. Examples are presented on {numref}`example-trajectories`.
 
-:::{figure} figures/trajectories.png
+:::{figure} figures/trajectories
 :name: example-trajectories
 **Examples trajectories on the fcHNN projection.**<br/><br/>
 **A** The fcHNN of study 1 seeded with real activation maps (gray dots) of an example participant. All activation maps converges to one of the four attractor states during the relaxation procedure (without noise). Trajectories are colored by attractor state.
