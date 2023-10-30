@@ -59,9 +59,9 @@ authors:
 
 abbreviations:
   fMRI: functional Magnetic Resonance Imaging
-  HNN: Hopfield Neural Network
   ANN: Artificial Neural Network
   fcHNN: functional connectome-based Hopfield Neural Network
+  HNN: Hopfield Neural Network
   ABIDE: Autism Brain Imaging Data Exchange
   ASD: Autism Spectrum Disorder
   MCC: Middle Cingulate Cortex
@@ -107,7 +107,7 @@ Understanding large-scale brain dynamics is a grand challenge in neuroscience.
 We propose functional connectome-based Hopfield neural networks (fcHNNs) as a model of macro-scale brain dynamics, arising from recurrent activity flow among brain regions. An fcHNN is neither optimized to mimic certain brain characteristics, nor trained to solve specific tasks; its weights are simply initialized with empirical functional connectivity values.
 In the fcHNN framework, brain dynamics are understood in relation to so-called attractor states, i.e. neurobiologically meaningful low-energy activity configurations.
 Analyses of 7 distinct datasets demonstrate that fcHNNs can accurately reconstruct and predict brain dynamics under a wide range of conditions, including resting and task states and brain disorders.
-By establishing a mechanistic link between connectivity and activity, fcHNNs offers a simple and interpretable  computational alternative to conventional descriptive analyses of brain function. Being a generative framework, fCHNNs can yield mechanistic insights and hold potential to uncover novel treatment targets.
+By establishing a mechanistic link between connectivity and activity, fcHNNs offers a simple and interpretable  computational alternative to conventional descriptive analyses of brain function. Being a generative framework, fcHNNs can yield mechanistic insights and hold potential to uncover novel treatment targets.
 +++
 
 ## Introduction
