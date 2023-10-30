@@ -42,7 +42,7 @@ jobs:
         run: |
           cd docs
           myst build --docx
-          # myst build --pdf
+          myst build --pdf
           myst build --html
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
