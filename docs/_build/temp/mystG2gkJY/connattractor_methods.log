@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2023.10.30)  30 OCT 2023 18:51
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2023.10.30)  30 OCT 2023 18:56
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -756,15 +756,6 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) (/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
-
-Package natbib Warning: Citation `aine2017multimodal' on page 1 undefined on in
-put line 78.
-
-
-Package natbib Warning: Citation `petersen2010alzheimer' on page 1 undefined on
- input line 78.
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 86--86
 []\T1/lmr/m/n/10 age
  []
@@ -781,62 +772,62 @@ Underfull \hbox (badness 2617) in paragraph at lines 91--92
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 92--92
-[]\T1/lmr/m/n/10 study
+[]\T1/lmr/m/n/10 study 5
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 92--92
-\T1/lmr/m/n/10 5 (Neu-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 92--92
-[]\T1/lmr/m/n/10 coordinate-
- []
-
-
-Underfull \hbox (badness 1394) in paragraph at lines 92--92
-\T1/lmr/m/n/10 based meta-
- []
-
-
-Underfull \hbox (badness 6592) in paragraph at lines 92--92
-[]\T1/lmr/m/n/10 14371 stud-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 94--95
-[][][]\T1/lmr/m/n/10 Yarkoni
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 95--95
-[]\T1/lmr/m/n/10 study 6
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 95--95
 \T1/lmr/m/n/10 (Meta-anal-y-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 95--95
+Underfull \hbox (badness 10000) in paragraph at lines 92--92
 []\T1/lmr/m/n/10 IPD meta-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 95--95
+Underfull \hbox (badness 10000) in paragraph at lines 92--92
 \T1/lmr/m/n/10 analysis
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 95--95
+Underfull \hbox (badness 10000) in paragraph at lines 92--92
 []\T1/lmr/m/n/10 n=603 (20
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 97--98
+Underfull \hbox (badness 10000) in paragraph at lines 94--95
 [][][]\T1/lmr/m/n/10 Zunhammer
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 95--95
+[]\T1/lmr/m/n/10 study
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 95--95
+\T1/lmr/m/n/10 6 (Neu-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 95--95
+[]\T1/lmr/m/n/10 coordinate-
+ []
+
+
+Underfull \hbox (badness 1394) in paragraph at lines 95--95
+\T1/lmr/m/n/10 based meta-
+ []
+
+
+Underfull \hbox (badness 6592) in paragraph at lines 95--95
+[]\T1/lmr/m/n/10 14371 stud-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 97--98
+[][][]\T1/lmr/m/n/10 Yarkoni
  []
 
 
@@ -884,6 +875,9 @@ Underfull \hbox (badness 4940) in paragraph at lines 98--99
 Package amsfonts Warning: Obsolete command \bold; \mathbf should be used instea
 d on input line 127.
 
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
 Package microtype Info: Character `029' is missing
 (microtype)             in font `T1/lmr/m/sc/9'.
 (microtype)             Ignoring protrusion settings for this character.
@@ -915,11 +909,7 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `lmtt' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-[5])
-
-Package natbib Warning: There were undefined citations.
-
-[6] (./connattractor_methods.aux)
+[5]) [6] (./connattractor_methods.aux)
 
 LaTeX Warning: There were undefined references.
 
@@ -935,4 +925,4 @@ Here is how much of TeX's memory you used:
  14 hyphenation exceptions out of 8191
  91i,12n,90p,1206b,470s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on connattractor_methods.xdv (6 pages, 57684 bytes).
+Output written on connattractor_methods.xdv (6 pages, 57220 bytes).

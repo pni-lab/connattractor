@@ -3,11 +3,9 @@ Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: connattractor_methods.aux
 The style file: unsrtnat.bst
 Database file #1: main.bib
-Warning--I didn't find a database entry for "aine2017multimodal"
-Warning--I didn't find a database entry for "petersen2010alzheimer"
 You've used 21 entries,
             2481 wiz_defined-function locations,
-            703 strings with 10257 characters,
+            701 strings with 10218 characters,
 and the built_in function-call counts, 10031 in all, are:
 = -- 717
 > -- 813
@@ -46,4 +44,3 @@ warning$ -- 0
 while$ -- 73
 width$ -- 0
 write$ -- 296
-(There were 2 warnings)

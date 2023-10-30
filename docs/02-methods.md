@@ -45,8 +45,7 @@ bibliography:
 ### Data
 
 We obtained functional MRI data from 7 different sources ([](tab-samples)).
-We included three resting state studies with healthy volunteers (study 1, study 2, study 3), one task-based study (study 4), 8 meta-analytic task-based activation patterns obtained from Neurosynth (study 5), and three additional resting state studies focusing on specific disease conditions. These include the ABIDE (Autism Brain Imaging Data Exchange) study on Autism Spectrum Disorder (ASD, study 6, {cite}`di2014autism`), the COBRE (Center for Biomedical Research Excellence) study on Schizophrenia (study 8, {cite:p}`aine2017multimodal`) and data obtained from ADNI (Alzheimer’s Disease Neuroimaging Initiative database (adni.loni.usc.edu) on Alzheimer's Disease (study 7, {cite:p}`petersen2010alzheimer`).
-
+We included three resting state studies with healthy volunteers (study 1, study 2, study 3), one task-based study (study 4), an individual participant meta-analytic pain activation map of pain (study 5), 8 meta-analytic task-based activation patterns obtained from Neurosynth (study 6) and a resting state dataset focusing on ASD from the ABIDE (Autism Brain Imaging Data Exchange, study 6, {cite}`di2014autism`).
 
 ```{list-table} **Datasets and studies.** The table includes details about the study modality, analysis, sample size, mean age, gender distribution, and references.
 :header-rows: 1
@@ -87,20 +86,20 @@ We included three resting state studies with healthy volunteers (study 1, study 
   - 27.9 ± 9.0 
   - 66%
   - [](https://doi.org/10.1371/journal.pbio.1002036)
-* - study 5 (Neurosynth)
-  - task-based
-  - coordinate-based meta-analyses
-  - 14371 studies in total
-  - -
-  - -
-  - [](https://doi.org/10.1038/nmeth.1635)
-* - study 6 (Metaanalysis)
+* - study 5 (Metaanalysis)
   - task-based
   - IPD meta-analysis pain map
   - n=603 (20 studies)
   - -
   - -
   - {cite}`zunhammer2021meta`
+* - study 6 (Neurosynth)
+  - task-based
+  - coordinate-based meta-analyses
+  - 14371 studies in total
+  - -
+  - -
+  - [](https://doi.org/10.1038/nmeth.1635)
 * - study 7 (ABIDE, NYU sample)
   - resting state
   - Autism Spectrum Disorder

@@ -34,6 +34,13 @@ Choong-Wan Woo, Mathieu Roy, Jason~T. Buhle, and Tor~D. Wager.
 \newblock \doi{10.1371/journal.pbio.1002036}.
 \newblock URL \url{https://doi.org/10.1371%2Fjournal.pbio.1002036}.
 
+\bibitem[Zunhammer et~al.(2021)Zunhammer, Spis{\'a}k, Wager, and
+  Bingel]{zunhammer2021meta}
+Matthias Zunhammer, Tam{\'a}s Spis{\'a}k, Tor~D Wager, and Ulrike Bingel.
+\newblock Meta-analysis of neural systems underlying placebo analgesia from
+  individual participant fmri data.
+\newblock \emph{Nature communications}, 12\penalty0 (1):\penalty0 1391, 2021.
+
 \bibitem[Yarkoni et~al.(2011)Yarkoni, Poldrack, Nichols, Essen, and
   Wager]{Yarkoni_2011}
 Tal Yarkoni, Russell~A Poldrack, Thomas~E Nichols, David C~Van Essen, and Tor~D
@@ -43,13 +50,6 @@ Tal Yarkoni, Russell~A Poldrack, Thomas~E Nichols, David C~Van Essen, and Tor~D
 \newblock \emph{Nature Methods}, 8\penalty0 (8):\penalty0 665--670, jun 2011.
 \newblock \doi{10.1038/nmeth.1635}.
 \newblock URL \url{https://doi.org/10.1038%2Fnmeth.1635}.
-
-\bibitem[Zunhammer et~al.(2021)Zunhammer, Spis{\'a}k, Wager, and
-  Bingel]{zunhammer2021meta}
-Matthias Zunhammer, Tam{\'a}s Spis{\'a}k, Tor~D Wager, and Ulrike Bingel.
-\newblock Meta-analysis of neural systems underlying placebo analgesia from
-  individual participant fmri data.
-\newblock \emph{Nature communications}, 12\penalty0 (1):\penalty0 1391, 2021.
 
 \bibitem[Woo et~al.(2015{\natexlab{b}})Woo, Roy, Buhle, and
   Wager]{woo2015distinct}

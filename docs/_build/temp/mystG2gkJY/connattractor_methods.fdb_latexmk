@@ -1,16 +1,16 @@
 # Fdb version 3
-["bibtex connattractor_methods"] 1698691888 "connattractor_methods.aux" "connattractor_methods.bbl" "connattractor_methods" 1698691889
+["bibtex connattractor_methods"] 1698692164 "connattractor_methods.aux" "connattractor_methods.bbl" "connattractor_methods" 1698692166
   "/usr/share/texlive/texmf-dist/bibtex/bst/natbib/unsrtnat.bst" 1233624470 24550 a41a6405f4de768c43e871d9fbce2bc8 ""
-  "connattractor_methods.aux" 1698691889 5814 64d6727802ae083e63ac01fa2d460bf1 "xelatex"
-  "main.bib" 1698691884 29509 462a404711e1dc40f7c535cf29c49932 ""
+  "connattractor_methods.aux" 1698692165 5751 fd064242dcefb6cf21396cf8a33540a8 "xelatex"
+  "main.bib" 1698692161 29509 0a4cd044584ac895c303477a0e811992 ""
   (generated)
   "connattractor_methods.bbl"
   "connattractor_methods.blg"
-["xdvipdfmx"] 1698691889 "connattractor_methods.xdv" "connattractor_methods.pdf" "connattractor_methods" 1698691889
-  "connattractor_methods.xdv" 1698691889 57684 1d58509b76c2f1463ab5573bdb3c4133 "xelatex"
+["xdvipdfmx"] 1698692166 "connattractor_methods.xdv" "connattractor_methods.pdf" "connattractor_methods" 1698692166
+  "connattractor_methods.xdv" 1698692165 57220 909ee82ac4835e03da5dc1e98eff4e29 "xelatex"
   (generated)
   "connattractor_methods.pdf"
-["xelatex"] 1698691888 "connattractor_methods.tex" "connattractor_methods.xdv" "connattractor_methods" 1698691889
+["xelatex"] 1698692165 "connattractor_methods.tex" "connattractor_methods.xdv" "connattractor_methods" 1698692166
   "/etc/texmf/web2c/texmf.cnf" 1698268334 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/adobe/zapfding/pzdr.tfm" 1136768653 1528 f853c4d1b4e0550255e02831fdc8496f ""
@@ -158,13 +158,13 @@
   "/usr/share/texmf/tex/latex/lm/t1lmr.fd" 1256929440 1865 afbfccbe7fda9c2dc5078ad7c486bbed ""
   "/usr/share/texmf/tex/latex/lm/t1lmtt.fd" 1256929440 2681 354015af3b61e7be30009f084986375a ""
   "/usr/share/texmf/web2c/texmf.cnf" 1644012257 39432 7155514e09a3d69036fac785183a21c2 ""
-  "/var/lib/texmf/web2c/xetex/xelatex.fmt" 1698691849 3606618 c3f1d8782a2c51bac6162b772435653f ""
-  "arxiv.sty" 1698691884 7600 45f68a70e01100853d71f61aba221bdd ""
-  "connattractor_methods.aux" 1698691889 5814 64d6727802ae083e63ac01fa2d460bf1 "xelatex"
-  "connattractor_methods.bbl" 1698691888 8744 672c4f367672b4ebe2ac8ec7e00912bd "bibtex connattractor_methods"
+  "/var/lib/texmf/web2c/xetex/xelatex.fmt" 1698692134 3606618 2fb0c73691fd58f27a3f02edd276c747 ""
+  "arxiv.sty" 1698692161 7600 45f68a70e01100853d71f61aba221bdd ""
+  "connattractor_methods.aux" 1698692165 5751 fd064242dcefb6cf21396cf8a33540a8 "xelatex"
+  "connattractor_methods.bbl" 1698692165 8744 dcfcec92b01ae08b157639d3025ad9de "bibtex connattractor_methods"
   "connattractor_methods.gls" 0 -1 0 ""
-  "connattractor_methods.out" 1698691889 1541 7bc579152f80cd3437cb68b7992d736d "xelatex"
-  "connattractor_methods.tex" 1698691884 22597 7b4702612db142c7d9e304d99804c115 ""
+  "connattractor_methods.out" 1698692165 1541 7bc579152f80cd3437cb68b7992d736d "xelatex"
+  "connattractor_methods.tex" 1698692161 22271 077478ae08142907f0e20b71c856d207 ""
   (generated)
   "connattractor_methods.aux"
   "connattractor_methods.glo"
