@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2023.10.30)  30 OCT 2023 19:28
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2023.10.30)  30 OCT 2023 19:34
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -552,22 +552,22 @@ Package: glossary-tree 2021/11/01 v4.49 (NLCT)
 
 Package glossaries Info: Writing glossary file connattractor_manuscript.glo on 
 input line 24.
-Package hyperref Info: Option `colorlinks' set `true' on input line 51.
+Package hyperref Info: Option `colorlinks' set `true' on input line 52.
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\spacefactor' on input line 99.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\@m' on input line 99.
+(hyperref)                removing `\spacefactor' on input line 100.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\spacefactor' on input line 99.
+(hyperref)                removing `\@m' on input line 100.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\@m' on input line 99.
+(hyperref)                removing `\spacefactor' on input line 100.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\@m' on input line 100.
 
 (/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-xetex.def
 File: l3backend-xetex.def 2022-01-12 L3 backend support: XeTeX
@@ -583,31 +583,31 @@ File: l3backend-xetex.def 2022-01-12 L3 backend support: XeTeX
 ) (./connattractor_manuscript.aux)
 \openout1 = `connattractor_manuscript.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 101.
-LaTeX Font Info:    ... okay on input line 101.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 101.
-LaTeX Font Info:    ... okay on input line 101.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 101.
-LaTeX Font Info:    ... okay on input line 101.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 101.
-LaTeX Font Info:    ... okay on input line 101.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 101.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 102.
+LaTeX Font Info:    ... okay on input line 102.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 102.
+LaTeX Font Info:    ... okay on input line 102.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 102.
+LaTeX Font Info:    ... okay on input line 102.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 102.
+LaTeX Font Info:    ... okay on input line 102.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 102.
 LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 1
-01.
+02.
 (/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 101.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 101.
-LaTeX Font Info:    ... okay on input line 101.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 101.
-LaTeX Font Info:    ... okay on input line 101.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 101.
-LaTeX Font Info:    ... okay on input line 101.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 101.
-LaTeX Font Info:    ... okay on input line 101.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 101.
-LaTeX Font Info:    ... okay on input line 101.
+LaTeX Font Info:    ... okay on input line 102.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 102.
+LaTeX Font Info:    ... okay on input line 102.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 102.
+LaTeX Font Info:    ... okay on input line 102.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 102.
+LaTeX Font Info:    ... okay on input line 102.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 102.
+LaTeX Font Info:    ... okay on input line 102.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 102.
+LaTeX Font Info:    ... okay on input line 102.
 *geometry* driver: auto-detecting
 *geometry* detected driver: xetex
 *geometry* verbose mode - [ preamble ] result:
@@ -674,7 +674,7 @@ LaTeX Font Info:    ... okay on input line 101.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-Package hyperref Info: Link coloring ON on input line 101.
+Package hyperref Info: Link coloring ON on input line 102.
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
 (/usr/share/texlive/texmf-dist/tex/latex/refcount/refcount.sty
@@ -684,9 +684,9 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count349
 )
-LaTeX Info: Redefining \ref on input line 101.
-LaTeX Info: Redefining \pageref on input line 101.
-LaTeX Info: Redefining \nameref on input line 101.
+LaTeX Info: Redefining \ref on input line 102.
+LaTeX Info: Redefining \pageref on input line 102.
+LaTeX Info: Redefining \nameref on input line 102.
 (./connattractor_manuscript.out) (./connattractor_manuscript.out)
 \@outlinefile=\write5
 \openout5 = `connattractor_manuscript.out'.
@@ -696,11 +696,11 @@ Invalid UTF-8 byte or sequence at line 10 replaced by U+FFFD.
 Invalid UTF-8 byte or sequence at line 22 replaced by U+FFFD.
 File: fc-english.def 2016/01/12
 )
-LaTeX Info: Redefining \microtypecontext on input line 101.
-Package microtype Info: Applying patch `item' on input line 101.
-Package microtype Info: Applying patch `toc' on input line 101.
-Package microtype Info: Applying patch `eqnum' on input line 101.
-Package microtype Info: Applying patch `footnote' on input line 101.
+LaTeX Info: Redefining \microtypecontext on input line 102.
+Package microtype Info: Applying patch `item' on input line 102.
+Package microtype Info: Applying patch `toc' on input line 102.
+Package microtype Info: Applying patch `eqnum' on input line 102.
+Package microtype Info: Applying patch `footnote' on input line 102.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
 Package microtype Info: No adjustment of tracking.
@@ -717,39 +717,39 @@ Package microtype Info: Character `029' is missing
 (microtype)             in font `T1/lmr/m/sc/10'.
 (microtype)             Ignoring protrusion settings for this character.
 LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 1
-03.
+04.
 (/usr/share/texmf/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OML+lmm on input line 1
-03.
+04.
 (/usr/share/texmf/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
-103.
+104.
 (/usr/share/texmf/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
-103.
+104.
 (/usr/share/texmf/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 103.
+(Font)              <10> on input line 104.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 103.
+(Font)              <7> on input line 104.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 103.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 103
+(Font)              <5> on input line 104.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 104
 .
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 ) (/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 103
+LaTeX Font Info:    Trying to load font information for U+msb on input line 104
 .
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -759,32 +759,32 @@ File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 File: orcid.pdf Graphic file (type pdf)
 <use orcid.pdf>
 
-Overfull \hbox (42.42625pt too wide) in paragraph at lines 103--103
+Overfull \hbox (42.42625pt too wide) in paragraph at lines 104--104
  [][] 
  []
 
 
-Overfull \hbox (5.70267pt too wide) in paragraph at lines 103--103
+Overfull \hbox (5.70267pt too wide) in paragraph at lines 104--104
  [] 
  []
 
 
-Overfull \hbox (5.70267pt too wide) in paragraph at lines 103--103
+Overfull \hbox (5.70267pt too wide) in paragraph at lines 104--104
  [] 
  []
 
 
-Overfull \hbox (42.42625pt too wide) in paragraph at lines 103--103
+Overfull \hbox (42.42625pt too wide) in paragraph at lines 104--104
  [] 
  []
 
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <9> on input line 103.
+(Font)              <9> on input line 104.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 103.
+(Font)              <6> on input line 104.
 
 LaTeX Font Warning: Font shape `T1/lmr/bx/sc' undefined
-(Font)              using `T1/lmr/bx/n' instead on input line 105.
+(Font)              using `T1/lmr/bx/n' instead on input line 106.
 
 [1
 
@@ -796,109 +796,109 @@ Package microtype Info: Character `029' is missing
 (microtype)             in font `T1/lmr/m/sc/9'.
 (microtype)             Ignoring protrusion settings for this character.
 [2]
-File: files/concept-5cc6dd1618db257bff79af77899d35bd.png Graphic file (type bmp
+File: files/concept-314fc5f51c8cc2cad6628045d74274a4.png Graphic file (type bmp
 )
-<files/concept-5cc6dd1618db257bff79af77899d35bd.png>
+<files/concept-314fc5f51c8cc2cad6628045d74274a4.png>
 
-Underfull \hbox (badness 10000) in paragraph at lines 173--173
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 173--173
+Underfull \hbox (badness 10000) in paragraph at lines 174--174
 
  []
 
 
-LaTeX Warning: Reference `tab-samples' on page 3 undefined on input line 187.
+Underfull \hbox (badness 10000) in paragraph at lines 174--174
+
+ []
+
+
+LaTeX Warning: Reference `tab-samples' on page 3 undefined on input line 188.
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 [3]
-File: files/embedding_method-d8a4b348c27f31c6ca21be210c8c4746.png Graphic file 
+File: files/embedding_method-b4ec4907021225363b7940b16ec3d61a.png Graphic file 
 (type bmp)
-<files/embedding_method-d8a4b348c27f31c6ca21be210c8c4746.png>
+<files/embedding_method-b4ec4907021225363b7940b16ec3d61a.png>
 
-LaTeX Warning: Reference `tab-samples' on page 4 undefined on input line 237.
+LaTeX Warning: Reference `tab-samples' on page 4 undefined on input line 238.
 
 
 LaTeX Warning: Reference `si_expl_variance_energy' on page 4 undefined on input
- line 237.
+ line 238.
 
 
 LaTeX Warning: Reference `si_classification_acc_state_basins' on page 4 undefin
-ed on input line 237.
+ed on input line 238.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 237--237
+Underfull \hbox (badness 10000) in paragraph at lines 238--238
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 237--237
+Underfull \hbox (badness 10000) in paragraph at lines 238--238
 
  []
 
 
-LaTeX Warning: Reference `tab-samples' on page 4 undefined on input line 237.
+LaTeX Warning: Reference `tab-samples' on page 4 undefined on input line 238.
 
 
 LaTeX Warning: Reference `si_expl_variance_energy' on page 4 undefined on input
- line 237.
+ line 238.
 
 
 LaTeX Warning: Reference `si_classification_acc_state_basins' on page 4 undefin
-ed on input line 237.
+ed on input line 238.
 
 
 LaTeX Warning: Reference `si_att_state_emergence_over_beta' on page 4 undefined
- on input line 242.
+ on input line 243.
 
 
-./connattractor_manuscript.tex:259: LaTeX Error: Cannot determine size of graph
-ic in files/trajectories-ffe26eb837bce382ba06b21613e3d205.svg (no BoundingBox).
+./connattractor_manuscript.tex:260: LaTeX Error: Cannot determine size of graph
+ic in files/trajectories-7a99c22474ccea45d2c0f9010c4bf4c9.svg (no BoundingBox).
 
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.259 ...ies-ffe26eb837bce382ba06b21613e3d205.svg}
+l.260 ...ies-7a99c22474ccea45d2c0f9010c4bf4c9.svg}
                                                   
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
-File: files/trajectories-ffe26eb837bce382ba06b21613e3d205.svg Graphic file (typ
+File: files/trajectories-7a99c22474ccea45d2c0f9010c4bf4c9.svg Graphic file (typ
 e eps)
-<files/trajectories-ffe26eb837bce382ba06b21613e3d205.svg>
+<files/trajectories-7a99c22474ccea45d2c0f9010c4bf4c9.svg>
 
-Underfull \hbox (badness 10000) in paragraph at lines 265--265
+Underfull \hbox (badness 10000) in paragraph at lines 266--266
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 265--265
+Underfull \hbox (badness 10000) in paragraph at lines 266--266
 
  []
 
 [4] [5]
-File: files/face_validity-884e4d0f13a9e72620f08d4c1b4a6b44.png Graphic file (ty
+File: files/face_validity-44010d5054111d646884a7f3efc116e5.png Graphic file (ty
 pe bmp)
-<files/face_validity-884e4d0f13a9e72620f08d4c1b4a6b44.png>
+<files/face_validity-44010d5054111d646884a7f3efc116e5.png>
 
-Underfull \hbox (badness 10000) in paragraph at lines 292--292
+Underfull \hbox (badness 10000) in paragraph at lines 293--293
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 292--292
+Underfull \hbox (badness 10000) in paragraph at lines 293--293
 
  []
 
 [6]
 
-LaTeX Warning: Reference `tab-samples' on page 7 undefined on input line 298.
+LaTeX Warning: Reference `tab-samples' on page 7 undefined on input line 299.
 
 
 Underfull \vbox (badness 5302) has occurred while \output is active []
@@ -906,53 +906,53 @@ Underfull \vbox (badness 5302) has occurred while \output is active []
 [7]
 
 LaTeX Warning: Reference `si_state_occcupancy_null_models' on page 8 undefined 
-on input line 305.
+on input line 306.
 
 
-LaTeX Warning: Reference `tab-samples' on page 8 undefined on input line 311.
+LaTeX Warning: Reference `tab-samples' on page 8 undefined on input line 312.
 
-File: files/task_validity-37fa56f4afd6b50ae1435ecdcd7d0561.png Graphic file (ty
+File: files/task_validity-fec0b4656343b43a52b4374410ce1eb9.png Graphic file (ty
 pe bmp)
-<files/task_validity-37fa56f4afd6b50ae1435ecdcd7d0561.png>
+<files/task_validity-fec0b4656343b43a52b4374410ce1eb9.png>
 
-LaTeX Warning: Reference `tab-samples' on page 8 undefined on input line 332.
+LaTeX Warning: Reference `tab-samples' on page 8 undefined on input line 333.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 332--332
+Underfull \hbox (badness 10000) in paragraph at lines 333--333
 
  []
 
 
-LaTeX Warning: Reference `tab-samples' on page 8 undefined on input line 332.
+LaTeX Warning: Reference `tab-samples' on page 8 undefined on input line 333.
 
 
 LaTeX Warning: Reference `si_downreg_trajectory_sim' on page 8 undefined on inp
-ut line 343.
+ut line 344.
 
 [8] [9]
 
-LaTeX Warning: Reference `tab-samples' on page 10 undefined on input line 350.
+LaTeX Warning: Reference `tab-samples' on page 10 undefined on input line 351.
 
 
-LaTeX Warning: File `figures/state_analysis.png' not found on input line 357.
+LaTeX Warning: File `figures/state_analysis.png' not found on input line 358.
 
-./connattractor_manuscript.tex:357: Unable to load picture or PDF file 'figures
+./connattractor_manuscript.tex:358: Unable to load picture or PDF file 'figures
 /state_analysis.png'.
 <to be read again> 
                    }
-l.357 ....7\linewidth]{figures/state_analysis.png}
+l.358 ....7\linewidth]{figures/state_analysis.png}
                                                   
 The requested image couldn't be read because
 it was not a recognized image format.
 
 
-./connattractor_manuscript.tex:357: Package graphics Error: Division by 0.
+./connattractor_manuscript.tex:358: Package graphics Error: Division by 0.
 
 See the graphics package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.357 ....7\linewidth]{figures/state_analysis.png}
+l.358 ....7\linewidth]{figures/state_analysis.png}
                                                   
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -961,78 +961,78 @@ or  <return>  to continue without it.
 File: figures/state_analysis.png Graphic file (type bmp)
 <figures/state_analysis.png>
 
-LaTeX Warning: Reference `tab-samples' on page 10 undefined on input line 367.
+LaTeX Warning: Reference `tab-samples' on page 10 undefined on input line 368.
 
 
 LaTeX Warning: Reference `si_clinical_results_table' on page 10 undefined on in
-put line 367.
+put line 368.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 367--367
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 367--367
+Underfull \hbox (badness 10000) in paragraph at lines 368--368
 
  []
 
 
-LaTeX Warning: Reference `tab-samples' on page 10 undefined on input line 367.
+Underfull \hbox (badness 10000) in paragraph at lines 368--368
+
+ []
+
+
+LaTeX Warning: Reference `tab-samples' on page 10 undefined on input line 368.
 
 
 LaTeX Warning: Reference `si_clinical_results_table' on page 10 undefined on in
-put line 367.
+put line 368.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 367--367
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 367--367
+Underfull \hbox (badness 10000) in paragraph at lines 368--368
 
  []
 
 
-Underfull \hbox (badness 1014) in paragraph at lines 382--382
+Underfull \hbox (badness 10000) in paragraph at lines 368--368
+
+ []
+
+
+Underfull \hbox (badness 1014) in paragraph at lines 383--383
 []\T1/lmr/m/n/10 mediolateral sen-so-ri-mo-
  []
 
 
-Underfull \hbox (badness 5403) in paragraph at lines 386--386
+Underfull \hbox (badness 5403) in paragraph at lines 387--387
 []\T1/lmr/m/n/10 dorsolateral sen-so-ri-mo-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 388--388
+Underfull \hbox (badness 10000) in paragraph at lines 389--389
 []\T1/lmr/m/n/10 dorsolateral pre-frontal
  []
 
 [10]
 
 LaTeX Warning: Reference `si_noise_robustness_weights' on page 11 undefined on 
-input line 403.
+input line 404.
 
 
 LaTeX Warning: Reference `si_expl_variance_energy' on page 11 undefined on inpu
-t line 408.
+t line 409.
 
 
 LaTeX Warning: Reference `si_att_state_emergence_over_beta' on page 11 undefine
-d on input line 408.
+d on input line 409.
 
 
 LaTeX Warning: Reference `si_state_occcupancy_null_models' on page 11 undefined
- on input line 408.
+ on input line 409.
 
 
 LaTeX Warning: Reference `si_pain_ghost_attractor_sim' on page 11 undefined on 
-input line 408.
+input line 409.
 
 
 LaTeX Warning: Reference `si_downreg_trajectory_sim' on page 11 undefined on in
-put line 408.
+put line 409.
 
 
 Underfull \vbox (badness 1577) has occurred while \output is active []
@@ -1040,7 +1040,7 @@ Underfull \vbox (badness 1577) has occurred while \output is active []
 [11]
 
 LaTeX Warning: Reference `si_noise_robustness_weights' on page 12 undefined on 
-input line 417.
+input line 418.
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -1064,12 +1064,12 @@ d.
 (rerunfilecheck)             Checksum: B7A84C7A70C811F7D8FB2758940CE9EC;2162.
  ) 
 Here is how much of TeX's memory you used:
- 18255 strings out of 478190
- 304016 string characters out of 5854826
- 798091 words of memory out of 5000000
- 38491 multiletter control sequences out of 15000+600000
+ 18285 strings out of 478190
+ 304504 string characters out of 5854826
+ 798639 words of memory out of 5000000
+ 38521 multiletter control sequences out of 15000+600000
  531164 words of font info for 70 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  91i,12n,90p,36936b,559s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on connattractor_manuscript.xdv (17 pages, 158336 bytes).
+Output written on connattractor_manuscript.xdv (17 pages, 158480 bytes).

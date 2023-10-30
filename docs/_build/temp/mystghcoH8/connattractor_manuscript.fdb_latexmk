@@ -1,16 +1,16 @@
 # Fdb version 3
-["bibtex connattractor_manuscript"] 1698694101 "connattractor_manuscript.aux" "connattractor_manuscript.bbl" "connattractor_manuscript" 1698694104
+["bibtex connattractor_manuscript"] 1698694489 "connattractor_manuscript.aux" "connattractor_manuscript.bbl" "connattractor_manuscript" 1698694493
   "/usr/share/texlive/texmf-dist/bibtex/bst/natbib/unsrtnat.bst" 1233624470 24550 a41a6405f4de768c43e871d9fbce2bc8 ""
-  "connattractor_manuscript.aux" 1698694102 12754 5f82c855e1a2c0d5f44e8d8a6e3b2668 "xelatex"
-  "main.bib" 1698694097 29509 0a4cd044584ac895c303477a0e811992 ""
+  "connattractor_manuscript.aux" 1698694491 12754 5f82c855e1a2c0d5f44e8d8a6e3b2668 "xelatex"
+  "main.bib" 1698694484 29509 8563695a408f90ffebbafb6d0224da22 ""
   (generated)
   "connattractor_manuscript.bbl"
   "connattractor_manuscript.blg"
-["xdvipdfmx"] 1698694102 "connattractor_manuscript.xdv" "connattractor_manuscript.pdf" "connattractor_manuscript" 1698694104
-  "connattractor_manuscript.xdv" 1698694102 158336 9b2be4eb2725c86571ca7d477ab81b4e "xelatex"
+["xdvipdfmx"] 1698694491 "connattractor_manuscript.xdv" "connattractor_manuscript.pdf" "connattractor_manuscript" 1698694493
+  "connattractor_manuscript.xdv" 1698694491 158480 522d6fb31d05ee0f7fa729d9de1ad626 "xelatex"
   (generated)
   "connattractor_manuscript.pdf"
-["xelatex"] 1698694101 "connattractor_manuscript.tex" "connattractor_manuscript.xdv" "connattractor_manuscript" 1698694104
+["xelatex"] 1698694489 "connattractor_manuscript.tex" "connattractor_manuscript.xdv" "connattractor_manuscript" 1698694493
   "/etc/texmf/web2c/texmf.cnf" 1698268334 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/adobe/zapfding/pzdr.tfm" 1136768653 1528 f853c4d1b4e0550255e02831fdc8496f ""
@@ -161,20 +161,20 @@
   "/usr/share/texmf/tex/latex/lm/ot1lmr.fd" 1256929440 1880 bae7b659316f7344a86218ad38b01d91 ""
   "/usr/share/texmf/tex/latex/lm/t1lmr.fd" 1256929440 1865 afbfccbe7fda9c2dc5078ad7c486bbed ""
   "/usr/share/texmf/web2c/texmf.cnf" 1644012257 39432 7155514e09a3d69036fac785183a21c2 ""
-  "/var/lib/texmf/web2c/xetex/xelatex.fmt" 1698694070 3606618 cb59510fdd30a062cd36f59383738a84 ""
-  "arxiv.sty" 1698694097 7600 45f68a70e01100853d71f61aba221bdd ""
-  "connattractor_manuscript.aux" 1698694102 12754 5f82c855e1a2c0d5f44e8d8a6e3b2668 "xelatex"
-  "connattractor_manuscript.bbl" 1698694101 20845 0f6d25c9d49b6e83edefcebd6da268b4 "bibtex connattractor_manuscript"
+  "/var/lib/texmf/web2c/xetex/xelatex.fmt" 1698694452 3606622 778ce8c5475481d4776ef489cd849431 ""
+  "arxiv.sty" 1698694484 7600 45f68a70e01100853d71f61aba221bdd ""
+  "connattractor_manuscript.aux" 1698694491 12754 5f82c855e1a2c0d5f44e8d8a6e3b2668 "xelatex"
+  "connattractor_manuscript.bbl" 1698694489 20845 0f6d25c9d49b6e83edefcebd6da268b4 "bibtex connattractor_manuscript"
   "connattractor_manuscript.gls" 0 -1 0 ""
-  "connattractor_manuscript.out" 1698694102 2162 b7a84c7a70c811f7d8fb2758940ce9ec "xelatex"
-  "connattractor_manuscript.tex" 1698694097 59942 4cc0fd87c8cf6692a12ab589221e5799 ""
+  "connattractor_manuscript.out" 1698694491 2162 b7a84c7a70c811f7d8fb2758940ce9ec "xelatex"
+  "connattractor_manuscript.tex" 1698694484 60021 7f07dc4ea6955fb219f2c2ef4006aaf6 ""
   "figures/state_analysis.png" 0 -1 0 ""
-  "files/concept-5cc6dd1618db257bff79af77899d35bd.png" 1698694097 394918 8dc12841800a7d160919afae2417818a ""
-  "files/embedding_method-d8a4b348c27f31c6ca21be210c8c4746.png" 1698694097 984514 62a105a5d2932a7d4014d1f6512fd95f ""
-  "files/face_validity-884e4d0f13a9e72620f08d4c1b4a6b44.png" 1698694097 1371999 b3b3eb9d292509347e13f45baac7d303 ""
-  "files/task_validity-37fa56f4afd6b50ae1435ecdcd7d0561.png" 1698694097 4129676 86305725fe5582996945342dc9ff2e94 ""
-  "files/trajectories-ffe26eb837bce382ba06b21613e3d205.svg" 1698694097 5472703 12c089fe0141584d0952dea5f5d292b8 ""
-  "orcid.pdf" 1698694097 12397 91d5d508c0f091a7cee0cca88f1680c0 ""
+  "files/concept-314fc5f51c8cc2cad6628045d74274a4.png" 1698694484 394918 8dc12841800a7d160919afae2417818a ""
+  "files/embedding_method-b4ec4907021225363b7940b16ec3d61a.png" 1698694484 984514 62a105a5d2932a7d4014d1f6512fd95f ""
+  "files/face_validity-44010d5054111d646884a7f3efc116e5.png" 1698694484 1371999 b3b3eb9d292509347e13f45baac7d303 ""
+  "files/task_validity-fec0b4656343b43a52b4374410ce1eb9.png" 1698694484 4129676 86305725fe5582996945342dc9ff2e94 ""
+  "files/trajectories-7a99c22474ccea45d2c0f9010c4bf4c9.svg" 1698694484 5472703 12c089fe0141584d0952dea5f5d292b8 ""
+  "orcid.pdf" 1698694484 12397 91d5d508c0f091a7cee0cca88f1680c0 ""
   (generated)
   "connattractor_manuscript.aux"
   "connattractor_manuscript.glo"
