@@ -321,7 +321,7 @@ After excluding high-motion cases (see [Methods](#clinical-data)), we visualized
 We found several significant differences in the mean attractor activation (see [Methods](#clinical-data)) in the ASD group as compared to the respective controls ({numref}`clinical-validity`B).
 Strongest differences were found on the "action-perception" axis ({numref}`tab-clinical-results`), with increased activity of the sensory-motor and middle cingular cortices during "action-execution" related states and increased visual and decreased sensory and auditory activity during "perception" states, likely reflecting the widely acknowledged, yet poorly understood, perceptual atypicalities in ASD {cite:p}`hadad2019perception`. ASD related changes in the internal-external axis were characterized by more involvement of the posterior cingulate, the precuneus, the nucleus accumbens, the dorsolateral prefrontal cortex (dlPFC), the cerebellum (Crus II, lobule VII) and inferior temporal regions during activity of the internalizing subsystem ({numref}`tab-clinical-results`). While similar, default mode network (DMN)-related changes have often been attributed to an atypical integration of information about the “self” and the “other” {cite:p}`padmanabhan2017default`, a more detailed fcHNN-analysis may help to further disentangle the specific nature of these changes.
 
-:::{figure} figures/state_analysis.png
+:::{figure} figures/state_analysis.*
 :name: clinical-validity
 **Connectome-based Hopfield analysis of autism spectrum disorder.** <br></br>
 **A** The distribution of time-frames on the fcHNN-projection separately for ASD patients and typically developing control (TDC) participants. <br></br>
