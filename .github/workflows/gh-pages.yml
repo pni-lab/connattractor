@@ -31,11 +31,18 @@ jobs:
           node-version: 18.x
       - name: Install MyST Markdown
         run: npm install -g mystmd
+      - name: Manually download docx template
+        run: |
+          cd docs
+          wget https://github.com/myst-templates/docx_default/archive/refs/heads/main.zip
+          mkdir -p _build/templates/docx/myst/default
+          unzip main.zip -d _build/templates/docx/myst/default  
+          cp _build/templates/docx/myst/default/docx_default-main/styles.xml _build/templates/docx/myst/default/styles.xml
       - name: Build HTML Assets
         run: |
           cd docs
           myst build --docx
-          myst build --pdf
+          # myst build --pdf
           myst build --html
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
