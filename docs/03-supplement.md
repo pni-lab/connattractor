@@ -22,20 +22,20 @@ activation.**  See [supplemental_material.ipynb](https://github.com/pni-lab/conn
 **Parameter sweep of fcHNN parameters threshold and beta.** the number of attractor states is color-coded. See [supplemental_material.ipynb](https://github.com/pni-lab/connattractor/blob/master/notebooks/supplemental_material.ipynb) for details.
 :::
 
-:::{figure} figures/supplement/si_state_occupancy_null_model
+:::{figure} figures/supplement/si_state_occupancy_null_model.png
 :name: si_state_occcupancy_null_models
 **Statistical inference of the fcHNN state occupancy prediction with different null models.**
 **A** Results with a spatial autocorrelation-preserving null model for the empirical activity patterns. See [null_models.ipynb](https://github.com/pni-lab/connattractor/blob/master/notebooks/null_models.ipynb) for more details.
 **B** Results where simulated samples are randomly sampled from a multivariate normal distribution, with te functional connectome as the covariance matrix, and compared to the fcHNN performance. See [supplemental_material.ipynb](https://github.com/pni-lab/connattractor/blob/master/notebooks/supplemental_material.ipynb) for details.
 :::
 
-:::{figure} figures/supplement/si_pain_ghost_attractor_sim
+:::{figure} figures/supplement/si_pain_ghost_attractor_sim.png
 :name: si_pain_ghost_attractor_sim
 **FcHNN can reconstruct the pain "ghost attractor".**
 Signal-to-noise values range from 0.003 to 0.009. Asterisk denotes the location of the simulated "ghost attractor". P-values are based on permutation testing, by randomly changing the conditions in a per-participant basis. See [main_analyses.ipynb](https://github.com/pni-lab/connattractor/blob/master/notebooks/main_analyses.ipynb) for more details.
 :::
 
-:::{figure} figures/supplement/si_downreg_trajectory_sim
+:::{figure} figures/supplement/si_downreg_trajectory_sim.png
 :name: si_downreg_trajectory_sim
 **FcHNN can reconstruct the changes in brain dynamics caused by the voluntary donwregulation of pain (as contrasted to upregulation)**
 Signal-to-noise values range from 0.001 to 0.005. P-values are based on permutation testing, by randomly changing the conditions in a per-participant basis. See [main_analyses.ipynb](https://github.com/pni-lab/connattractor/blob/master/notebooks/main_analyses.ipynb) for more details.
