@@ -33,6 +33,7 @@ exports:
     template: arxiv_nips
     output: exports/connattractor_methods.pdf
   - format: docx
+    hideFooter: true
     output: exports/connattractor_methods.docx
 
 bibliography:

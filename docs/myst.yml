@@ -3,7 +3,7 @@ version: 1
 project:
   title: ConnAttractor Website
   short_title: ConnAttractor
-  # description:
+  description: Webpage for functional connectome-based Hopfield Neural Networks
   keywords: []
   license: CC-BY-4.0
   github: https://github.com/pni-lab/connattractor
@@ -12,7 +12,9 @@ site:
   template: book-theme
   title: ConnAttractor
   analytics_google: G-16X8EW2S89 # Measurement ID or Tracking ID
-  # logo:
+  logo: figures/logo-fchnn.png
+  logo_dark: figures/logo-fchnn.png
+  logo_text: fcHNN
   nav: []
   actions:
     - title: PNI-lab
