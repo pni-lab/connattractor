@@ -29,6 +29,10 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 18.x
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install texlive-xetex latexmk libpng-dev libjpeg-dev libtiff-dev imagemagick -y
       - name: Install MyST Markdown
         run: npm install -g mystmd
       - name: Manually download docx template
