@@ -229,6 +229,7 @@ The attractor basins were visualized by using the decision boundaries obtained f
 
 :::{figure} figures/trajectories.png
 :name: example-trajectories
+:width: 66%
 **Examples trajectories on the fcHNN projection.**<br/><br/>
 **A** The fcHNN of study 1 seeded with real activation maps (gray dots) of an example participant. All activation maps converge to one of the four attractor states during the relaxation procedure (without noise). Trajectories are colored by attractor state.
 **B** Illustration of the stochastic relaxation procedure in the same fcHNN model. The system does not converge to an attractor state but instead transverses the state space in a way restricted by the topology of the connectome and the "gravitational pull" of the attractor states. The shade of the trajectory changes with increasing number of iterations. The trajectory is smoothed with a moving average over 10 iterations for visualization purposes.
