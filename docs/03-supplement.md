@@ -2,6 +2,14 @@
 title: Supplementary Information
 #subtitle: Optional Subtitle
 short_title: Supplementary Information
+
+exports:
+  - format: pdf
+    template: arxiv_nips
+    output: exports/connattractor_si.pdf
+  - format: docx
+    hideFooter: true
+    output: exports/connattractor_si.docx
 ---
 
 ## Supplementary Figures
