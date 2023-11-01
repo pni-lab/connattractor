@@ -434,7 +434,7 @@ To conclude, here we have proposed a lightweight, high-level computational frame
 +++ {"part": "acknowledgements"}
 ## Acknowledgements
 
-The work was supported by the Deutsche Forschungsgemeinschaft (DFG, German Research Foundation; projects ‘TRR289 - Treatment Expectation’, ID 422744262 and ‘SFB1280 - Extinction Learning’, ID 316803389).
+The work was supported by the Deutsche Forschungsgemeinschaft (DFG, German Research Foundation; projects ‘TRR289 - Treatment Expectation’, ID 422744262 and ‘SFB1280 - Extinction Learning’, ID 316803389) and by IBS-R015-D1 (Institute for Basic Science; C.W.-W.).
 +++
 
 +++ {"part": "data-availability"}
