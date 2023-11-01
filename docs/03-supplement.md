@@ -23,7 +23,7 @@ activation.**  See [supplemental_material.ipynb](https://github.com/pni-lab/conn
 :::
 
 :::{figure} figures/supplement/si_state_occupancy_null_model.png
-:name: si_state_occcupancy_null_models
+:name: si_state_occupancy_null_models
 **Statistical inference of the fcHNN state occupancy prediction with different null models.**
 **A** Results with a spatial autocorrelation-preserving null model for the empirical activity patterns. See [null_models.ipynb](https://github.com/pni-lab/connattractor/blob/master/notebooks/null_models.ipynb) for more details.
 **B** Results where simulated samples are randomly sampled from a multivariate normal distribution, with te functional connectome as the covariance matrix, and compared to the fcHNN performance. See [supplemental_material.ipynb](https://github.com/pni-lab/connattractor/blob/master/notebooks/supplemental_material.ipynb) for details.
