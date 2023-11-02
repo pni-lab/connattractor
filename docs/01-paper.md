@@ -225,16 +225,7 @@ The resulting two-dimensional embedding ({numref}`attractors`B, bottom plot) exh
 For all subsequent analyses, we set $\sigma=0.37$ (based a coarse optimization procedure aimed at reconstructing the bimodal distribution of empirical data, {numref}`attractors`E right). On the low-dimensional embedding, which we refer to as the *fcHNN projection*, we observed a clear separation of the attractor states ({numref}`attractors`C), with the two symmetric pairs of attractor states located at the extremes of the first and second PC. 
 To map the attractor basins on the space spanned by the first two PCs ({numref}`attractors`C), we obtained the attractor state of each point visited during the stochastic relaxation and fit a multinomial logistic regression model to predict the attractor state from the first two PCs. 
 The resulting model accurately predicted attractor states of arbitrary brain activity patterns, achieving a cross-validated accuracy of 96.5%.
-The attractor basins were visualized by using the decision boundaries obtained from this model. ({numref}`attractors`C). We propose the 2-dimensional fcHNN projection depicted on ({numref}`attractors`C) as a simplified representation of brain dynamics, and use it as a basis for all subsequent analyses in this work. Examples are presented on {numref}`example-trajectories`.
-
-:::{figure} figures/trajectories.png
-:name: example-trajectories
-:width: 66%
-**Examples trajectories on the fcHNN projection.**<br/><br/>
-**A** The fcHNN of study 1 seeded with real activation maps (gray dots) of an example participant. All activation maps converge to one of the four attractor states during the relaxation procedure (without noise). Trajectories are colored by attractor state.
-**B** Illustration of the stochastic relaxation procedure in the same fcHNN model. The system does not converge to an attractor state but instead transverses the state space in a way restricted by the topology of the connectome and the "gravitational pull" of the attractor states. The shade of the trajectory changes with increasing number of iterations. The trajectory is smoothed with a moving average over 10 iterations for visualization purposes.
-**C** Real resting state fMRI data of an example participant from study 1, plotted on the fcHNN projection. The shade of the trajectory changes with increasing number of iterations.
-:::
+The attractor basins were visualized by using the decision boundaries obtained from this model. ({numref}`attractors`C). We propose the 2-dimensional fcHNN projection depicted on ({numref}`attractors`C) as a simplified representation of brain dynamics, and use it as a basis for all subsequent analyses in this work.
 
 ### Reconstruction of resting state brain dynamics
 
@@ -251,11 +242,16 @@ patterns with high neuroscientific relevance, representing sub-systems previousl
 **B** The attractor states show excellent replicability in two external datasets (study 2 and 3, mean correlation 0.93). 
 **C** The fcHNN projection (first two PCs of the fcHNN state space) explains significantly more variance (p<0.0001) in the real 
 resting state fMRI data than principal components derived from the real resting state data itself and generalizes 
-better (p<0.0001) to out-of-sample data (study 2). Error bars denote 99% bootstrapped confidence intervals. 
-**D** The fcHNN analysis accurately predicts (p<0.0001) the fraction of time spent on the basis of the four attractor 
+better (p<0.0001) to out-of-sample data (study 2). Error bars denote 99% bootstrapped confidence intervals.
+**D** The fcHNN of study 1 seeded with real activation maps (gray dots) of an example participant. All activation maps converge to one of the four attractor states during the relaxation procedure (without noise) and the system reaches equilibrium. Trajectories are colored by attractor state.
+**E** Illustration of the stochastic relaxation procedure in the same fcHNN model, seeded from a single starting point (activation pattern). The system does not converge to an attractor state but instead transverses the state space in a way restricted by the topology of the connectome and the "gravitational pull" of the attractor states. The shade of the trajectory changes with increasing number of iterations. The trajectory is smoothed with a moving average over 10 iterations for visualization purposes.
+**F** Real resting state fMRI data of an example participant from study 1, plotted on the fcHNN projection. The shade of the trajectory changes with increasing number of iterations.
+**G** Flow map of the mean trajectories (i.e. the timeframe-to-timeframe transition direction) in fcHNN-generated data, as compared to a shuffled null model representing zero temporal autocorrelation. The flow map reveals that the "gravitational pull" of the attractor states results gives rise to a characteristic temporal autocorrelation structure. 
+**H** A similar pattern can be found in real data (flow analysis of all participants from study 1 pooled, as compared to a shuffled null model representing zero temporal autocorrelation).
+**I** The fcHNN analysis accurately predicts (p<0.0001) the fraction of time spent on the basis of the four attractor 
 states in real restring state fMRI data (study 1) and, 
-**E**, reconstructs the characteristic bimodal distribution of the real resting state data. We observed non-random temporal sequences in both the real resting state data and the fcHNN-generated data ({numref}`Supplementary Figure %s <si_trajectories_vs_randoms>`), highlighting the temporal dependency structure of resting state brain activity and the "gravitational pull" of the attractor states.
-**F** Stochastic fcHNNs are capable of self-reconstruction: the timeseries resulting from the stochastic relaxation procedure 
+**J**, reconstructs the characteristic bimodal distribution of the real resting state data. We observed non-random temporal sequences in both the real resting state data and the fcHNN-generated data, highlighting the temporal dependency structure of resting state brain activity and the "gravitational pull" of the attractor states.
+**K** Stochastic fcHNNs are capable of self-reconstruction: the timeseries resulting from the stochastic relaxation procedure 
 mirror the co-variance structure of the functional connectome the fcHNN model was initialized with. 
 :::
 
@@ -264,9 +260,17 @@ correlation 0.93) across the discovery dataset (study 1) and two independent rep
 ([study 2 and 3](tab-samples), {numref}`rest-validity`C). Moreover, they were found to be robust to noise added to the connectome ({numref}`Supplementary Figure %s <si_noise_robustness_weights>`).
 
 Further analysis in study 1 showed that connectome-based Hopfield models accurately reconstructed multiple 
-characteristics of true resting-state data. 
+characteristics of true resting-state data.
 First, the first two components of the fcHNN projection accounted for a substantial amount of variance in the real resting-state fMRI data in study 1 (mean $R^2=0.399$) and generalized well to out-of-sample data (study 2, mean $R^2=0.396$)  ({numref}`rest-validity`E). Remarkably, the explained variance of the fcHNN projection significantly exceeded that of a PCA performed directly on the real resting-state fMRI data itself ($R^2=0.37$ and $0.364$ for in- and out-of-sample analyses).
-Second, fcHNN analyses accurately reconstructed true resting brain state dynamics. During stochastic relaxation, the fcHNN model was found to spend approximately three-quarters of the time on the basis of the first two attractor states and one-quarter on the basis of the second pair of attractor states (approximately equally distributed between pairs). We observed strikingly similar temporal occupancies in the real data {numref}`rest-validity`D), statistically significant with various null models ({numref}`Supplementary Figure %s <si_state_occupancy_null_models>`). Fine-grained details of the bimodal distribution observed in the real resting-state fMRI data were also convincingly reproduced by the fcHNN model ({numref}`rest-validity`F and {numref}`attractors`E). We found, furthermore, that the temporal dependency structure of both the real and the fcHNN-generated timeseries reflects the "gravitational pull" of attractor states ({numref}`Supplementary Figure %s <si_trajectories_vs_random>`).
+
+Second, fcHNN analyses accurately reconstructed various aspects of true resting brain state dynamics. 
+Panel D on {numref}`rest-validity` shows that, with the conventional Hopfield relaxation procedure, individual activation maps converge to one of the four attractor states. When weak noise is introduced to the system (stochastic relaxation, panel E), the system does not converge to an attractor state but the resulting path is still influenced by the attractor states' gravity. The empirical timeseries data exhibits a similar pattern not only visually (panel F), but also when quantifying the average trajectories of flow, as compared to null-models of zero temporal autocorrelation (randomized timeframe order). ({numref}`rest-validity` G and H, see [Methods](#evaluation-resting-state-dynamics) fro analysis details). 
+
+During stochastic relaxation, the fcHNN model was found to spend approximately three-quarters of the time on the basis of the first two attractor states and one-quarter on the basis of the second pair of attractor states (approximately equally distributed between pairs). We observed strikingly similar temporal occupancies in the real data {numref}`rest-validity`D), statistically significant with various null models ({numref}`Supplementary Figure %s <si_state_occupancy_null_models>`). Fine-grained details of the bimodal distribution observed in the real resting-state fMRI data were also convincingly reproduced by the fcHNN model ({numref}`rest-validity`F and {numref}`attractors`E).
+We found, furthermore, that the temporal dependency structure of both the real and the fcHNN-generated timeseries reflects the "gravitational pull" of attractor states.
+
+
+
 Finally, fcHNNs were found to generate signal that preserves the covariance structure of the real functional connectome, indicating that dynamic systems of this type (including the brain) inevitably "leak" their underlying structure into the activity time series, strengthening the construct validity of our approach ({numref}`rest-validity`D).
 
 ### An explanatory framework for task-based brain activity
