@@ -1,33 +1,39 @@
 ---
-title: Attractor states of the functional brain connectome orchestrate large-scale brain dynamics
+title: Connectome-Based Attractor Dynamics Guide Brain Activity in Rest, Task, and Disease
 subject: manuscript draft
 #subtitle: Optional Subtitle
 short_title: Manuscript
 authors:
     - name: Robert Englert
       affiliations:
+        - Center for Translational Neuro- and Behavioral Sciences (C-TNBS), University Medicine Essen, Germany
         - Department of Diagnostic and Interventional Radiology and Neuroradiology,  University Medicine Essen, Germany
       email: robert.englert@uk-essen.de
       
     - name: Balint Kincses
       affiliations:
+        - Center for Translational Neuro- and Behavioral Sciences (C-TNBS), University Medicine Essen, Germany
         - Department of Neurology, University Medicine Essen, Germany
         
     - name: Raviteja Kotikalapudi
       affiliations:
+        - Center for Translational Neuro- and Behavioral Sciences (C-TNBS), University Medicine Essen, Germany
         - Department of Neurology, University Medicine Essen, Germany
         
     - name: Giuseppe Gallitto
       affiliations:
+        - Center for Translational Neuro- and Behavioral Sciences (C-TNBS), University Medicine Essen, Germany
         - Department of Neurology, University Medicine Essen, Germany
         
     - name: Jialin Li
       affiliations:
+        - Center for Translational Neuro- and Behavioral Sciences (C-TNBS), University Medicine Essen, Germany
         - Department of Neurology, University Medicine Essen, Germany
         - Max Planck School of Cognition, Leipzig, Germany
         
     - name: Kevin Hoffschlag
       affiliations:
+        - Center for Translational Neuro- and Behavioral Sciences (C-TNBS), University Medicine Essen, Germanys
         - Department of Neurology, University Medicine Essen, Germany
     
     - name: Choong-Wan Woo
@@ -99,14 +105,16 @@ bibliography:
 **Key Points:**
 - We present a simple yet powerful computational model for large-scale brain dynamics
 - The model uses a functional connectome-based Hopfield artificial neural network (fcHNN) architecture to compute recurrent "activity flow" through the functional brain connectome
-- FcHNNs accurately reconstruct the dynamic repertoire of the brain in resting conditions
+- FcHNN attractor dynamics accurately reconstruct the dynamic repertoire of the brain in resting conditions
 - FcHNNs conceptualize both task-induced and pathological changes in brain activity as a non-linear shift in these dynamics
-- Our approach is validated using data from seven studies involving approximately 1000 participants
+- Our approach is validated using large-scale neuroimaging data from seven studies
+- FcHNNs offers a simple and interpretable computational alternative to conventional descriptive analyses of brain function
+
 +++
 
 +++ {"part": "abstract"}
 Understanding large-scale brain dynamics is a grand challenge in neuroscience. 
-We propose functional connectome-based Hopfield neural networks (fcHNNs) as a model of macro-scale brain dynamics, arising from recurrent activity flow among brain regions. An fcHNN is neither optimized to mimic certain brain characteristics, nor trained to solve specific tasks; its weights are simply initialized with empirical functional connectivity values.
+We propose functional connectome-based Hopfield Neural Networks (fcHNNs) as a model of macro-scale brain dynamics, arising from recurrent activity flow among brain regions. An fcHNN is neither optimized to mimic certain brain characteristics, nor trained to solve specific tasks; its weights are simply initialized with empirical functional connectivity values.
 In the fcHNN framework, brain dynamics are understood in relation to so-called attractor states, i.e. neurobiologically meaningful low-energy activity configurations.
 Analyses of 7 distinct datasets demonstrate that fcHNNs can accurately reconstruct and predict brain dynamics under a wide range of conditions, including resting and task states and brain disorders.
 By establishing a mechanistic link between connectivity and activity, fcHNNs offers a simple and interpretable  computational alternative to conventional descriptive analyses of brain function. Being a generative framework, fcHNNs can yield mechanistic insights and hold potential to uncover novel treatment targets.
