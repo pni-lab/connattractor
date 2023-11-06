@@ -4,6 +4,7 @@ project:
   title: ConnAttractor Website
   short_title: Home
   description: Webpage for functional connectome-based Hopfield Neural Networks
+  thumbnail: figures/concept.png
   keywords: []
   license: CC-BY-4.0
   github: https://github.com/pni-lab/connattractor
