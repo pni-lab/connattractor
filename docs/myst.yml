@@ -2,7 +2,7 @@
 version: 1
 project:
   title: ConnAttractor Website
-  short_title: ConnAttractor
+  short_title: Home
   description: Webpage for functional connectome-based Hopfield Neural Networks
   keywords: []
   license: CC-BY-4.0
