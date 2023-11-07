@@ -15,7 +15,7 @@ The fcHNN framework offers a simple, interpretable computational alternative to 
 ::::{grid} 1 2 4 4
 
 :::{grid-item-card}
-:link: paper
+:link: 01-paper.md
 :header: **Manuscript**
 ```{image} figures/thumbnail.png
 :alt: paper
@@ -35,7 +35,7 @@ The fcHNN framework offers a simple, interpretable computational alternative to 
 :::
 
 :::{grid-item-card}
-:link: package
+:link: 04-package.ipynb
 :header: **Quickstart Guide**
 ```{image} figures/fchnn_projection.png
 :alt: fcHNN
@@ -45,7 +45,7 @@ The fcHNN framework offers a simple, interpretable computational alternative to 
 :::
 
 :::{grid-item-card}
-:link: citation
+:link: 05-citation.md
 :header: **Citation**
 ```{image} figures/bib.png
 :alt: fcHNN
