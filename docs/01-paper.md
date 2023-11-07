@@ -67,6 +67,7 @@ abbreviations:
   fMRI: functional Magnetic Resonance Imaging
   ANN: Artificial Neural Network
   fcHNN: functional connectome-based Hopfield Neural Network
+  FcHNN: functional connectome-based Hopfield Neural Network
   HNN: Hopfield Neural Network
   PC: Principal Component
   ABIDE: Autism Brain Imaging Data Exchange
