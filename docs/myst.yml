@@ -1,16 +1,107 @@
 # See docs at: https://mystmd.org/guide/frontmatter
 version: 1
 project:
-  title: ConnAttractor Website
-  short_title: Home
+  title: Connectome-Based Attractor Dynamics Underly Brain Activity in Rest, Task, and Disease
+  subject: manuscript draft
+  #subtitle: Optional Subtitle
+  short_title: Manuscript
+  authors:
+    - name: Robert Englert
+      affiliations:
+        - Center for Translational Neuro- and Behavioral Sciences (C-TNBS), University Medicine Essen, Germany
+        - Department of Diagnostic and Interventional Radiology and Neuroradiology,  University Medicine Essen, Germany
+      email: robert.englert@uk-essen.de
+
+    - name: Balint Kincses
+      affiliations:
+        - Center for Translational Neuro- and Behavioral Sciences (C-TNBS), University Medicine Essen, Germany
+        - Department of Neurology, University Medicine Essen, Germany
+
+    - name: Raviteja Kotikalapudi
+      affiliations:
+        - Center for Translational Neuro- and Behavioral Sciences (C-TNBS), University Medicine Essen, Germany
+        - Department of Neurology, University Medicine Essen, Germany
+
+    - name: Giuseppe Gallitto
+      affiliations:
+        - Center for Translational Neuro- and Behavioral Sciences (C-TNBS), University Medicine Essen, Germany
+        - Department of Neurology, University Medicine Essen, Germany
+
+    - name: Jialin Li
+      affiliations:
+        - Center for Translational Neuro- and Behavioral Sciences (C-TNBS), University Medicine Essen, Germany
+        - Department of Neurology, University Medicine Essen, Germany
+        - Max Planck School of Cognition, Leipzig, Germany
+
+    - name: Kevin Hoffschlag
+      affiliations:
+        - Center for Translational Neuro- and Behavioral Sciences (C-TNBS), University Medicine Essen, Germanys
+        - Department of Neurology, University Medicine Essen, Germany
+
+    - name: Choong-Wan Woo
+      affiliations:
+        - Center for Neuroscience Imaging Research, Institute for Basic Science, Suwon, South Korea
+        - Department of Biomedical Engineering, Sungkyunkwan University, Suwon, South Korea
+
+    - name: Tor D. Wager
+      affiliations:
+        - Department of Psychological and Brain Sciences, Dartmouth College, Hanover, NH, USA
+
+    - name: Dagmar Timmann
+      affiliations:
+        - Department of Neurology, University Medicine Essen, Germany
+        - Center for Translational Neuro- and Behavioral Sciences (C-TNBS), University Medicine Essen, Germany
+
+    - name: Ulrike Bingel
+      affiliations:
+        - Department of Neurology, University Medicine Essen, Germany
+        - Center for Translational Neuro- and Behavioral Sciences (C-TNBS), University Medicine Essen, Germany
+
+    - name: Tamas Spisak
+      affiliations:
+        - Department of Diagnostic and Interventional Radiology and Neuroradiology,  University Medicine Essen, Germany
+        - Center for Translational Neuro- and Behavioral Sciences (C-TNBS), University Medicine Essen, Germany
+      orcid: 0000-0002-2942-0821
+      email: tamas.spisak@uk-essen.de
+      corresponding: True
+
+  abbreviations:
+    fMRI: functional Magnetic Resonance Imaging
+    ANN: Artificial Neural Network
+    fcHNN: functional connectome-based Hopfield Neural Network
+    HNN: Hopfield Neural Network
+    PC: Principal Component
+    ABIDE: Autism Brain Imaging Data Exchange
+    ASD: Autism Spectrum Disorder
+    MCC: Middle Cingulate Cortex
+    ACC: Anterior Cingulate Cortex
+    pg: perigenual
+    PFC: Prefrontal Cortex
+    dm: dorsomedial
+    dl: dorsolateral
+    STG: Superior Temporal Gyrus
+    MTG: Middle Temporal Gyrus
+    ITG: Inferior Temporal Gyrus
+    Caud/Acc: Caudate-Accumbens
+    SM: Sensorimotor
+    V1: Primary Visual
+    A1: Primary Auditory
+    Hipp: Parahippocampal Gyrus
+    Precun: Precuneus
+    SMA: Supplementary Motor Cortex
+    IPL: Inferior Parietal Lobule
+
   description: Webpage for functional connectome-based Hopfield Neural Networks
   thumbnail: figures/concept.png
+  banner: figures/banner.png
+  doi: https://doi.org/10.1101/2023.11.03.565516
+  date: 2023/11/05
   keywords: []
   license: CC-BY-4.0
   github: https://github.com/pni-lab/connattractor
   # bibliography: []
 site:
-  template: book-theme
+  template: article-theme
   title: ConnAttractor
   analytics_google: G-16X8EW2S89 # Measurement ID or Tracking ID
   logo: figures/logo-fchnn.png
@@ -21,5 +112,3 @@ site:
     - title: PNI-lab
       url: https://pni-lab.github.io/
   domains: []
-
-
