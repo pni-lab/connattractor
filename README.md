@@ -13,11 +13,15 @@ Laboratory for Predictive Neuroimaging - University Hospital Essen, Germany
 
 ## How to install the connattractor package?
 
-*TODO*
+The package 'connattractor' will be soon available on PyPI.
 
-```bash
+Afterwards the preferred way to install it will be:
+
+```
 pip install connattractor
 ```
+
+For now, the easiest way to try out the package is using docker, see below:
 
 ## How to re-run the analyses?
 
