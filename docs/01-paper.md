@@ -1,33 +1,39 @@
 ---
-title: Attractor states of the functional brain connectome orchestrate large-scale brain dynamics
+title: Connectome-Based Attractor Dynamics Underly Brain Activity in Rest, Task, and Disease
 subject: manuscript draft
 #subtitle: Optional Subtitle
 short_title: Manuscript
 authors:
     - name: Robert Englert
       affiliations:
+        - Center for Translational Neuro- and Behavioral Sciences (C-TNBS), University Medicine Essen, Germany
         - Department of Diagnostic and Interventional Radiology and Neuroradiology,  University Medicine Essen, Germany
       email: robert.englert@uk-essen.de
       
     - name: Balint Kincses
       affiliations:
+        - Center for Translational Neuro- and Behavioral Sciences (C-TNBS), University Medicine Essen, Germany
         - Department of Neurology, University Medicine Essen, Germany
         
     - name: Raviteja Kotikalapudi
       affiliations:
+        - Center for Translational Neuro- and Behavioral Sciences (C-TNBS), University Medicine Essen, Germany
         - Department of Neurology, University Medicine Essen, Germany
         
     - name: Giuseppe Gallitto
       affiliations:
+        - Center for Translational Neuro- and Behavioral Sciences (C-TNBS), University Medicine Essen, Germany
         - Department of Neurology, University Medicine Essen, Germany
         
     - name: Jialin Li
       affiliations:
+        - Center for Translational Neuro- and Behavioral Sciences (C-TNBS), University Medicine Essen, Germany
         - Department of Neurology, University Medicine Essen, Germany
         - Max Planck School of Cognition, Leipzig, Germany
         
     - name: Kevin Hoffschlag
       affiliations:
+        - Center for Translational Neuro- and Behavioral Sciences (C-TNBS), University Medicine Essen, Germanys
         - Department of Neurology, University Medicine Essen, Germany
     
     - name: Choong-Wan Woo
@@ -61,6 +67,7 @@ abbreviations:
   fMRI: functional Magnetic Resonance Imaging
   ANN: Artificial Neural Network
   fcHNN: functional connectome-based Hopfield Neural Network
+  FcHNN: functional connectome-based Hopfield Neural Network
   HNN: Hopfield Neural Network
   PC: Principal Component
   ABIDE: Autism Brain Imaging Data Exchange
@@ -99,14 +106,16 @@ bibliography:
 **Key Points:**
 - We present a simple yet powerful computational model for large-scale brain dynamics
 - The model uses a functional connectome-based Hopfield artificial neural network (fcHNN) architecture to compute recurrent "activity flow" through the functional brain connectome
-- FcHNNs accurately reconstruct the dynamic repertoire of the brain in resting conditions
+- FcHNN attractor dynamics accurately reconstruct the dynamic repertoire of the brain in resting conditions
 - FcHNNs conceptualize both task-induced and pathological changes in brain activity as a non-linear shift in these dynamics
-- Our approach is validated using data from seven studies involving approximately 1000 participants
+- Our approach is validated using large-scale neuroimaging data from seven studies
+- FcHNNs offers a simple and interpretable computational alternative to conventional descriptive analyses of brain function
+
 +++
 
 +++ {"part": "abstract"}
 Understanding large-scale brain dynamics is a grand challenge in neuroscience. 
-We propose functional connectome-based Hopfield neural networks (fcHNNs) as a model of macro-scale brain dynamics, arising from recurrent activity flow among brain regions. An fcHNN is neither optimized to mimic certain brain characteristics, nor trained to solve specific tasks; its weights are simply initialized with empirical functional connectivity values.
+We propose functional connectome-based Hopfield Neural Networks (fcHNNs) as a model of macro-scale brain dynamics, arising from recurrent activity flow among brain regions. An fcHNN is neither optimized to mimic certain brain characteristics, nor trained to solve specific tasks; its weights are simply initialized with empirical functional connectivity values.
 In the fcHNN framework, brain dynamics are understood in relation to so-called attractor states, i.e. neurobiologically meaningful low-energy activity configurations.
 Analyses of 7 distinct datasets demonstrate that fcHNNs can accurately reconstruct and predict brain dynamics under a wide range of conditions, including resting and task states and brain disorders.
 By establishing a mechanistic link between connectivity and activity, fcHNNs offers a simple and interpretable  computational alternative to conventional descriptive analyses of brain function. Being a generative framework, fcHNNs can yield mechanistic insights and hold potential to uncover novel treatment targets.
@@ -118,7 +127,7 @@ Brain function is characterized by the continuous activation and deactivation of
 populations {cite:p}`buzsaki2006rhythms`.
 Irrespective of the presence or absence of explicit stimuli, brain regions appear to work in concert, giving rise to a
 rich and spatiotemporally complex fluctuation {cite:p}`bassett2017network`.
-This fluctuation is neither random, nor stationary over time {cite:p}`liu2013time; zalesky2014time`.
+This fluctuation is neither random nor stationary over time {cite:p}`liu2013time; zalesky2014time`.
 It is organized around large-scale gradients {cite:p}`margulies2016situating; huntenburg2018large` and exhibits quasi-periodic properties, with a limited number of recurring patterns known as "brain states" {cite:p}`greene2023everyone; vidaurre2017brain; liu2013time`.
 
 A wide variety of descriptive techniques have been previously employed to characterize whole-brain dynamics {cite:p}`smith2012temporally; vidaurre2017brain; liu2013time; chen2018human`. 
@@ -129,18 +138,18 @@ However, the underlying driving forces remain elusive due to the descriptive nat
 Conventional computational approaches attempt to solve this puzzle by going all the way down to the biophysical properties of single neurons, and aim to construct a model of larger neural populations, or even the entire brain 
 {cite:p}`breakspear2017dynamic`.
 These approaches have shown numerous successful applications {cite:p}`murray2018biophysical; kriegeskorte2018cognitive; heinz2019towards`.
-However, the estimation of the vast number of free parameters in such models hampers their ability to effectively bridge the gap between explanations at the level of single neurons and the complexity of behavior {cite:p}`breakspear2017dynamic`.
-Recent efforts using coarse-grained brain network models {cite:p}`schirner2022dynamic; schiff1994controlling; papadopoulos2017development` and linear network control theory  {cite:p}`chiem2021structure; scheid2021time; gu2015controllability` opted to trade biophysical fidelity to phenomenological validity. The challenge for such models lies in modelling the relation between the structural wiring of the brain and functional connectivity.
+However, the need to estimate a vast number of free parameters in such models hampers their ability to effectively bridge the gap between explanations at the level of single neurons and the complexity of behavior {cite:p}`breakspear2017dynamic`.
+Recent efforts using coarse-grained brain network models {cite:p}`schirner2022dynamic; schiff1994controlling; papadopoulos2017development; seguin2023brain` and linear network control theory  {cite:p}`chiem2021structure; scheid2021time; gu2015controllability` opted to trade biophysical fidelity to phenomenological validity. The challenge for such models lies in modelling the relation between the structural wiring of the brain and functional connectivity.
 The "neuroconnectionist" approach, on the other hand, {cite:p}`doerig2023neuroconnectionist` aims at "cognitive/behavioral fidelity" {cite:p}`kriegeskorte2018cognitive`, by using artificial neural networks (ANNs) that are trained to perform various tasks, as brain models. However, the need to train ANNs for specific tasks inherently limits their ability to explain task-independent, spontaneous neural dynamics {cite:p}`richards2019deep`.
 
 Here we propose a novel approach that combines the advantages of large-scale network models and neuroconnectionism, to investigate brain dynamics.
 Similar to neuroconnectionism, we utilize an ANN as a high-level computational model of the brain.
 However, our model is not explicitly trained for a specific task. Instead, we set its weights empirically, with data based on the "activity flow" {cite:p}`cole2016activity; ito2017cognitive` across regions within the functional brain connectome, as measured with functional magnetic resonance imaging (fMRI, {numref}`concept`B). 
 
-Specifically, we employ a continuous-space Hopfield neural network (HNN) {cite:p}`hopfield1982neural; krotov2023new`, with its nodes representing large-scale brain areas, and its weights initialized with the functional connectivity values between these areas.
+Specifically, we employ a continuous-space Hopfield Neural Network (HNN) {cite:p}`hopfield1982neural; krotov2023new`, with its nodes representing large-scale brain areas, and its weights initialized with the functional connectivity values between these areas.
 Based on the topology of the functional connectome, this architecture establishes an energy level for any arbitrary activation patterns and determines a "trajectory of least action" towards one of the finite number of stable patterns, known as *attractor states*, that minimize this energy.
-In this simplistic yet powerful framework, brain dynamics can be conceptualized as an intricate, high-dimensional path on the energy landscape ({numref}`concept`C), arising from the activity flow {cite:p}`cole2016activity` within the functional connectome and constrained by the "gravitational pull" of the attractor states of the system.
-Given its generative nature, the proposed model offers testable predictions for the effect of various perturbations and alterations of these dynamics, from task-induced activity, to changes related to brain disorders.
+In this simple yet powerful framework, brain dynamics can be conceptualized as an intricate, high-dimensional path on the energy landscape ({numref}`concept`C), arising from the activity flow {cite:p}`cole2016activity` within the functional connectome and constrained by the "gravitational pull" of the attractor states of the system.
+Given its generative nature, the proposed model offers testable predictions for the effect of various perturbations and alterations of these dynamics, from task-induced activity to changes related to brain disorders.
 
 :::{figure} figures/concept.png
 :name: concept
@@ -164,10 +173,10 @@ Subsequently, we use a diverse set of experimental, clinical and meta-analytic s
 ### Connectome-based Hopfield network as a model of brain dynamics
 
 First, we explored the attractor states of the functional connectome in a sample of n=41 healthy young 
-participants ([study 1](tab-samples)). We estimated interregional activity flow {cite:p}`cole2016activity; ito2017cognitive` 
+participants ([study 1](tab-samples), see Methods [](tab-samples) for details). We estimated interregional activity flow {cite:p}`cole2016activity; ito2017cognitive` 
 as the study-level average of regularized partial correlations among the resting state fMRI timeseries of m = 122 
 functionally defined brain regions (see [Methods](#Functional-connectome) for details). We then used the standardized 
-functional connectome as the $w_{ij}$  weights of a fully connected recurrent ANN, specifically a continuous-state Hopfield network {cite:p}`hopfield1982neural; koiran1994dynamics` consisting of $m$ neural units, each having an activity 
+functional connectome as the $w_{ij}$  weights of a fully connected recurrent ANN, specifically a continuous-state Hopfield network {cite:p}`hopfield1982neural; koiran1994dynamics`, consisting of $m$ neural units, each having an activity 
 $a_i \in [-1,1] \subset \mathbb{R})$. Hopfield networks can be initialized by an arbitrary activation pattern (consisting of $m$ activation values) and iteratively updated (i.e. "relaxed") until their energy converges a local minimum, that is, to one of the finite number of attractor states (see [Methods](#connectome-based-hopfield-networks)). The relaxation procedure is based on a simple rule; in each iteration, the activity of a region is constructed as the weighted average of the activities of all other regions, with weights defined by the connectivity between them. The average is then transformed by a sigmoidal activation function, to keep it in the desired [-1,1] interval.
 This can be expressed by the following equation:
 
@@ -189,13 +198,13 @@ Hopfield network in study 1 ({numref}`attractors`A, bottom panel).
 **Attractor states and state-space dynamics of connectome-based Hopfield networks** <br/><br/>
 **A** Top: During so-called relaxation procedure, activities in the nodes of an fcHNN model are iteratively updated based on the activity of all other regions and the connectivity between them. The energy of a
 connectome-based Hopfield network decreases during the relaxation procedure until reaching an equilibrium state with 
-minimal energy, i.e. an attractor state. Bottom: Four attractor states of the CHNN derived from the
+minimal energy, i.e. an attractor state. Bottom: Four attractor states of the fcHNN derived from the
 group-level functional connectivity matrix from [study 1](tab-samples) (n=44). 
-**B** Top: Similarly to stochastic dynamic causal modeling, in presence of weak noise (stochastic update), the system 
-does not converge to equilibrium anymore. Instead, activity transverses on the state landscape in a way 
+**B** Top: In presence of weak noise (stochastic update), the system 
+does not converge to equilibrium anymore. Instead, activity traverses on the state landscape in a way 
 restricted by the topology of the connectome and the "gravitational pull" of the attractor states. Bottom: We sample 
-the state space by running the stochastic relaxation procedure for an extended amount of time (e.g. 100.000 consecutive
-stochastic updates), each point representing a possible activation configuration (state). To construct a 
+the "state landscape" by running the stochastic relaxation procedure for an extended amount of time (e.g. 100.000 consecutive
+stochastic updates), each point representing an activation configuration or state. To construct a 
 low-dimensional representation of the state space, we take the first two principal components of the simulated activity
 patterns. The first two principal components explain approximately 58-85% of the variance of state energy (depending 
 on the noise parameter $\sigma$, see {numref}`Supplementary Figure %s <si_expl_variance_energy>`).
@@ -220,7 +229,7 @@ FcHNNs, without any modifications, always converge to an equilibrium state.
 To incorporate stochastic fluctuations in neuronal activity {cite:p}`robinson2005multiscale`, we introduced weak 
 Gaussian noise to the fcHNN relaxation procedure. This procedure, referred to as stochastic relaxation, prevents the system from reaching equilibrium and, somewhat similarly to stochastic DCM {cite:p}`daunizeau2012stochastic`, induces complex system dynamics ({numref}`attractors`B).
 
-In order to enhance interpretability, we obtained the first two principal components (PCs) of the states sampled from stochastic relaxation procedure.
+In order to enhance interpretability, we obtained the first two principal components (PCs) of the states sampled from the stochastic relaxation procedure.
 The resulting two-dimensional embedding ({numref}`attractors`B, bottom plot) exhibited high consistency across different values of $\beta$ and $\sigma$ ({numref}`attractors`E).
 For all subsequent analyses, we set $\sigma=0.37$ (based a coarse optimization procedure aimed at reconstructing the bimodal distribution of empirical data, {numref}`attractors`E right). On the low-dimensional embedding, which we refer to as the *fcHNN projection*, we observed a clear separation of the attractor states ({numref}`attractors`C), with the two symmetric pairs of attractor states located at the extremes of the first and second PC. 
 To map the attractor basins on the space spanned by the first two PCs ({numref}`attractors`C), we obtained the attractor state of each point visited during the stochastic relaxation and fit a multinomial logistic regression model to predict the attractor state from the first two PCs. 
@@ -229,28 +238,28 @@ The attractor basins were visualized by using the decision boundaries obtained f
 
 ### Reconstruction of resting state brain dynamics
 
-The spatial patterns of the obtained attractor states exhibit high neuroscientific relevance and closely resemble previously described large-scale brain systems. ({numref}`rest-validity`A). The first pair of attractors (mapped on PC1, horizontal axis) resemble the two complementary “macro” systems described, among others, by {cite:t}`golland2008data` and {cite:t}`cioli2014differences` as well as the two "primary" brain states observed by {cite:t}`chen2018human` and the 'unimodal to transmodal' principal gradient of {cite:t}`margulies2016situating` and {cite:t}` huntenburg2018large`. A common interpretation of these two patterns is that they represent (i) an “extrinsic” system linked to the immediate sensory environment and (ii) an "intrinsic" system for higher-level internal context.
+The spatial patterns of the obtained attractor states exhibit high neuroscientific relevance and closely resemble previously described large-scale brain systems. ({numref}`rest-validity`A). The first pair of attractors (mapped on PC1, horizontal axis) resemble the two complementary “macro” systems described, among others, by {cite:t}`golland2008data` and {cite:t}`cioli2014differences` as well as the two "primary" brain states observed by {cite:t}`chen2018human` and the 'unimodal-to-transmodal' principal gradient of {cite:t}`margulies2016situating` and {cite:t}` huntenburg2018large`. A common interpretation of these two patterns is that they represent (i) an “extrinsic” system linked to the immediate sensory environment and (ii) an "intrinsic" system for higher-level internal context.
 The other pair of attractors spans an orthogonal axis, and resemble to patterns commonly associated with perception–action cycles {cite:p}`fuster2004upper`, and described as a gradient across sensory-motor modalities {cite:p}`huntenburg2018large`, recruiting regions associated with active inference (e.g. motor cortices) and perceptual inference (e.g visual areas).
 
 :::{figure} figures/face_validity.png 
 :name: rest-validity
 **Connectome-based Hopfield networks reconstruct characteristics of real resting state brain activity.**<br/><br/>
 **A** The four attractor states of the fcHNN model from study 1 reflect brain activation 
-patterns with high neuroscientific relevance, representing sub-systems previously associated with 'internal context'
-(blue), "external context" (yellow), "action/execution" (red) and "perception" (green)
+patterns with high neuroscientific relevance, representing sub-systems previously associated with "internal context"
+(blue), "external context" (yellow), "action" (red) and "perception" (green)
 {cite:p}`golland2008data; cioli2014differences; chen2018human; fuster2004upper; margulies2016situating`.
 **B** The attractor states show excellent replicability in two external datasets (study 2 and 3, mean correlation 0.93). 
 **C** The fcHNN projection (first two PCs of the fcHNN state space) explains significantly more variance (p<0.0001) in the real 
 resting state fMRI data than principal components derived from the real resting state data itself and generalizes 
 better (p<0.0001) to out-of-sample data (study 2). Error bars denote 99% bootstrapped confidence intervals.
 **D** The fcHNN of study 1 seeded with real activation maps (gray dots) of an example participant. All activation maps converge to one of the four attractor states during the relaxation procedure (without noise) and the system reaches equilibrium. Trajectories are colored by attractor state.
-**E** Illustration of the stochastic relaxation procedure in the same fcHNN model, seeded from a single starting point (activation pattern). The system does not converge to an attractor state but instead transverses the state space in a way restricted by the topology of the connectome and the "gravitational pull" of the attractor states. The shade of the trajectory changes with increasing number of iterations. The trajectory is smoothed with a moving average over 10 iterations for visualization purposes.
-**F** Real resting state fMRI data of an example participant from study 1, plotted on the fcHNN projection. The shade of the trajectory changes with increasing number of iterations.
-**G** Flow map of the mean trajectories (i.e. the timeframe-to-timeframe transition direction) in fcHNN-generated data, as compared to a shuffled null model representing zero temporal autocorrelation. The flow map reveals that the "gravitational pull" of the attractor states results gives rise to a characteristic temporal autocorrelation structure. 
+**E** Illustration of the stochastic relaxation procedure in the same fcHNN model, seeded from a single starting point (activation pattern). The system does not converge to an attractor state but instead traverses the state space in a way restricted by the topology of the connectome and the "gravitational pull" of the attractor states. The shade of the trajectory changes with increasing number of iterations. The trajectory is smoothed with a moving average over 10 iterations for visualization purposes.
+**F** Real resting state fMRI data of an example participant from study 1, plotted on the fcHNN projection. The shade of the trajectory changes with an increasing number of iterations.
+**G** Flow map of the mean trajectories (i.e. the timeframe-to-timeframe transition direction) in fcHNN-generated data, as compared to a shuffled null model representing zero temporal autocorrelation. The flow map reveals that the "gravitational pull" of the attractor states gives rise to a characteristic temporal autocorrelation structure. 
 **H** A similar pattern can be found in real data (flow analysis of all participants from study 1 pooled, as compared to a shuffled null model representing zero temporal autocorrelation).
 **I** The fcHNN analysis accurately predicts (p<0.0001) the fraction of time spent on the basis of the four attractor 
 states in real restring state fMRI data (study 1) and, 
-**J**, reconstructs the characteristic bimodal distribution of the real resting state data. We observed non-random temporal sequences in both the real resting state data and the fcHNN-generated data, highlighting the temporal dependency structure of resting state brain activity and the "gravitational pull" of the attractor states.
+**J**, reconstructs the characteristic bimodal distribution of the real resting state data.
 **K** Stochastic fcHNNs are capable of self-reconstruction: the timeseries resulting from the stochastic relaxation procedure 
 mirror the co-variance structure of the functional connectome the fcHNN model was initialized with. 
 :::
@@ -261,15 +270,12 @@ correlation 0.93) across the discovery dataset (study 1) and two independent rep
 
 Further analysis in study 1 showed that connectome-based Hopfield models accurately reconstructed multiple 
 characteristics of true resting-state data.
-First, the first two components of the fcHNN projection accounted for a substantial amount of variance in the real resting-state fMRI data in study 1 (mean $R^2=0.399$) and generalized well to out-of-sample data (study 2, mean $R^2=0.396$)  ({numref}`rest-validity`E). Remarkably, the explained variance of the fcHNN projection significantly exceeded that of a PCA performed directly on the real resting-state fMRI data itself ($R^2=0.37$ and $0.364$ for in- and out-of-sample analyses).
+First, the two axes of the fcHNN projection accounted for a substantial amount of variance in the real resting-state fMRI data in study 1 (mean $R^2=0.399$) and generalized well to out-of-sample data (study 2, mean $R^2=0.396$)  ({numref}`rest-validity`E). Remarkably, the explained variance of the fcHNN projection significantly exceeded that of a PCA performed directly on the real resting-state fMRI data itself ($R^2=0.37$ and $0.364$ for in- and out-of-sample analyses).
 
-Second, fcHNN analyses accurately reconstructed various aspects of true resting brain state dynamics. 
-Panel D on {numref}`rest-validity` shows that, with the conventional Hopfield relaxation procedure, individual activation maps converge to one of the four attractor states. When weak noise is introduced to the system (stochastic relaxation, panel E), the system does not converge to an attractor state but the resulting path is still influenced by the attractor states' gravity. The empirical timeseries data exhibits a similar pattern not only visually (panel F), but also when quantifying the average trajectories of flow, as compared to null-models of zero temporal autocorrelation (randomized timeframe order). ({numref}`rest-validity` G and H, see [Methods](#evaluation-resting-state-dynamics) fro analysis details). 
+Second, fcHNN analyses accurately reconstructed various aspects of true resting state brain dynamics. 
+Panel D on {numref}`rest-validity` shows that, with the conventional Hopfield relaxation procedure, individual activation maps converge to one of the four attractor states. When weak noise is introduced to the system (stochastic relaxation, panel E), the system does not converge to an attractor state but the resulting path is still influenced by the attractor states' gravity. The empirical timeseries data exhibits a similar pattern not only visually (panel F), but also when quantifying the average trajectories of flow, as compared to null-models of zero temporal autocorrelation (randomized timeframe order), reflecting the "gravitational pull" of attractor states ({numref}`rest-validity` G and H, see [Methods](#evaluation-resting-state-dynamics) fro analysis details). 
 
 During stochastic relaxation, the fcHNN model was found to spend approximately three-quarters of the time on the basis of the first two attractor states and one-quarter on the basis of the second pair of attractor states (approximately equally distributed between pairs). We observed strikingly similar temporal occupancies in the real data {numref}`rest-validity`D), statistically significant with various null models ({numref}`Supplementary Figure %s <si_state_occupancy_null_models>`). Fine-grained details of the bimodal distribution observed in the real resting-state fMRI data were also convincingly reproduced by the fcHNN model ({numref}`rest-validity`F and {numref}`attractors`E).
-We found, furthermore, that the temporal dependency structure of both the real and the fcHNN-generated timeseries reflects the "gravitational pull" of attractor states.
-
-
 
 Finally, fcHNNs were found to generate signal that preserves the covariance structure of the real functional connectome, indicating that dynamic systems of this type (including the brain) inevitably "leak" their underlying structure into the activity time series, strengthening the construct validity of our approach ({numref}`rest-validity`D).
 
@@ -279,7 +285,7 @@ Next to reproducing various characteristics of spontaneous brain dynamics, fcHNN
 
 We found that activity changes due to pain (taking into account hemodynamics, see [Methods](#evaluation-task-based-dynamics)) were characterized on the fcHNN projection by a shift towards the attractor state of action/execution (permutation test for mean projection difference by randomly swapping conditions, p<0.001, {numref}`task-validity`A, left). Energies, as defined by the fcHNN, were also significantly different between the two conditions (p<0.001), with higher energies during pain stimulation.
 
-When participants were instructed to up- or downregulate their pain sensation (resulting in increased and decreased pain reports and differential brain activity in the nucleus accumbens, NAc (see {cite}`woo2015distinct` for details), we observed further changes of the location of momentary brain activity patterns on the fcHNN projection (p<0.001, {numref}`task-validity`A, right), with down-regulation pulling brain dynamics towards the attractor state of internal context and perception. Interestingly, self-regulation did not trigger significant energy changes (p=0.36). 
+When participants were instructed to up- or downregulate their pain sensation (resulting in increased and decreased pain reports and differential brain activity in the nucleus accumbens, NAc (see {cite}`woo2015distinct` for details), we observed further changes of the location of momentary brain activity patterns on the fcHNN projection (p<0.001, {numref}`task-validity`A, right), with downregulation pulling brain dynamics towards the attractor state of internal context and perception. Interestingly, self-regulation did not trigger significant energy changes (p=0.36). 
 
 :::{figure} figures/task_validity.png
 :name: task-validity
@@ -299,16 +305,16 @@ other circle plots).
 :::
 
 Next, we conducted a "flow analysis" on the fcHNN projection, quantifying how the average timeframe-to-timeframe transition direction differs on the fcHNN projection between conditions (see [Methods](#evaluation-task-based-dynamics)).
-This analysis unveiled that during pain ({numref}`task-validity`B, left side), brain activity tends to gravitate towards a distinct point on the projection, which we term the "ghost attractor" of pain (similar to {cite}`vohryzek2020ghost`). on the boundary the basins of the internal and action attractors. In case of downregulation (as compared to upregulation), brain activity is pulled away from the pain-related "ghost attractor" ({numref}`task-validity`C, left side), towards the attractor of internal context.
+This analysis unveiled that during pain ({numref}`task-validity`B, left side), brain activity tends to gravitate towards a distinct point on the projection on the boundary the basins of the internal and action attractors, which we term the "ghost attractor" of pain (similar to {cite}`vohryzek2020ghost`). In case of downregulation (as compared to upregulation), brain activity is pulled away from the pain-related "ghost attractor" ({numref}`task-validity`C, left side), towards the attractor of internal context.
 
-Our fcHNN was able to accurately reconstruct these non-linear dynamics by adding a small amount of realistic "control signal" (similarly to network control theory {cite}`liu2011controllability; gu2015controllability`). To simulate the alterations in brain dynamics during pain stimulation, we acquired a meta-analytic pain activation map {cite:p}`zunhammer2021meta` (n=603) and incorporated it as a control signal added to each iteration of the the stochastic relaxation procedure. The ghost attractor found in the empirical data was present across a relatively wide range of signal-to-noise (SNR) values ({numref}`Supplementary Figure %s <si_pain_ghost_attractor_sim>`). Results with SNR=0.005 are presented on {numref}`task-validity`B, right side (Pearson's r = 0.46, p=0.005 based on randomizing conditions on a per-participant basis).
+Our fcHNN was able to accurately reconstruct these non-linear dynamics by adding a small amount of realistic "control signal" (similarly to network control theory {cite}`liu2011controllability; gu2015controllability`). To simulate the alterations in brain dynamics during pain stimulation, we acquired a meta-analytic pain activation map {cite:p}`zunhammer2021meta` (n=603) and incorporated it as a control signal added to each iteration of the stochastic relaxation procedure. The ghost attractor found in the empirical data was present across a relatively wide range of signal-to-noise (SNR) values ({numref}`Supplementary Figure %s <si_pain_ghost_attractor_sim>`). Results with SNR=0.005 are presented on {numref}`task-validity`B, right side (Pearson's r = 0.46, p=0.005 based on randomizing conditions on a per-participant basis).
 
 The same model was also able to reconstruct the observed non-linear differences in brain dynamics between the up- and downregulation conditions (Pearson's r = 0.62, p=0.023) without any further optimization (SNR=0.005, 
 {numref}`task-validity`C, right side). The only change we made to the model was the addition (downregulation) or 
 subtraction (upregulation) of control signal in the NAc (the region in which {cite:p}`woo2015distinct` observed significant changes between up- and downregulation), introducing a signal difference of $\Delta$SNR=0.005 (the same value we found optimal in the pain-analysis). Results were reproducible with lower NAc SNRs, too ({numref}`Supplementary Figure %s <si_downreg_trajectory_sim>`).
 
-To provide a comprehensive picture on how tasks and stimuli other then pain map onto the fcHNN projection, we obtained various task-based meta-analytic activation maps from Neurosynth (see [Methods](#evaluation-task-based-dynamics)) and plotted them on the fcHNN projection ({numref}`task-validity`E). This analysis reinforced and extended our interpretation of the four investigated attractor states and shed more light on how various functions are mapped on the axes of internal vs. external context and perception vs. action.
-In the coordinate system of the fcHNN projection, visual processing is labeled "external-perception", sensory-motor processes "external-active", language, verbal cognition and working memory is labelled "internal-active" and long-term memory as well as social and autobiographic schemata fall into the "internal-perception" regime ({numref}`task-validity`F).
+To provide a comprehensive picture on how tasks and stimuli other than pain map onto the fcHNN projection, we obtained various task-based meta-analytic activation maps from Neurosynth (see [Methods](#evaluation-task-based-dynamics)) and plotted them on the fcHNN projection ({numref}`task-validity`E). This analysis reinforced and extended our interpretation of the four investigated attractor states and shed more light on how various functions are mapped on the axes of internal vs. external context and perception vs. action.
+In the coordinate system of the fcHNN projection, visual processing is labeled "external-perception", sensory-motor processes fall into the "external-active" domain, language, verbal cognition and working memory belongs to the "internal-active" region and long-term memory as well as social and autobiographic schemata fall into the "internal-perception" regime ({numref}`task-validity`F).
 
 ### Clinical relevance
 
@@ -321,9 +327,9 @@ Strongest differences were found on the "action-perception" axis ({numref}`tab-c
 :name: clinical-validity
 **Connectome-based Hopfield analysis of autism spectrum disorder.** <br></br>
 **A** The distribution of time-frames on the fcHNN-projection separately for ASD patients and typically developing control (TDC) participants. <br></br>
-**B** We quantified attractor state activations in the Autism Brain Imaging Data Exchange datasets ([studies 7](tab-samples)) as the 
+**B** We quantified attractor state activations in the Autism Brain Imaging Data Exchange datasets ([study 7](tab-samples)) as the 
 individual-level mean activation of all time-frames belonging to the same attractor state. This analysis captured alterations similar to those previously associated to ASD-related perceptual atypicalities (visual, auditory and somatosensory cortices) as well as atypical integration of information about the “self” and the “other” (default mode network regions). All results are corrected for multiple comparisons across brain regions and attractor states (122*4 comparisons) with Bonferroni-correction. See {numref}`tab-clinical-results` and {numref}`Supplementary Figure %s <si_clinical_results_table>` for detailed results. <br></br>
-**C** The comparison of data generated by fcHNNs initialized with ASD and TDC connectomes, respectively, revealed a characteristic pattern of differences in the system's dynamics, with increased pull towards (and potentially a higher separation between) the action and perception attractors attractors and a lower tendency of trajectories going towards the internal and external attractors. <br></br>
+**C** The comparison of data generated by fcHNNs initialized with ASD and TDC connectomes, respectively, revealed a characteristic pattern of differences in the system's dynamics, with increased pull towards (and potentially a higher separation between) the action and perception attractors and a lower tendency of trajectories going towards the internal and external attractors. <br></br>
 ***Abbreviations**: MCC: middle cingulate cortex, ACC: anterior cingulate cortex, pg: perigenual, PFC: prefrontal cortex, dm: dorsomedial, dl: dorsolateral, STG: superior temporal gyrus, ITG: inferior temporal gyrus, Caud/Acc: caudate-accumbens,  SM: sensorimotor, V1: primary visual, A1: primary auditory, SMA: supplementary motor cortex, ASD: autism spectrum disorder, TDC: typically developing control.*
 :::
 
@@ -377,34 +383,35 @@ individual-level mean activation of all time-frames belonging to the same attrac
    - <0.0001
 :::
 
-Thus, we contrasted the characteristic trajectories derived from the fcHNN models of the two groups (initialized with the group-level functional connectomes). Our FcHNN-based flow analysis predicted that in ASD, there is an increased likelihood of states returning towards the middle from the internal-external axis and an increased likelihood of states transitioning towards the extremes of the action-perception axis ({numref}`clinical-validity`C). We observed a highly similar pattern in the real data (Pearson's correlation: 0.66), statistically significant after permutation testing (shuffling the group assignment, p=0.009).
+Thus, we contrasted the characteristic trajectories derived from the fcHNN models of the two groups (initialized with the group-level functional connectomes). Our fcHNN-based flow analysis predicted that in ASD, there is an increased likelihood of states returning towards the middle from the internal-external axis and an increased likelihood of states transitioning towards the extremes of the action-perception axis ({numref}`clinical-validity`C). We observed a highly similar pattern in the real data (Pearson's correlation: 0.66), statistically significant after permutation testing (shuffling the group assignment, p=0.009).
 
 ## Discussion
 
-In this study, we have introduced and validated a simple yet robust computational generative framework that elucidates how activity propagation within the functional connectome orchestrates large-scale brain dynamics, leading to the spontaneous emergence of brain states and characteristic dynamic responses to perturbations.
+In this study, we have introduced and validated a simple yet robust network-level generative computational framework that elucidates how activity propagation within the functional connectome orchestrates large-scale brain dynamics, leading to the spontaneous emergence of brain states, gradients and characteristic dynamic responses to perturbations.
 
 The construct validity of our model is rooted in the activity flow principle, first introduced by {cite:t}`cole2016activity`. The activity flow principle states that activity in a brain region can be predicted by a weighted combination of the activity of all other regions, where the weights are set to the functional connectivity of those regions to the held-out region. This principle has been shown to hold across a wide range of experimental and clinical conditions {cite:p}`cole2016activity; ito2017cognitive; mill2022network; hearne2021activity; chen2018human`.
-The proposed approach is based on the intuition that the repeated, iterative application of the activity flow equation in a system exhibits close analogies with a type of recurrent artificial neural networks known as Hopfield networks {cite:p}`hopfield1982neural`.
+The proposed approach is based on the intuition that the repeated, iterative application of the activity flow equation exhibits close analogies with a type of recurrent artificial neural networks, known as Hopfield networks {cite:p}`hopfield1982neural`.
 
 Hopfield networks have been widely acknowledged for their relevance for brain function, including the ability to store and recall memories {cite:p}`hopfield1982neural`, self-repair {cite:p}`murre2003selfreparing`,
 a staggering robustness to noisy or corrupted inputs {cite:p}`hertz1991introduction` (see also {numref}`Supplementary Figure %s <si_noise_robustness_weights>`) and the ability to produce multistable dynamics organized by the "gravitational pull" of a finite number of attractor states {cite:p}`khona2022attractor`. While many of such properties of Hopfield networks have previously been proposed as a model for micro-scale neural systems (see {cite}`khona2022attractor` for a review), the proposed link between macro-scale activity propagation and Hopfield networks allows transferring the vast body of knowledge on Hopfield networks to the study of large-scale brain dynamics.
 
 Integrating Cole's activity flow principle with the HNN architecture mandates the initiation of network weights with functional connectivity values, specifically partial correlations as suggested by {cite:t}`cole2016activity`.
-Considering the functional connectome as weights of an already trained neural network distinguishes our methodology not only from conventional biophysical and phenomenological computational modeling strategies, which usually rely on the structural connectome as a proxy for polysynaptic connectivity {cite:p}`cabral2017functional`, but also from "neuroconnectionist" approaches that employ explicit training procedures {cite:p}`doerig2023neuroconnectionist`.
+Considering the functional connectome as weights of an already trained neural network distinguishes our methodology not only from conventional biophysical and phenomenological computational modeling strategies, which usually rely on the structural connectome to model polysynaptic connectivity {cite:p}`cabral2017functional`, but also from "neuroconnectionist" approaches that employ explicit training procedures {cite:p}`doerig2023neuroconnectionist`.
 
-As compared to finely detailed biophysical models with many free parameters, the basic form of the fcHNN approach comprises solely two "hyperparameters" (temperature and noise) and yields notably consistent outcomes across an extensive range of these parameters ({numref}`Supplementary Figure %s <si_expl_variance_energy>`, {numref}`%s <si_att_state_emergence_over_beta>`, {numref}`%s <si_state_occupancy_null_models>`, {numref}`%s <si_pain_ghost_attractor_sim>`, {numref}`%s <si_downreg_trajectory_sim>`)). To underscore the potency of this simplicity and stability, in the present work, we avoided any unnecessary parameter optimization. It is likely, however, that extensive parameter optimization could further improve the performance of the model.
+In contrast to finely detailed biophysical models with many free parameters, the basic form of the fcHNN approach comprises solely two, easily interpretable  "hyperparameters" (temperature and noise) and yields notably consistent outcomes across an extensive range of these parameters ({numref}`Supplementary Figure %s <si_expl_variance_energy>`, {numref}`%s <si_att_state_emergence_over_beta>`, {numref}`%s <si_state_occupancy_null_models>`, {numref}`%s <si_pain_ghost_attractor_sim>`, {numref}`%s <si_downreg_trajectory_sim>`). To underscore the potency of this simplicity and stability, in the present work, we avoided any unnecessary parameter optimization. It is likely, however, that extensive parameter optimization could further improve the performance of the model.
 
-Another advantage of fcHNNs over more detailed models is that fcHNNs establish a simple and easily interpretable link between two highly prevalent metrics of brain function: functional connectivity and brain activity. This connection is not solely phenomenological, but also mathematical, facilitating the exploration and prediction of alterations in the system's dynamics in response to perturbations affecting both activity and connectivity.
+%Another advantage of fcHNNs over more detailed models is that fcHNNs establish a simple and easily interpretable link between two highly prevalent metrics of brain function: functional connectivity and brain activity. This connection is not solely phenomenological, but also mathematical, facilitating the exploration and prediction of alterations in the system's dynamics in response to perturbations affecting both activity and connectivity.
 
-The proposed model also exhibits several advantages over linear network control theory-based {cite:p}`gu2015controllability` approaches. First, the fcHNN approach works with direct activity flow estimates and does not require knowledge about the structural-functional coupling in the brain. Second, the fcHNN approach is based on a non-linear ANN architecture, thus, similarly to neuroconnectionist approaches, allows leveraging on knowledge about the ANN architecture itself. Specifically, the fcHNNs provide a mechanistic account for the emergence of large-scale canonical brain networks {cite:p}`zalesky2014time` and brain states or the presence of "ghost attractors" {cite:p}`deco2012ongoing; vohryzek2020ghost`, via the key concept in the Hopfield network framework, the attractor states.
+The proposed model is different from, but compatible with, linear network control theory-based (Gu et al., 2015) approaches. The fact that fcHNNs work with direct activity flow estimates, means however, that we do not have to tackle the challenge of modelling the structural-functional coupling {cite:p}`seguin2023brain`. Further, the fcHNN approach allows us to leverage on knowledge about the underlying ANN architecture. Specifically, Hopfield attractor dynamics provide a mechanistic account for the emergence of large-scale canonical brain networks (Zalesky et al., 2014) ), and shed light to the origin of characteristic task-responses that are accounted by "ghost attractors" in the system {cite:p}`deco2012ongoing; vohryzek2020ghost`.
 
-In comparison to conventional neuroconnectionist approaches, fcHNNs do not need to be trained to solve tasks and thus allow for the exploration of spontaneous brain dynamics. However, it is worth mentioning that, like any other ANNs, fcHNNs can also be further trained via established ANN training techniques (e.g. via the Hebbian learning rule) to "solve" various tasks or to match altered dynamics during development or in clinical populations. In this interesting future direction, the training procedure itself becomes part of the model, providing testable hypotheses about the formation, and various malformations, of brain dynamics.
+As fcHNNs do not need to be trained to solve any explicit tasks, they are well suited to examine spontaneous brain dynamics. However, it is worth mentioning that fcHNNs are compatible with the neuroconnectionist approach (Doerig et al., 2021), as well.
+Like any other ANNs, fcHNNs can also be further trained via established ANN training techniques (e.g. via the Hebbian learning rule) to "solve" various tasks or to match altered dynamics during development or in clinical populations. In this promising future direction, the training procedure itself becomes part of the model, providing testable hypotheses about the formation, and various malformations, of brain dynamics.
 
 Given its simplicity, it is remarkable, if not surprising, how accurately the fcHNN model is able to reconstruct and predict brain dynamics under a wide range of conditions. Particularly interesting is the result that the two-dimensional fcHNN projection can explain more variance in real resting state fMRI data than the first two principal components derived from the data itself. 
-A plausible explanation for the remarkable reconstruction performance is that, trough their known noise tolerance, fcHNNs are able to capture essential principles of the underlying dynamic processes even if our empirical measurements are corrupted by noise and low sampling rate.
+A plausible explanation for the remarkable reconstruction performance is that, through their known noise tolerance, fcHNNs are able to capture essential principles of the underlying dynamic processes even if our empirical measurements are corrupted by noise and low sampling rate.
  Indeed, fcHNN attractor states were found to be robust to noisy weights ({numref}`Supplementary Figure %s <si_noise_robustness_weights>`) and highly replicable across datasets acquired at different sites, with different scanners and imaging sequences (study 2 and 3). The observed level of replicability allowed us to re-use the fcHNN model constructed with the connectome of study 1 for all subsequent analyses, without any further fine-tuning or study-specific parameter optimization.
 
- Conceptually, the notion of a global attractor model of the brain network is not new {cite:p}`deco2012ongoing`. The present work shows, however, that the brain as an attractor network necessarily 'leaks' its code in form of the partial correlation across the regional timeseries, allowing us to uncover its large-scale attractor states. Moreover, we demonstrate that the brain's attractor states are not solely local minima in the state-space but act as a driving force for the dynamic trajectories of brain activity. Attractor-dynamics may be the main driving factor for the spatial and temporal autocorrelation structure of the brain, recently described to be predictive of network topology in relation to age, subclinical symptoms of dementia, and pharmacological manipulations with serotonergic drugs {cite:p}`shinn2023functional`. 
+ Conceptually, the notion of a global attractor model of the brain network is not new {cite:p}`deco2012ongoing`. The present work shows, however, that the brain as an attractor network necessarily 'leaks' its code in form of the partial correlation across the regional timeseries, posing fcHNNs as the preferred technique to uncover its large-scale attractor states. We demonstrate that the reconstructed attractor states are not solely local minima in the state-space but act as a driving force for the dynamic trajectories of brain activity. Attractor-dynamics may be the main driving factor for the spatial and temporal autocorrelation structure of the brain, recently described to be predictive of network topology in relation to age, subclinical symptoms of dementia, and pharmacological manipulations with serotonergic drugs {cite:p}`shinn2023functional`. 
 Nevertheless, attractor states should not be confused with the conventional notion of brain states {cite:p}`chen2015introducing` and large-scale functional gradients {cite:p}`margulies2016situating`. In the fcHNN framework, attractor states can rather be conceptualized as "Platonic idealizations" of brain activity, that are continuously approximated - but never reached - by the brain, resulting in re-occurring patterns (brain states) and smooth gradual transitions (large-scale gradients).
 
 Relying on previous work, we can establish a relatively straightforward (although somewhat speculative) correspondence between attractor states and brain function, mapping brain activation on the axes of internal vs. external context {cite:p}`golland2008data; cioli2014differences`, as well as perception vs. action {cite:p}`fuster2004upper`.
@@ -414,7 +421,7 @@ Both conceptually and in terms of analysis practices, resting and task states ar
 Task-based brain activity in the fcHNN framework is not a mere response to external stimuli in certain brain locations but a perturbation of the brain's characteristic dynamic trajectories, with increased preference for certain locations on the energy landscape ("ghost attractors").
 In our analyses, the fcHNN approach capture and predict participant-level activity changes induced by pain and its self-regulation and gave a mechanistic account for how relatively small activity changes in a single region (NAcc) may result in a significantly altered pain experience.
 
-Brain dynamics can not only be perturbed by task or other types of experimental or naturalistic interventions, but also by pathological alterations. Here we have demonstrated (study 7) that fcHNN-based analyses can characterize and predict altered brain dynamics in autism spectrum disorder (ASD). The observed ASD-associated changes in brain dynamics are indicative of a reduced ability to flexibly switch between internal and external modes of processing, corroborating previous findings that ASD sensory-driven connectivity transitions do not converge to transmodal areas {cite:p}`hong2019atypical`. Such findings are in line with previous reports of a reduced influence of context on the interpretation of incoming sensory information in ASD (e.g. the violation of Weber's law) {cite:p}`hadad2019perception`.
+Brain dynamics can not only be perturbed by task or other types of experimental or naturalistic interventions, but also by pathological alterations. Here we have demonstrated (study 7) that fcHNN-based analyses can characterize and predict altered brain dynamics in autism spectrum disorder (ASD). The observed ASD-associated changes in brain dynamics are indicative of a reduced ability to flexibly switch between perception and internal representations, corroborating previous findings that in ASD, sensory-driven connectivity transitions do not converge to transmodal areas {cite:p}`hong2019atypical`. Such findings are in line with previous reports of a reduced influence of context on the interpretation of incoming sensory information in ASD (e.g. the violation of Weber's law) {cite:p}`hadad2019perception`.
 
 Together, our findings open up a series of exciting opportunities for the better understanding of brain function in health and disease.
 
@@ -425,7 +432,7 @@ Second, fcHNN analyses may provide insights into the causes of changes in brain 
 Third, the fcHNN approach can provide testable predictions about the effects of pharmacological interventions as well as non-invasive brain stimulation (e.g. transcranial magnetic or direct current stimulation, focused ultrasound, etc) and neurofeedback. Obtaining the optimal stimulation or treatment target within the fcHNN framework (e.g. by means of network control theory {cite:p}`liu2011controllability`) is one of the most promising future directions with the potential to significantly advance the development of novel, personalized treatment approaches.
 
 In this initial work, we presented the simplest possible implementation of the fcHNN concept. It is clear that the presented analyses exploit only a small proportion of the richness of the full state-space dynamics reconstructed by the fcHNN model. 
-There are many potential way to further improve the utility of the fcHNN approach. Increasing the number of reconstructed attractor states (by increasing the temperature parameter), investigating higher-dimensional dynamics, fine-tuning the hyperparameters, testing the effect of different initializations and perturbations are all important direction for future work, with the potential to further improve the model's accuracy and usefulness.
+There are many potential ways to further improve the utility of the fcHNN approach. Increasing the number of reconstructed attractor states (by increasing the temperature parameter), investigating higher-dimensional dynamics, fine-tuning the hyperparameters, testing the effect of different initializations and perturbations are all important direction for future work, with the potential to further improve the model's accuracy and usefulness.
 
 % **other potential topics**:
 % - is the functional connectome stationary? Why don't we use dynamic connectivity? See arguments by the Cole-group. Also, the fcHNN model can actually probably also reproduce task-based connectivity, when adding a task-related control signal to the stochastic relaxation procedure (as on Fig. 3). Thus it could be a model of how task-based connectivity and dynamic connectivity changes arise from the underlying rs-fMRI connectome. Maybe it could be even better to use "latent-FC" a'la McCormick, 2022, [](https://doi.org/10.1162/netn_a_00234))
@@ -434,7 +441,7 @@ There are many potential way to further improve the utility of the fcHNN approac
 
 ## Conclusion
 
-To conclude, here we have proposed a lightweight, high-level computational framework that accurately captures and predicts brain dynamics under a wide range of conditions. The framework models large-scale activity flow in the brain with a recurrent artificial neural network architecture that, instead of being trained to solve specific tasks or mimic certain dynamics, is simply initialized with the empirical functional connectome. The framework identifies neurobiologically meaningful attractor states and provides a model for how these restrict brain dynamics. The proposed framework, referred to as the connectome-based Hopfield neural network (fcHNN) model, can accurately reconstruct and predict brain dynamics under a wide range of conditions, including resting state, task-induced activity changes, as well as brain disorders. FcHNNs establish a conceptual link between connectivity and activity and offer a simple, robust, and highly interpretable computational alternative to conventional descriptive approaches to investigating brain function. The generative nature of the proposed model opens up a series of exciting opportunities for future research, including predicting the effect, and understanding the mechanistic bases, of various interventions; thereby paving the way for designing novel treatment approaches.
+To conclude, here we have proposed a lightweight, high-level computational framework that accurately captures and predicts brain dynamics under a wide range of conditions. The framework models large-scale activity flow in the brain with a recurrent artificial neural network architecture that, instead of being trained to solve specific tasks or mimic certain dynamics, is simply initialized with the empirical functional connectome. The framework identifies neurobiologically meaningful attractor states and provides a model for how these restrict brain dynamics. The proposed framework, referred to as the connectome-based Hopfield neural network (fcHNN) model, can accurately reconstruct and predict brain dynamics under a wide range of conditions, including resting states, task-induced activity changes and brain disorders. FcHNNs establish a conceptual link between connectivity and activity, provide a mechanistic account for the emergence of brain states, gradients and autocorrelation structure and offer a simple, robust, and highly interpretable computational alternative to conventional descriptive approaches to investigating brain function. The generative nature of the proposed model opens up a series of exciting opportunities for future research, including predicting the effect, and understanding the mechanistic bases, of various interventions; thereby paving the way for designing novel treatment approaches.
 
 
 +++ {"part": "acknowledgements"}
@@ -452,5 +459,5 @@ https://github.com/pni-lab/connattractor
 https://pni-lab.github.io/connattractor/
 
 ## Data availability
-Study 1,2 and 4 is available at openneuro.org (ds002608, ds002608, ds000140). Data for study 3 is available upon request. Data for study 5-6 is available at the github page of the project: https://github.com/pni-lab/connattractor. Study 7 is available at https://fcon_1000.projects.nitrc.org/indi/abide/, preprocessed data is available at http://preprocessed-connectomes-project.org/.
+Study 1, 2 and 4 is available at openneuro.org (ds002608, ds002608, ds000140). Data for study 3 is available upon request. Data for study 5-6 is available at the github page of the project: https://github.com/pni-lab/connattractor. Study 7 is available at https://fcon_1000.projects.nitrc.org/indi/abide/, preprocessed data is available at http://preprocessed-connectomes-project.org/.
 +++
