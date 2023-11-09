@@ -308,8 +308,8 @@ class Hopfield(object):
         # todo: return the plot isntead of showing it
         defaultKwargs = {'cmap': cm.coolwarm,
                          'aspect': 'equal',
-                         'vmin': -abs(self.W).max(),
-                         'vmax': abs(self.W).max(),
+                         'vmin': -abs(self.W).max().max(),
+                         'vmax': abs(self.W).max().max(),
                          'interpolation': 'none'
                          }
         kwargs = {**defaultKwargs, **kwargs}
