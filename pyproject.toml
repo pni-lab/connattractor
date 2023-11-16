@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "connattractor"
 version = "0.1.0"
-description = "Tools for analyzing and quantifying effects of counfounder variables on machine learning model predictions."
+description = "Tool for analyzing fMRI data with functional connectome-based Hopfield networks (fcHNN)"
 authors = ["Tamas Spisak <tamas.spisak@uni-due.de>", "Robert Englert <robert.englert@uk-essen.de>"]
 license = "GPL-3.0-or-later"
 repository = "https://github.com/pni-lab/connattractor"
@@ -11,7 +11,10 @@ keywords = [
     "functional connectivity analysis",
     "brain dynamics",
     "dynamic modelling",
-    "brain states"
+    "brain states",
+    "fcHNN",
+    "functional connectome",
+    "Hopfield"
 ]
 
 packages = [
@@ -32,7 +35,6 @@ scikit-learn = ">=1.3"
 nilearn = ">=0.9.1"
 matplotlib = ">=3.5.2"
 pingouin = ">=0.5.3"
-PyQt5 = ">=5.15.10"
 
 [build-system]
 requires = ["poetry-core>=1.0.0", "poetry-dynamic-versioning"]

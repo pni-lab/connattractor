@@ -15,7 +15,7 @@ def get_MIST_labels_path():
     base_path = get_base_path()
     return Path.joinpath(base_path, 'MIST122_relabeled.tsv')
 
-def get_fcHNN_embedding():
+def get_fcHNN_template_embedding():
     base_path = get_base_path()
     target_path = Path.joinpath(base_path, 'default_hopfield_embedding_0.37.pkl')
 
