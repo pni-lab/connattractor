@@ -7,9 +7,9 @@
 # documentation.
 
 # the following line: pypa/gh-action-pypi-publish@79739dc2f2bf6bcfd21ecf9af9f06bd643dbeeae
-# references a specific commit of the gh-action-pypi-publish, based on the commit ID hash. This is supposed to be the
+# references a specific commit of the gh-action-pypi-publish, based on the commit ID hash. This is reconmended as the
 # safest route for consistent performance of the gh action. Check https://github.com/pypa/gh-action-pypi-publish for
-# the latest versions of the gh action
+# the latest versions and more info
 
 name: Upload Python Package
 
@@ -22,9 +22,8 @@ permissions:
 
 jobs:
   deploy:
-
+    if: startsWith(github.ref, 'refs/tags/v') #only puplish on releases starting with 'v'
     runs-on: ubuntu-latest
-
     steps:
     - uses: actions/checkout@v3
     - name: Set up Python
