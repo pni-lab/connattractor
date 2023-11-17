@@ -9,7 +9,7 @@
 Laboratory for Predictive Neuroimaging - University Hospital Essen, Germany
 
 ## Webpage with manuscript and getting started guide
-[pni-lab.github.io/connattractor](pni-lab.github.io/connattractor)
+[https://pni-lab.github.io/connattractor](https://pni-lab.github.io/connattractor)
 
 ## How to install the connattractor package?
 
