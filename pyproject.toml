@@ -1,0 +1,41 @@
+[tool.poetry]
+name = "connattractor"
+version = "0.1.0"
+description = "Tool for analyzing fMRI data with functional connectome-based Hopfield networks (fcHNN)"
+authors = ["Tamas Spisak <tamas.spisak@uni-due.de>", "Robert Englert <robert.englert@uk-essen.de>"]
+license = "GPL-3.0-or-later"
+repository = "https://github.com/pni-lab/connattractor"
+homepage = "https://pni-lab.github.io/connattractor/"
+readme = 'README.md'
+keywords = [
+    "functional connectivity analysis",
+    "brain dynamics",
+    "dynamic modelling",
+    "brain states",
+    "fcHNN",
+    "functional connectome",
+    "Hopfield"
+]
+
+packages = [
+    { include = "connattractor" },
+    { include = "resources" },
+]
+
+[tool.poetry.dependencies]
+python = ">=3.7"
+joblib = ">=1.0.1"
+tqdm = ">=4.62.0"
+numpy = ">=1.21.1"
+pandas = ">=1.3.1"
+scipy = ">=1.7.1"
+statsmodels = ">=0.12.2"
+seaborn = ">=0.11.1"
+scikit-learn = ">=1.3"
+nilearn = ">=0.9.1"
+matplotlib = ">=3.5.2"
+pingouin = ">=0.5.3"
+
+[build-system]
+requires = ["poetry-core>=1.0.0", "poetry-dynamic-versioning"]
+build-backend = "poetry.core.masonry.api"
