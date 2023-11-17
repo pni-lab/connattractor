@@ -1,0 +1,187 @@
+\begin{thebibliography}{21}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Di~Martino et~al.(2014)Di~Martino, Yan, Li, Denio, Castellanos,
+  Alaerts, Anderson, Assaf, Bookheimer, Dapretto, et~al.]{di2014autism}
+Adriana Di~Martino, Chao-Gan Yan, Qingyang Li, Erin Denio, Francisco~X
+  Castellanos, Kaat Alaerts, Jeffrey~S Anderson, Michal Assaf, Susan~Y
+  Bookheimer, Mirella Dapretto, et~al.
+\newblock The autism brain imaging data exchange: towards a large-scale
+  evaluation of the intrinsic brain architecture in autism.
+\newblock \emph{Molecular psychiatry}, 19\penalty0 (6):\penalty0 659--667,
+  2014.
+
+\bibitem[Spisak et~al.(2020)Spisak, Kincses, Schlitt, Zunhammer,
+  Schmidt-Wilcke, Kincses, and Bingel]{Spisak_2020}
+Tamas Spisak, Balint Kincses, Frederik Schlitt, Matthias Zunhammer, Tobias
+  Schmidt-Wilcke, Zsigmond~T. Kincses, and Ulrike Bingel.
+\newblock Pain-free resting-state functional brain connectivity predicts
+  individual pain sensitivity.
+\newblock \emph{Nature Communications}, 11\penalty0 (1), January 2020.
+\newblock ISSN 2041-1723.
+\newblock \doi{10.1038/s41467-019-13785-z}.
+\newblock URL \url{http://dx.doi.org/10.1038/s41467-019-13785-z}.
+
+\bibitem[Woo et~al.(2015{\natexlab{a}})Woo, Roy, Buhle, and Wager]{Woo_2015}
+Choong-Wan Woo, Mathieu Roy, Jason~T. Buhle, and Tor~D. Wager.
+\newblock Distinct brain systems mediate the effects of nociceptive input and
+  self-regulation on pain.
+\newblock \emph{PLoS Biology}, 13\penalty0 (1):\penalty0 e1002036, January
+  2015{\natexlab{a}}.
+\newblock ISSN 1545-7885.
+\newblock \doi{10.1371/journal.pbio.1002036}.
+\newblock URL \url{http://dx.doi.org/10.1371/journal.pbio.1002036}.
+
+\bibitem[Zunhammer et~al.(2021)Zunhammer, Spis{\'a}k, Wager, and
+  Bingel]{zunhammer2021meta}
+Matthias Zunhammer, Tam{\'a}s Spis{\'a}k, Tor~D Wager, and Ulrike Bingel.
+\newblock Meta-analysis of neural systems underlying placebo analgesia from
+  individual participant fmri data.
+\newblock \emph{Nature communications}, 12\penalty0 (1):\penalty0 1391, 2021.
+
+\bibitem[Yarkoni et~al.(2011)Yarkoni, Poldrack, Nichols, Van~Essen, and
+  Wager]{Yarkoni_2011}
+Tal Yarkoni, Russell~A Poldrack, Thomas~E Nichols, David~C Van~Essen, and Tor~D
+  Wager.
+\newblock Large-scale automated synthesis of human functional neuroimaging
+  data.
+\newblock \emph{Nature Methods}, 8\penalty0 (8):\penalty0 665–670, June 2011.
+\newblock ISSN 1548-7105.
+\newblock \doi{10.1038/nmeth.1635}.
+\newblock URL \url{http://dx.doi.org/10.1038/nmeth.1635}.
+
+\bibitem[Woo et~al.(2015{\natexlab{b}})Woo, Roy, Buhle, and
+  Wager]{woo2015distinct}
+Choong-Wan Woo, Mathieu Roy, Jason~T Buhle, and Tor~D Wager.
+\newblock Distinct brain systems mediate the effects of nociceptive input and
+  self-regulation on pain.
+\newblock \emph{PLoS biology}, 13\penalty0 (1):\penalty0 e1002036,
+  2015{\natexlab{b}}.
+
+\bibitem[Tor~D.(2011)]{Tor_D__2011}
+Wager Tor~D.
+\newblock Neurosynth: a new platform for large-scale automated synthesis of
+  human functional neuroimaging data.
+\newblock \emph{Frontiers in Neuroinformatics}, 5, 2011.
+\newblock ISSN 1662-5196.
+\newblock \doi{10.3389/conf.fninf.2011.08.00058}.
+\newblock URL \url{http://dx.doi.org/10.3389/conf.fninf.2011.08.00058}.
+
+\bibitem[Craddock et~al.(2013)Craddock, Sikka, Cheung, Khanuja, Ghosh, Yan, Li,
+  Lurie, Vogelstein, Burns, et~al.]{craddock2013towards}
+Cameron Craddock, Sharad Sikka, Brian Cheung, Ranjeet Khanuja, Satrajit~S
+  Ghosh, Chaogan Yan, Qingyang Li, Daniel Lurie, Joshua Vogelstein, Randal
+  Burns, et~al.
+\newblock Towards automated analysis of connectomes: The configurable pipeline
+  for the analysis of connectomes (c-pac).
+\newblock \emph{Front Neuroinform}, 42\penalty0 (10.3389), 2013.
+
+\bibitem[Dadi et~al.(2019)Dadi, Rahim, Abraham, Chyzhyk, Milham, Thirion,
+  Varoquaux, Initiative, et~al.]{dadi2019benchmarking}
+Kamalaker Dadi, Mehdi Rahim, Alexandre Abraham, Darya Chyzhyk, Michael Milham,
+  Bertrand Thirion, Ga{\"e}l Varoquaux, Alzheimer's Disease~Neuroimaging
+  Initiative, et~al.
+\newblock Benchmarking functional connectome-based predictive models for
+  resting-state fmri.
+\newblock \emph{NeuroImage}, 192:\penalty0 115--134, 2019.
+
+\bibitem[Bellec et~al.(2010)Bellec, Rosa-Neto, Lyttelton, Benali, and
+  Evans]{bellec2010multi}
+Pierre Bellec, Pedro Rosa-Neto, Oliver~C Lyttelton, Habib Benali, and Alan~C
+  Evans.
+\newblock Multi-level bootstrap analysis of stable clusters in resting-state
+  fmri.
+\newblock \emph{Neuroimage}, 51\penalty0 (3):\penalty0 1126--1139, 2010.
+
+\bibitem[Gorgolewski et~al.(2011)Gorgolewski, Burns, Madison, Clark, Halchenko,
+  Waskom, and Ghosh]{gorgolewski2011nipype}
+Krzysztof Gorgolewski, Christopher~D Burns, Cindee Madison, Dav Clark,
+  Yaroslav~O Halchenko, Michael~L Waskom, and Satrajit~S Ghosh.
+\newblock Nipype: a flexible, lightweight and extensible neuroimaging data
+  processing framework in python.
+\newblock \emph{Frontiers in neuroinformatics}, 5:\penalty0 13, 2011.
+
+\bibitem[Jenkinson et~al.(2012)Jenkinson, Beckmann, Behrens, Woolrich, and
+  Smith]{jenkinson2012fsl}
+Mark Jenkinson, Christian~F Beckmann, Timothy~EJ Behrens, Mark~W Woolrich, and
+  Stephen~M Smith.
+\newblock Fsl.
+\newblock \emph{Neuroimage}, 62\penalty0 (2):\penalty0 782--790, 2012.
+
+\bibitem[Avants et~al.(2011)Avants, Tustison, Song, Cook, Klein, and
+  Gee]{avants2011reproducible}
+Brian~B Avants, Nicholas~J Tustison, Gang Song, Philip~A Cook, Arno Klein, and
+  James~C Gee.
+\newblock A reproducible evaluation of ants similarity metric performance in
+  brain image registration.
+\newblock \emph{Neuroimage}, 54\penalty0 (3):\penalty0 2033--2044, 2011.
+
+\bibitem[Cox(1996)]{cox1996afni}
+Robert~W Cox.
+\newblock Afni: software for analysis and visualization of functional magnetic
+  resonance neuroimages.
+\newblock \emph{Computers and Biomedical research}, 29\penalty0 (3):\penalty0
+  162--173, 1996.
+
+\bibitem[Esteban et~al.(2019)Esteban, Markiewicz, Blair, Moodie, Isik,
+  Erramuzpe, Kent, Goncalves, DuPre, Snyder, et~al.]{esteban2019fmriprep}
+Oscar Esteban, Christopher~J Markiewicz, Ross~W Blair, Craig~A Moodie, A~Ilkay
+  Isik, Asier Erramuzpe, James~D Kent, Mathias Goncalves, Elizabeth DuPre,
+  Madeleine Snyder, et~al.
+\newblock fmriprep: a robust preprocessing pipeline for functional mri.
+\newblock \emph{Nature methods}, 16\penalty0 (1):\penalty0 111--116, 2019.
+
+\bibitem[Friston et~al.(1996)Friston, Williams, Howard, Frackowiak, and
+  Turner]{friston1996movement}
+Karl~J Friston, Steven Williams, Robert Howard, Richard~SJ Frackowiak, and
+  Robert Turner.
+\newblock Movement-related effects in fmri time-series.
+\newblock \emph{Magnetic resonance in medicine}, 35\penalty0 (3):\penalty0
+  346--355, 1996.
+
+\bibitem[Power et~al.(2012)Power, Barnes, Snyder, Schlaggar, and
+  Petersen]{power2012spurious}
+Jonathan~D Power, Kelly~A Barnes, Abraham~Z Snyder, Bradley~L Schlaggar, and
+  Steven~E Petersen.
+\newblock Spurious but systematic correlations in functional connectivity mri
+  networks arise from subject motion.
+\newblock \emph{Neuroimage}, 59\penalty0 (3):\penalty0 2142--2154, 2012.
+
+\bibitem[Behzadi et~al.(2007)Behzadi, Restom, Liau, and
+  Liu]{behzadi2007component}
+Yashar Behzadi, Khaled Restom, Joy Liau, and Thomas~T Liu.
+\newblock A component based noise correction method (compcor) for bold and
+  perfusion based fmri.
+\newblock \emph{Neuroimage}, 37\penalty0 (1):\penalty0 90--101, 2007.
+
+\bibitem[Satterthwaite et~al.(2013)Satterthwaite, Elliott, Gerraty, Ruparel,
+  Loughead, Calkins, Eickhoff, Hakonarson, Gur, Gur,
+  et~al.]{satterthwaite2013improved}
+Theodore~D Satterthwaite, Mark~A Elliott, Raphael~T Gerraty, Kosha Ruparel,
+  James Loughead, Monica~E Calkins, Simon~B Eickhoff, Hakon Hakonarson, Ruben~C
+  Gur, Raquel~E Gur, et~al.
+\newblock An improved framework for confound regression and filtering for
+  control of motion artifact in the preprocessing of resting-state functional
+  connectivity data.
+\newblock \emph{Neuroimage}, 64:\penalty0 240--256, 2013.
+
+\bibitem[Abraham et~al.(2014)Abraham, Pedregosa, Eickenberg, Gervais, Mueller,
+  Kossaifi, Gramfort, Thirion, and Varoquaux]{abraham2014machine}
+Alexandre Abraham, Fabian Pedregosa, Michael Eickenberg, Philippe Gervais,
+  Andreas Mueller, Jean Kossaifi, Alexandre Gramfort, Bertrand Thirion, and
+  Ga{\"e}l Varoquaux.
+\newblock Machine learning for neuroimaging with scikit-learn.
+\newblock \emph{Frontiers in neuroinformatics}, 8:\penalty0 14, 2014.
+
+\bibitem[Hopfield(1982)]{hopfield1982neural}
+John~J Hopfield.
+\newblock Neural networks and physical systems with emergent collective
+  computational abilities.
+\newblock \emph{Proceedings of the national academy of sciences}, 79\penalty0
+  (8):\penalty0 2554--2558, 1982.
+
+\end{thebibliography}
