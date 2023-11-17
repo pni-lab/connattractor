@@ -13,23 +13,21 @@ Laboratory for Predictive Neuroimaging - University Hospital Essen, Germany
 
 ## How to install the connattractor package?
 
-The package 'connattractor' will be soon available on PyPI.
-
-Afterwards the preferred way to install it will be:
+The package 'connattractor' is available on PyPI!
 
 ```
 pip install connattractor
 ```
 
-For now, the easiest way to try out the package is using docker, see below:
-
 ## How to re-run the analyses?
-
+- **Install the PyPI package**
+  - run the notebooks in connattractor/notebooks
+    
 - **Run the analyses with 1 click (in the cloud)**
   - [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/pni-lab/connattractor/HEAD)
   - Open in GitHub Codespaces (click `code` on top right on the github page of the repo)
 
-- **Set up everything to run in 5 mins (locally on your computer)**
+- **Set up everything locally with docker**
   - install [docker](https://www.docker.com/)
   - clone the repo and start your notebook in a docker container
     ```bash
@@ -40,10 +38,10 @@ For now, the easiest way to try out the package is using docker, see below:
   - copy paste the last link in your browser to start the notebook
 
  - **Bare-metal** (developers)
-  - clone this repository with git as above
-  - set up a python environment (e.g with conda)
-  - install all requirements from requirements.txt
-  - start developing
+   - clone this repository with git as above
+   - set up a python environment (e.g with conda)
+   - install all requirements from requirements.txt
+   - start developing
 
 ## How to render the web-page locally?
 ```bash
