@@ -2,7 +2,7 @@
 
 **The manuscript is currently under review.**
 
-Please cite the [preprint](https://biorxiv.org/cgi/content/short/2023.11.03.565516v1) in the meantime:
+Please cite the [preprint](https://www.biorxiv.org/content/10.1101/2023.11.03.565516v2) in the meantime:
 
 #### DOI
 https://doi.org/10.1101/2023.11.03.565516
@@ -16,8 +16,8 @@ https://doi.org/10.1101/2023.11.03.565516
 	year = {2023},
 	doi = {10.1101/2023.11.03.565516},
 	publisher = {Cold Spring Harbor Laboratory},
-	URL = {https://www.biorxiv.org/content/early/2023/11/05/2023.11.03.565516},
-	eprint = {https://www.biorxiv.org/content/early/2023/11/05/2023.11.03.565516.full.pdf},
+	URL = {https://www.biorxiv.org/content/10.1101/2023.11.03.565516v2},
+	eprint = {https://www.biorxiv.org/content/10.1101/2023.11.03.565516v2.full.pdf},
 	journal = {bioRxiv}
 }
 ```
