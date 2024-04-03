@@ -1,0 +1,106 @@
+{
+  "input": {
+    "files": [],
+    "opts": {
+      "execute": false,
+      "pdf": false,
+      "tex": false,
+      "typst": false,
+      "docx": false,
+      "md": false,
+      "xml": false,
+      "meca": false,
+      "site": false,
+      "html": false,
+      "all": true,
+      "watch": false,
+      "force": false,
+      "checkLinks": false,
+      "strict": false,
+      "ci": false,
+      "maxSizeWebp": 1572864
+    },
+    "performSiteBuild": true
+  },
+  "exports": [
+    {
+      "format": "pdf",
+      "template": "arxiv_nips",
+      "output": "/home/runner/work/connattractor/connattractor/docs/exports/connattractor_manuscript.pdf",
+      "articles": [
+        {
+          "file": "/home/runner/work/connattractor/connattractor/docs/01-paper.md",
+          "level": 0
+        }
+      ],
+      "$file": "/home/runner/work/connattractor/connattractor/docs/01-paper.md",
+      "$project": "/home/runner/work/connattractor/connattractor/docs"
+    },
+    {
+      "format": "docx",
+      "hideFooter": true,
+      "output": "/home/runner/work/connattractor/connattractor/docs/exports/connattractor_manuscript.docx",
+      "articles": [
+        {
+          "file": "/home/runner/work/connattractor/connattractor/docs/01-paper.md",
+          "level": 0
+        }
+      ],
+      "$file": "/home/runner/work/connattractor/connattractor/docs/01-paper.md",
+      "$project": "/home/runner/work/connattractor/connattractor/docs"
+    },
+    {
+      "format": "pdf",
+      "template": "arxiv_nips",
+      "output": "/home/runner/work/connattractor/connattractor/docs/exports/connattractor_methods.pdf",
+      "articles": [
+        {
+          "file": "/home/runner/work/connattractor/connattractor/docs/02-methods.md",
+          "level": 0
+        }
+      ],
+      "$file": "/home/runner/work/connattractor/connattractor/docs/02-methods.md",
+      "$project": "/home/runner/work/connattractor/connattractor/docs"
+    },
+    {
+      "format": "docx",
+      "hideFooter": true,
+      "output": "/home/runner/work/connattractor/connattractor/docs/exports/connattractor_methods.docx",
+      "articles": [
+        {
+          "file": "/home/runner/work/connattractor/connattractor/docs/02-methods.md",
+          "level": 0
+        }
+      ],
+      "$file": "/home/runner/work/connattractor/connattractor/docs/02-methods.md",
+      "$project": "/home/runner/work/connattractor/connattractor/docs"
+    },
+    {
+      "format": "pdf",
+      "template": "arxiv_nips",
+      "output": "/home/runner/work/connattractor/connattractor/docs/exports/connattractor_si.pdf",
+      "articles": [
+        {
+          "file": "/home/runner/work/connattractor/connattractor/docs/03-supplement.md",
+          "level": 0
+        }
+      ],
+      "$file": "/home/runner/work/connattractor/connattractor/docs/03-supplement.md",
+      "$project": "/home/runner/work/connattractor/connattractor/docs"
+    },
+    {
+      "format": "docx",
+      "hideFooter": true,
+      "output": "/home/runner/work/connattractor/connattractor/docs/exports/connattractor_si.docx",
+      "articles": [
+        {
+          "file": "/home/runner/work/connattractor/connattractor/docs/03-supplement.md",
+          "level": 0
+        }
+      ],
+      "$file": "/home/runner/work/connattractor/connattractor/docs/03-supplement.md",
+      "$project": "/home/runner/work/connattractor/connattractor/docs"
+    }
+  ],
+  "buildSite": true
+}
