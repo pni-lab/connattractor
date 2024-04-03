@@ -113,6 +113,7 @@ bibliography:
 
 +++
 
+
 +++ {"part": "abstract"}
 Understanding large-scale brain dynamics is a grand challenge in neuroscience. 
 We propose functional connectome-based Hopfield Neural Networks (fcHNNs) as a model of macro-scale brain dynamics, arising from recurrent activity flow among brain regions. An fcHNN is neither optimized to mimic certain brain characteristics, nor trained to solve specific tasks; its weights are simply initialized with empirical functional connectivity values.
