@@ -3,6 +3,7 @@ import numpy as np
 import sklearn.base
 from matplotlib.figure import figaspect
 from sklearn.linear_model import LogisticRegression
+from sklearn.dummy import DummyClassifier
 from dataclasses import dataclass
 
 from sklearn.preprocessing import StandardScaler
@@ -358,7 +359,12 @@ def create_embeddings(simulation, attractor_sample=1000, num_hopfield_iter=10000
     attractors = {v: np.array(k) for k, v in attractors.items()}
 
     # Fit a Multinomial Logistic Regression model that predicts the attractors on the first two PCs
-    attractor_model = LogisticRegression(multi_class="multinomial")
+    
+    if np.unique(attractor_labels).shape[0] == 1:
+        attractor_model = DummyClassifier(strategy="most_frequent")
+    else:
+        attractor_model = LogisticRegression(multi_class="multinomial")
+    
     attractor_model.fit(embedded[sample, :attractor_model_dim], attractor_labels)
 
     return HopfiledEmbedding(hopnet=simulation.hopnet, embedding_model=pca,

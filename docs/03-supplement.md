@@ -30,6 +30,12 @@ activation.**  See [supplemental_material.ipynb](https://github.com/pni-lab/conn
 **Parameter sweep of fcHNN parameters threshold and beta.** the number of attractor states is color-coded. See [supplemental_material.ipynb](https://github.com/pni-lab/connattractor/blob/master/notebooks/supplemental_material.ipynb) for details.
 :::
 
+:::{figure} figures/supplement/si_convergence.png
+:name: si_convergence
+**HNNs initialized with the empirical connectome has better convergence properties than permutation-based null models.** Histograms show the number of iterations until convergence with the real (unpermuted) connectome, for 100 random initializations, with various beta values. HNN models based on the permuted connectivity matrix (with retaining symmetry) did not reach convergence in 10000 iterations in more than 98% of the same random initializations. See [convergence-analysis.ipynb](https://github.com/pni-lab/connattractor/blob/master/notebooks/convergence_analysis.ipynb) for details.
+:::
+
+
 :::{figure} figures/supplement/si_state_occupancy_null_model.png
 :name: si_state_occupancy_null_models
 **Statistical inference of the fcHNN state occupancy prediction with different null models.**
