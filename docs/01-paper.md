@@ -156,14 +156,10 @@ This allows us to circumvent the necessity of comprehensively understanding and 
 Based on the topology of the functional connectome, our model establishes an energy level for any arbitrary activation patterns and determines a "trajectory of least action" towards one of the finite number of stable patterns, known as *attractor states*, that minimize this energy. In the proposed framework, macro-scale brain dynamics can be conceptualized as an intricate, high-dimensional path on the energy landscape ({numref}`concept`C), arising from the activity flow {cite:p}`cole2016activity` within the functional connectome and constrained by the "gravitational pull" of the attractor states of the system.
 The generative nature of the proposed framework offers testable predictions for the effect of various perturbations and alterations of these dynamics, from task-induced activity to changes related to brain disorders.
 
-:::{figure} figures/concept.png
-:name: concept
-**Connectome-based Hopfield networks as models of macro-scale brain dynamics.** <br/><br/>
-**A** Hopfield artificial neural networks (HNNs)  are a form of recurrent artificial neural networks that serve as content-addressable ("associative") memory systems. Hopfield networks can be trained to store a finite number of patterns (e.g. via Hebbian learning a.k.a. "fire together -  wire together"). During the training procedure, the weights of the HNN are trained so that the stored 
-patterns become stable attractor states of the network. Thus, when the trained network is presented partial, noisy or corrupted variations of the stored patterns, it can effectively reconstruct the original pattern via an iterative relaxation procedure that converges to the attractor states.
-**B** We consider regions of the brain as nodes of a Hopfield network. Instead of initilaizing the network with the structural wiring of the brain or training it to solve specific tasks, we set its weights empirically, using information about the interregional "activity flow" across regions, as estimated via functional brain connectivity. Capitalizing on strong analogies between the relaxation rule of Hopfield networks and the activity flow principle that links activity to connectivity in brain networks, we propose the resulting 
-functional connectome-based Hopfield neural network (fcHNN) as a minimal phenomenological model for macro-scale brain dynamics.  
-**C** The proposed computational framework assigns an energy level, an attractor state and a position in a 
-low-dimensional embedding to brain activation patterns. Additionally, it models how the entire state-space of viable activation patterns is restricted by the dynamics of the system and how alterations in activity and/or connectivity modify these dynamics.
+
+:::{figure} figures/supplement/classification_acc_state_basins.png
+:name: si_classification_acc_state_basins
+**Cross-validation classification accuracy of the fcHNN, when predicting the attractor state from state 
+activation.**  See [supplemental_material.ipynb](https://github.com/pni-lab/connattractor/blob/master/notebooks/supplemental_material.ipynb) for details.
 :::
 
