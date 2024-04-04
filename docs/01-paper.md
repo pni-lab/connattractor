@@ -102,6 +102,32 @@ bibliography:
   - bibliography.bib
 ---
 
+% {"part": "key-points"}
+**Key Points:**
+- We present a simple yet powerful phenomenological model for large-scale brain dynamics
+- The model uses a functional connectome-based Hopfield artificial neural network (fcHNN) architecture to compute recurrent "activity flow" through the functional brain connectome
+- FcHNN attractor dynamics accurately reconstruct the dynamic repertoire of the brain in resting conditions
+- FcHNNs conceptualize both task-induced and pathological changes in brain activity as a non-linear shift in these dynamics
+- Our approach is validated using large-scale neuroimaging data from seven studies
+- FcHNNs offers a simple and interpretable computational alternative to conventional descriptive analyses of brain function
+
+%+++
+
+
+%+++ {"part": "abstract"}
+
+```{card}
+:header: Abstract
+
+Understanding large-scale brain dynamics is a grand challenge in neuroscience. 
+We propose functional connectome-based Hopfield Neural Networks (fcHNNs) as a model of macro-scale brain dynamics, arising from recurrent activity flow among brain regions. An fcHNN is neither optimized to mimic certain brain characteristics, nor trained to solve specific tasks; its weights are simply initialized with empirical functional connectivity values.
+In the fcHNN framework, brain dynamics are understood in relation to so-called attractor states, i.e. neurobiologically meaningful low-energy activity configurations.
+Analyses of 7 distinct datasets demonstrate that fcHNNs can accurately reconstruct and predict brain dynamics under a wide range of conditions, including resting and task states and brain disorders.
+By establishing a mechanistic link between connectivity and activity, fcHNNs offers a simple and interpretable  computational alternative to conventional descriptive analyses of brain function. Being a generative framework, fcHNNs can yield mechanistic insights and hold potential to uncover novel treatment targets.
+```
+
+%+++
+
 ## Introduction
 
 Brain function is characterized by the continuous activation and deactivation of anatomically distributed neuronal 
@@ -417,3 +443,21 @@ There are many potential ways to further improve the utility of the fcHNN approa
 To conclude, here we have proposed a lightweight, high-level computational framework that accurately captures and predicts brain dynamics under a wide range of conditions, including resting states, task-induced activity changes and brain disorders. The framework models large-scale activity flow in the brain with a recurrent artificial neural network architecture that, instead of being trained to solve specific tasks or mimic certain dynamics, is simply initialized with the empirical functional connectome. The framework identifies neurobiologically meaningful attractor states and provides a model for how these restrict brain dynamics. 
  The proposed model establishes a conceptual link between connectivity and activity, provides a mechanistic account for the emergence of brain states, gradients and temporal autocorrelation structure and offers a simple, robust, and highly interpretable computational alternative to conventional descriptive approaches to investigating brain function. The generative nature of our proposed model opens up a wealth of opportunities for future research, including predicting the effect, and understanding the mechanistic bases, of various interventions; thereby paving the way for designing novel treatment approaches.
 
+
+%+++ {"part": "acknowledgements"}
+## Acknowledgements
+
+The work was supported by the Deutsche Forschungsgemeinschaft (DFG, German Research Foundation; projects ‘TRR289 - Treatment Expectation’, ID 422744262 and ‘SFB1280 - Extinction Learning’, ID 316803389) and by IBS-R015-D1 (Institute for Basic Science; C.W.-W.).
+%+++
+
+%+++ {"part": "data-availability"}
+
+## Analysis source code
+https://github.com/pni-lab/connattractor
+
+## Project website
+https://pni-lab.github.io/connattractor/
+
+## Data availability
+Study 1, 2 and 4 is available at openneuro.org (ds002608, ds002608, ds000140). Data for study 3 is available upon request. Data for study 5-6 is available at the github page of the project: https://github.com/pni-lab/connattractor. Study 7 is available at https://fcon_1000.projects.nitrc.org/indi/abide/, preprocessed data is available at http://preprocessed-connectomes-project.org/.
+%+++
