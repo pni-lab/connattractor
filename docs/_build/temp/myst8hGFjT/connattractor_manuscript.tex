@@ -1,0 +1,135 @@
+% Created with jtex v.1.0.15
+\documentclass{article}
+\usepackage{arxiv}
+
+\usepackage[utf8]{inputenc} % allow utf-8 input
+\usepackage[T1]{fontenc}    % use 8-bit T1 fonts
+\usepackage{hyperref}       % hyperlinks
+\usepackage{url}            % simple URL typesetting
+\usepackage{datetime}       % show dates in the title block
+\usepackage{booktabs}       % professional-quality tables
+\usepackage{amsfonts}       % blackboard math symbols
+\usepackage{nicefrac}       % compact symbols for 1/2, etc.
+\usepackage{microtype}      % microtypography
+\usepackage{graphicx}
+\usepackage{natbib}
+\usepackage{doi}
+\usepackage{xcolor}
+
+\usepackage[acronym]{glossaries}
+\makeglossaries
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%  acronyms  %%%%%%%%%%%%%%%%%%%
+\newacronym{ann}{ANN}{Artificial Neural Network}
+\newacronym{hnn}{HNN}{Hopfield Neural Network}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\hypersetup{colorlinks = true,
+linkcolor = purple,
+urlcolor  = blue,
+citecolor = cyan,
+anchorcolor = black}
+
+\title{Connectome-Based Attractor Dynamics Underlie Brain Activity in Rest, Task, and Disease}
+
+\newdate{articleDate}{4}{4}{2024}
+\date{\displaydate{articleDate}}
+
+\makeatletter
+\let\@fnsymbol\@arabic
+\makeatother
+
+\author{Robert Englert\\
+Center for Translational Neuro- and Behavioral Sciences (C-TNBS), University Medicine Essen, Germany\\Department of Diagnostic and Interventional Radiology and Neuroradiology,  University Medicine Essen, Germany\\\AND
+Balint Kincses\\
+Center for Translational Neuro- and Behavioral Sciences (C-TNBS), University Medicine Essen, Germany\\Department of Neurology, University Medicine Essen, Germany\\\AND
+Raviteja Kotikalapudi\\
+Center for Translational Neuro- and Behavioral Sciences (C-TNBS), University Medicine Essen, Germany\\Department of Neurology, University Medicine Essen, Germany\\\AND
+Giuseppe Gallitto\\
+Center for Translational Neuro- and Behavioral Sciences (C-TNBS), University Medicine Essen, Germany\\Department of Neurology, University Medicine Essen, Germany\\\AND
+Jialin Li\\
+Center for Translational Neuro- and Behavioral Sciences (C-TNBS), University Medicine Essen, Germany\\Department of Neurology, University Medicine Essen, Germany\\Max Planck School of Cognition, Leipzig, Germany\\\AND
+Kevin Hoffschlag\\
+Center for Translational Neuro- and Behavioral Sciences (C-TNBS), University Medicine Essen, Germanys\\Department of Neurology, University Medicine Essen, Germany\\\AND
+Choong-Wan Woo\\
+Center for Neuroscience Imaging Research, Institute for Basic Science, Suwon, South Korea\\Department of Biomedical Engineering, Sungkyunkwan University, Suwon, South Korea\\\AND
+Tor D. Wager\\
+Department of Psychological and Brain Sciences, Dartmouth College, Hanover, NH, USA\\\AND
+Dagmar Timmann\\
+Department of Neurology, University Medicine Essen, Germany\\Center for Translational Neuro- and Behavioral Sciences (C-TNBS), University Medicine Essen, Germany\\\AND
+Ulrike Bingel\\
+Department of Neurology, University Medicine Essen, Germany\\Center for Translational Neuro- and Behavioral Sciences (C-TNBS), University Medicine Essen, Germany\\\AND
+\href{https://orcid.org/0000-0002-2942-0821}{\includegraphics[scale=0.06]{orcid.pdf}}\hspace{1mm}Tamas Spisak\footnotemark[1]\\
+Department of Diagnostic and Interventional Radiology and Neuroradiology,  University Medicine Essen, Germany\\Center for Translational Neuro- and Behavioral Sciences (C-TNBS), University Medicine Essen, Germany\\}
+
+% Uncomment to override  the `A preprint' in the header
+\renewcommand{\headeright}{manuscript draft}
+\renewcommand{\undertitle}{}
+\renewcommand{\shorttitle}{Manuscript}
+
+%% Add PDF metadata to help others organize their library
+%% Once the PDF is generated, you can check the metadata with
+%% $ pdfinfo template.pdf
+\hypersetup{
+pdftitle={\@title},
+pdfsubject={},
+pdfauthor={\@author},
+pdfkeywords={},
+addtopdfcreator={Written in Curvenote}
+}
+
+\begin{document}
+\maketitle
+\footnotetext[1]{Correspondence to: tamas.spisak@uk-essen.de}
+
+
+\keywords{}
+
+\section{Introduction}
+
+Brain function is characterized by the continuous activation and deactivation of anatomically distributed neuronal
+populations \citep{buzsaki2006rhythms}.
+Irrespective of the presence or absence of explicit stimuli, brain regions appear to work in concert, giving rise to a
+rich and spatiotemporally complex fluctuation \citep{bassett2017network}.
+This fluctuation is neither random nor stationary over time \citep{liu2013time, zalesky2014time}.
+It is organized around large-scale gradients \citep{margulies2016situating, huntenburg2018large} and exhibits quasi-periodic properties, with a limited number of recurring patterns known as ``brain states'' \citep{greene2023everyone, vidaurre2017brain, liu2013time}.
+
+A wide variety of descriptive techniques have been previously employed to characterize whole-brain dynamics \citep{smith2012temporally, vidaurre2017brain, liu2013time, chen2018human}.
+These efforts have provided accumulating evidence not only for the existence of dynamic brain states but also for their clinical
+significance \citep{hutchison2013dynamic, barttfeld2015signature, meer2020movie}.
+However, the underlying driving forces remain elusive due to the descriptive nature of such studies.
+
+Conventional computational approaches attempt to solve this puzzle by going all the way down to the biophysical properties of single neurons, and aim to construct a model of larger neural populations, or even the entire brain
+\citep{breakspear2017dynamic}.
+These approaches have shown numerous successful applications \citep{murray2018biophysical, kriegeskorte2018cognitive, heinz2019towards}.
+However, such models need to estimate a vast number of neurobiologically motivated free parameters to fit the data. This hampers their ability to effectively bridge the gap between explanations at the level of single neurons and the complexity of behavior \citep{breakspear2017dynamic}.
+Recent efforts using coarse-grained brain network models \citep{schirner2022dynamic, schiff1994controlling, papadopoulos2017development, seguin2023brain} and linear network control theory  \citep{chiem2021structure, scheid2021time, gu2015controllability} opted to trade biophysical fidelity to phenomenological validity.
+
+Such models have provided insights into some of the inherent key characteristics of the brain as a dynamic system; for instance, the importance of stable patterns, so-called ``attractor states'', in governing brain dynamics \citep{deco2012anatomy, golos2015multistability, hansen2015functional}. While attractor networks have become established models of micro-scale canonical brain circuits in the last four decades \citep{khona2022attractor}, these studies highlighted that attractor dynamics are essential characteristics of macro-scale brain dynamics as well. However, the standard practice among these studies is the use of models that capitalize on information about the structural wiring of the brain, leading to the grand challenge of modeling the relationship between the structural wiring of the brain and functional connectivity.
+
+The ``neuroconnectionist'' approach \citep{doerig2023neuroconnectionist} makes another step towards trading biophisical detail to ``cognitive/behavioral fidelity'' \citep{kriegeskorte2018cognitive}, by using artificial neural networks (\acrshort{ann}s) that are trained to perform various tasks, as brain models. However, the need to train \acrshort{ann}s for specific tasks inherently limits their ability to explain task-independent, spontaneous neural dynamics \citep{richards2019deep}.
+
+Here we propose a minimal phenomenological model for large-scale brain dynamics that combines the advantages of large-scale attractor network models \citep{golos2015multistability}, neuroconnectionism \citep{doerig2023neuroconnectionist}, and recent advances in undersanding the flow of brain activity across regions \citep{cole2016activity}, to investigate brain dynamics.
+Similar to neuroconnectionism, we utilize an \acrshort{ann} as an abstract, high-level computational model of the brain.
+However, our model is not explicitly trained for a specific task. Instead, we set its weights empirically.
+
+Specifically, we employ a continuous-space Hopfield Neural Network (\acrshort{hnn}) \citep{hopfield1982neural, krotov2023new}, similar to the spin-glass and Hopfield-style attractor network models applied e.g. by \citet{deco2012anatomy, golos2015multistability}, where the nodes of the network model represent large-scale brain areas. However, in contrast to these previos efforts that starting from the structural wiring of the brain, we initialize the edge weights of the network based on direct estimates node-to-node information transfer. Our decision to employ a direct proxy of interregional communication, rather than biophisical wiring, capitalizes on the ``activity flow'' \citep{cole2016activity, ito2017cognitive} principle, a toroughgly validated phenomenological model of the association between brain activity and functional connectivity, as measuured with functional magneic resonance imaging.
+This allows us to circumvent the necessity of comprehensively understanding and accurately modeling structural-functional coupling in the brain. Instead, we can concentrate on the overarching dynamical properties of the system.
+
+Based on the topology of the functional connectome, our model establishes an energy level for any arbitrary activation patterns and determines a ``trajectory of least action'' towards one of the finite number of stable patterns, known as \textit{attractor states}, that minimize this energy. In the proposed framework, macro-scale brain dynamics can be conceptualized as an intricate, high-dimensional path on the energy landscape (\ref{concept}C), arising from the activity flow \citep{cole2016activity} within the functional connectome and constrained by the ``gravitational pull'' of the attractor states of the system.
+The generative nature of the proposed framework offers testable predictions for the effect of various perturbations and alterations of these dynamics, from task-induced activity to changes related to brain disorders.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%  acronyms & glossary  %%%%%%%%%%%%%
+\printglossaries
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+\bibliographystyle{unsrtnat}
+\bibliography{main.bib}
+
+\end{document}
