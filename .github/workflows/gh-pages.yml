@@ -34,7 +34,7 @@ jobs:
           sudo apt-get update
           sudo apt-get install texlive-xetex latexmk libpng-dev libjpeg-dev libtiff-dev imagemagick -y
       - name: Install MyST Markdown
-        run: npm install -g mystmd@v1.1.50
+        run: npm install -g mystmd
       - name: Manually download docx template
         run: |
           cd docs
@@ -45,8 +45,8 @@ jobs:
       - name: Build HTML Assets
         run: |
           cd docs
-          #myst build --docx
-          #myst build --pdf
+          myst build --docx
+          myst build --pdf
           myst build --html
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
