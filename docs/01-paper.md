@@ -157,9 +157,3 @@ Based on the topology of the functional connectome, our model establishes an ene
 The generative nature of the proposed framework offers testable predictions for the effect of various perturbations and alterations of these dynamics, from task-induced activity to changes related to brain disorders.
 
 
-:::{figure} figures/supplement/classification_acc_state_basins.png
-:name: si_classification_acc_state_basins
-**Cross-validation classification accuracy of the fcHNN, when predicting the attractor state from state 
-activation.**  See [supplemental_material.ipynb](https://github.com/pni-lab/connattractor/blob/master/notebooks/supplemental_material.ipynb) for details.
-:::
-
