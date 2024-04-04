@@ -130,7 +130,7 @@ The 122-parcel version of the BASC (Multi-level bootstrap analysis of stable clu
 ### Functional connectome
 
 Regional timeseries were ordered into large-scale functional modules (defined by the 7-parcel level of the BASC atlas) for visualization purposes.
-Next, in all datasets, we estimated study-level mean connectivity matrices by regularized partial correlation, via the Graphical Lasso algorithm that estimates a sparse precision matrix by solving a Lasso problem and an L1 penalty for sparsity, as implemented in nilearn {cite:p}`abraham2014machine`. Diagonal elements of the matrices were set to zero. 
+Next, in all datasets, we estimated study-level mean connectivity matrices by regularized partial correlation, via the Graphical Lasso algorithm that estimates a sparse precision matrix by solving a Lasso problem and an L1 penalty for sparsity {cite:p}`varoquaux2010detection`, as implemented in nilearn {cite:p}`abraham2014machine`.  Diagonal elements of the matrices were set to zero. 
 
 
 ### Connectome-based Hopfield networks
@@ -148,14 +148,15 @@ where $W$ is the weight matrix with element $w_{i,j}$ denoting the weight betwee
 
  ```{math}
  :label: hopfield-update-matrix
- \dot{\bold{a}} = S(\beta \bold{W} \bold{a} - \bold{b})
+ \bold{a'} = S(\beta \bold{W} \bold{a} - \bold{b})
  ```
-where $\dot{\bold{a}} = (\dot{a}_1, \dots, \dot{a}_m)$ is the activity in the next iteration and $S(.)$ is the sigmoidal activation function ($S(a) = tanh(a)$ in our implementation) and $\beta$ is the temperature parameter.
+
+where $\bold{a'} = ({a'}_1, \dots, {a'}_m)$ is the activity in the next iteration and $S(.)$ is the sigmoidal activation function ($S(a) = tanh(a)$ in our implementation) and $\beta$ is the temperature parameter.
 During the stochastic relaxation procedure, we add weak Gaussian noise to each node's activity at every iteration:
 
 ```{math}
 :label: hopfield-update-matrix-stochastic
-\dot{\bold{a}} = S(\beta \bold{W} \bold{a} - \bold{b}  + \epsilon),
+\bold{a'} = S(\beta \bold{W} \bold{a} - \bold{b}  + \epsilon),
 ```
 
  where $ \epsilon \sim \mathcal{N}(\mathbf{\mu}, \sigma)$, with $\sigma$ regulating the amount of noise added and $\mathbf{\mu}$ set to 0, by default.
@@ -180,7 +181,8 @@ We obtained the four attractor states in study 1, as described above. We then co
 Analogously to the methodology of the fcHNN projection, we performed PCA on the preprocessed fMRI time-frames from study 1 (based on the empirical regional timeseries data).
 To compare the explanatory power of the first two PCs derived from fcHNN-generated data and real fMRI data, we fitted linear regression models which used the first two fcHNN or real data-based PCs as regressors to reconstruct the real fMRI time-frames. In-sample explained variances and the corresponding confidence intervals were calculated for both models with bootstrapping (100 samples). To evaluate the out-of-sample generalization of the PCs (fcHNN- and real data-based) from study 1, we calculated how much variance they can explain in study 2.
 
-To calculate fractional time occupancies of the attractor states in real timeseries vs simulated data, we used each real and simulated timeframe as an input to the fcHNN of study 1 and obtained the corresponding attractor state. Statistical inference on the similarity of the real fractional occupancies and the fcHNN prediction was performed with two different null models. Null model #1 was constructed by a spatial autocorrelation preserving randomization of all time-frames in the real data. Null model #2 was constructed  by random sampling from a multivariate normal distribution, with the covariance matrix set based on the functional connectome (partial correlations). More detail on the null-models can be found in {numref}`Supplementary figure %s <si_state_occupancy_null_models>`.
+To calculate fractional time occupancies of the attractor states in real timeseries vs simulated data, we used each real and simulated timeframe as an input to the fcHNN of study 1 and obtained the corresponding attractor state. Statistical inference on the similarity of the real fractional occupancies and the fcHNN prediction was performed with two different null models. Null model #1 was constructed  by random sampling from a multivariate normal distribution, with the covariance matrix set based on the functional connectome (partial correlations).
+Null model #2 was constructed by a spatial autocorrelation preserving randomization of all time-frames in the real data. More detail on the null-models can be found in {numref}`Supplementary figure %s <si_state_occupancy_null_models>`.
 
 To confirm that the real and fcCHNN temporal sequences (from the stochastic relaxation) on display similar temporal autocorrelation properties, we compared both to their randomly shuffled variant with a "flow analysis".
 First we calculated the direction on the projection plane between each successive TR (a vector on the fcHNN projection plane for each TR transition), both for the empirical and the shuffled data.
