@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2024.4.4)  4 APR 2024 14:42
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2024.4.4)  4 APR 2024 14:49
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -574,33 +574,33 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) (/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
-File: files/expl_variance_energy-54ef09ef6a4e1215328a54b23f1369dd.png Graphic f
+File: files/expl_variance_energy-a88a5510b68abd1b0ed446972f0962b4.png Graphic f
 ile (type bmp)
-<files/expl_variance_energy-54ef09ef6a4e1215328a54b23f1369dd.png>
-File: files/classification_acc_s-575bf099e429e2fb0cde57032dd71905.png Graphic f
+<files/expl_variance_energy-a88a5510b68abd1b0ed446972f0962b4.png>
+File: files/classification_acc_s-0347bb7eb46568eea98b66fb84dfc1e2.png Graphic f
 ile (type bmp)
-<files/classification_acc_s-575bf099e429e2fb0cde57032dd71905.png>
-File: files/att_state_emergence_-f0c883304a8071918bad7c24cdcac6fe.png Graphic f
+<files/classification_acc_s-0347bb7eb46568eea98b66fb84dfc1e2.png>
+File: files/att_state_emergence_-e491e0d51d379eb5242ba7216ea8e597.png Graphic f
 ile (type bmp)
-<files/att_state_emergence_-f0c883304a8071918bad7c24cdcac6fe.png>
-File: files/si_convergence-3a7c025b6a9c700a0e913bcb41077f7a.png Graphic file (t
+<files/att_state_emergence_-e491e0d51d379eb5242ba7216ea8e597.png>
+File: files/si_convergence-daf20eb85a495690251180fecc68442e.png Graphic file (t
 ype bmp)
-<files/si_convergence-3a7c025b6a9c700a0e913bcb41077f7a.png>
-File: files/si_state_occupancy_n-f682a0bf77d96f78c1ecfb7ce4730396.png Graphic f
+<files/si_convergence-daf20eb85a495690251180fecc68442e.png>
+File: files/si_state_occupancy_n-bd1c17d6605b3c0006a8daee1aa3a125.png Graphic f
 ile (type bmp)
-<files/si_state_occupancy_n-f682a0bf77d96f78c1ecfb7ce4730396.png>
-File: files/si_pain_ghost_attrac-19106c6b75ee202e65ebb8ff20e41171.png Graphic f
+<files/si_state_occupancy_n-bd1c17d6605b3c0006a8daee1aa3a125.png>
+File: files/si_pain_ghost_attrac-c7fa374b0924e30a86a06492e60563ea.png Graphic f
 ile (type bmp)
-<files/si_pain_ghost_attrac-19106c6b75ee202e65ebb8ff20e41171.png>
-File: files/si_downreg_trajector-299b4580e38d0f246cca96100cd5f5e8.png Graphic f
+<files/si_pain_ghost_attrac-c7fa374b0924e30a86a06492e60563ea.png>
+File: files/si_downreg_trajector-859bf5b53b1d6fb9c1e2784f60e1f7cb.png Graphic f
 ile (type bmp)
-<files/si_downreg_trajector-299b4580e38d0f246cca96100cd5f5e8.png>
-File: files/noise_robustness_wei-7471a47fb88e22a90ded132495c639a5.png Graphic f
+<files/si_downreg_trajector-859bf5b53b1d6fb9c1e2784f60e1f7cb.png>
+File: files/noise_robustness_wei-435b4be794717d53adaf551dc8a490b3.png Graphic f
 ile (type bmp)
-<files/noise_robustness_wei-7471a47fb88e22a90ded132495c639a5.png>
-File: files/clinical_results_tab-6fcfa9f0c92bd645fb6b10fd5a18044f.png Graphic f
+<files/noise_robustness_wei-435b4be794717d53adaf551dc8a490b3.png>
+File: files/clinical_results_tab-e3dddc14a2e860319e298e0d69f01894.png Graphic f
 ile (type bmp)
-<files/clinical_results_tab-6fcfa9f0c92bd645fb6b10fd5a18044f.png>
+<files/clinical_results_tab-e3dddc14a2e860319e298e0d69f01894.png>
 [1
 
 
