@@ -26,6 +26,32 @@
     {
       "format": "pdf",
       "template": "arxiv_nips",
+      "output": "/home/runner/work/connattractor/connattractor/docs/exports/connattractor_manuscript.pdf",
+      "articles": [
+        {
+          "file": "/home/runner/work/connattractor/connattractor/docs/01-paper.md",
+          "level": 0
+        }
+      ],
+      "$file": "/home/runner/work/connattractor/connattractor/docs/01-paper.md",
+      "$project": "/home/runner/work/connattractor/connattractor/docs"
+    },
+    {
+      "format": "docx",
+      "hideFooter": true,
+      "output": "/home/runner/work/connattractor/connattractor/docs/exports/connattractor_manuscript.docx",
+      "articles": [
+        {
+          "file": "/home/runner/work/connattractor/connattractor/docs/01-paper.md",
+          "level": 0
+        }
+      ],
+      "$file": "/home/runner/work/connattractor/connattractor/docs/01-paper.md",
+      "$project": "/home/runner/work/connattractor/connattractor/docs"
+    },
+    {
+      "format": "pdf",
+      "template": "arxiv_nips",
       "output": "/home/runner/work/connattractor/connattractor/docs/exports/connattractor_methods.pdf",
       "articles": [
         {
