@@ -34,7 +34,7 @@ jobs:
           sudo apt-get update
           sudo apt-get install texlive-xetex latexmk libpng-dev libjpeg-dev libtiff-dev imagemagick -y
       - name: Install MyST Markdown
-        run: npm install -g mystmd@v1.0.4
+        run: npm install -g mystmd@v1.1.50
       - name: Manually download docx template
         run: |
           cd docs
