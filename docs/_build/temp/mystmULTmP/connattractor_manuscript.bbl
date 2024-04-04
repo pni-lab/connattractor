@@ -1,0 +1,257 @@
+\begin{thebibliography}{34}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Buzsaki(2006)]{buzsaki2006rhythms}
+Gyorgy Buzsaki.
+\newblock \emph{Rhythms of the Brain}.
+\newblock Oxford university press, 2006.
+
+\bibitem[Bassett and Sporns(2017)]{bassett2017network}
+Danielle~S Bassett and Olaf Sporns.
+\newblock Network neuroscience.
+\newblock \emph{Nature neuroscience}, 20\penalty0 (3):\penalty0 353--364, 2017.
+
+\bibitem[Liu and Duyn(2013)]{liu2013time}
+Xiao Liu and Jeff~H Duyn.
+\newblock Time-varying functional network information extracted from brief
+  instances of spontaneous brain activity.
+\newblock \emph{Proceedings of the National Academy of Sciences}, 110\penalty0
+  (11):\penalty0 4392--4397, 2013.
+
+\bibitem[Zalesky et~al.(2014)Zalesky, Fornito, Cocchi, Gollo, and
+  Breakspear]{zalesky2014time}
+Andrew Zalesky, Alex Fornito, Luca Cocchi, Leonardo~L Gollo, and Michael
+  Breakspear.
+\newblock Time-resolved resting-state brain networks.
+\newblock \emph{Proceedings of the National Academy of Sciences}, 111\penalty0
+  (28):\penalty0 10341--10346, 2014.
+
+\bibitem[Margulies et~al.(2016)Margulies, Ghosh, Goulas, Falkiewicz,
+  Huntenburg, Langs, Bezgin, Eickhoff, Castellanos, Petrides,
+  et~al.]{margulies2016situating}
+Daniel~S Margulies, Satrajit~S Ghosh, Alexandros Goulas, Marcel Falkiewicz,
+  Julia~M Huntenburg, Georg Langs, Gleb Bezgin, Simon~B Eickhoff, F~Xavier
+  Castellanos, Michael Petrides, et~al.
+\newblock Situating the default-mode network along a principal gradient of
+  macroscale cortical organization.
+\newblock \emph{Proceedings of the National Academy of Sciences}, 113\penalty0
+  (44):\penalty0 12574--12579, 2016.
+
+\bibitem[Huntenburg et~al.(2018)Huntenburg, Bazin, and
+  Margulies]{huntenburg2018large}
+Julia~M Huntenburg, Pierre-Louis Bazin, and Daniel~S Margulies.
+\newblock Large-scale gradients in human cortical organization.
+\newblock \emph{Trends in cognitive sciences}, 22\penalty0 (1):\penalty0
+  21--31, 2018.
+
+\bibitem[Greene et~al.(2023)Greene, Horien, Barson, Scheinost, and
+  Constable]{greene2023everyone}
+Abigail~S Greene, Corey Horien, Daniel Barson, Dustin Scheinost, and R~Todd
+  Constable.
+\newblock Why is everyone talking about brain state?
+\newblock \emph{Trends in Neurosciences}, 2023.
+
+\bibitem[Vidaurre et~al.(2017)Vidaurre, Smith, and Woolrich]{vidaurre2017brain}
+Diego Vidaurre, Stephen~M Smith, and Mark~W Woolrich.
+\newblock Brain network dynamics are hierarchically organized in time.
+\newblock \emph{Proceedings of the National Academy of Sciences}, 114\penalty0
+  (48):\penalty0 12827--12832, 2017.
+
+\bibitem[Smith et~al.(2012)Smith, Miller, Moeller, Xu, Auerbach, Woolrich,
+  Beckmann, Jenkinson, Andersson, Glasser, et~al.]{smith2012temporally}
+Stephen~M Smith, Karla~L Miller, Steen Moeller, Junqian Xu, Edward~J Auerbach,
+  Mark~W Woolrich, Christian~F Beckmann, Mark Jenkinson, Jesper Andersson,
+  Matthew~F Glasser, et~al.
+\newblock Temporally-independent functional modes of spontaneous brain
+  activity.
+\newblock \emph{Proceedings of the National Academy of Sciences}, 109\penalty0
+  (8):\penalty0 3131--3136, 2012.
+
+\bibitem[Chen et~al.(2018)Chen, Ito, Kulkarni, and Cole]{chen2018human}
+Richard~H Chen, Takuya Ito, Kaustubh~R Kulkarni, and Michael~W Cole.
+\newblock The human brain traverses a common activation-pattern state space
+  across task and rest.
+\newblock \emph{Brain Connectivity}, 8\penalty0 (7):\penalty0 429--443, 2018.
+
+\bibitem[Hutchison et~al.(2013)Hutchison, Womelsdorf, Allen, Bandettini,
+  Calhoun, Corbetta, Della~Penna, Duyn, Glover, Gonzalez-Castillo,
+  et~al.]{hutchison2013dynamic}
+R~Matthew Hutchison, Thilo Womelsdorf, Elena~A Allen, Peter~A Bandettini,
+  Vince~D Calhoun, Maurizio Corbetta, Stefania Della~Penna, Jeff~H Duyn, Gary~H
+  Glover, Javier Gonzalez-Castillo, et~al.
+\newblock Dynamic functional connectivity: promise, issues, and
+  interpretations.
+\newblock \emph{Neuroimage}, 80:\penalty0 360--378, 2013.
+
+\bibitem[Barttfeld et~al.(2015)Barttfeld, Uhrig, Sitt, Sigman, Jarraya, and
+  Dehaene]{barttfeld2015signature}
+Pablo Barttfeld, Lynn Uhrig, Jacobo~D Sitt, Mariano Sigman, B{\'e}chir Jarraya,
+  and Stanislas Dehaene.
+\newblock Signature of consciousness in the dynamics of resting-state brain
+  activity.
+\newblock \emph{Proceedings of the National Academy of Sciences}, 112\penalty0
+  (3):\penalty0 887--892, 2015.
+
+\bibitem[Meer et~al.(2020)Meer, Breakspear, Chang, Sonkusare, and
+  Cocchi]{meer2020movie}
+Johan N van~der Meer, Michael Breakspear, Luke~J Chang, Saurabh Sonkusare, and
+  Luca Cocchi.
+\newblock Movie viewing elicits rich and reliable brain state dynamics.
+\newblock \emph{Nature communications}, 11\penalty0 (1):\penalty0 5004, 2020.
+
+\bibitem[Breakspear(2017)]{breakspear2017dynamic}
+Michael Breakspear.
+\newblock Dynamic models of large-scale brain activity.
+\newblock \emph{Nature neuroscience}, 20\penalty0 (3):\penalty0 340--352, 2017.
+
+\bibitem[Murray et~al.(2018)Murray, Demirta{\c{s}}, and
+  Anticevic]{murray2018biophysical}
+John~D Murray, Murat Demirta{\c{s}}, and Alan Anticevic.
+\newblock Biophysical modeling of large-scale brain dynamics and applications
+  for computational psychiatry.
+\newblock \emph{Biological Psychiatry: Cognitive Neuroscience and
+  Neuroimaging}, 3\penalty0 (9):\penalty0 777--787, 2018.
+
+\bibitem[Kriegeskorte and Douglas(2018)]{kriegeskorte2018cognitive}
+Nikolaus Kriegeskorte and Pamela~K Douglas.
+\newblock Cognitive computational neuroscience.
+\newblock \emph{Nature neuroscience}, 21\penalty0 (9):\penalty0 1148--1160,
+  2018.
+
+\bibitem[Heinz et~al.(2019)Heinz, Murray, Schlagenhauf, Sterzer, Grace, and
+  Waltz]{heinz2019towards}
+Andreas Heinz, Graham~K Murray, Florian Schlagenhauf, Philipp Sterzer,
+  Anthony~A Grace, and James~A Waltz.
+\newblock Towards a unifying cognitive, neurophysiological, and computational
+  neuroscience account of schizophrenia.
+\newblock \emph{Schizophrenia bulletin}, 45\penalty0 (5):\penalty0 1092--1100,
+  2019.
+
+\bibitem[Schirner et~al.(2022)Schirner, Kong, Yeo, Deco, and
+  Ritter]{schirner2022dynamic}
+Michael Schirner, Xiaolu Kong, BT~Thomas Yeo, Gustavo Deco, and Petra Ritter.
+\newblock Dynamic primitives of brain network interaction.
+\newblock \emph{NeuroImage}, 250:\penalty0 118928, 2022.
+
+\bibitem[Schiff et~al.(1994)Schiff, Jerger, Duong, Chang, Spano, and
+  Ditto]{schiff1994controlling}
+Steven~J Schiff, Kristin Jerger, Duc~H Duong, Taeun Chang, Mark~L Spano, and
+  William~L Ditto.
+\newblock Controlling chaos in the brain.
+\newblock \emph{Nature}, 370\penalty0 (6491):\penalty0 615--620, 1994.
+
+\bibitem[Papadopoulos et~al.(2017)Papadopoulos, Kim, Kurths, and
+  Bassett]{papadopoulos2017development}
+Lia Papadopoulos, Jason~Z Kim, J{\"u}rgen Kurths, and Danielle~S Bassett.
+\newblock Development of structural correlations and synchronization from
+  adaptive rewiring in networks of kuramoto oscillators.
+\newblock \emph{Chaos: An Interdisciplinary Journal of Nonlinear Science},
+  27\penalty0 (7), 2017.
+
+\bibitem[Seguin et~al.(2023)Seguin, Sporns, and Zalesky]{seguin2023brain}
+Caio Seguin, Olaf Sporns, and Andrew Zalesky.
+\newblock Brain network communication: concepts, models and applications.
+\newblock \emph{Nature Reviews Neuroscience}, 24\penalty0 (9):\penalty0
+  557--574, 2023.
+
+\bibitem[Chi{\^e}m et~al.(2021)Chi{\^e}m, Crevecoeur, and
+  Delvenne]{chiem2021structure}
+Benjamin Chi{\^e}m, Fr{\'e}d{\'e}ric Crevecoeur, and Jean-Charles Delvenne.
+\newblock Structure-informed functional connectivity driven by identifiable and
+  state-specific control regions.
+\newblock \emph{Network Neuroscience}, 5\penalty0 (2):\penalty0 591--613, 2021.
+
+\bibitem[Scheid et~al.(2021)Scheid, Ashourvan, Stiso, Davis, Mikhail,
+  Pasqualetti, Litt, and Bassett]{scheid2021time}
+Brittany~H Scheid, Arian Ashourvan, Jennifer Stiso, Kathryn~A Davis, Fadi
+  Mikhail, Fabio Pasqualetti, Brian Litt, and Danielle~S Bassett.
+\newblock Time-evolving controllability of effective connectivity networks
+  during seizure progression.
+\newblock \emph{Proceedings of the National Academy of Sciences}, 118\penalty0
+  (5):\penalty0 e2006436118, 2021.
+
+\bibitem[Gu et~al.(2015)Gu, Pasqualetti, Cieslak, Telesford, Yu, Kahn,
+  Medaglia, Vettel, Miller, Grafton, et~al.]{gu2015controllability}
+Shi Gu, Fabio Pasqualetti, Matthew Cieslak, Qawi~K Telesford, Alfred~B Yu,
+  Ari~E Kahn, John~D Medaglia, Jean~M Vettel, Michael~B Miller, Scott~T
+  Grafton, et~al.
+\newblock Controllability of structural brain networks.
+\newblock \emph{Nature communications}, 6\penalty0 (1):\penalty0 8414, 2015.
+
+\bibitem[Deco et~al.(2012)Deco, Senden, and Jirsa]{deco2012anatomy}
+Gustavo Deco, Mario Senden, and Viktor Jirsa.
+\newblock How anatomy shapes dynamics: a semi-analytical study of the brain at
+  rest by a simple spin model.
+\newblock \emph{Frontiers in computational neuroscience}, 6:\penalty0 68, 2012.
+
+\bibitem[Golos et~al.(2015)Golos, Jirsa, and
+  Dauc{\'e}]{golos2015multistability}
+Mathieu Golos, Viktor Jirsa, and Emmanuel Dauc{\'e}.
+\newblock Multistability in large scale models of brain activity.
+\newblock \emph{PLoS computational biology}, 11\penalty0 (12):\penalty0
+  e1004644, 2015.
+
+\bibitem[Hansen et~al.(2015)Hansen, Battaglia, Spiegler, Deco, and
+  Jirsa]{hansen2015functional}
+Enrique~CA Hansen, Demian Battaglia, Andreas Spiegler, Gustavo Deco, and
+  Viktor~K Jirsa.
+\newblock Functional connectivity dynamics: modeling the switching behavior of
+  the resting state.
+\newblock \emph{Neuroimage}, 105:\penalty0 525--535, 2015.
+
+\bibitem[Khona and Fiete(2022)]{khona2022attractor}
+Mikail Khona and Ila~R Fiete.
+\newblock Attractor and integrator networks in the brain.
+\newblock \emph{Nature Reviews Neuroscience}, 23\penalty0 (12):\penalty0
+  744--766, 2022.
+
+\bibitem[Doerig et~al.(2023)Doerig, Sommers, Seeliger, Richards, Ismael,
+  Lindsay, Kording, Konkle, Van~Gerven, Kriegeskorte,
+  et~al.]{doerig2023neuroconnectionist}
+Adrien Doerig, Rowan~P Sommers, Katja Seeliger, Blake Richards, Jenann Ismael,
+  Grace~W Lindsay, Konrad~P Kording, Talia Konkle, Marcel~AJ Van~Gerven,
+  Nikolaus Kriegeskorte, et~al.
+\newblock The neuroconnectionist research programme.
+\newblock \emph{Nature Reviews Neuroscience}, pages 1--20, 2023.
+
+\bibitem[Richards et~al.(2019)Richards, Lillicrap, Beaudoin, Bengio, Bogacz,
+  Christensen, Clopath, Costa, de~Berker, Ganguli, et~al.]{richards2019deep}
+Blake~A Richards, Timothy~P Lillicrap, Philippe Beaudoin, Yoshua Bengio, Rafal
+  Bogacz, Amelia Christensen, Claudia Clopath, Rui~Ponte Costa, Archy
+  de~Berker, Surya Ganguli, et~al.
+\newblock A deep learning framework for neuroscience.
+\newblock \emph{Nature neuroscience}, 22\penalty0 (11):\penalty0 1761--1770,
+  2019.
+
+\bibitem[Cole et~al.(2016)Cole, Ito, Bassett, and Schultz]{cole2016activity}
+Michael~W Cole, Takuya Ito, Danielle~S Bassett, and Douglas~H Schultz.
+\newblock Activity flow over resting-state networks shapes cognitive task
+  activations.
+\newblock \emph{Nature neuroscience}, 19\penalty0 (12):\penalty0 1718--1726,
+  2016.
+
+\bibitem[Hopfield(1982)]{hopfield1982neural}
+John~J Hopfield.
+\newblock Neural networks and physical systems with emergent collective
+  computational abilities.
+\newblock \emph{Proceedings of the national academy of sciences}, 79\penalty0
+  (8):\penalty0 2554--2558, 1982.
+
+\bibitem[Krotov(2023)]{krotov2023new}
+Dmitry Krotov.
+\newblock A new frontier for hopfield networks.
+\newblock \emph{Nature Reviews Physics}, pages 1--2, 2023.
+
+\bibitem[Ito et~al.(2017)Ito, Kulkarni, Schultz, Mill, Chen, Solomyak, and
+  Cole]{ito2017cognitive}
+Takuya Ito, Kaustubh~R Kulkarni, Douglas~H Schultz, Ravi~D Mill, Richard~H
+  Chen, Levi~I Solomyak, and Michael~W Cole.
+\newblock Cognitive task information is transferred between brain regions via
+  resting-state network topology.
+\newblock \emph{Nature communications}, 8\penalty0 (1):\penalty0 1027, 2017.
+
+\end{thebibliography}
