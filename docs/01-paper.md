@@ -105,9 +105,9 @@ bibliography:
 % {"part": "key-points"}
 **Key Points:**
 - We present a simple yet powerful phenomenological model for large-scale brain dynamics
-- The model uses a functional connectome-based Hopfield artificial neural network (fcHNN) architecture to compute recurrent "activity flow" through the functional brain connectome
-- FcHNN attractor dynamics accurately reconstruct the dynamic repertoire of the brain in resting conditions
-- FcHNNs conceptualize both task-induced and pathological changes in brain activity as a non-linear shift in these dynamics
+- The model uses a functional connectome-based Hopfield artificial neural network (fcHNN) architecture to compute recurrent "activity flow" through the network of brain regions
+- fcHNN attractor dynamics accurately reconstruct the several characteristics of resting state brain dynamics
+- fcHNNs conceptualize both task-induced and pathological changes in brain activity as a non-linear alteration of these dynamics
 - Our approach is validated using large-scale neuroimaging data from seven studies
 - FcHNNs offers a simple and interpretable computational alternative to conventional descriptive analyses of brain function
 
