@@ -10,15 +10,18 @@
       "md": false,
       "xml": false,
       "meca": false,
+      "cff": false,
       "site": false,
       "html": false,
       "all": true,
+      "doiBib": false,
       "watch": false,
       "force": false,
       "checkLinks": false,
       "strict": false,
       "ci": false,
-      "maxSizeWebp": 1572864
+      "maxSizeWebp": 1572864,
+      "keepHost": false
     },
     "performSiteBuild": true
   },
