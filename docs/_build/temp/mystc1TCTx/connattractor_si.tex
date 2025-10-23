@@ -1,0 +1,594 @@
+% Created with jtex v.1.0.20
+\documentclass{article}
+\usepackage{arxiv}
+
+\usepackage[utf8]{inputenc} % allow utf-8 input
+\usepackage[T1]{fontenc}    % use 8-bit T1 fonts
+\usepackage{hyperref}       % hyperlinks
+\usepackage{url}            % simple URL typesetting
+\usepackage{datetime}       % show dates in the title block
+\usepackage{booktabs}       % professional-quality tables
+\usepackage{amsfonts}       % blackboard math symbols
+\usepackage{nicefrac}       % compact symbols for 1/2, etc.
+\usepackage{microtype}      % microtypography
+\usepackage{graphicx}
+\usepackage{natbib}
+\usepackage{doi}
+\usepackage{xcolor}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%  imports  %%%%%%%%%%%%%%%%%%%
+\usepackage{amsmath}
+\usepackage{framed}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\hypersetup{colorlinks = true,
+linkcolor = purple,
+urlcolor  = blue,
+citecolor = cyan,
+anchorcolor = black}
+
+\title{Supplementary Information}
+
+\newdate{articleDate}{23}{10}{2025}
+\date{\displaydate{articleDate}}
+
+\makeatletter
+\let\@fnsymbol\@arabic
+\makeatother
+
+\author{}
+
+% Uncomment to override  the `A preprint' in the header
+\renewcommand{\headeright}{}
+\renewcommand{\undertitle}{}
+\renewcommand{\shorttitle}{Supplementary Information}
+
+%% Add PDF metadata to help others organize their library
+%% Once the PDF is generated, you can check the metadata with
+%% $ pdfinfo template.pdf
+\hypersetup{
+pdftitle={\@title},
+pdfsubject={},
+pdfauthor={\@author},
+pdfkeywords={},
+addtopdfcreator={Written in Curvenote}
+}
+
+\begin{document}
+\maketitle
+
+
+\keywords{}
+
+\section{Supplementary Figures}
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[width=0.7\linewidth]{files/si_orthogonality-3be51866afad7ce10d8cfa8ebed4c31d.png}
+\caption[]{\textbf{Eigenstructure and projector tests of the fcANN} \newline
+
+\textbf{A}: Eigenvalue spectra of the empirical coupling matrix J (left) and null model 1 (coupling matrix based on phase randomized timeseries data, recalculated for each permutation) (right). \textbf{B}: Eigenvector--attractor alignment calculated from the empirical (left) and phase-randomized data (right). Attractors were obtained by deterministic relaxation from random initial states (with collapsing sign‑duplicates); alignment is the absolute cosine between collapsed attractor vectors and the top eigenvectors of J. \textbf{C}: Weight correspondence between J and its Kanter--Sompolinsky (K--S) analog. From the measured attractors we formed $\Sigma$ (columns are attractors) and C=$\Sigma$ᵀ$\Sigma$/N, then computed the pseudo‑inverse projector $J_{KS}=(1/N) \SigmaC⁻¹ \Sigmaᵀ$. Similarity was quantified as the cosine between the off‑diagonal elements of J and $J_{KS}$. The gray histogram shows the null distribution from null model 2 (symmetry‑preserving permutations of J, but see \href{https://github.com/pni-lab/connattractor/blob/master/notebooks/ks-test.ipynb}{Source notebook} for similar results with null model 1, i.e. phase randomized timeseries data); for each of the 1000 permutations $p$ we recomputed the own attractors of the surrogate network and $J_{KS}^{(p)}$. The red dashed line marks the empirical value; the one‑sided p‑value is the fraction of null cosines $\geq$ the empirical cosine. The empirical network shows stronger eigenvector--attractor alignment and substantially higher J\leftrightarrowJ\_KS off‑diagonal correspondence than the null, consistent with approximate K--S projector behavior.}
+\label{si_orthogonality}
+\end{figure}
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[width=0.7\linewidth]{files/si_fcann_projection-38f5e600654450896027c27da772fd02.png}
+\caption[]{\textbf{Schematic representation of the fcANN projection.}
+The fcANN projection is a 2-dimensional visualization of the fcANN dynamics, based on the first two principal components (PCs) of the states sampled from the stochastic relaxation procedure. The first two PCs yield a clear separation of the attractor states, with the two symmetric pairs of attractor states located at the extremes of the first and second PC.
+To map the attractors' basins on the space spanned by the first two PCs, we obtained the attractor state of each point visited during the stochastic relaxation and fit a multinomial logistic regression model to predict the attractor state from the first two PCs.
+The resulting model accurately predicted attractor states of arbitrary brain activity patterns, achieving a cross-validated accuracy of 96.5\% (permutation-based p\textless 0.001).
+The attractor basins were visualized by using the decision boundaries obtained from this model. We propose the 2-dimensional fcANN projection as a simplified visual representation of brain dynamics, and use it as a basis for all subsequent analyses in this work.}
+\label{si_fcann_projection}
+\end{figure}
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[width=0.7\linewidth]{files/expl_variance_energy-3e0c060cec3a75f05eb65951d9b8c0a2.png}
+\caption[]{\textbf{Explained variance in state energy by first two principal components.} See \href{https://github.com/pni-lab/connattractor/blob/master/notebooks/supplemental\_material.ipynb}{supplemental\_material.ipynb} for details.}
+\label{si_expl_variance_energy}
+\end{figure}
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[width=0.7\linewidth]{files/classification_acc_s-93180f22e822a6c15450ea6be13ec54a.png}
+\caption[]{\textbf{Cross-validation classification accuracy of the fcANN, when predicting the attractor state from state
+activation.}  See \href{https://github.com/pni-lab/connattractor/blob/master/notebooks/supplemental\_material.ipynb}{supplemental\_material.ipynb} for details.}
+\label{si_classification_acc_state_basins}
+\end{figure}
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[width=0.7\linewidth]{files/att_state_emergence_-b8e5f7cd59304a9fce308c83517fa996.png}
+\caption[]{\textbf{Parameter sweep of fcANN parameters threshold and beta.} The number of attractor states is color‑coded. See \href{https://github.com/pni-lab/connattractor/blob/master/notebooks/supplemental\_material.ipynb}{supplemental\_material.ipynb} for details.}
+\label{si_att_state_emergence_over_beta}
+\end{figure}
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[width=0.7\linewidth]{files/si_convergence_jitte-3f82e6bd99f78f00f83506cd6801cccc.png}
+\caption[]{\textbf{fcANNs initialized with the empirical connectome have better convergence properties than permutation‑based null models.} We investigated the convergence properties of functional connectome‑based ANNs in study 1 by contrasting the number of iterations until reaching convergence to a permutation‑based null model. In more detail, the null model was constructed by randomly permuting the upper triangle of the original connectome and filling up the lower triangle to get a symmetric network (symmetry of the weight matrix is a general requirement for convergence). This procedure was repeated 1000 times. In each repetition, we initialized both the original and the permuted fcANN with the same random input and counted the number of iterations until convergence. Each point on the plot shows an iteration number; the lines connect iteration numbers corresponding to the original and permuted matrices initialized with the same input. Statistical significance of the faster convergence in the empirical connectome was assessed via a one‑sided Wilcoxon signed‑rank test (i.e., a non‑parametric paired test) on the paired iteration values (1,000 pairs), with the null hypothesis that the empirical connectome converges in fewer iterations than the permuted connectome. The whole procedure was repeated with $\beta=0.3, 0.35, 0.4, 0.5$ and 0.6 (providing 2--8 attractor states). See \href{https://github.com/pni-lab/connattractor/blob/master/notebooks/convergence\_analysis.ipynb}{convergence-analysis.ipynb} for details.}
+\label{si_convergence}
+\end{figure}
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[width=0.7\linewidth]{files/si_state_occupancy_n-7dae32e2e43abe3d008bb9756f2cd611.png}
+\caption[]{\textbf{Statistical inference of the fcANN state occupancy prediction with different null models.}
+\textbf{A} Results with a spatial autocorrelation-preserving null model for the empirical activity patterns. See \href{https://github.com/pni-lab/connattractor/blob/master/notebooks/null\_models.ipynb}{null\_models.ipynb} for more details.
+\textbf{B} Results where simulated samples are randomly sampled from a multivariate normal distribution, with the functional connectome as the covariance matrix, and compared to the fcANN performance. See \href{https://github.com/pni-lab/connattractor/blob/master/notebooks/supplemental\_material.ipynb}{supplemental\_material.ipynb} for details.}
+\label{si_state_occupancy_null_models}
+\end{figure}
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[width=0.7\linewidth]{files/si_pain_ghost_attrac-f8c63297d0e0c56a2b4be96d12421b81.png}
+\caption[]{\textbf{FcANN can reconstruct the pain ``ghost attractor''.}
+Signal-to-noise values range from 0.003 to 0.009. Asterisk denotes the location of the simulated ``ghost attractor''. P-values are based on permutation testing, by randomly changing the conditions in a per-participant basis. See \href{https://github.com/pni-lab/connattractor/blob/master/notebooks/main\_analyses.ipynb}{main\_analyses.ipynb} for more details.}
+\label{si_pain_ghost_attractor_sim}
+\end{figure}
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[width=0.7\linewidth]{files/si_downreg_trajector-4f640b94503e06fb9a2cc8edfc750146.png}
+\caption[]{\textbf{fcANN can reconstruct the changes in brain dynamics caused by the voluntary downregulation of pain (as contrasted to upregulation)}
+Signal-to-noise values range from 0.001 to 0.005. P-values are based on permutation testing, by randomly changing the conditions in a per-participant basis. See \href{https://github.com/pni-lab/connattractor/blob/master/notebooks/main\_analyses.ipynb}{main\_analyses.ipynb} for more details.}
+\label{si_downreg_trajectory_sim}
+\end{figure}
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[width=0.7\linewidth]{files/noise_robustness_wei-4a96a77072e6b086a57f3137a2bc77e9.png}
+\caption[]{\textbf{Robustness of the fcANN weights to noise.}
+We set the temperature of the fcANN, so that two attractor states emerge and iteratively add noise to the connectome.
+To account for the change in dynamics, we adjust the temperature (beta) of the noisy fcANN so that exactly two states emerge. We then highlight the decrease in nodal strength of the noisy connectome (the fcANN weights) as a reference metric
+vs the correlation of the attractor states that emerge from the noisy connectome. See \href{https://github.com/pni-lab/connattractor/blob/master/notebooks/supplemental\_material.ipynb}{supplemental\_material.ipynb} for details.}
+\label{si_noise_robustness_weights}
+\end{figure}
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[width=0.7\linewidth]{files/clinical_results_tab-8f2ab2d62409867bf46098ee000d1085.png}
+\caption[]{\textbf{All significant differences of the mean state activation analysis on the ABIDE dataset; label denotes the region
+in the BASC122 atlas.} See \href{https://github.com/pni-lab/connattractor/blob/master/notebooks/supplemental\_material.ipynb}{supplemental\_material.ipynb} for details.}
+\label{si_clinical_results_table}
+\end{figure}
+
+\section{Supplementary Tables}
+
+\begin{table}
+\centering
+\caption[]{\textbf{MRI acquisition parameters.} TR: repetition time; TE: echo time; FA: flip angle; FOV: field of view; EPI: echo‑planar imaging; SPGR: spoiled gradient recall; SENSE/GRAPPA/ASSET: parallel imaging factors. Study 5-7 are metaanalyses or multi-center studies with varying data. Sequence parameters for these studies are available in the respective publications.}
+\label{si-tab-mri}
+\begin{tabular}{p{\dimexpr 0.200\linewidth-2\tabcolsep}p{\dimexpr 0.200\linewidth-2\tabcolsep}p{\dimexpr 0.200\linewidth-2\tabcolsep}p{\dimexpr 0.200\linewidth-2\tabcolsep}p{\dimexpr 0.200\linewidth-2\tabcolsep}}
+\toprule
+Parameter & Study 1 & Study 2 & Study 3 & Study 4 \\
+\hline
+Scanner / head coil & Philips Achieva X 3T; 32‑ch & Siemens Magnetom Skyra 3T; 32‑ch & GE Discovery MR750w 3T; 20‑ch & Philips Achieva TX 3T; head coil per site \\
+Anatomical sequence & T1 MPRAGE & T1 MPRAGE & T1 3D IR‑FSPGR & T1 SPGR (high‑resolution) \\
+Anatomical TR / TE & 8500 ms / 3.9 ms & 2300 ms / 2.07 ms & 5.3 ms / 2.1 ms & --- / --- \\
+Anatomical resolution / FOV & 1$\times$1$\times$1 mm\textsuperscript{3}; 256$\times$256$\times$220 mm\textsuperscript{3} & 1$\times$1$\times$1 mm\textsuperscript{3}; 256$\times$256$\times$192 mm\textsuperscript{3} & 1$\times$1$\times$1 mm\textsuperscript{3}; 256$\times$256$\times$172 & --- \\
+Resting‑state EPI TR / TE / FA & 2500 ms / 35 ms / 90° & 2520 ms / 35 ms / 90° & 2500 ms / 27 ms / 81° & 2000 ms / 20 ms / --- \\
+Phase enc. & COL & A\textgreater \textgreater P & A\textgreater \textgreater P & --- \\
+FOV (voxels $\times$ slices) & 240$\times$240$\times$132; 40 slices & 230$\times$230$\times$132; 38 slices & 96$\times$96$\times$44; 44 slices & 64$\times$64; 42 slices \\
+Slice thickness / gap / order & 3 mm / 0.3 mm / interleaved & 3 mm / 0.48 mm / interleaved & 3 mm / 0 mm / interleaved & 3 mm / --- / interleaved \\
+Acceleration / fat suppression & SENSE 3$\times$ / SPIR & GRAPPA 2$\times$ / Fat sat. & ASSET 2$\times$ / Fat sat. & SENSE 1.5$\times$ / --- \\
+Volumes / dummies / scan time & 200 / 5 / 8 min 37 s & 290 / 5 / 12 min 11 s & 240 / 0 / 10 min & --- / --- / --- \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}
+\centering
+\caption[]{\textbf{Neurosynth meta-analyses.} The table includes details about the term used for the automated meta-analyses, as well as the number of studies included in the meta-analysis, the total number of reported activations and the maximal Z-statistic from the meta-analysis.}
+\label{si-tab-neurosynth}
+\begin{tabular}{p{\dimexpr 0.250\linewidth-2\tabcolsep}p{\dimexpr 0.250\linewidth-2\tabcolsep}p{\dimexpr 0.250\linewidth-2\tabcolsep}p{\dimexpr 0.250\linewidth-2\tabcolsep}}
+\toprule
+search term & num. studies & num. activations & max. Z \\
+\hline
+pain & 516 & 23295 & 14.8 \\
+motor & 2565 & 109491 & 22.5 \\
+auditory & 1252 & 46557 & 25.3 \\
+visual & 3110 & 115726 & 15.4 \\
+face & 896 & 31842 & 26.8 \\
+autobiographical & 143 & 7251 & 15.7 \\
+theory of mind & 181 & 7761 & 15.1 \\
+sentences & 356 & 13461 & 16.5 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Supplementary Methods}
+
+\textbf{Study 4 instructions for upregulation.}
+\textit{``During this scan, we are going to ask you to try to imagine as hard as you can that the thermal stimulations are more painful than they are. Try to focus on how unpleasant the pain is, for instance, how strongly you would like to remove your arm from it. Pay attention to the burning, stinging and shooting sensations. You can use your mind to turn up the dial of the pain, much like turning up the volume dial on a stereo. As you feel the pain rise in intensity, imagine it rising faster and faster and going higher and higher. Picture your skin being held up against a glowing hot metal or fire. Think of how disturbing it is to be burned, and visualize your skin sizzling, melting and bubbling as a result of the intense heat.''}
+
+\textbf{Study 4 instructions for downregulation.}
+\textit{``During this scan, we are going to ask you to try to imagine as hard as you can that the thermal stimulations are less painful than they are. Focus on the part of the sensation that is pleasantly warm, like a blanket on a cold day. You can use your mind to turn down the dial of your pain sensation, much like turning down the volume dial on a stereo. As you feel the stimulation rise, let it numb your arm, so any pain you feel simply fades away. Imagine your skin is very cool, from being outside, and think of how good the stimulation feels as it warms you up.''}
+
+\section{Supplementary Information 1}
+
+\textbf{Derivation of the joint steady-state probability of free energy minimizing attractor networks}
+See \citep{https://doi.org/10.48550/arxiv.2505.22749} for details on the whole framework.
+
+\subsection{Outline}
+
+\begin{framed}
+\textbf{Note}\\
+\textbf{Regularity assumptions}
+
+\begin{itemize}
+\item Existence of a non-equilibrium steady-state density $p^\ast$ with $\Phi=\log p^\ast$ differentiable almost everywhere on its support; stationary edge fluxes are finite.
+\item Measurable jump kernel with finite total update rate at each configuration $\sigma$; independent Poisson clocks as specified.
+\item Compact support of single-site updates $x\in[ -1,1]$ so boundary terms vanish in the summation-by-parts/test-function identities used for solenoidal orthogonality.
+\item Sufficient smoothness to justify differentiating the reversible increment at $x=\sigma_i$; mixed partials commute where invoked.
+\end{itemize}
+\end{framed}
+
+\subsection{Setup: Continuous--Bernoulli kernel}
+
+We assume that the single-site conditional distribution is the Continuous--Bernoulli on $[ -1,1]$ with canonical parameter
+
+\begin{equation}
+\kappa_i(\boldsymbol{\sigma}_{-i}) = b_i + \sum_{j\neq i} J_{ij}\sigma_j
+\end{equation}
+
+and density (for $x\in[ -1,1]$)
+
+\begin{equation}
+K(x\mid \kappa) = h(x) e^{\kappa x - A(\kappa)}, \qquad x\in[-1,1]
+\end{equation}
+
+with $h(x)=\tfrac12 \mathbf{1}_{[ -1,1]}(x)$ and $A(\kappa)=\log(\sinh\kappa) -\log\kappa$ (so the $\kappa\to0$ limit is uniform on $[ -1,1]$).
+
+The conditional mean is:
+
+\begin{equation}
+L(\kappa) =\mathbb{E}_{K(\cdot\mid\kappa)}[x] = \coth\kappa - \frac{1}{\kappa}
+\end{equation}
+
+\subsection{1. Master equation}
+
+Let's consider a precise formalization of the asynchronous update procedure: each site $i$ has an independent Poisson clock of rate $\gamma_i$. When it rings, $\sigma_i$ is replaced by a draw $x\sim K(\cdot\mid\kappa_i(\sigma_{ -i}))$.
+
+With $\sigma^{(i,x)}$ the configuration equal to $\sigma$ but with coordinate $i$ set to $x$, the transition density is
+
+\begin{equation}
+w_i(\sigma^{(i,x)}\mid\sigma) =\gamma_i K(x\mid\kappa_i(\sigma_{-i}))
+\end{equation}
+
+The master equation for $p(\sigma,t)$ is
+
+\begin{equation}
+\partial_t p(\sigma,t) =\sum_{i=1}^N\int_{-1}^{1} \Big[ \underbrace{w_i(\sigma\mid\sigma^{(i,x)}) p(\sigma^{(i,x)},t)}_{inflow} - \underbrace{w_i(\sigma^{(i,x)}\mid\sigma) p(\sigma,t)}_{outflow}\Big] dx
+\end{equation}
+
+\begin{framed}
+\textbf{Note}\\
+In a small interval $dt$, probability in state $\sigma$ changes by inflow from all one-site predecessors $\sigma^{(i,x)}$ minus outflow from $\sigma$ to those states. Multiple updates within $dt$ are $\mathcal{O}(dt^2)$ and negligible. Because the updated value $x$ is continuous, we integrate over $x\in[ -1,1]$.
+\end{framed}
+
+\subsection{2. Probability currents}
+
+Let's denote the site-wise flux density as:
+
+\begin{equation}
+F_i(\sigma \to x) := w_i(\sigma^{(i,x)}\mid\sigma) p^\ast(\sigma)
+\end{equation}
+
+At steady state $p^\ast$, by definition we have:
+
+\begin{equation}
+\sum_i \int_{-1}^1 \Big(F_i(\sigma^{(i,x)}\to\sigma)-F_i(\sigma\to x)\Big) dx = 0
+\end{equation}
+
+\begin{framed}
+\textbf{Note}\\
+${\sigma^{(i,x)}}^{(i,\sigma)} = \sigma$
+\end{framed}
+
+\subsection{3. Detailed balance condition}
+
+A special (and maybe the most intuitive) way to satisfy the previous eq. is the case of detailed balance or equilibrium. In this case, every transition is balanced:
+
+\begin{equation}
+F_i(\sigma^{(i,x)}\to\sigma) = F_i(\sigma\to x)
+\end{equation}
+
+It can be shown that:
+
+\begin{equation}
+w_i(\sigma^{(i,x)}\mid\sigma) p^\ast(\sigma) = w_i(\sigma\mid\sigma^{(i,x)}) p^\ast(\sigma^{(i,x)}) \iff \partial_{\sigma_i}\Phi(\sigma) = \kappa_i(\sigma_{-i}) = b_i + \sum_{k\neq i} J_{ik} \sigma_k
+\end{equation}
+
+I.e., the log-density $\Phi$ changes by the local slope at $i$ (see detailed derivation below).
+
+Hence for $j\neq i$:
+
+\begin{equation}
+\partial_{\sigma_j}\partial_{\sigma_i}\Phi = J_{ij}, \qquad \partial_{\sigma_i}\partial_{\sigma_j}\Phi = J_{ji}
+\end{equation}
+
+Mixed partials commute, thus:
+
+\begin{equation}
+J_{ij}=J_{ji} \quad \iff \textit{detailed balance}
+\end{equation}
+
+Therefore, \textbf{equilibrium (detailed balance) is possible only when the coupling is symmetric}.
+
+\begin{framed}
+\textbf{Note}\\
+\textbf{Derivation}
+
+From:
+
+$w_i(\sigma^{(i,x)}\mid\sigma) p^\ast(\sigma) = w_i(\sigma\mid\sigma^{(i,x)}) p^\ast(\sigma^{(i,x)})$
+
+We take logs ($\Phi=\log p^\ast$) and rearrange:
+
+$\Phi(\sigma^{(i,x)}) - \Phi(\sigma) = \log w_i(\sigma^{(i,x)} \mid \sigma) - \log w_i(\sigma \mid \sigma^{(i,x)})$
+
+Substitute $w_i = \gamma_i K(\cdot \mid \kappa)$ with $\kappa = \kappa_i(\sigma_{ -i}) = \kappa_i(\sigma^{(i,x)}_{ -i})$:
+
+$\Phi(\sigma^{(i,x)}) - \Phi(\sigma) = \big[\log \gamma_i + \log K(x \mid \kappa)\big] - \big[\log \gamma_i + \log K(\sigma_i|\kappa)\big] = \log K(x \mid \kappa) - log K(\sigma_i \mid \kappa)$
+
+Use CB form $\log K(z|\kappa) = \log h(z) + \kappa z - A(\kappa)$:
+
+$\Phi(\sigma^{(i,x)}) - \Phi(\sigma) = \big[ \log h(x) - \log h(\sigma_i)\big] + \kappa(x - \sigma_i)$
+
+($A(\kappa)$ cancels because $\kappa$ is the same).
+
+For Continuous--Bernoulli on [-1,1], $h(x) = 1/2$ on the support \Rightarrow $\log h(x) - log h(\sigma_i) = 0$, so:
+
+\begin{equation}
+> \Phi(\sigma^{(i,x)}) − \Phi(σ) = \kappa(x − \sigma_i)
+>
+\end{equation}
+
+Differentiating at $x=\sigma_i$ yields
+
+\begin{equation}
+> \partial_{\sigma_i}\Phi(\sigma) = \kappa_i(\sigma_{-i}) = b_i + \sum_{k\neq i} J_{ik} \sigma_k
+>
+\end{equation}
+\end{framed}
+
+\subsection{4. Non-equilibrium Steady State (NESS)}
+
+Detailed balance (equilibrium) is only one specific way the steady-state condition can hold:
+
+\begin{equation}
+\sum_i \int_{-1}^1 \Big(F_i(\sigma^{(i,x)}\to\sigma)-F_i(\sigma\to x)\Big) dx = 0
+\end{equation}
+
+Let's consider the general case: an arbitrary (possibly asymmetric) $J$ coupling. $J$ can always be decomposed into:
+
+\begin{equation}
+J = J^{\mathrm{S}} + J^{\mathrm{A}},\qquad J^{\mathrm{S}} := \tfrac12(J+J^\top), \quad J^{\mathrm{A}} := \tfrac12(J-J^\top)
+\end{equation}
+
+This leads to a decomposition of the edge currents on each directed edge $(\sigma,\sigma^{(i,x)})$:
+
+\begin{equation}
+F_i^{\mathrm{sym}}(\sigma\to x) := \tfrac12\Big(F_i(\sigma\to x)+F_i(\sigma^{(i,x)}\to\sigma)\Big),\qquad
+F_i^{\mathrm{sol}}(\sigma\to x) := \tfrac12\Big(F_i(\sigma\to x)-F_i(\sigma^{(i,x)}\to\sigma)\Big)
+\end{equation}
+
+so that $F_i = F_i^{\mathrm{sym}} + F_i^{\mathrm{sol}}$ and $F_i^{\mathrm{sym}}(\sigma\to x)=F_i^{\mathrm{sym}}(\sigma^{(i,x)}\to\sigma)$.
+
+Since $F_i(\sigma\to x) = e^{\Phi(\sigma)} w_i(\sigma\to x)$, define rates accordingly:
+
+\begin{equation}
+w_i^{\mathrm{sym}}(\sigma\to x) := e^{-\Phi(\sigma)} F_i^{\mathrm{sym}}(\sigma\to x),\qquad
+w_i^{\mathrm{sol}}(\sigma\to x) := e^{-\Phi(\sigma)} F_i^{\mathrm{sol}}(\sigma\to x)
+\end{equation}
+
+so $w_i = w_i^{\mathrm{sym}} + w_i^{\mathrm{sol}}$ and $F_i^{\mathrm{sym}} = e^{\Phi}w_i^{\mathrm{sym}}$, $F_i^{\mathrm{sol}} = e^{\Phi}w_i^{\mathrm{sol}}$.
+
+We proceed in two steps: (i) the antisymmetric component is divergence-free and never changes the steady state; (ii) the remaining symmetric component yields exactly the same $p^\ast$ as the equilibrium distribution obtained by setting $J=J^{\mathrm{S}}$. Finally, as a bonus, we show that the induced circulating flow is indeed tangential to the level sets of $\Phi$, in accordance to the Helmholtz decomposition.
+
+\subsubsection{i) Antisymmetric component is divergence-free (does not change $p^\ast$).}
+
+Starting again from stationarity of the full current,
+
+\begin{equation}
+\sum_i \int_{-1}^1 \Big(F_i(\sigma^{(i,x)}\to\sigma)-F_i(\sigma\to x)\Big) dx = 0
+\end{equation}
+
+subtract the same identity written with $F^{\mathrm{sym}}$ in place of $F$. Because $F^{\mathrm{sym}}(\sigma\to x)=F^{\mathrm{sym}}(\sigma^{(i,x)}\to\sigma)$ on every edge, its contribution vanishes pairwise, giving
+
+\begin{equation}
+\sum_i \int_{-1}^1 \Big(F_i^{\mathrm{sol}}(\sigma^{(i,x)}\to\sigma)-F_i^{\mathrm{sol}}(\sigma\to x)\Big) dx = 0
+\end{equation}
+
+Thus $F^{\mathrm{sol}}$ has zero divergence and does not change $p^\ast$.
+
+\subsubsection{ii) Symmetric component determines $p^\ast$ and matches the equilibrium solution with $J=J^{\mathrm{S}}$.}
+
+From Section 3, only $J^{\mathrm{S}}$ can appear in a potential gradient (commuting mixed partials). Therefore
+
+\begin{equation}
+\partial_{\sigma_i}\Phi(\sigma) = b_i + \sum_{k\neq i} J^{\mathrm{S}}_{ik}\,\sigma_k
+\end{equation}
+
+which integrates to the same $\Phi=\log p^\ast$ you obtain by enforcing detailed balance with the symmetric coupling $J=J^{\mathrm{S}}$ (i.e., in the absence of $J^{\mathrm{A}}$). Equivalently, the symmetric current $F^{\mathrm{sym}}$ is reversible with respect to $p^\ast$ and alone reproduces the same steady state.
+
+\subsubsection{Note: Tangency to level sets of $\Phi$ (no work against the potential).}
+
+Multiply the preceding identity by a test function $\psi(\sigma)$ and integrate over $\sigma$ (``summation by parts'') to obtain
+
+\begin{equation}
+\int d\sigma\, \sum_i\int_{-1}^1 F_i^{\mathrm{sol}}(\sigma\to x)\,\big[\psi(\sigma^{(i,x)})-\psi(\sigma)\big] dx = 0
+\end{equation}
+
+Taking $\psi=\Phi$ yields
+
+\begin{equation}
+-\int d\sigma\, \sum_i\int_{-1}^1 F_i^{\mathrm{sol}}(\sigma\to x)\,\big[\Phi(\sigma^{(i,x)})-\Phi(\sigma)\big] dx = 0
+\end{equation}
+
+so the solenoidal current is orthogonal to discrete gradients and flows tangent to the isocontours of $\Phi$ (the level sets of $p^\ast$).
+
+\begin{enumerate}[resume]
+\item Link to $J^{\mathrm{A}}$.
+\end{enumerate}
+
+Under the linear Continuous--Bernoulli parametrization, $J^{\mathrm{A}}$ cannot contribute to any scalar potential (mixed partials must commute). Therefore, varying $J^{\mathrm{A}}$ at fixed $J^{\mathrm{S}}$ leaves $\Phi$ and $p^\ast$ unchanged; it only affects the circulating, divergence-free component $F^{\mathrm{sol}}$.
+
+\subsubsection{Conclusion: explicit steady-state $p^\ast$ for arbitrary $J$}
+
+By the results above, only the symmetric component $J^{\mathrm{S}} := \tfrac12(J+J^\top)$ can shape the potential $\Phi=\log p^\ast$. Therefore, for arbitrary (possibly asymmetric) $J$, the non-equilibrium steady-state density takes the Boltzmann-like form:
+
+\begin{equation}
+p^\ast(\sigma) = \frac{1}{Z} \exp\Bigg( \sum_i b_i\,\sigma_i + \sum_{i,j} J^{\mathrm{S}}_{ij}\,\sigma_i\,\sigma_j \Bigg)
+\end{equation}
+
+with $J^{\mathrm{S}}_{ii}=0$ and partition function
+
+\begin{equation}
+Z = \int_{[-1,1]^N} \exp\Bigg( \sum_i b_i\,\sigma_i + \sum_{i,j} J^{\mathrm{S}}_{ij}\,\sigma_i\,\sigma_j \Bigg) \, d\sigma
+\end{equation}
+
+The antisymmetric component $J^{\mathrm{A}} := \tfrac12(J -J^\top)$ contributes only to divergence-free (solenoidal) probability currents tangent to the level sets of $\Phi$ and thus does not alter $p^\ast$. This expression matches the manuscript's stationary density, with $J^{\mathrm{S}}$ playing the role of the effective (symmetric) interaction matrix.
+
+\section{Supplementary Information 2}
+
+Here we provide a concise derivation of how $\sigma$ and $J$ changes as a consequence of free energy minimization resulting in an inference (node update) rule and a local, incremental learning rule, respectively.
+
+For more background and a detailed derivation, see \citep{https://doi.org/10.48550/arxiv.2505.22749}.
+
+Let the instantaneous net input to node $\sigma_i$ be
+
+\begin{equation}
+u_i := b_i + \sum_{j\ne i} J_{ij}\,\sigma_j,
+\end{equation}
+
+and let $q(\sigma_i)\propto e^{b_q\sigma_i}$ be the variational marginal with mean $L(b_q)$, where $L$ is the Langevin function (the mean of the Continuous--Bernoulli).
+
+\subsection{Inference (Hopfield-style)}
+
+We start by writing up the local variational free energy from the point of view of a single node $\sigma_i$:
+
+\begin{equation}
+\label{variational-free-energy}
+F = \mathbb{E}_q[\ln q(\sigma_i)] - \mathbb{E}_q[\ln p(\sigma_{\setminus i}\mid \sigma_i)]
+\end{equation}
+
+Next we express:
+
+\begin{equation}
+\ln q(\sigma_i)= b_q\,\sigma_i - A(b_q) + \ln h(\sigma_i)
+\end{equation}
+
+with mean $\mathbb{E}_q[\sigma_i]=L(b_q)=A'(b_q)$.
+
+and
+
+\begin{equation}
+\ln p(\sigma_{\setminus i}\mid \sigma_i) = \text{const} + \sigma_i\,\sum_{j\ne i} J_{ij}\sigma_j.
+\end{equation}
+
+As it depends on $\sigma_i$ only through the linear slope $\sum_{j\ne i}J_{ij}\sigma_j$:
+
+\begin{equation}
+\mathbb{E}_q[\,\ln p(\sigma_{\setminus i}\mid \sigma_i)\,] = \text{const} + L(b_q)\,\sum_{j\ne i} J_{ij}\sigma_j
+\end{equation}
+
+Now, we assemble the local free energy (dropping constants independent of $b_q$):
+
+\begin{equation}
+F = (b_q - b_i)\,L(b_q) - \big[A(b_q)-A(b_i)\big] - L(b_q)\sum_{j\ne i}J_{ij}\sigma_j.
+\end{equation}
+
+Equivalently, using $u_i=b_i+\sum_{j\ne i}J_{ij}\sigma_j$ and $A'(b_q)=L(b_q)$,
+
+\begin{equation}
+F = (b_q - u_i)\,L(b_q) - A(b_q) + \text{const}.
+\end{equation}
+
+\begin{enumerate}[resume]
+\item Differentiate w.r.t. $b_q$ and use $A'(b_q)=L(b_q)$ to cancel terms:
+\end{enumerate}
+
+\begin{equation}
+\frac{\partial F}{\partial b_q} = (b_q-u_i)\,L'(b_q) + L(b_q) - A'(b_q) = (b_q-u_i)\,L'(b_q).
+\end{equation}
+
+Setting the derivative to zero gives $b_q^\star=u_i$ and therefore the node-wise update
+
+\begin{equation}
+\boxed{\;\mathbb{E}_q[\sigma_i] \;=\; L(b_q^\star) \;=\; L\!\left(b_i + \sum_{j\ne i} J_{ij}\,\sigma_j\right)\;}
+\end{equation}
+
+which is the stochastic Hopfield/Boltzmann-style activation with the Langevin nonlinearity.
+
+\subsection{Learning (Hebb - anti-Hebb)}
+
+Make the dependence on $u_i$ explicit by adding and subtracting the CB log-partition $A(u_i)$ (using $\ln p(\sigma_i\mid\sigma_{\setminus i})=u_i\,\sigma_i - A(u_i)+\ln h(\sigma_i)$ and Bayes' rule):
+
+\begin{equation}
+F = \mathbb{E}_q\big[(b_q-u_i)\,\sigma_i\big] + A(u_i) - A(b_q) + \text{const}.
+\end{equation}
+
+Now
+
+\begin{equation}
+\frac{\partial F}{\partial u_i} = -\mathbb{E}_q[\sigma_i] + A'(u_i) = -\mathbb{E}_q[\sigma_i] + L(u_i),
+\end{equation}
+
+and by the chain rule with $\partial u_i/\partial J_{ij}=\sigma_j$ we obtain
+
+\begin{equation}
+\frac{\partial F}{\partial J_{ij}} = \big[\,L(u_i) - \mathbb{E}_q[\sigma_i] \,\big] \, \sigma_j.
+\end{equation}
+
+Using a stochastic (sample-based) estimate $\mathbb{E}_q[\sigma_i]\approx\sigma_i$ and descending $F$ gives the local update
+
+\begin{equation}
+\boxed{\;\Delta J_{ij} \;\propto\; \underbrace{\sigma_i\sigma_j}_{\text{Hebbian (observed)}} \;-\; \underbrace{L\!\left(b_i+\sum_{k\ne i} J_{ik}\sigma_k\right)\sigma_j}_{\text{anti-Hebbian (predicted)}}\;}
+\end{equation}
+
+This is a predictive coding-based learning rule that strengthens observed correlations and subtracts those already predicted by the current model.
+
+\section{Supplementary Information 3}
+
+\textbf{Self-orthogonalization of attractor states}
+
+To illustrate how the learning rule in free energy minimizing attractor networks gives rise to efficient, (approximately) orthogonal representations of the external states, suppose the network has already learned a pattern $\mathbf{s}^{(1)}$, whose neural representation is the attractor $\boldsymbol{\sigma}^{(1)}$ and associated weights $\mathbf{J}^{(1)}$. When a new pattern $\mathbf{s}^{(2)}$ is presented that is correlated with $\mathbf{s}^{(1)}$, the network's prediction for $\sigma_i^{(2)}$ will be $\hat{\sigma}_i = L(b_i + \sum_{k \neq i} J_{ik}^{(1)} \sigma_k)$. Because inference with $\mathbf{J}^{(1)}$ converges to $\boldsymbol{\sigma}^{(1)}$ and $\boldsymbol{\sigma}^{(2)}$ is correlated with $\boldsymbol{\sigma}^{(1)}$, the prediction $\hat{\boldsymbol{\sigma}}$ will capture variance in $\boldsymbol{\sigma}^{(2)}$ that is `explained' by $\boldsymbol{\sigma}^{(1)}$.
+The learning rule updates the weights based only on the unexplained (residual) component of the variance, the prediction error. In other words, $\hat{\boldsymbol{\sigma}}$ approximates the projection of $\boldsymbol{\sigma}^{(2)}$ onto the subspace already spanned by $\boldsymbol{\sigma}^{(1)}$. Therefore, the weight update primarily strengthens weights corresponding to the component of $\boldsymbol{\sigma}^{(2)}$ that is orthogonal to $\boldsymbol{\sigma}^{(1)}$.
+Thus, the learning effectively encodes this residual, $\boldsymbol{\sigma}^{(2)}_{\perp}$, ensuring that the new attractor components being formed tend to be orthogonal to those already established.
+
+For more details on self-orthogonalization in these networks, including an empirical demonstration, see \citep{https://doi.org/10.48550/arxiv.2505.22749}.
+
+\section{Supplementary Information 4}
+
+\textbf{Reconstruction of the attractor network from the activation timeseries.}
+
+We start from Eq. (\ref{steady-state-dist}), written in matrix notation: \newline
+$E_{HN}(\bm{\sigma}) = -\frac{1}{2} \sigma^\top J \sigma + \sigma^\top b \\ 
+= -\frac{1}{2} \sigma^\top J \sigma + \sigma^\top J J^{ -1} b \\
+= -\frac{1}{2} \sigma^\top J \sigma + \sigma^\top J J^{ -1} b - \frac{1}{2} b^\top J^{ -1} b + \frac{1}{2} b^\top J^{ -1} b$ \newline
+\newline
+To complete the square, we added and subtracted  $\frac{1}{2} b^\top J^{ -1} b$  within the exponent.
+We recognize that  $\sigma^\top J J^{ -1} b = \sigma^\top b$. Now add and subtract  $\frac{1}{2} b^\top J^{ -1} b$
+
+$= -\frac{1}{2} \left[\sigma^\top J \sigma - 2 \sigma^\top J J^{ -1} b + b^\top J^{ -1} b \right] + \frac{1}{2} b^\top J^{ -1} b \\
+= -\frac{1}{2} \left[\sigma - J^{ -1} b \right]^\top J \left[\sigma - J^{ -1} b\right] + \frac{1}{2} b^T J^{ -1} b$ \newline
+\newline
+Given that $P(\bm{\sigma}) = \exp( -E_{HN}(\bm{\sigma}))$, the expression simplifies to:
+$P(\sigma) \propto \exp\left( -\frac{1}{2} (\sigma - J^{ -1} b)^\top J (\sigma - J^{ -1} b) \right)$ \newline
+\newline
+Note that the term  $\frac{1}{2} b^\top J^{ -1} b$  is independent of  $\sigma$; we have absorbed it into the normalization constant.
+\newline
+This is exactly the exponent of a multivariate Gaussian distribution with mean $J^{ -1} b$ and covariance matrix $J^{ -1}$, meaning that the weight matrix of the attractor network can be reconstructed as the inverse covariance matrix of activation timeseries of the lower-level nodes:
+$\mathbf{J} = -\Lambda = -\Sigma^{ -1}$
+
+
+
+\bibliographystyle{unsrtnat}
+\bibliography{main.bib}
+
+\end{document}
