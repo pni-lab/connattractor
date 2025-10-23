@@ -36,45 +36,45 @@ The attractor basins were visualized by using the decision boundaries obtained f
 
 :::{figure} figures/supplement/classification_acc_state_basins.png
 :name: si_classification_acc_state_basins
-**Cross-validation classification accuracy of the fcHNN, when predicting the attractor state from state 
+**Cross-validation classification accuracy of the fcANN, when predicting the attractor state from state 
 activation.**  See [supplemental_material.ipynb](https://github.com/pni-lab/connattractor/blob/master/notebooks/supplemental_material.ipynb) for details.
 :::
 
 :::{figure} figures/supplement/att_state_emergence_over_beta.png
 :name: si_att_state_emergence_over_beta
-**Parameter sweep of fcHNN parameters threshold and beta.** the number of attractor states is color-coded. See [supplemental_material.ipynb](https://github.com/pni-lab/connattractor/blob/master/notebooks/supplemental_material.ipynb) for details.
+**Parameter sweep of fcANN parameters threshold and beta.** The number of attractor states is color‑coded. See [supplemental_material.ipynb](https://github.com/pni-lab/connattractor/blob/master/notebooks/supplemental_material.ipynb) for details.
 :::
 
-:::{figure} figures/supplement/si_convergence.png
+:::{figure} figures/supplement/si_convergence_jittered.png
 :name: si_convergence
-**HNNs initialized with the empirical connectome has better convergence properties than permutation-based null models.** Histograms show the number of iterations until convergence with the real (unpermuted) connectome, for 100 random initializations, with various beta values. HNN models based on the permuted connectivity matrix (with retaining symmetry) did not reach convergence in 10000 iterations in more than 98% of the same random initializations. See [convergence-analysis.ipynb](https://github.com/pni-lab/connattractor/blob/master/notebooks/convergence_analysis.ipynb) for details.
+**fcANNs initialized with the empirical connectome have better convergence properties than permutation‑based null models.** We investigated the convergence properties of functional connectome‑based ANNs in study 1 by contrasting the number of iterations until reaching convergence to a permutation‑based null model. In more detail, the null model was constructed by randomly permuting the upper triangle of the original connectome and filling up the lower triangle to get a symmetric network (symmetry of the weight matrix is a general requirement for convergence). This procedure was repeated 1000 times. In each repetition, we initialized both the original and the permuted fcANN with the same random input and counted the number of iterations until convergence. Each point on the plot shows an iteration number; the lines connect iteration numbers corresponding to the original and permuted matrices initialized with the same input. Statistical significance of the faster convergence in the empirical connectome was assessed via a one‑sided Wilcoxon signed‑rank test (i.e., a non‑parametric paired test) on the paired iteration values (1,000 pairs), with the null hypothesis that the empirical connectome converges in fewer iterations than the permuted connectome. The whole procedure was repeated with $\beta=0.3, 0.35, 0.4, 0.5$ and $0.6$ (providing 2–8 attractor states). See [convergence-analysis.ipynb](https://github.com/pni-lab/connattractor/blob/master/notebooks/convergence_analysis.ipynb) for details.
 :::
 
 
 :::{figure} figures/supplement/si_state_occupancy_null_model.png
 :name: si_state_occupancy_null_models
-**Statistical inference of the fcHNN state occupancy prediction with different null models.**
+**Statistical inference of the fcANN state occupancy prediction with different null models.**
 **A** Results with a spatial autocorrelation-preserving null model for the empirical activity patterns. See [null_models.ipynb](https://github.com/pni-lab/connattractor/blob/master/notebooks/null_models.ipynb) for more details.
-**B** Results where simulated samples are randomly sampled from a multivariate normal distribution, with the functional connectome as the covariance matrix, and compared to the fcHNN performance. See [supplemental_material.ipynb](https://github.com/pni-lab/connattractor/blob/master/notebooks/supplemental_material.ipynb) for details.
+**B** Results where simulated samples are randomly sampled from a multivariate normal distribution, with the functional connectome as the covariance matrix, and compared to the fcANN performance. See [supplemental_material.ipynb](https://github.com/pni-lab/connattractor/blob/master/notebooks/supplemental_material.ipynb) for details.
 :::
 
 :::{figure} figures/supplement/si_pain_ghost_attractor_sim.png
 :name: si_pain_ghost_attractor_sim
-**FcHNN can reconstruct the pain "ghost attractor".**
+**FcANN can reconstruct the pain "ghost attractor".**
 Signal-to-noise values range from 0.003 to 0.009. Asterisk denotes the location of the simulated "ghost attractor". P-values are based on permutation testing, by randomly changing the conditions in a per-participant basis. See [main_analyses.ipynb](https://github.com/pni-lab/connattractor/blob/master/notebooks/main_analyses.ipynb) for more details.
 :::
 
 :::{figure} figures/supplement/si_downreg_trajectory_sim.png
 :name: si_downreg_trajectory_sim
-**FcHNN can reconstruct the changes in brain dynamics caused by the voluntary donwregulation of pain (as contrasted to upregulation)**
+**fcANN can reconstruct the changes in brain dynamics caused by the voluntary downregulation of pain (as contrasted to upregulation)**
 Signal-to-noise values range from 0.001 to 0.005. P-values are based on permutation testing, by randomly changing the conditions in a per-participant basis. See [main_analyses.ipynb](https://github.com/pni-lab/connattractor/blob/master/notebooks/main_analyses.ipynb) for more details.
 :::
 
 :::{figure} figures/supplement/noise_robustness_weights.png
 :name: si_noise_robustness_weights
-**Robustness of the fcHNN weights to noise.**
-We set the temperature of the fcHNN, so that two attractor states emerge and iteratively add noise to the connectome. 
-To account for the change in dynamics, we adjust the temperature (beta) of the noisy fcHNN so that exactly two states emerge. We then highlight the decrease in nodal strength of the noisy connectome (the fcHNN weights) as a reference metric 
+**Robustness of the fcANN weights to noise.**
+We set the temperature of the fcANN, so that two attractor states emerge and iteratively add noise to the connectome. 
+To account for the change in dynamics, we adjust the temperature (beta) of the noisy fcANN so that exactly two states emerge. We then highlight the decrease in nodal strength of the noisy connectome (the fcANN weights) as a reference metric 
 vs the correlation of the attractor states that emerge from the noisy connectome. See [supplemental_material.ipynb](https://github.com/pni-lab/connattractor/blob/master/notebooks/supplemental_material.ipynb) for details.
 :::
 
@@ -85,6 +85,68 @@ in the BASC122 atlas.** See [supplemental_material.ipynb](https://github.com/pni
 :::
 
 ## Supplementary Tables
+
+```{list-table} **MRI acquisition parameters.** TR: repetition time; TE: echo time; FA: flip angle; FOV: field of view; EPI: echo‑planar imaging; SPGR: spoiled gradient recall; SENSE/GRAPPA/ASSET: parallel imaging factors. Study 5-7 are metaanalyses or multi-center studies with varying data. Sequence parameters for these studies are available in the respective publications.
+:header-rows: 1
+:name: si-tab-mri
+
+* - Parameter
+  - Study 1
+  - Study 2
+  - Study 3
+  - Study 4
+* - Scanner / head coil
+  - Philips Achieva X 3T; 32‑ch
+  - Siemens Magnetom Skyra 3T; 32‑ch
+  - GE Discovery MR750w 3T; 20‑ch
+  - Philips Achieva TX 3T; head coil per site
+* - Anatomical sequence
+  - T1 MPRAGE
+  - T1 MPRAGE
+  - T1 3D IR‑FSPGR
+  - T1 SPGR (high‑resolution)
+* - Anatomical TR / TE
+  - 8500 ms / 3.9 ms
+  - 2300 ms / 2.07 ms
+  - 5.3 ms / 2.1 ms
+  - — / —
+* - Anatomical resolution / FOV
+  - 1×1×1 mm³; 256×256×220 mm³
+  - 1×1×1 mm³; 256×256×192 mm³
+  - 1×1×1 mm³; 256×256×172
+  - —
+* - Resting‑state EPI TR / TE / FA
+  - 2500 ms / 35 ms / 90°
+  - 2520 ms / 35 ms / 90°
+  - 2500 ms / 27 ms / 81°
+  - 2000 ms / 20 ms / —
+* - Phase enc.
+  - COL
+  - A>>P
+  - A>>P
+  - —
+* - FOV (voxels × slices)
+  - 240×240×132; 40 slices
+  - 230×230×132; 38 slices
+  - 96×96×44; 44 slices
+  - 64×64; 42 slices
+* - Slice thickness / gap / order
+  - 3 mm / 0.3 mm / interleaved
+  - 3 mm / 0.48 mm / interleaved
+  - 3 mm / 0 mm / interleaved
+  - 3 mm / — / interleaved
+* - Acceleration / fat suppression
+  - SENSE 3× / SPIR
+  - GRAPPA 2× / Fat sat.
+  - ASSET 2× / Fat sat.
+  - SENSE 1.5× / —
+* - Volumes / dummies / scan time
+  - 200 / 5 / 8 min 37 s
+  - 290 / 5 / 12 min 11 s
+  - 240 / 0 / 10 min
+  - — / — / —
+```
+
 ```{list-table} **Neurosynth meta-analyses.** The table includes details about the term used for the automated meta-analyses, as well as the number of studies included in the meta-analysis, the total number of reported activations and the maximal Z-statistic from the meta-analysis.
 :header-rows: 1
 :name: si-tab-neurosynth
@@ -488,7 +550,7 @@ For more details on self-orthogonalization in these networks, including an empir
 
 **Reconstruction of the attractor network from the activation timeseries.**
 
-We start from e.q [](steady-state-dist), written in the matrix notation: \
+We start from Eq. [](steady-state-dist), written in matrix notation: \
 $E_{HN}(\bm{\sigma}) = -\frac{1}{2} \sigma^\top J \sigma + \sigma^\top b \\ 
 = -\frac{1}{2} \sigma^\top J \sigma + \sigma^\top J J^{-1} b \\
 = -\frac{1}{2} \sigma^\top J \sigma + \sigma^\top J J^{-1} b - \frac{1}{2} b^\top J^{-1} b + \frac{1}{2} b^\top J^{-1} b
@@ -507,7 +569,7 @@ $
 P(\sigma) \propto \exp\left(-\frac{1}{2} (\sigma - J^{-1} b)^\top J (\sigma - J^{-1} b) \right)
 $ \
 \
-Note, that the term  $\frac{1}{2} b^\top J^{-1} b$  is independent of  $\sigma$, we have absorbed it into the normalization constant. 
+Note that the term  $\frac{1}{2} b^\top J^{-1} b$  is independent of  $\sigma$; we have absorbed it into the normalization constant. 
 \
 This is exactly the exponent of a multivariate Gaussian distribution with mean $J^{-1} b$ and covariance matrix $J^{-1}$, meaning that the weight matrix of the attractor network can be reconstructed as the inverse covariance matrix of activation timeseries of the lower-level nodes:
 $
