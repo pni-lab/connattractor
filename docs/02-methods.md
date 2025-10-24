@@ -144,36 +144,29 @@ Next, in all datasets, we estimated study‑level mean connectivity matrices by 
 
 ### fcANN inference (FEP-ANN) and update rules
 
-Our fcANN instantiates the inference dynamics of free-energy-minimizing attractor neural networks (FEP-ANNs) at the macro-scale. Each node represents a brain region with continuous activity \( \boldsymbol{a} = (a_1,\dots,a_m) \), and couplings are given by the symmetrized matrix \( \boldsymbol{J} \) (see Functional connectome). Unless noted otherwise, biases are zero (\(\boldsymbol{b}=\boldsymbol{0}\)).
+Our fcANN instantiates the inference dynamics of free-energy-minimizing attractor neural networks (FEP-ANNs) at the macro-scale. Each node represents a brain region with continuous activity $\boldsymbol{\sigma} = (\sigma_1,\dots,\sigma_m)$, and couplings are given by the symmetrized matrix $\boldsymbol{J}$ (see Functional connectome). Unless noted otherwise, biases are zero ($\boldsymbol{b}=\boldsymbol{0}$).
 
 Deterministic inference. In the noise‑free symmetric case, activities are updated by repeatedly applying a sigmoidal nonlinearity to the weighted input
 
 ```{math}
 :label: fep-deterministic-update
-\boldsymbol{a}^{(t+1)} = S\!\left( \beta\, \boldsymbol{J}\, \boldsymbol{a}^{(t)} \right),
+\boldsymbol{\sigma}^{(t+1)} = S\!\left( \beta\, \boldsymbol{J}\, \boldsymbol{\sigma}^{(t)} \right),
 ```
 
-where \(S\) is a smooth odd sigmoid (we used \(\tanh\) as a practical, fast surrogate for the Langevin function) and \(\beta\) is the inverse temperature (precision) scaling the couplings. Iterations monotonically decrease a Lyapunov (free energy) function equivalent—up to an additive constant—to
-
-```{math}
-:label: energy-function
-E(\boldsymbol{a}) = - \tfrac{1}{2}\, \boldsymbol{a}^\top \boldsymbol{J}\, \boldsymbol{a} + \boldsymbol{a}^\top \boldsymbol{b},
-```
-
-and therefore converge to a local free‑energy minimum without any external optimizer. Thus, convergence does not require any optimization procedure with an external optimizer. Instead, it arises as the fixed point of repeated local inference updates, which implement gradient descent on free energy in the deterministic symmetric case (see main text).
+where $S$ is a smooth odd sigmoid (we used $\tanh$ as a practical, fast surrogate for the Langevin function) and $\beta$ is the inverse temperature (precision) scaling the couplings. As the inference rule was derived as a gradient descent on free energy, iterations monotonically decrease the free energy function and therefore converge to a local free‑energy minimum without any external optimizer. Thus, convergence does not require any optimization procedure with an external optimizer. Instead, it arises as the fixed point of repeated local inference updates, which implement gradient descent on free energy in the deterministic symmetric case (see main text).
 
 Stochastic (Langevin‑style) inference. For generative modeling of dynamics, we adopt a slight variation of the FEP‑ANN inference rule: starting from the deterministic update above, we add zero‑mean Gaussian noise directly to the post‑activation state (Langevin‑style)
 
 ```{math}
 :label: langevin-update
-\boldsymbol{a}^{(t+1)} = S\!\left( \beta\, \boldsymbol{J}\, \boldsymbol{a}^{(t)} \right) + \boldsymbol{\epsilon}^{(t)}, \quad \boldsymbol{\epsilon}^{(t)} \sim \mathcal{N}(\boldsymbol{0}, \sigma^2 \boldsymbol{I}).
+\boldsymbol{\sigma}^{(t+1)} = S\!\left( \beta\, \boldsymbol{J}\, \boldsymbol{\sigma}^{(t)} \right) + \boldsymbol{\omega}^{(t)}, \quad \boldsymbol{\omega}^{(t)} \sim \mathcal{N}(\boldsymbol{0}, \epsilon^2 \boldsymbol{I}).
 ```
 
 This explicit additive Gaussian noise differs from the continuous‑Bernoulli noise implied by the theoretical derivation but aligns with common Langevin formulations and was empirically robust. We use deterministic updates to identify attractors and study convergence; we use stochastic updates as a generative model of multistable dynamics.
 
 ### fcANN convergence and attractors
 
-We investigated convergence under the deterministic update (Eq. [](#fep-deterministic-update)) by contrasting iterations-to-convergence of the empirical fcANN against a permutation-based null. The null was constructed by randomly permuting the upper triangle of \(\boldsymbol{J}\) and reflecting it to preserve symmetry (destroying topology while preserving weight distribution). For each of 1,000 permutations, we initialized both models with the same random state and counted iterations to convergence. Statistical significance of faster convergence in the empirical connectome was assessed via a one-sided Wilcoxon signed-rank test on paired iteration counts (1,000 pairs), testing whether the empirical connectome converges in fewer iterations than its permuted counterpart. We repeated this procedure across inverse-temperature values \(\beta \in \{0.035, 0.040, 0.045, 0.050, 0.055, 0.060\}\) (yielding 2–8 attractor states). See {numref}`Supplementary Figure %s <si_convergence>` for detailed results.
+We investigated convergence under the deterministic update (Eq. [](#fep-deterministic-update)) by contrasting iterations-to-convergence of the empirical fcANN against a permutation-based null. The null was constructed by randomly permuting the upper triangle of $\boldsymbol{J}$ and reflecting it to preserve symmetry (destroying topology while preserving weight distribution). For each of 1,000 permutations, we initialized both models with the same random state and counted iterations to convergence. Statistical significance of faster convergence in the empirical connectome was assessed via a one-sided Wilcoxon signed-rank test on paired iteration counts (1,000 pairs), testing whether the empirical connectome converges in fewer iterations than its permuted counterpart. We repeated this procedure across inverse-temperature values $\beta \in \{0.035, 0.040, 0.045, 0.050, 0.055, 0.060\}$ (yielding 2–8 attractor states). See {numref}`Supplementary Figure %s <si_convergence>` for detailed results.
 
 
 ### fcANN projection
@@ -212,7 +205,7 @@ First, runs 1, 3 and 7, investigating the passive experience and the down- and u
 To further highlight the difference between the task and rest conditions, a "flow analysis" was performed to investigate the dynamic trajectory differences between the conditions rest and pain. The analysis method was identical to the flow analysis of the resting state data ([](#evaluation-resting-state-dynamics)). First, we calculated the direction in the projection plane between each successive TR during the rest conditions (a vector on the fcANN projection plane for each TR transition). Next, we obtained two-dimensional binned means for the x and y coordinates of these transition vectors (pooled across all participants), calculated over a two-dimensional grid of 100×100 uniformly distributed bins in the [-6,6] range (arbitrary units) and applied Gaussian smoothing with $\sigma=5$ bins. 
 The same procedure was repeated for the pain condition and the difference in the mean directions between the two conditions was visualized as “streamplots” (using Python’s matplotlib). We used the same approach to quantify the difference in characteristic state transition trajectories between the up- and downregulation conditions. The empirically estimated trajectory differences (from real fMRI data) were contrasted to the trajectory differences predicted by the fcANN model from study 1. The similarity between real and simulated flow maps was quantified with Pearson’s correlation coefficient (two-sided), and significance was assessed via permutation testing (1,000 permutations) by randomly swapping condition labels within participants.
 
-To obtain fcANN-simulated state transitions in resting conditions, we used the stochastic relaxation procedure ({numref}`hopfield-update-matrix-stochastic`), with $\mathbf{\mu}$ set zero.
+To obtain fcANN-simulated state transitions in resting conditions, we used the stochastic relaxation procedure (Eq. [](#langevin-update)), with $\mathbf{\mu}$ set to zero.
 To simulate the effect of pain-related activation on large-scale brain dynamics, we set $\mu_i$ during the stochastic relaxation procedure to a value representing pain-elicited activity in region i. The region-wise activations were obtained calculating the parcel-level mean activations from the meta-analytic pain activation map from {cite:p}`zunhammer2021meta`, which contained Hedges' g effect sizes from an individual participant-level meta-analysis of 20 pain studies, encompassing a total of n=603 participants. The whole activation map was scaled with five different values ranging from $10^{-3}$ to $10^{-1}$, spaced logarithmically, to investigate various signal-to-noise scenarios.
 We obtained the activity patterns of $10^5$ iterations from this stochastic relaxation procedure and calculated the state transition trajectories with the same approach used with the empirical data.
 Next we calculated the fcANN-generated difference between the rest and pain conditions and compared it to the actual difference through a permutation test with 1,000 permutations, randomly swapping the conditions within each participant in the real data and using Pearson's correlation coefficient between the real (permuted) and fcANN-generated flow maps as the test statistic.

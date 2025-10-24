@@ -196,7 +196,7 @@ Inference arises from minimizing free energy with respect to the states $\sigma$
 
 ```{math}
 :label: fep-update
-\mathbb{E}_{q}[\sigma_i] = L(b_q) = \underbrace{ L \left( \underbrace{ b_i}_{\textit{bias}} + \underbrace{\sum_{j \ne i} J_{ij} \sigma_j}_{\textit{weighted input}} \right) }_{ \textit{sigmoid (Langevin)} } 
+\mathbb{E}_{q}[\sigma_i] = L(b_q) = \underbrace{ L \left( \underbrace{ b_i}_{\textit{bias}} + \underbrace{\sum_{j \ne i} J_{ij} \sigma_j}_{\textit{local potential}} \right) }_{ \textit{sigmoid (Langevin)} } 
 ```
 
 where $L$ is a sigmoidal activation function (a Langevin function in our case). This rule dictates that each unit updates its activity stochastically, based on a weighted sum of the activity of other units, plus its own intrinsic bias. See {cite:p}`10.48550/ARXIV.2505.22749` and [](#Supplementary-Information-2) for a detailed derivation of the inference dynamics.

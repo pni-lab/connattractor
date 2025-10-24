@@ -331,15 +331,11 @@ Therefore, **equilibrium (detailed balance) is possible only when the coupling i
 >
 > For Continuous–Bernoulli on [−1,1], $h(x) = 1/2$ on the support ⇒ $\log h(x) − log h(\sigma_i) = 0$, so:
 >
-> $$
-> \Phi(\sigma^{(i,x)}) − \Phi(σ) = \kappa(x − \sigma_i)
-> $$
+> $$\Phi(\sigma^{(i,x)}) − \Phi(σ) = \kappa(x − \sigma_i)$$
 >
 > Differentiating at $x=\sigma_i$ yields
 >
-> $$
-> \partial_{\sigma_i}\Phi(\sigma) = \kappa_i(\sigma_{-i}) = b_i + \sum_{k\neq i} J_{ik} \sigma_k
-> $$
+> $$ \partial_{\sigma_i}\Phi(\sigma) = \kappa_i(\sigma_{-i}) = b_i + \sum_{k\neq i} J_{ik} \sigma_k $$
 
 ### 4. Non-equilibrium Steady State (NESS)
 

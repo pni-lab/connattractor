@@ -1,14 +1,12 @@
-# Functional connectome-based Hopfield Neural Networks
+# Functional connectivity-based Attractor Neural Networks
 
 ```{image} figures/concept.png
 :alt: paper
 :align: left
 ```
 
-The fcHNN framework offers a simple, interpretable computational alternative to conventional descriptive analyses of brain function.
-- [x] Map your activation patterns and contrasts on the fcHNN-projection and understand how they relate to brain attractors
-- [x] Analyze activity and connectivity in the same framework
-- [x] Predict brain dynamics and its alterations due to tasks, stimuli or brain disorders as a change in fcHNN attractor dynamics 
+Functional connectivity-based Attractor Neural Networks (fcANNs) offer a simple, interpretable computational alternative to conventional descriptive analyses of brain function.
+In this theoretically-inspired computational framework, large-scale brain dynamics are understood in relation to attractor states; neurobiologically meaningful activity configurations that minimize the free energy of the system.
 
 ### Read more
 
