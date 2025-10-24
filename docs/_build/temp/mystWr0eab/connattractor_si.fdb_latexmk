@@ -1,18 +1,18 @@
 # Fdb version 4
-["bibtex connattractor_si"] 1761213039.07834 "connattractor_si.aux" "connattractor_si.bbl" "connattractor_si" 1761213043.18318 0
-  "./main.bib" 1761213037.49809 313 1a02a27892443a1e589eb564a9fe672e ""
+["bibtex connattractor_si"] 1761292016.7039 "connattractor_si.aux" "connattractor_si.bbl" "connattractor_si" 1761292020.77227 0
+  "./main.bib" 1761292015.05376 313 1a02a27892443a1e589eb564a9fe672e ""
   "/usr/share/texlive/texmf-dist/bibtex/bst/natbib/unsrtnat.bst" 1233624470 24550 a41a6405f4de768c43e871d9fbce2bc8 ""
-  "connattractor_si.aux" 1761213039.63313 5393 96f3dbd5256904e72ab19c00179166ee "xelatex"
+  "connattractor_si.aux" 1761292017.24475 5393 96f3dbd5256904e72ab19c00179166ee "xelatex"
   (generated)
   "connattractor_si.bbl"
   "connattractor_si.blg"
   (rewritten before read)
-["xdvipdfmx"] 1761213039.73597 "connattractor_si.xdv" "connattractor_si.pdf" "connattractor_si" 1761213043.1851 0
-  "connattractor_si.xdv" 1761213039.63413 63344 385a995555b862b2b811a4336abcf9b0 "xelatex"
+["xdvipdfmx"] 1761292017.34527 "connattractor_si.xdv" "connattractor_si.pdf" "connattractor_si" 1761292020.77815 0
+  "connattractor_si.xdv" 1761292017.24575 63348 08887fa626c7cbc16075866b42e04cc1 "xelatex"
   (generated)
   "connattractor_si.pdf"
   (rewritten before read)
-["xelatex"] 1761213039.09581 "connattractor_si.tex" "connattractor_si.xdv" "connattractor_si" 1761213043.18332 2
+["xelatex"] 1761292016.72047 "connattractor_si.tex" "connattractor_si.xdv" "connattractor_si" 1761292020.77244 2
   "/etc/texmf/web2c/texmf.cnf" 1759179991.63557 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/adobe/zapfding/pzdr.tfm" 1136768653 1528 f853c4d1b4e0550255e02831fdc8496f ""
@@ -140,23 +140,23 @@
   "/usr/share/texmf/tex/latex/lm/t1lmr.fd" 1616454256 1867 996fe743d88a01aca041ed22cc10e1bb ""
   "/usr/share/texmf/tex/latex/lm/t1lmtt.fd" 1616454256 2682 555da1faa2e266801e4b221d01a42cb5 ""
   "/usr/share/texmf/web2c/texmf.cnf" 1707919699 40399 f2c302f7d2af602abb742093540a5834 ""
-  "/var/lib/texmf/web2c/xetex/xelatex.fmt" 1761212990 9050238 75ba818bf09fca74ca761be7217e986d ""
-  "arxiv.sty" 1761213037.49309 7600 45f68a70e01100853d71f61aba221bdd ""
-  "connattractor_si.aux" 1761213039.63313 5393 96f3dbd5256904e72ab19c00179166ee "xelatex"
-  "connattractor_si.bbl" 1761213039.09112 545 3cc28a1c38acb979cfe6eb656780cb80 "bibtex connattractor_si"
-  "connattractor_si.out" 1761213039.63313 4456 1f75e0dfe8aaeab1db894441f4174174 "xelatex"
-  "connattractor_si.tex" 1761213037.49309 34062 f38aad2cb6479f8a625a6faa3ef21b9b ""
-  "files/att_state_emergence_-b8e5f7cd59304a9fce308c83517fa996.png" 1761213037.49309 22688 adfb41419122107b5411732658873730 ""
-  "files/classification_acc_s-93180f22e822a6c15450ea6be13ec54a.png" 1761213037.49309 11869 e41fe9af3b4e334da8b2dd37ad68eeeb ""
-  "files/clinical_results_tab-8f2ab2d62409867bf46098ee000d1085.png" 1761213037.49309 117297 226f18e10fb08f309c5f8e723b5d21b1 ""
-  "files/expl_variance_energy-3e0c060cec3a75f05eb65951d9b8c0a2.png" 1761213037.49309 16975 d16946f6cfed4308ba0bdde867e7498d ""
-  "files/noise_robustness_wei-4a96a77072e6b086a57f3137a2bc77e9.png" 1761213037.49409 25515 a99536dcf9b95cc307c0d15918c7ba91 ""
-  "files/si_convergence_jitte-3f82e6bd99f78f00f83506cd6801cccc.png" 1761213037.49409 519724 536f960e4fdcf0b8df3776e795481cff ""
-  "files/si_downreg_trajector-4f640b94503e06fb9a2cc8edfc750146.png" 1761213037.49509 1110976 0eed3456451ee9a3213ed95d0655c680 ""
-  "files/si_fcann_projection-38f5e600654450896027c27da772fd02.png" 1761213037.49609 860283 a0d708960627a7f864b91eae152026f1 ""
-  "files/si_orthogonality-3be51866afad7ce10d8cfa8ebed4c31d.png" 1761213037.49609 385488 0816fc0aee7181e58d8a67651c097030 ""
-  "files/si_pain_ghost_attrac-f8c63297d0e0c56a2b4be96d12421b81.png" 1761213037.49709 1457548 04d6559c69c6feff6cec548ef52d3293 ""
-  "files/si_state_occupancy_n-7dae32e2e43abe3d008bb9756f2cd611.png" 1761213037.49809 470305 c859556797cfd1a7e655a9bbe30d0fb0 ""
+  "/var/lib/texmf/web2c/xetex/xelatex.fmt" 1761291942 9050237 6111fe13081c65b04974749bf841c60e ""
+  "arxiv.sty" 1761292015.04776 7600 45f68a70e01100853d71f61aba221bdd ""
+  "connattractor_si.aux" 1761292017.24475 5393 96f3dbd5256904e72ab19c00179166ee "xelatex"
+  "connattractor_si.bbl" 1761292016.71675 545 3cc28a1c38acb979cfe6eb656780cb80 "bibtex connattractor_si"
+  "connattractor_si.out" 1761292017.24575 4456 1f75e0dfe8aaeab1db894441f4174174 "xelatex"
+  "connattractor_si.tex" 1761292015.04776 34062 151c7aa60a76d320acb8dc836f5bc944 ""
+  "files/att_state_emergence_-644a0ecb2cfd2486a6230d8942bf5fb0.png" 1761292015.04776 22688 adfb41419122107b5411732658873730 ""
+  "files/classification_acc_s-c8c05db20f42eae74f96a0240fb8f98e.png" 1761292015.04776 11869 e41fe9af3b4e334da8b2dd37ad68eeeb ""
+  "files/clinical_results_tab-9f9c3cffd894f0f28de1ae206b2929e0.png" 1761292015.04876 117297 226f18e10fb08f309c5f8e723b5d21b1 ""
+  "files/expl_variance_energy-55b006fcec57daee871657547ff814e8.png" 1761292015.04876 16975 d16946f6cfed4308ba0bdde867e7498d ""
+  "files/noise_robustness_wei-4bca60d7ade769ee21d0a3ccb9445fd5.png" 1761292015.04876 25515 a99536dcf9b95cc307c0d15918c7ba91 ""
+  "files/si_convergence_jitte-5c8e0d6e6dc07b3268ada365b4df5113.png" 1761292015.04876 519724 536f960e4fdcf0b8df3776e795481cff ""
+  "files/si_downreg_trajector-78318c24d125827b05b9da6649329111.png" 1761292015.04976 1110976 0eed3456451ee9a3213ed95d0655c680 ""
+  "files/si_fcann_projection-8ce70dab79beec9ac9c3954809646e36.png" 1761292015.05076 860283 a0d708960627a7f864b91eae152026f1 ""
+  "files/si_orthogonality-0d7692fb648179d08e347fb0196051c5.png" 1761292015.05176 385488 0816fc0aee7181e58d8a67651c097030 ""
+  "files/si_pain_ghost_attrac-311a9d354eee384cf7928e1ae22324aa.png" 1761292015.05276 1457548 04d6559c69c6feff6cec548ef52d3293 ""
+  "files/si_state_occupancy_n-a7e0c58abb260da4e8d9219992673bcc.png" 1761292015.05376 470305 c859556797cfd1a7e655a9bbe30d0fb0 ""
   (generated)
   "connattractor_si.aux"
   "connattractor_si.log"

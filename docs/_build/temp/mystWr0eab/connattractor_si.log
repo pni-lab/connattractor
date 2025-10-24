@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023/Debian) (preloaded format=xelatex 2025.10.23)  23 OCT 2025 09:50
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023/Debian) (preloaded format=xelatex 2025.10.24)  24 OCT 2025 07:46
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -627,9 +627,9 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) (/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
-File: files/si_orthogonality-3be51866afad7ce10d8cfa8ebed4c31d.png Graphic file 
+File: files/si_orthogonality-0d7692fb648179d08e347fb0196051c5.png Graphic file 
 (type bmp)
-<files/si_orthogonality-3be51866afad7ce10d8cfa8ebed4c31d.png>
+<files/si_orthogonality-0d7692fb648179d08e347fb0196051c5.png>
 Missing character: There is no ‑ ("2011) in font ec-lmr10!
 Missing character: There is no ᵀ ("1D40) in font ec-lmr10!
 Missing character: There is no ‑ ("2011) in font ec-lmr10!
@@ -719,23 +719,23 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 Missing character: There is no ‑ ("2011) in font ec-lmr10!
-File: files/si_fcann_projection-38f5e600654450896027c27da772fd02.png Graphic fi
+File: files/si_fcann_projection-8ce70dab79beec9ac9c3954809646e36.png Graphic fi
 le (type bmp)
-<files/si_fcann_projection-38f5e600654450896027c27da772fd02.png>
-File: files/expl_variance_energy-3e0c060cec3a75f05eb65951d9b8c0a2.png Graphic f
+<files/si_fcann_projection-8ce70dab79beec9ac9c3954809646e36.png>
+File: files/expl_variance_energy-55b006fcec57daee871657547ff814e8.png Graphic f
 ile (type bmp)
-<files/expl_variance_energy-3e0c060cec3a75f05eb65951d9b8c0a2.png>
-File: files/classification_acc_s-93180f22e822a6c15450ea6be13ec54a.png Graphic f
+<files/expl_variance_energy-55b006fcec57daee871657547ff814e8.png>
+File: files/classification_acc_s-c8c05db20f42eae74f96a0240fb8f98e.png Graphic f
 ile (type bmp)
-<files/classification_acc_s-93180f22e822a6c15450ea6be13ec54a.png>
-File: files/att_state_emergence_-b8e5f7cd59304a9fce308c83517fa996.png Graphic f
+<files/classification_acc_s-c8c05db20f42eae74f96a0240fb8f98e.png>
+File: files/att_state_emergence_-644a0ecb2cfd2486a6230d8942bf5fb0.png Graphic f
 ile (type bmp)
-<files/att_state_emergence_-b8e5f7cd59304a9fce308c83517fa996.png>
+<files/att_state_emergence_-644a0ecb2cfd2486a6230d8942bf5fb0.png>
 Missing character: There is no ‑ ("2011) in font ec-lmr10!
 Missing character: There is no ‑ ("2011) in font ec-lmr10!
-File: files/si_convergence_jitte-3f82e6bd99f78f00f83506cd6801cccc.png Graphic f
+File: files/si_convergence_jitte-5c8e0d6e6dc07b3268ada365b4df5113.png Graphic f
 ile (type bmp)
-<files/si_convergence_jitte-3f82e6bd99f78f00f83506cd6801cccc.png>
+<files/si_convergence_jitte-5c8e0d6e6dc07b3268ada365b4df5113.png>
 Missing character: There is no ‑ ("2011) in font ec-lmbx10!
 Missing character: There is no ‑ ("2011) in font ec-lmr10!
 Missing character: There is no ‑ ("2011) in font ec-lmr10!
@@ -748,21 +748,21 @@ Missing character: There is no ‑ ("2011) in font ec-lmr10!
 Missing character: There is no ‑ ("2011) in font ec-lmr10!
 Missing character: There is no ‑ ("2011) in font ec-lmr10!
 Missing character: There is no ‑ ("2011) in font ec-lmr10!
-File: files/si_state_occupancy_n-7dae32e2e43abe3d008bb9756f2cd611.png Graphic f
+File: files/si_state_occupancy_n-a7e0c58abb260da4e8d9219992673bcc.png Graphic f
 ile (type bmp)
-<files/si_state_occupancy_n-7dae32e2e43abe3d008bb9756f2cd611.png>
-File: files/si_pain_ghost_attrac-f8c63297d0e0c56a2b4be96d12421b81.png Graphic f
+<files/si_state_occupancy_n-a7e0c58abb260da4e8d9219992673bcc.png>
+File: files/si_pain_ghost_attrac-311a9d354eee384cf7928e1ae22324aa.png Graphic f
 ile (type bmp)
-<files/si_pain_ghost_attrac-f8c63297d0e0c56a2b4be96d12421b81.png>
-File: files/si_downreg_trajector-4f640b94503e06fb9a2cc8edfc750146.png Graphic f
+<files/si_pain_ghost_attrac-311a9d354eee384cf7928e1ae22324aa.png>
+File: files/si_downreg_trajector-78318c24d125827b05b9da6649329111.png Graphic f
 ile (type bmp)
-<files/si_downreg_trajector-4f640b94503e06fb9a2cc8edfc750146.png>
-File: files/noise_robustness_wei-4a96a77072e6b086a57f3137a2bc77e9.png Graphic f
+<files/si_downreg_trajector-78318c24d125827b05b9da6649329111.png>
+File: files/noise_robustness_wei-4bca60d7ade769ee21d0a3ccb9445fd5.png Graphic f
 ile (type bmp)
-<files/noise_robustness_wei-4a96a77072e6b086a57f3137a2bc77e9.png>
-File: files/clinical_results_tab-8f2ab2d62409867bf46098ee000d1085.png Graphic f
+<files/noise_robustness_wei-4bca60d7ade769ee21d0a3ccb9445fd5.png>
+File: files/clinical_results_tab-9f9c3cffd894f0f28de1ae206b2929e0.png Graphic f
 ile (type bmp)
-<files/clinical_results_tab-8f2ab2d62409867bf46098ee000d1085.png>
+<files/clinical_results_tab-9f9c3cffd894f0f28de1ae206b2929e0.png>
 Missing character: There is no ‑ ("2011) in font ec-lmr10!
 Missing character: There is no ‑ ("2011) in font ec-lmr10!
 Missing character: There is no ‑ ("2011) in font ec-lmr10!
@@ -1164,4 +1164,4 @@ Here is how much of TeX's memory you used:
  14 hyphenation exceptions out of 8191
  72i,14n,79p,1686b,369s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on connattractor_si.xdv (14 pages, 63344 bytes).
+Output written on connattractor_si.xdv (14 pages, 63348 bytes).
