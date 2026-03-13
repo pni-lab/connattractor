@@ -8,6 +8,15 @@
 
 Laboratory for Predictive Neuroimaging - University Hospital Essen, Germany
 
+----------
+
+This repository contains the Python package and all additional analyses associated with:
+*Englert et al., Functional Connectivity-based Attractor Dynamics in Rest, Task, and Disease, eLife, 13:RP98725.*
+https://doi.org/10.7554/eLife.98725
+[https://doi.org/10.7554/eLife.98725](https://doi.org/10.7554/eLife.98725)
+
+----------
+
 ## Webpage with manuscript and getting started guide
 [https://pni-lab.github.io/connattractor](https://pni-lab.github.io/connattractor)
 
